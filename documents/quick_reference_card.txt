@@ -1,0 +1,322 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    JUSTIFY.AI - QUICK REFERENCE CARD                      ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📁 DIRECTORY STRUCTURE AT A GLANCE
+═══════════════════════════════════════════════════════════════════════════
+
+justify-ai/
+├── src/                          ← Main source code (your logic)
+│   ├── core/                     ← Language manager, config loader
+│   ├── preprocessing/            ← Text preprocessing per language
+│   ├── lexicon/                  ← Hate lexicon mining (PMI-based)
+│   ├── causality/                ← Cause-effect extraction
+│   ├── bias/                     ← Demographic bias analysis (WEAT)
+│   ├── scoring/                  ← Risk score calculation
+│   ├── api/                      ← Flask/FastAPI backend
+│   ├── utils/                    ← Logging, validation, helpers
+│   └── data_processing/          ← Dataset loading & cleaning
+│
+├── configs/                      ← Configuration files (YAML)
+│   └── languages/                ← english.yaml, hindi.yaml, etc.
+│
+├── data/                         ← Datasets, embeddings, lexicons
+│   ├── datasets/                 ← Raw data (HatEval, HASOC, etc.)
+│   ├── lexicons/                 ← SQLite databases
+│   ├── embeddings/               ← Word vectors (GloVe, FastText, etc.)
+│   ├── seed_words/               ← JSON files for each language
+│   └── models/                   ← Pretrained NLP models
+│
+├── frontend/                     ← Streamlit web interface
+│   ├── app.py                    ← Main Streamlit app
+│   ├── pages/                    ← Home, analyzer, visualizations
+│   ├── components/               ← Language selector, text input, etc.
+│   └── styles/                   ← CSS and theme
+│
+├── tests/                        ← Unit & integration tests
+│   ├── unit/                     ← Individual module tests
+│   ├── integration/              ← End-to-end pipeline tests
+│   └── fixtures/                 ← Test data
+│
+├── scripts/                      ← Utility scripts
+│   ├── setup_data.py             ← Download datasets
+│   ├── build_lexicons.py         ← Create SQLite DBs
+│   └── evaluate_pipeline.py      ← Test pipeline
+│
+├── docs/                         ← Documentation
+├── notebooks/                    ← Jupyter exploration
+├── logs/                         ← Application logs (runtime)
+├── output/                       ← Generated results (runtime)
+│
+├── requirements.txt              ← Python dependencies
+├── setup.py                      ← Package configuration
+├── .gitignore                    ← Git ignore rules
+├── .env.example                  ← Environment variables template
+└── README.md                     ← Project overview
+
+═══════════════════════════════════════════════════════════════════════════
+
+📋 FILES TO CREATE FIRST (Priority Order)
+═══════════════════════════════════════════════════════════════════════════
+
+1. .gitignore                    (Ignore data/, logs/, __pycache__)
+2. requirements.txt              (Python dependencies)
+3. setup.py                      (Package setup)
+4. .env.example                  (Environment template)
+5. README.md                     (Project overview)
+6. configs/default.yaml
+7. configs/languages/english.yaml
+8. configs/languages/hindi.yaml
+9. src/core/__init__.py         (And all other __init__.py files)
+10. src/core/constants.py
+11. src/core/config_loader.py
+12. src/core/language_manager.py
+13. tests/conftest.py
+14. tests/unit/test_language_manager.py
+15. data/README.md
+
+═══════════════════════════════════════════════════════════════════════════
+
+🐍 PYTHON DEPENDENCIES (Key Packages)
+═══════════════════════════════════════════════════════════════════════════
+
+NLP Libraries:
+  - nltk          Language processing
+  - spacy         English dependency parsing
+  - gensim        Word2Vec embeddings
+  - fasttext      Fast text embeddings & language detection
+
+Indian Languages:
+  - indicnlp      Hindi/Marathi/etc NLP
+  - indicbert     Multilingual embeddings
+
+Data & Analysis:
+  - numpy         Numerical computing
+  - pandas        Data manipulation
+  - scikit-learn  Machine learning utilities
+
+Bias Analysis:
+  - weat          Word Embedding Association Test
+
+Web/API:
+  - flask         Backend API
+  - fastapi       Alternative API (faster)
+  - streamlit     Frontend UI
+
+Database:
+  - sqlite3       Built-in, no install needed
+
+Configuration:
+  - pyyaml        YAML config files
+  - python-dotenv Environment variables
+
+Testing:
+  - pytest        Unit testing framework
+
+═══════════════════════════════════════════════════════════════════════════
+
+⚙️  CONFIGURATION FILE EXAMPLES
+═══════════════════════════════════════════════════════════════════════════
+
+configs/languages/english.yaml:
+├── code: "en"
+├── preprocessing:
+│   ├── tokenizer: "spacy"
+│   ├── remove_stopwords: true
+│   └── lowercase: true
+├── lexicon:
+│   ├── database: "./data/lexicons/english_lexicon.db"
+│   └── seed_words: "./data/seed_words/english_seeds.json"
+├── embedding:
+│   ├── type: "glove"
+│   ├── path: "./data/embeddings/english/"
+│   └── dimension: 300
+├── parser:
+│   ├── type: "spacy"
+│   ├── model: "en_core_web_sm"
+│   └── fallback: "keyword-based"
+└── bias:
+    └── demographic_groups: ["gender", "religion", "nationality", "race"]
+
+configs/languages/hindi.yaml:
+├── code: "hi"
+├── preprocessing:
+│   ├── tokenizer: "indicnlp"
+│   └── normalize_script: true
+├── embedding:
+│   ├── type: "fasttext"
+│   └── model: "fasttext_hi.bin"
+├── parser:
+│   ├── type: "indicnlp"
+│   └── fallback: "keyword-based"
+└── ... (similar structure)
+
+═══════════════════════════════════════════════════════════════════════════
+
+🔧 CORE MODULE RESPONSIBILITIES
+═══════════════════════════════════════════════════════════════════════════
+
+src/core/language_manager.py:
+  ├── detect_language(text) → language_code
+  └── load_language_resources(language_code) → config dict
+
+src/core/config_loader.py:
+  ├── load_language_config(language_code)
+  └── load_default_config()
+
+src/preprocessing/base_preprocessor.py:
+  ├── preprocess(text) → cleaned_text
+  ├── tokenize(text) → tokens
+  └── remove_stopwords(tokens) → filtered_tokens
+
+src/lexicon/lexicon_miner.py:
+  ├── mine_lexicon(dataset, language) → lexicon_terms
+  ├── calculate_pmi(candidate, context) → pmi_score
+  └── save_lexicon(terms, language)
+
+src/causality/causality_extractor.py:
+  ├── extract_relations(text, language) → [(cause, effect), ...]
+  └── build_causal_graph(relations) → directed_graph
+
+src/bias/bias_auditor.py:
+  ├── load_embeddings(language) → embedding_model
+  ├── calculate_weat(groups, attributes) → weat_score
+  └── detect_bias(text, language) → bias_report
+
+src/scoring/risk_scorer.py:
+  ├── calculate_lexical_severity(text, language) → score
+  ├── calculate_causal_intensity(relations) → score
+  ├── calculate_bias_magnitude(bias_report) → score
+  └── generate_hate_risk_score(L, C, B, weights) → final_score
+
+src/api/app.py:
+  ├── Create Flask app
+  ├── Define routes
+  └── Error handling
+
+═══════════════════════════════════════════════════════════════════════════
+
+🌐 API ENDPOINTS TO BUILD
+═══════════════════════════════════════════════════════════════════════════
+
+POST /analyze
+  Input: { "text": "...", "language": "en" }
+  Output: { "risk_score": 75, "terms": [...], "relations": [...], "bias": {...} }
+
+GET /languages
+  Output: ["en", "hi", "mr", "bh", "rj"]
+
+GET /lexicon/{language}
+  Output: { "language": "en", "terms": [...], "count": 250 }
+
+POST /evaluate
+  Input: { "test_data": [...], "language": "en" }
+  Output: { "precision": 0.85, "recall": 0.78, "f1": 0.81 }
+
+GET /health
+  Output: { "status": "ok", "timestamp": "..." }
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ SETUP CHECKLIST FOR ANTIGRAVITY IDE
+═══════════════════════════════════════════════════════════════════════════
+
+Project Structure:
+  ☐ Create justify-ai/ root directory
+  ☐ Create all subdirectories (use guide above)
+  ☐ Create __init__.py in every package directory
+
+Root Configuration:
+  ☐ Create .gitignore (copy from guide)
+  ☐ Create requirements.txt (copy from guide)
+  ☐ Create setup.py
+  ☐ Create .env.example
+  ☐ Create README.md
+
+Configurations:
+  ☐ Create configs/default.yaml
+  ☐ Create configs/languages/english.yaml
+  ☐ Create configs/languages/hindi.yaml
+  ☐ Create other language configs later
+
+Core Modules:
+  ☐ Create src/core/constants.py
+  ☐ Create src/core/config_loader.py
+  ☐ Create src/core/language_manager.py
+
+Tests:
+  ☐ Create tests/conftest.py
+  ☐ Create tests/unit/test_language_manager.py
+
+Data Structure:
+  ☐ Create data/README.md
+  ☐ Create all data subdirectories
+  ☐ Add .gitkeep files
+
+Runtime Directories:
+  ☐ Create logs/.gitkeep
+  ☐ Create output/.gitkeep
+
+═══════════════════════════════════════════════════════════════════════════
+
+🚀 NEXT IMMEDIATE STEPS
+═══════════════════════════════════════════════════════════════════════════
+
+1. Create project structure (use directory structure above)
+
+2. Copy files from setup guide:
+   - .gitignore
+   - requirements.txt
+   - setup.py
+   - .env.example
+
+3. Create configuration files:
+   - configs/default.yaml
+   - configs/languages/english.yaml
+   - configs/languages/hindi.yaml
+
+4. Create core modules:
+   - src/core/constants.py
+   - src/core/config_loader.py
+   - src/core/language_manager.py
+
+5. Test imports:
+   python -c "from src.core.language_manager import LanguageManager"
+
+6. Install dependencies:
+   pip install -r requirements.txt
+
+7. Download models:
+   python -m spacy download en_core_web_sm
+   python -m indicnlp.download
+
+8. Run first test:
+   pytest tests/unit/test_language_manager.py
+
+═══════════════════════════════════════════════════════════════════════════
+
+💡 KEY PRINCIPLES
+═══════════════════════════════════════════════════════════════════════════
+
+Modularity:   Each module does ONE thing well
+Testability:  Write tests as you code
+Configuration: Use YAML for language-specific settings
+Separation:   Keep data, config, code separate
+Documentation: Document non-obvious code
+Scalability:  Easy to add new languages
+Performance:  Cache/load models efficiently
+Error Handling: Graceful fallbacks (e.g., keyword-based parsing)
+
+═══════════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION TO WRITE LATER
+═══════════════════════════════════════════════════════════════════════════
+
+docs/setup.md           Installation & setup instructions
+docs/api.md            API endpoint documentation
+docs/architecture.md   System design & flow
+docs/language_guide.md Language-specific configuration guide
+docs/data_format.md    Input/output data format specs
+docs/evaluation.md     Evaluation metrics & methodology
+
+═══════════════════════════════════════════════════════════════════════════

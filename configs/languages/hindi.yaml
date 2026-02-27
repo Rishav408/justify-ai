@@ -1,0 +1,30 @@
+code: "hi"
+name: "Hindi"
+enabled: true
+
+preprocessing:
+  tokenizer: "indicnlp"
+  remove_stopwords: true
+  remove_diacritics: true
+  normalize_script: true
+
+lexicon:
+  database: "./data/lexicons/hindi_lexicon.db"
+  seed_words: "./data/seed_words/hindi_seeds.json"
+  min_frequency: 2
+
+embedding:
+  type: "fasttext"
+  path: "./data/embeddings/hindi/"
+  model: "fasttext_hi.bin"
+  dimension: 300
+  fallback: "indicbert"
+
+parser:
+  type: "indicnlp"
+  model: "hindi_parser"
+  fallback: "keyword-based"
+
+bias:
+  demographic_groups: ["gender", "religion", "nationality", "caste", "language"]
+  attributes: ["negative", "harmful", "stereotypical"]

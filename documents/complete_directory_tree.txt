@@ -1,0 +1,323 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║           JUSTIFY.AI - COMPLETE DIRECTORY TREE (READY TO CREATE)         ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+justify-ai/
+│
+├── .gitignore                                 # Git ignore rules
+├── .env.example                               # Environment variables template
+├── requirements.txt                           # Python dependencies
+├── setup.py                                   # Package setup
+├── README.md                                  # Project overview
+│
+├── src/                                       # Main source code directory
+│   ├── __init__.py                           # Package marker
+│   ├── main.py                               # Entry point
+│   │
+│   ├── core/                                 # Core functionality
+│   │   ├── __init__.py
+│   │   ├── constants.py                      # Global constants
+│   │   ├── config_loader.py                  # Load YAML configs
+│   │   └── language_manager.py               # Language detection & resource loading
+│   │
+│   ├── preprocessing/                        # Text preprocessing
+│   │   ├── __init__.py
+│   │   ├── base_preprocessor.py              # Abstract base class
+│   │   ├── english_preprocessor.py           # English-specific
+│   │   ├── hindi_preprocessor.py             # Hindi-specific
+│   │   ├── marathi_preprocessor.py           # Marathi-specific
+│   │   ├── bhojpuri_preprocessor.py          # Bhojpuri-specific
+│   │   ├── marwari_preprocessor.py           # Marwari-specific
+│   │   └── utils.py                          # Shared preprocessing utilities
+│   │
+│   ├── lexicon/                              # Hate lexicon mining
+│   │   ├── __init__.py
+│   │   ├── pmi_calculator.py                 # Pointwise Mutual Information
+│   │   ├── lexicon_miner.py                  # Main lexicon mining logic
+│   │   ├── lexicon_manager.py                # Load/save lexicons
+│   │   ├── seed_words.py                     # Seed word management
+│   │   └── database.py                       # SQLite database operations
+│   │
+│   ├── causality/                            # Causal relation extraction
+│   │   ├── __init__.py
+│   │   ├── causality_extractor.py            # Main extractor
+│   │   ├── dependency_parser.py              # Wrapper for spaCy/IndicNLP
+│   │   ├── fallback_detector.py              # Keyword-based fallback
+│   │   ├── pattern_matcher.py                # Pattern detection
+│   │   └── graph_builder.py                  # NetworkX graph operations
+│   │
+│   ├── bias/                                 # Demographic bias auditing
+│   │   ├── __init__.py
+│   │   ├── bias_auditor.py                   # Main bias auditing
+│   │   ├── embedding_loader.py               # Load embeddings
+│   │   ├── weat_calculator.py                # WEAT implementation
+│   │   ├── demographic_analyzer.py           # Demographic group detection
+│   │   └── bias_visualizer.py                # Visualization utilities
+│   │
+│   ├── scoring/                              # Risk score calculation
+│   │   ├── __init__.py
+│   │   ├── risk_scorer.py                    # Main risk score logic
+│   │   ├── normalizer.py                     # Language-specific normalization
+│   │   └── aggregator.py                     # Score aggregation
+│   │
+│   ├── api/                                  # Backend API (Flask/FastAPI)
+│   │   ├── __init__.py
+│   │   ├── app.py                            # Flask/FastAPI application
+│   │   ├── routes.py                         # API endpoints
+│   │   ├── models.py                         # Request/response models
+│   │   ├── middleware.py                     # API middleware
+│   │   └── error_handler.py                  # Error handling
+│   │
+│   ├── utils/                                # Utility functions
+│   │   ├── __init__.py
+│   │   ├── logger.py                         # Logging configuration
+│   │   ├── validators.py                     # Input validation
+│   │   ├── helpers.py                        # Helper functions
+│   │   └── decorators.py                     # Custom decorators
+│   │
+│   └── data_processing/                      # Data utilities
+│       ├── __init__.py
+│       ├── dataset_loader.py                 # Load datasets
+│       ├── annotation_parser.py              # Parse annotations
+│       ├── data_cleaner.py                   # Data cleaning
+│       └── train_test_split.py               # Data splitting
+│
+├── configs/                                   # Configuration files (YAML)
+│   ├── __init__.py
+│   ├── default.yaml                          # Default configuration
+│   ├── paths.yaml                            # Data paths
+│   ├── models.yaml                           # Model paths
+│   ├── api.yaml                              # API configuration
+│   │
+│   └── languages/                            # Language-specific configs
+│       ├── english.yaml                      # English configuration
+│       ├── hindi.yaml                        # Hindi configuration
+│       ├── marathi.yaml                      # Marathi configuration
+│       ├── bhojpuri.yaml                     # Bhojpuri configuration
+│       └── marwari.yaml                      # Marwari configuration
+│
+├── data/                                      # Data directory (large files)
+│   ├── README.md                             # Data documentation
+│   │
+│   ├── datasets/                             # Raw datasets
+│   │   ├── english/
+│   │   │   ├── hateval/
+│   │   │   │   ├── train.csv                 # Training data
+│   │   │   │   ├── test.csv                  # Test data
+│   │   │   │   └── README.md
+│   │   │   ├── hatebase/
+│   │   │   │   └── hatebase.json             # Lexicon reference
+│   │   │   └── kaggle/
+│   │   │       └── hate_speech.csv           # Kaggle data (subset)
+│   │   │
+│   │   ├── hindi/
+│   │   │   ├── hasoc/
+│   │   │   │   ├── 2019/                     # HASOC 2019
+│   │   │   │   ├── 2020/                     # HASOC 2020
+│   │   │   │   ├── 2021/                     # HASOC 2021
+│   │   │   │   └── README.md
+│   │   │   └── social_media/
+│   │   │       └── hindi_samples.json        # Collected samples
+│   │   │
+│   │   ├── marathi/
+│   │   │   ├── annotated/
+│   │   │   │   ├── raw.json                  # Raw collected data
+│   │   │   │   ├── cleaned.json              # Cleaned data
+│   │   │   │   ├── annotations.json          # Annotations
+│   │   │   │   └── inter_annotator_agreement.json
+│   │   │   └── README.md
+│   │   │
+│   │   ├── bhojpuri/
+│   │   │   ├── annotated/
+│   │   │   │   ├── raw.json
+│   │   │   │   ├── cleaned.json
+│   │   │   │   ├── annotations.json
+│   │   │   │   └── inter_annotator_agreement.json
+│   │   │   └── README.md
+│   │   │
+│   │   └── marwari/
+│   │       ├── annotated/
+│   │       │   ├── raw.json
+│   │       │   ├── cleaned.json
+│   │       │   ├── annotations.json
+│   │       │   └── inter_annotator_agreement.json
+│   │       └── README.md
+│   │
+│   ├── lexicons/                             # SQLite lexicon databases
+│   │   ├── english_lexicon.db                # English DB
+│   │   ├── hindi_lexicon.db                  # Hindi DB
+│   │   ├── marathi_lexicon.db                # Marathi DB
+│   │   ├── bhojpuri_lexicon.db               # Bhojpuri DB
+│   │   ├── marwari_lexicon.db                # Marwari DB
+│   │   └── lexicon_schema.sql                # Database schema
+│   │
+│   ├── embeddings/                           # Word embeddings
+│   │   ├── english/
+│   │   │   ├── glove.6B.300d.txt             # GloVe embeddings
+│   │   │   ├── fasttext_en.bin               # FastText model
+│   │   │   └── README.md
+│   │   ├── hindi/
+│   │   │   ├── fasttext_hi.bin               # FastText Hindi
+│   │   │   ├── indicbert/                    # IndicBERT model
+│   │   │   └── README.md
+│   │   ├── marathi/
+│   │   │   ├── fasttext_mr.bin               # FastText Marathi
+│   │   │   ├── custom_word2vec.model         # Custom Word2Vec
+│   │   │   └── README.md
+│   │   ├── bhojpuri/
+│   │   │   ├── custom_word2vec.model         # Custom Word2Vec
+│   │   │   └── README.md
+│   │   └── marwari/
+│   │       ├── custom_word2vec.model         # Custom Word2Vec
+│   │       └── README.md
+│   │
+│   ├── seed_words/                           # Seed words for lexicon mining
+│   │   ├── english_seeds.json                # English seed words
+│   │   ├── hindi_seeds.json                  # Hindi seed words
+│   │   ├── marathi_seeds.json                # Marathi seed words
+│   │   ├── bhojpuri_seeds.json               # Bhojpuri seed words
+│   │   └── marwari_seeds.json                # Marwari seed words
+│   │
+│   └── models/                               # Pretrained NLP models
+│       ├── spacy_en_core_web_sm/             # spaCy English
+│       ├── indicnlp_hi/                      # IndicNLP Hindi
+│       └── multilingual_models/              # Other models
+│
+├── frontend/                                  # Streamlit web interface
+│   ├── __init__.py
+│   ├── app.py                                # Main Streamlit app
+│   │
+│   ├── pages/                                # Streamlit pages
+│   │   ├── __init__.py
+│   │   ├── home.py                           # Home page
+│   │   ├── analyzer.py                       # Main analysis page
+│   │   ├── visualizations.py                 # Results visualization
+│   │   └── about.py                          # About page
+│   │
+│   ├── components/                           # Reusable components
+│   │   ├── __init__.py
+│   │   ├── language_selector.py              # Language dropdown
+│   │   ├── text_input.py                     # Text input field
+│   │   ├── results_display.py                # Results display
+│   │   ├── chart_builder.py                  # Chart builders
+│   │   └── footer.py                         # Footer component
+│   │
+│   ├── styles/                               # Styling
+│   │   ├── custom.css                        # Custom CSS
+│   │   └── theme.py                          # Streamlit theme
+│   │
+│   └── utils/                                # Frontend utilities
+│       ├── __init__.py
+│       ├── api_client.py                     # Backend API client
+│       └── formatters.py                     # Result formatting
+│
+├── tests/                                     # Test suite
+│   ├── __init__.py
+│   ├── conftest.py                           # Pytest configuration
+│   │
+│   ├── unit/                                 # Unit tests
+│   │   ├── __init__.py
+│   │   ├── test_preprocessors.py             # Test preprocessing
+│   │   ├── test_lexicon_miner.py             # Test lexicon mining
+│   │   ├── test_pmi_calculator.py            # Test PMI calculation
+│   │   ├── test_causality.py                 # Test causality extraction
+│   │   ├── test_bias.py                      # Test bias auditing
+│   │   ├── test_weat_calculator.py           # Test WEAT
+│   │   ├── test_risk_scorer.py               # Test risk scoring
+│   │   ├── test_language_manager.py          # Test language manager
+│   │   ├── test_config_loader.py             # Test config loading
+│   │   └── test_utils.py                     # Test utilities
+│   │
+│   ├── integration/                          # Integration tests
+│   │   ├── __init__.py
+│   │   ├── test_english_pipeline.py          # End-to-end English
+│   │   ├── test_hindi_pipeline.py            # End-to-end Hindi
+│   │   ├── test_marathi_pipeline.py          # End-to-end Marathi
+│   │   ├── test_language_switching.py        # Test language switching
+│   │   ├── test_api.py                       # Test API endpoints
+│   │   └── test_all_languages.py             # Test all languages
+│   │
+│   └── fixtures/                             # Test fixtures
+│       ├── sample_texts.json                 # Sample input texts
+│       ├── expected_outputs.json             # Expected results
+│       └── test_datasets/
+│           ├── english_small.csv
+│           ├── hindi_small.csv
+│           ├── marathi_small.csv
+│           ├── bhojpuri_small.csv
+│           └── marwari_small.csv
+│
+├── scripts/                                   # Utility scripts
+│   ├── __init__.py
+│   ├── setup_data.py                         # Download & setup datasets
+│   ├── build_lexicons.py                     # Build SQLite DBs
+│   ├── train_embeddings.py                   # Train custom embeddings
+│   ├── evaluate_pipeline.py                  # Evaluate system
+│   ├── generate_report.py                    # Generate reports
+│   └── cleanup.py                            # Clean up temp files
+│
+├── notebooks/                                 # Jupyter notebooks
+│   ├── 01_data_exploration.ipynb             # Explore datasets
+│   ├── 02_lexicon_mining.ipynb               # Lexicon analysis
+│   ├── 03_causality_analysis.ipynb           # Causality analysis
+│   ├── 04_bias_analysis.ipynb                # Bias analysis
+│   └── 05_model_evaluation.ipynb             # Evaluation
+│
+├── docs/                                      # Documentation
+│   ├── README.md                             # Main docs
+│   ├── setup.md                              # Setup instructions
+│   ├── architecture.md                       # System design
+│   ├── api.md                                # API documentation
+│   ├── language_guide.md                     # Language-specific guides
+│   ├── data_format.md                        # Data format specs
+│   ├── contributing.md                       # Contributing guidelines
+│   └── evaluation.md                         # Evaluation methodology
+│
+├── logs/                                      # Application logs (runtime)
+│   ├── app.log                               # Main application log
+│   ├── errors.log                            # Error log
+│   └── .gitkeep                              # Keep directory in git
+│
+├── output/                                    # Generated outputs (runtime)
+│   ├── results/                              # Analysis results
+│   │   └── .gitkeep
+│   ├── reports/                              # Generated reports
+│   │   └── .gitkeep
+│   ├── visualizations/                       # Generated charts
+│   │   └── .gitkeep
+│   └── .gitkeep
+│
+└── docker/                                    # Docker configuration (optional)
+    ├── Dockerfile                            # Docker image
+    ├── docker-compose.yml                    # Docker compose
+    └── .dockerignore                         # Docker ignore rules
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+TOTAL FILES TO CREATE: 100+ (including __init__.py files)
+
+KEY DIRECTORIES TO CREATE FIRST:
+✓ src/ and all subdirectories
+✓ configs/ and configs/languages/
+✓ data/ and all data subdirectories
+✓ tests/ and test subdirectories
+✓ frontend/ and frontend subdirectories
+✓ scripts/
+✓ docs/
+✓ notebooks/
+✓ logs/ (with .gitkeep)
+✓ output/ with subdirectories (with .gitkeep)
+
+═══════════════════════════════════════════════════════════════════════════
+
+IMPORTANT NOTES:
+
+1. .gitkeep files ensure empty directories are tracked in Git
+2. All Python package directories need __init__.py
+3. Data files (datasets, embeddings, models) are NOT included by default
+4. Use .gitignore to prevent tracking data/, logs/, output/, __pycache__
+5. Copy files from setup_guide.txt for root-level files
+6. Configuration files should be customized per language
+
+═══════════════════════════════════════════════════════════════════════════
