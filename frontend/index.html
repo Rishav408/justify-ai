@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Justify.AI - Explainable Multilingual Hate Speech Analysis Platform">
+    <title>Justify.AI - Explainable Multilingual Hate Speech Analysis</title>
+    
+    <!-- Google Fonts: Inter for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip to main content (accessibility) -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Justify.AI</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links" role="menubar" aria-label="Site navigation">
+                <li><a href="index.html" class="nav-link">Platform</a></li>
+                <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="docs.html" class="nav-link">Docs</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+
+            <!-- Action Buttons -->
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Try Demo Button -->
+                <a href="demo.html" class="btn btn-primary">Try Demo</a>
+
+                <!-- GitHub Button -->
+                <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content" tabindex="-1">
+        <!-- Hero Section -->
+        <section class="hero-section" aria-label="Hero">
+            <div class="hero-container">
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <h1 class="hero-headline">Explainable Multilingual Hate Speech Analysis</h1>
+                    <p class="hero-subtext">
+                        Justify.AI combines advanced NLP with explainable AI to detect, analyze, and understand 
+                        hate speech across multiple Indian languages. Get insights into lexical patterns, 
+                        causal narratives, and bias dimensions.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="demo.html" class="btn btn-primary btn-large">Try Demo</a>
+                        <a href="research.html" class="btn btn-secondary btn-large">View Research</a>
+                    </div>
+                </div>
+
+                <!-- Hero Visualization -->
+                <div class="hero-visualization">
+                    <canvas id="particle-canvas"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Cards Section -->
+        <section class="features-section" aria-labelledby="features-heading">
+            <div class="features-container">
+                <!-- Visually hidden heading for screen readers -->
+                <h2 id="features-heading" class="sr-only">Platform Features</h2>
+                <!-- Feature Card 1: Lexicon Discovery -->
+                <div class="feature-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <line x1="10" y1="10" x2="16" y2="10"></line>
+                            <line x1="10" y1="14" x2="16" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Lexicon Discovery</h3>
+                    <p class="feature-description">
+                        Automatically identify and extract hate speech terms from multilingual text using 
+                        advanced NLP techniques. Build comprehensive lexicons with severity scoring and 
+                        contextual understanding across Indian regional languages.
+                    </p>
+                </div>
+
+                <!-- Feature Card 2: Causal Analysis -->
+                <div class="feature-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Causal Analysis</h3>
+                    <p class="feature-description">
+                        Uncover cause-and-effect relationships within hate narratives. Visualize how 
+                        different elements connect and influence each other through interactive causal 
+                        graphs, revealing the structure of harmful discourse.
+                    </p>
+                </div>
+
+                <!-- Feature Card 3: Bias Auditing -->
+                <div class="feature-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Bias Auditing</h3>
+                    <p class="feature-description">
+                        Measure and quantify bias across multiple dimensions including religion, gender, 
+                        and ethnicity. Get detailed metrics and visual representations to understand the 
+                        nature and intensity of bias in analyzed content.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multilingual Section -->
+        <section class="multilingual-section" aria-labelledby="multilingual-heading">
+            <div class="multilingual-container">
+                <!-- Section Header -->
+                <div class="multilingual-header" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100">
+                    <h2 class="multilingual-title" id="multilingual-heading">Multilingual Support</h2>
+                    <p class="multilingual-description">
+                        Justify.AI supports multilingual analysis for Indian regional languages using specialized NLP pipelines
+                    </p>
+                </div>
+
+                <!-- Language Cards Grid -->
+                <div class="language-cards-grid">
+                    <!-- English Card -->
+                    <div class="language-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100">
+                        <div class="language-flag">🇬🇧</div>
+                        <h3 class="language-name">English</h3>
+                        <p class="language-native">English</p>
+                    </div>
+
+                    <!-- Hindi Card -->
+                    <div class="language-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="50">
+                        <div class="language-flag">🇮🇳</div>
+                        <h3 class="language-name">Hindi</h3>
+                        <p class="language-native">हिन्दी</p>
+                    </div>
+
+                    <!-- Bhojpuri Card -->
+                    <div class="language-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="100">
+                        <div class="language-flag">🇮🇳</div>
+                        <h3 class="language-name">Bhojpuri</h3>
+                        <p class="language-native">भोजपुरी</p>
+                    </div>
+
+                    <!-- Marathi Card -->
+                    <div class="language-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="150">
+                        <div class="language-flag">🇮🇳</div>
+                        <h3 class="language-name">Marathi</h3>
+                        <p class="language-native">मराठी</p>
+                    </div>
+
+                    <!-- Marwari Card -->
+                    <div class="language-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="200">
+                        <div class="language-flag">🇮🇳</div>
+                        <h3 class="language-name">Marwari</h3>
+                        <p class="language-native">मारवाड़ी</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- Branding Column -->
+                <div class="footer-column footer-branding">
+                    <h3 class="footer-logo">Justify.AI</h3>
+                    <p class="footer-tagline">Explainable NLP for Hate Speech Analysis</p>
+                    <p class="footer-description">
+                        Advanced multilingual hate speech detection with transparent, 
+                        explainable AI insights across lexical, causal, and bias dimensions.
+                    </p>
+                </div>
+
+                <!-- Platform Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="demo.html" class="footer-link">Demo</a></li>
+                        <li><a href="research.html" class="footer-link">Research</a></li>
+                        <li><a href="docs.html" class="footer-link">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="https://github.com" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="docs.html#api" class="footer-link">API Reference</a></li>
+                        <li><a href="research.html#datasets" class="footer-link">Datasets</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <span class="footer-contact-label">Email:</span>
+                            <a href="mailto:contact@justify-ai.com" class="footer-link">contact@justify-ai.com</a>
+                        </li>
+                        <li>
+                            <span class="footer-contact-label">Institution:</span>
+                            <span class="footer-contact-text">Research University</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 Justify.AI. All rights reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library (deferred for performance) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    
+    <!-- Custom Scripts (deferred for performance) -->
+    <script src="js/theme.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>

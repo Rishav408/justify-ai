@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Justify.AI - Project Background and Team">
+    <title>About - Justify.AI</title>
+    
+    <!-- Google Fonts: Inter for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip to main content (accessibility) -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Justify.AI</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links" role="menubar" aria-label="Site navigation">
+                <li><a href="index.html" class="nav-link">Platform</a></li>
+                <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="docs.html" class="nav-link">Docs</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+
+            <!-- Action Buttons -->
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Try Demo Button -->
+                <a href="demo.html" class="btn btn-primary">Try Demo</a>
+
+                <!-- GitHub Button -->
+                <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content" tabindex="-1">
+        <!-- About Hero Section -->
+        <section class="about-hero-section">
+            <div class="about-hero-container">
+                <h1 class="about-hero-title">About Justify.AI</h1>
+                <p class="about-hero-subtitle">Advancing explainable AI for multilingual hate speech detection</p>
+            </div>
+        </section>
+
+        <!-- Project Purpose Section -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-content" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="about-section-title">Project Purpose</h2>
+                    <p class="about-text">
+                        Justify.AI is an advanced research project focused on developing explainable AI systems 
+                        for detecting and analyzing hate speech in multilingual contexts, with a particular emphasis 
+                        on Indian regional languages. The platform combines state-of-the-art natural language processing 
+                        techniques with explainability frameworks to provide transparent, interpretable insights into 
+                        hate speech patterns.
+                    </p>
+                    <p class="about-text">
+                        Our mission is to create tools that not only identify harmful content but also explain the 
+                        reasoning behind classifications, enabling researchers, policymakers, and content moderators 
+                        to make informed decisions. By supporting multiple Indian languages including Hindi, Bhojpuri, 
+                        Marathi, and Marwari, we address the critical need for culturally-aware hate speech detection 
+                        in diverse linguistic communities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Background Section -->
+        <section class="about-section about-section-alt">
+            <div class="about-container">
+                <div class="about-content" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="about-section-title">Research Background</h2>
+                    <p class="about-text">
+                        This project emerged from the growing need to address online hate speech in multilingual 
+                        environments, particularly in the Indian context where multiple languages and dialects coexist. 
+                        Traditional hate speech detection systems often lack transparency and struggle with low-resource 
+                        languages, making them inadequate for real-world deployment.
+                    </p>
+                    <p class="about-text">
+                        Justify.AI builds upon recent advances in explainable AI, causal inference, and multilingual 
+                        NLP to create a comprehensive analysis framework. The system employs three complementary 
+                        approaches:
+                    </p>
+                    <ul class="about-list">
+                        <li><strong>Lexicon-based Analysis:</strong> Automated discovery and scoring of hate speech terms with contextual understanding</li>
+                        <li><strong>Causal Narrative Extraction:</strong> Identification of cause-and-effect relationships within harmful discourse</li>
+                        <li><strong>Bias Auditing:</strong> Multi-dimensional measurement of bias across religion, gender, and ethnicity</li>
+                    </ul>
+                    <p class="about-text">
+                        Our research contributes to the broader field of responsible AI by demonstrating how 
+                        explainability can be integrated into hate speech detection systems without sacrificing 
+                        performance.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="about-section">
+            <div class="about-container">
+                <h2 class="about-section-title" data-aos="fade-up" data-aos-duration="800">Authors</h2>
+                <div class="team-grid">
+                    <!-- Team Member Card 1 -->
+                    <div class="team-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <div class="team-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="team-name">Research Team</h3>
+                        <p class="team-role">Project Authors</p>
+                        <p class="team-description">
+                            Graduate researchers specializing in NLP, explainable AI, and computational linguistics
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- University Section -->
+        <section class="about-section about-section-alt">
+            <div class="about-container">
+                <div class="about-content" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="about-section-title">University</h2>
+                    <p class="about-text">
+                        This research is conducted at a leading academic institution with strong programs in 
+                        artificial intelligence, natural language processing, and computational social science. 
+                        The university provides state-of-the-art research facilities and computational resources 
+                        necessary for developing and evaluating large-scale NLP systems.
+                    </p>
+                    <p class="about-text">
+                        The institution's commitment to responsible AI research and its focus on addressing 
+                        real-world societal challenges make it an ideal environment for this project.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supervisor Section -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-content" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="about-section-title">Supervisor</h2>
+                    <p class="about-text">
+                        This project is supervised by faculty members with expertise in natural language processing, 
+                        machine learning, and computational linguistics. The supervisory team provides guidance on 
+                        research methodology, technical implementation, and ethical considerations in AI development.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Repository Section -->
+        <section class="about-section about-section-cta">
+            <div class="about-container">
+                <div class="about-cta-content" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="about-cta-title">Open Source</h2>
+                    <p class="about-cta-text">
+                        Justify.AI is an open-source project. Explore the code, contribute to development, 
+                        or use it in your own research.
+                    </p>
+                    <a href="https://github.com" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem;">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- Branding Column -->
+                <div class="footer-column footer-branding">
+                    <h3 class="footer-logo">Justify.AI</h3>
+                    <p class="footer-tagline">Explainable NLP for Hate Speech Analysis</p>
+                    <p class="footer-description">
+                        Advanced multilingual hate speech detection with transparent, 
+                        explainable AI insights across lexical, causal, and bias dimensions.
+                    </p>
+                </div>
+
+                <!-- Platform Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="demo.html" class="footer-link">Demo</a></li>
+                        <li><a href="research.html" class="footer-link">Research</a></li>
+                        <li><a href="docs.html" class="footer-link">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="https://github.com" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="docs.html#api" class="footer-link">API Reference</a></li>
+                        <li><a href="research.html#datasets" class="footer-link">Datasets</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <span class="footer-contact-label">Email:</span>
+                            <a href="mailto:contact@justify-ai.com" class="footer-link">contact@justify-ai.com</a>
+                        </li>
+                        <li>
+                            <span class="footer-contact-label">Institution:</span>
+                            <span class="footer-contact-text">Research University</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 Justify.AI. All rights reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library (deferred for performance) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    
+    <!-- Custom Scripts (deferred for performance) -->
+    <script src="js/theme.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>

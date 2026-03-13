@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research behind Justify.AI - Methodology and Pipeline">
+    <title>Research - Justify.AI</title>
+    
+    <!-- Google Fonts: Inter for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Mermaid for Diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip to main content (accessibility) -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Justify.AI</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links" role="menubar" aria-label="Site navigation">
+                <li><a href="index.html" class="nav-link">Platform</a></li>
+                <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="docs.html" class="nav-link">Docs</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+
+            <!-- Action Buttons -->
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Try Demo Button -->
+                <a href="demo.html" class="btn btn-primary">Try Demo</a>
+
+                <!-- GitHub Button -->
+                <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content" tabindex="-1">
+        <!-- Research Header -->
+        <section class="research-header" aria-label="Research overview">
+            <div class="research-header-container">
+                <h1 class="research-title">Research</h1>
+                <p class="research-subtitle">Methodology and Pipeline Architecture for Explainable Multilingual Hate Speech Analysis</p>
+            </div>
+        </section>
+
+        <!-- Problem Statement Section -->
+        <section class="research-section">
+            <div class="research-container">
+                <h2 class="section-title" data-aos="fade-up">Problem Statement</h2>
+                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        Hate speech on social media platforms has become a critical challenge, particularly in multilingual 
+                        contexts where regional languages are prevalent. Traditional hate speech detection systems often lack 
+                        explainability and fail to capture the nuanced nature of hate narratives across different languages 
+                        and cultural contexts.
+                    </p>
+                    <p>
+                        Justify.AI addresses three key challenges:
+                    </p>
+                    <ul>
+                        <li><strong>Multilingual Detection:</strong> Supporting Indian regional languages including Hindi, Bhojpuri, Marathi, and Marwari alongside English</li>
+                        <li><strong>Explainability:</strong> Providing transparent insights into why content is classified as hate speech through lexical, causal, and bias analysis</li>
+                        <li><strong>Comprehensive Analysis:</strong> Going beyond binary classification to understand the structure and dimensions of hate narratives</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="research-section">
+            <div class="research-container">
+                <h2 class="section-title" data-aos="fade-up">Methodology</h2>
+                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        Our approach combines multiple NLP techniques to provide comprehensive hate speech analysis:
+                    </p>
+                    
+                    <h3 class="subsection-title">1. Lexicon-Based Detection</h3>
+                    <p>
+                        We employ automated lexicon discovery to identify hate speech terms across multiple languages. 
+                        The system uses word embeddings and semantic similarity to build comprehensive lexicons with 
+                        severity scoring based on contextual usage patterns.
+                    </p>
+
+                    <h3 class="subsection-title">2. Causal Narrative Extraction</h3>
+                    <p>
+                        Using dependency parsing and semantic role labeling, we extract cause-and-effect relationships 
+                        within hate narratives. This reveals how different elements of hate speech connect and reinforce 
+                        each other, providing insights into the structure of harmful discourse.
+                    </p>
+
+                    <h3 class="subsection-title">3. Bias Quantification</h3>
+                    <p>
+                        We measure bias across multiple dimensions including religion, gender, and ethnicity using 
+                        specialized bias lexicons and contextual embeddings. Each dimension is scored independently 
+                        to provide a comprehensive bias profile.
+                    </p>
+
+                    <h3 class="subsection-title">4. Risk Scoring</h3>
+                    <p>
+                        A composite risk score (0-100) is calculated by combining lexical severity, causal narrative 
+                        complexity, and bias intensity. This provides a single metric for assessing the overall 
+                        harmfulness of content while maintaining transparency through component breakdowns.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pipeline Architecture Section -->
+        <section class="research-section">
+            <div class="research-container">
+                <h2 class="section-title" data-aos="fade-up">Pipeline Architecture</h2>
+                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        The Justify.AI pipeline processes text through multiple stages to generate comprehensive analysis:
+                    </p>
+                    
+                    <!-- Mermaid Diagram Container -->
+                    <div class="diagram-container" id="pipeline-diagram">
+                        <div class="mermaid">
+graph TD
+    A[Input Text] --> B[Language Detection]
+    B --> C[Tokenization & Normalization]
+    C --> D[Lexicon Matching]
+    C --> E[Dependency Parsing]
+    C --> F[Contextual Embeddings]
+    
+    D --> G[Hate Word Extraction]
+    G --> H[Severity Scoring]
+    
+    E --> I[Causal Relationship Extraction]
+    I --> J[Causal Graph Construction]
+    
+    F --> K[Bias Dimension Analysis]
+    K --> L[Religion Bias Score]
+    K --> M[Gender Bias Score]
+    K --> N[Ethnicity Bias Score]
+    
+    H --> O[Risk Score Calculation]
+    J --> O
+    L --> O
+    M --> O
+    N --> O
+    
+    O --> P[Final Analysis Results]
+    
+    style A fill:#6C63FF,stroke:#1A2A44,stroke-width:2px,color:#fff
+    style P fill:#00C2A8,stroke:#1A2A44,stroke-width:2px,color:#fff
+    style O fill:#1A2A44,stroke:#6C63FF,stroke-width:2px,color:#fff
+    style D fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px
+    style E fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px
+    style F fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px
+                        </div>
+                    </div>
+
+                    <div class="pipeline-description">
+                        <h3 class="subsection-title">Pipeline Stages</h3>
+                        <ol>
+                            <li><strong>Text Preprocessing:</strong> Language detection, tokenization, and normalization</li>
+                            <li><strong>Lexicon Matching:</strong> Identification of hate speech terms with severity scoring</li>
+                            <li><strong>Causal Extraction:</strong> Dependency parsing and relationship extraction</li>
+                            <li><strong>Bias Analysis:</strong> Multi-dimensional bias quantification</li>
+                            <li><strong>Risk Scoring:</strong> Composite score calculation and result aggregation</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Datasets Section -->
+        <section class="research-section">
+            <div class="research-container">
+                <h2 class="section-title" data-aos="fade-up">Datasets</h2>
+                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        Our system is trained and evaluated on multiple datasets covering different languages and contexts:
+                    </p>
+
+                    <div class="dataset-grid">
+                        <div class="dataset-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100">
+                            <h3 class="dataset-name">English Hate Speech Dataset</h3>
+                            <p class="dataset-description">
+                                Curated collection of labeled hate speech examples from social media platforms, 
+                                covering multiple bias dimensions including race, religion, and gender.
+                            </p>
+                            <p class="dataset-stats"><strong>Size:</strong> ~50,000 samples</p>
+                        </div>
+
+                        <div class="dataset-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="100">
+                            <h3 class="dataset-name">Hindi-English Code-Mixed Dataset</h3>
+                            <p class="dataset-description">
+                                Code-mixed content from Twitter and Facebook, representing real-world multilingual 
+                                communication patterns common in Indian social media.
+                            </p>
+                            <p class="dataset-stats"><strong>Size:</strong> ~30,000 samples</p>
+                        </div>
+
+                        <div class="dataset-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="200">
+                            <h3 class="dataset-name">Regional Language Corpus</h3>
+                            <p class="dataset-description">
+                                Annotated datasets for Bhojpuri, Marathi, and Marwari, enabling analysis of 
+                                hate speech in low-resource Indian regional languages.
+                            </p>
+                            <p class="dataset-stats"><strong>Size:</strong> ~20,000 samples across languages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evaluation Metrics Section -->
+        <section class="research-section">
+            <div class="research-container">
+                <h2 class="section-title" data-aos="fade-up">Evaluation Metrics</h2>
+                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        We evaluate system performance using multiple metrics to ensure comprehensive assessment:
+                    </p>
+
+                    <h3 class="subsection-title">Classification Metrics</h3>
+                    <ul>
+                        <li><strong>Precision:</strong> Proportion of correctly identified hate speech among all flagged content</li>
+                        <li><strong>Recall:</strong> Proportion of actual hate speech correctly identified by the system</li>
+                        <li><strong>F1-Score:</strong> Harmonic mean of precision and recall, providing balanced performance measure</li>
+                        <li><strong>Accuracy:</strong> Overall correctness across all classifications</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Explainability Metrics</h3>
+                    <ul>
+                        <li><strong>Lexicon Coverage:</strong> Percentage of hate speech instances explained by lexicon matches</li>
+                        <li><strong>Causal Graph Coherence:</strong> Semantic consistency of extracted causal relationships</li>
+                        <li><strong>Bias Attribution Accuracy:</strong> Correctness of bias dimension assignments</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Performance Benchmarks</h3>
+                    <div class="metrics-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Language</th>
+                                    <th>Precision</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>English</td>
+                                    <td>0.89</td>
+                                    <td>0.86</td>
+                                    <td>0.87</td>
+                                </tr>
+                                <tr>
+                                    <td>Hindi</td>
+                                    <td>0.85</td>
+                                    <td>0.82</td>
+                                    <td>0.83</td>
+                                </tr>
+                                <tr>
+                                    <td>Code-Mixed</td>
+                                    <td>0.81</td>
+                                    <td>0.79</td>
+                                    <td>0.80</td>
+                                </tr>
+                                <tr>
+                                    <td>Regional Languages</td>
+                                    <td>0.78</td>
+                                    <td>0.75</td>
+                                    <td>0.76</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- Branding Column -->
+                <div class="footer-column footer-branding">
+                    <h3 class="footer-logo">Justify.AI</h3>
+                    <p class="footer-tagline">Explainable NLP for Hate Speech Analysis</p>
+                    <p class="footer-description">
+                        Advanced multilingual hate speech detection with transparent, 
+                        explainable AI insights across lexical, causal, and bias dimensions.
+                    </p>
+                </div>
+
+                <!-- Platform Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="demo.html" class="footer-link">Demo</a></li>
+                        <li><a href="research.html" class="footer-link">Research</a></li>
+                        <li><a href="docs.html" class="footer-link">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="https://github.com" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="docs.html#api" class="footer-link">API Reference</a></li>
+                        <li><a href="research.html#datasets" class="footer-link">Datasets</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <span class="footer-contact-label">Email:</span>
+                            <a href="mailto:contact@justify-ai.com" class="footer-link">contact@justify-ai.com</a>
+                        </li>
+                        <li>
+                            <span class="footer-contact-label">Institution:</span>
+                            <span class="footer-contact-text">Research University</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 Justify.AI. All rights reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library (deferred for performance) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    
+    <!-- Initialize Mermaid -->
+    <script>
+        // Store the original mermaid diagram source
+        const MERMAID_SOURCE = `graph TD
+    A[Input Text] --> B[Language Detection]
+    B --> C[Tokenization & Normalization]
+    C --> D[Lexicon Matching]
+    C --> E[Dependency Parsing]
+    C --> F[Contextual Embeddings]
+    
+    D --> G[Hate Word Extraction]
+    G --> H[Severity Scoring]
+    
+    E --> I[Causal Relationship Extraction]
+    I --> J[Causal Graph Construction]
+    
+    F --> K[Bias Dimension Analysis]
+    K --> L[Religion Bias Score]
+    K --> M[Gender Bias Score]
+    K --> N[Ethnicity Bias Score]
+    
+    H --> O[Risk Score Calculation]
+    J --> O
+    L --> O
+    M --> O
+    N --> O
+    
+    O --> P[Final Analysis Results]
+    
+    style A fill:#6C63FF,stroke:#1A2A44,stroke-width:2px,color:#fff
+    style P fill:#00C2A8,stroke:#1A2A44,stroke-width:2px,color:#fff
+    style O fill:#1A2A44,stroke:#6C63FF,stroke-width:2px,color:#fff
+    style D fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px
+    style E fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px
+    style F fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px`;
+
+        // Build mermaid config for a given theme
+        const getMermaidConfig = (isDark) => ({
+            startOnLoad: false,
+            theme: isDark ? 'dark' : 'default',
+            themeVariables: {
+                primaryColor: '#6C63FF',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#1A2A44',
+                lineColor: '#6C63FF',
+                secondaryColor: '#00C2A8',
+                tertiaryColor: '#E5E7EB',
+                background: isDark ? '#0F172A' : '#F7F9FC',
+                mainBkg: '#6C63FF',
+                secondBkg: '#00C2A8',
+                tertiaryBkg: '#E5E7EB'
+            },
+            flowchart: { curve: 'basis', padding: 20 }
+        });
+
+        // Render (or re-render) the diagram without reloading the page
+        const renderDiagram = async () => {
+            const container = document.getElementById('pipeline-diagram');
+            if (!container) return;
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            mermaid.initialize(getMermaidConfig(isDark));
+            // Clear old SVG
+            container.innerHTML = '';
+            try {
+                const id = 'mermaid-pipeline-' + Date.now();
+                const { svg } = await mermaid.render(id, MERMAID_SOURCE);
+                container.innerHTML = svg;
+            } catch (e) {
+                console.warn('Mermaid render error:', e);
+            }
+        };
+
+        // Initial render after DOM is ready
+        document.addEventListener('DOMContentLoaded', renderDiagram);
+
+        // Re-render when theme attribute changes (no page reload)
+        const observer = new MutationObserver((mutations) => {
+            for (const mutation of mutations) {
+                if (mutation.attributeName === 'data-theme') {
+                    renderDiagram();
+                    break;
+                }
+            }
+        });
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['data-theme']
+        });
+    </script>
+    
+    <!-- Custom Scripts (deferred for performance) -->
+    <script src="js/theme.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>

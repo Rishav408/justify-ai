@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Try Justify.AI Demo - Analyze hate speech in multiple languages">
+    <title>Demo - Justify.AI</title>
+    
+    <!-- Google Fonts: Inter for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="lib/chart.min.js"></script>
+    
+    <!-- Vis.js -->
+    <link href="lib/vis-network.min.css" rel="stylesheet">
+    <script src="lib/vis-network.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip to main content (accessibility) -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Justify.AI</span>
+            </a>
+            
+            <ul class="nav-links" role="menubar" aria-label="Site navigation">
+                <li><a href="index.html" class="nav-link">Platform</a></li>
+                <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="docs.html" class="nav-link">Docs</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+                <a href="demo.html" class="btn btn-primary">Try Demo</a>
+                <!-- GitHub Button -->
+                <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            
+            <button class="mobile-toggle" aria-label="Toggle mobile menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="demo-page" id="main-content" tabindex="-1">
+        <div class="demo-container">
+            <div class="demo-header" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100">
+                <h1 class="demo-title">Analyze Hate Speech</h1>
+                <p class="demo-subtitle">Enter text below to analyze hate narratives across lexical, causal, and bias dimensions</p>
+            </div>
+
+            <!-- Input Panel -->
+            <div class="input-panel" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="100">
+                <div class="input-group">
+                    <label for="text-input" class="input-label">Text Input</label>
+                    <textarea 
+                        id="text-input" 
+                        class="text-input" 
+                        placeholder="Paste text here to analyze hate narratives..."
+                        rows="8"
+                    ></textarea>
+                    <div id="input-error" class="error-message" role="alert" aria-live="assertive"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="language-selector" class="input-label">Language</label>
+                    <select id="language-selector" class="language-selector">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi (हिन्दी)</option>
+                        <option value="bho">Bhojpuri (भोजपुरी)</option>
+                        <option value="mr">Marathi (मराठी)</option>
+                        <option value="mwr">Marwari (मारवाड़ी)</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="analyze-btn" class="btn btn-primary btn-large" aria-describedby="input-error">
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                        </svg>
+                        Analyze
+                    </button>
+                    <button id="reset-btn" class="btn btn-secondary btn-large">
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                        Reset
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Dashboard (hidden by default) -->
+            <div id="results-dashboard" class="results-dashboard" style="display: none;">
+                <div class="results-grid">
+                    <!-- Hate Words Panel -->
+                    <div class="result-panel" id="hate-words-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title">Detected Hate Words</h3>
+                        </div>
+                        <div class="panel-content" id="hate-words-content">
+                            <!-- Hate words table will be populated here -->
+                        </div>
+                    </div>
+
+                    <!-- Causal Graph Panel -->
+                    <div class="result-panel" id="causal-graph-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title">Causal Graph</h3>
+                        </div>
+                        <div class="panel-content" id="causal-graph-content">
+                            <div id="causal-graph-network" class="causal-graph-network"></div>
+                        </div>
+                    </div>
+
+                    <!-- Bias Chart Panel -->
+                    <div class="result-panel" id="bias-chart-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title">Bias Metrics</h3>
+                        </div>
+                        <div class="panel-content" id="bias-chart-content">
+                            <canvas id="bias-radar-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Risk Score Panel -->
+                    <div class="result-panel" id="risk-score-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title">Hate Risk Score</h3>
+                        </div>
+                        <div class="panel-content risk-score-content" id="risk-score-content">
+                            <div class="risk-score-display">
+                                <div class="risk-score-value" id="risk-score-value">0</div>
+                                <div class="risk-score-badge" id="risk-score-badge">Low Risk</div>
+                            </div>
+                            <div class="risk-score-breakdown">
+                                <h4 class="breakdown-title">Risk Breakdown</h4>
+                                <div class="breakdown-item">
+                                    <div class="breakdown-label">
+                                        <span>Lexical Severity</span>
+                                        <span class="breakdown-percentage" id="lexical-percentage">0%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="lexical-progress" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <div class="breakdown-label">
+                                        <span>Causal Narrative</span>
+                                        <span class="breakdown-percentage" id="causal-percentage">0%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="causal-progress" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <div class="breakdown-label">
+                                        <span>Bias Indicator</span>
+                                        <span class="breakdown-percentage" id="bias-percentage">0%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="bias-progress" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="loading-content" role="status" aria-live="polite" aria-label="Analysis in progress">
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <p id="loading-message" class="loading-message">Analyzing text...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- Branding Column -->
+                <div class="footer-column footer-branding">
+                    <h3 class="footer-logo">Justify.AI</h3>
+                    <p class="footer-tagline">Explainable NLP for Hate Speech Analysis</p>
+                    <p class="footer-description">
+                        Advanced multilingual hate speech detection with transparent, 
+                        explainable AI insights across lexical, causal, and bias dimensions.
+                    </p>
+                </div>
+
+                <!-- Platform Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="demo.html" class="footer-link">Demo</a></li>
+                        <li><a href="research.html" class="footer-link">Research</a></li>
+                        <li><a href="docs.html" class="footer-link">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="https://github.com" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="docs.html#api" class="footer-link">API Reference</a></li>
+                        <li><a href="research.html#datasets" class="footer-link">Datasets</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <span class="footer-contact-label">Email:</span>
+                            <a href="mailto:contact@justify-ai.com" class="footer-link">contact@justify-ai.com</a>
+                        </li>
+                        <li>
+                            <span class="footer-contact-label">Institution:</span>
+                            <span class="footer-contact-text">Research University</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 Justify.AI. All rights reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library (deferred for performance) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    
+    <!-- Custom Scripts (deferred for performance) -->
+    <script src="js/theme.js" defer></script>
+    <script src="js/demo.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>
