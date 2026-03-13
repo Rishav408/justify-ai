@@ -3,7 +3,14 @@ BIAS_WORDS = [
     "never",
     "everyone",
     "nobody",
-    "obviously"
+    "obviously",
+    "all",
+    "certainly",
+    "undoubtedly",
+    "first",
+    "only",
+    "entire",
+    "every"
 ]
 
 def detect_bias(tokens):

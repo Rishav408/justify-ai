@@ -5,7 +5,11 @@ CAUSAL_WORDS = [
     "hence",
     "due",
     "causes",
-    "leads"
+    "leads",
+    "means",
+    "since",
+    "consequently",
+    "so"
 ]
 
 def extract_causality(tokens):
