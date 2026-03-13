@@ -3,39 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Justify.AI Documentation - API and Usage Guide">
-    <title>Documentation - Justify.AI</title>
-    
-    <!-- Google Fonts: Inter for premium typography -->
+    <meta name="description" content="Justify.AI Analysis Tool - Interactive hate speech analysis across multiple languages">
+    <title>Analysis Tool - Justify.AI</title>
+
+    <!-- Fonts: Inter + Noto Sans Devanagari -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- TailwindCSS CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- AOS Animation Library -->
+
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Prism.js for Syntax Highlighting -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-    
-    <!-- Custom Styles -->
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+
+    <!-- Cytoscape.js -->
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape@3/dist/cytoscape.min.js"></script>
+
+    <!-- Tippy.js -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css">
+
+    <!-- jsPDF + html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Site Styles -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+    /* ===== DOCS TOOL PAGE ===== */
+    .docs-hero{padding:2.5rem 2rem 1.5rem;background:linear-gradient(135deg,rgba(108,99,255,.06),rgba(0,194,168,.06));border-bottom:1px solid var(--color-border);text-align:center}
+    [data-theme="dark"] .docs-hero{background:linear-gradient(135deg,rgba(108,99,255,.12),rgba(0,194,168,.08))}
+    .docs-hero h1{font-size:2.25rem;font-weight:800;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem}
+    .docs-hero p{color:var(--color-text-secondary);font-size:1rem;max-width:600px;margin:0 auto .75rem}
+    .hero-controls{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;align-items:center}
+    .hero-controls select{padding:.5rem 1rem;border-radius:.5rem;border:1px solid var(--color-border);background:var(--color-bg-secondary);color:var(--color-text-primary);font-size:.875rem;cursor:pointer}
+    .sample-btn{padding:.375rem .75rem;border-radius:2rem;border:1px solid var(--color-border);background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:.75rem;cursor:pointer;transition:all .2s}
+    .sample-btn:hover{border-color:var(--color-secondary);color:var(--color-secondary);transform:scale(1.02)}
+
+    /* Main layout */
+    .docs-main{max-width:1400px;margin:0 auto;padding:1.5rem 2rem 3rem;display:grid;grid-template-columns:2fr 3fr;gap:1.5rem;min-height:calc(100vh - 260px)}
+    @media(max-width:1024px){.docs-main{grid-template-columns:1fr;gap:1rem}}
+
+    /* Cards */
+    .docs-card{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:1rem;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    [data-theme="dark"] .docs-card{box-shadow:0 2px 12px rgba(0,0,0,.2)}
+
+    /* Input panel */
+    .input-section label{display:block;font-weight:600;font-size:.875rem;margin-bottom:.375rem;color:var(--color-text-primary)}
+    .input-section .helper{font-size:.75rem;color:var(--color-text-tertiary);margin-top:.25rem}
+    .input-section select,.input-section textarea{width:100%;padding:.625rem .875rem;border-radius:.5rem;border:1px solid var(--color-border);background:var(--color-bg-primary);color:var(--color-text-primary);font-family:'Inter',sans-serif;font-size:.9rem;transition:border-color .2s}
+    .input-section select:focus,.input-section textarea:focus{outline:none;border-color:var(--color-secondary);box-shadow:0 0 0 3px rgba(108,99,255,.15)}
+    .input-section textarea{resize:vertical;min-height:240px}
+    .input-section textarea.invalid{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.15)}
+
+    /* File upload */
+    .file-drop{border:2px dashed var(--color-border);border-radius:.75rem;padding:1.25rem;text-align:center;color:var(--color-text-tertiary);cursor:pointer;transition:all .2s;font-size:.85rem}
+    .file-drop:hover,.file-drop.dragover{border-color:var(--color-secondary);background:rgba(108,99,255,.04);color:var(--color-secondary)}
+    .file-drop input{display:none}
+
+    /* Presets */
+    .preset-row{display:flex;gap:.5rem;flex-wrap:wrap}
+
+    /* Advanced toggle */
+    .advanced-toggle{display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.85rem;font-weight:600;color:var(--color-text-secondary);padding:.5rem 0;border:none;background:none;width:100%;text-align:left}
+    .advanced-toggle svg{width:16px;height:16px;transition:transform .2s}
+    .advanced-toggle.open svg{transform:rotate(90deg)}
+    .advanced-panel{display:none;padding:.75rem 0;gap:.75rem}
+    .advanced-panel.open{display:grid}
+    .advanced-panel label{font-size:.8rem}
+    .advanced-panel input[type=range]{width:100%;accent-color:var(--color-secondary)}
+    .range-val{font-size:.75rem;color:var(--color-text-tertiary);text-align:right}
+
+    /* Quick stats */
+    .quick-stats{display:flex;gap:1rem;padding:.5rem 0;font-size:.75rem;color:var(--color-text-tertiary)}
+    .quick-stats span{display:flex;align-items:center;gap:.25rem}
+
+    /* Action buttons */
+    .action-row{display:flex;gap:.75rem;margin-top:.25rem}
+    .action-row .btn{flex:1;text-align:center;justify-content:center;font-size:.95rem;padding:.75rem 1rem}
+
+    /* Privacy banner */
+    .privacy-banner{display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;border-radius:.5rem;background:rgba(0,194,168,.08);color:var(--color-text-secondary);font-size:.7rem;margin-top:.5rem}
+    .privacy-banner svg{flex-shrink:0;width:14px;height:14px}
+
+    /* ===== RESULTS PANEL ===== */
+    .results-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:400px;gap:1rem;color:var(--color-text-tertiary);text-align:center}
+    .results-empty svg{width:64px;height:64px;opacity:.3}
+
+    /* Summary strip */
+    .summary-strip{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1rem 1.25rem;margin-bottom:1rem;border-radius:.75rem;background:var(--color-bg-primary);border:1px solid var(--color-border)}
+    .gauge-wrap{position:relative;width:80px;height:80px}
+    .gauge-wrap canvas{width:80px!important;height:80px!important}
+    .gauge-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;line-height:1;color:var(--color-text-primary)}
+    .gauge-label small{font-size:.6rem;font-weight:500;color:var(--color-text-tertiary)}
+    .mini-bars{display:flex;gap:1rem;font-size:.75rem;align-items:center}
+    .mini-bar{display:flex;flex-direction:column;gap:.25rem;align-items:center}
+    .mini-bar-track{width:60px;height:6px;border-radius:3px;background:var(--color-bg-tertiary);overflow:hidden}
+    .mini-bar-fill{height:100%;border-radius:3px;transition:width .6s ease}
+
+    /* Tabs */
+    .result-tabs{display:flex;gap:.25rem;border-bottom:2px solid var(--color-border);padding-bottom:0;margin-bottom:1rem;overflow-x:auto}
+    .tab-btn{padding:.625rem 1rem;border:none;background:none;font-size:.8rem;font-weight:600;color:var(--color-text-tertiary);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s}
+    .tab-btn:hover{color:var(--color-text-primary)}
+    .tab-btn.active{color:var(--color-secondary);border-bottom-color:var(--color-secondary)}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+
+    /* Live text viewer */
+    .text-viewer{line-height:1.8;font-size:.95rem;padding:1rem;border-radius:.5rem;background:var(--color-bg-primary);border:1px solid var(--color-border);max-height:400px;overflow-y:auto}
+    .text-viewer mark{padding:.125rem .25rem;border-radius:.25rem;cursor:pointer;position:relative}
+    .text-viewer mark.severe{background:rgba(239,68,68,.2);border-bottom:2px solid #ef4444}
+    .text-viewer mark.moderate{background:rgba(249,115,22,.2);border-bottom:2px solid #f97316}
+    .text-viewer mark.mild{background:rgba(234,179,8,.2);border-bottom:2px solid #eab308}
+
+    /* Lexicon table */
+    .lex-table{width:100%;border-collapse:collapse;font-size:.8rem}
+    .lex-table th{text-align:left;padding:.625rem .5rem;border-bottom:2px solid var(--color-border);font-weight:700;color:var(--color-text-secondary);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em}
+    .lex-table td{padding:.5rem;border-bottom:1px solid var(--color-border);color:var(--color-text-primary)}
+    .sev-badge{padding:.125rem .5rem;border-radius:2rem;font-size:.7rem;font-weight:600}
+    .sev-high{background:rgba(239,68,68,.15);color:#ef4444}
+    .sev-med{background:rgba(249,115,22,.15);color:#f97316}
+    .sev-low{background:rgba(234,179,8,.15);color:#ca8a04}
+
+    /* Graph container */
+    #causal-graph-cy{width:100%;height:380px;border-radius:.5rem;border:1px solid var(--color-border);background:var(--color-bg-primary)}
+    .graph-controls{display:flex;gap:.75rem;align-items:center;margin-bottom:.75rem;font-size:.8rem}
+    .graph-controls label{color:var(--color-text-secondary)}
+    .graph-controls input[type=range]{width:120px;accent-color:var(--color-secondary)}
+
+    /* Bias radar */
+    .bias-chart-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+    .bias-chart-wrap canvas{max-height:280px}
+    .bias-details{font-size:.8rem}
+    .bias-item{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border)}
+    .bias-item:last-child{border:none}
+    @media(max-width:640px){.bias-chart-wrap{grid-template-columns:1fr}}
+
+    /* Sentence inspector */
+    .sentence-list{max-height:380px;overflow-y:auto}
+    .sentence-card{padding:.75rem;border-radius:.5rem;border:1px solid var(--color-border);margin-bottom:.5rem;font-size:.85rem;transition:border-color .2s}
+    .sentence-card:hover{border-color:var(--color-secondary)}
+    .sentence-meta{display:flex;gap:.75rem;margin-top:.375rem;font-size:.7rem;color:var(--color-text-tertiary)}
+
+    /* Export panel */
+    .export-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}
+    .export-card{padding:1rem;border-radius:.75rem;border:1px solid var(--color-border);text-align:center;cursor:pointer;transition:all .2s}
+    .export-card:hover{border-color:var(--color-secondary);transform:translateY(-2px);box-shadow:0 4px 12px rgba(108,99,255,.15)}
+    .export-card svg{margin:0 auto .5rem;width:28px;height:28px;color:var(--color-secondary)}
+    .export-card h4{font-size:.85rem;font-weight:600;margin-bottom:.25rem}
+    .export-card p{font-size:.7rem;color:var(--color-text-tertiary)}
+
+    /* Progress overlay */
+    .progress-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center}
+    .progress-overlay.active{display:flex}
+    .progress-box{background:var(--color-bg-secondary);border-radius:1rem;padding:2.5rem;text-align:center;min-width:320px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+    .progress-spinner{width:48px;height:48px;border:4px solid var(--color-border);border-top-color:var(--color-secondary);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 1rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .progress-msg{font-size:1rem;font-weight:600;color:var(--color-text-primary)}
+    .progress-sub{font-size:.8rem;color:var(--color-text-tertiary);margin-top:.25rem}
+
+    /* Mobile */
+    @media(max-width:768px){
+      .docs-hero h1{font-size:1.75rem}
+      .docs-main{padding:1rem}
+      .summary-strip{grid-template-columns:1fr;text-align:center}
+      .mini-bars{justify-content:center}
+    }
+    </style>
 </head>
 <body>
-    <!-- Skip to main content (accessibility) -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <!-- Logo -->
-            <a href="index.html" class="nav-logo">
-                <span class="logo-text">Justify.AI</span>
-            </a>
-
-            <!-- Navigation Links -->
+            <a href="index.html" class="nav-logo"><span class="logo-text">Justify.AI</span></a>
             <ul class="nav-links" id="nav-links" role="menubar" aria-label="Site navigation">
                 <li><a href="index.html" class="nav-link">Platform</a></li>
                 <li><a href="demo.html" class="nav-link">Demo</a></li>
@@ -43,605 +194,260 @@
                 <li><a href="docs.html" class="nav-link">Docs</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
-
-            <!-- Action Buttons -->
             <div class="nav-actions">
-                <!-- Theme Toggle Button -->
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </button>
-
-                <!-- Try Demo Button -->
                 <a href="demo.html" class="btn btn-primary">Try Demo</a>
-
-                <!-- GitHub Button -->
                 <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
-
             </div>
-
-            <!-- Mobile Menu Toggle -->
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
             </button>
         </div>
     </nav>
 
-    <main id="main-content" tabindex="-1">
-        <!-- Documentation Header -->
-        <section class="research-header">
-            <div class="research-header-container">
-                <h1 class="research-title">Documentation</h1>
-                <p class="research-subtitle">API Reference and Usage Guide for Justify.AI</p>
-            </div>
-        </section>
+    <!-- Hero Strip -->
+    <section class="docs-hero" aria-label="Tool introduction">
+        <h1>Analysis Tool</h1>
+        <p>Paste text or upload a file to analyze hate narratives across lexical, causal, and bias dimensions.</p>
+        <div class="hero-controls">
+            <select id="hero-lang" aria-label="Quick language select">
+                <option value="en">🇬🇧 English</option>
+                <option value="hi">🇮🇳 Hindi</option>
+                <option value="bho">🇮🇳 Bhojpuri</option>
+                <option value="mr">🇮🇳 Marathi</option>
+                <option value="mwr">🇮🇳 Marwari</option>
+            </select>
+            <button class="sample-btn" data-sample="news">📰 News post</button>
+            <button class="sample-btn" data-sample="tweet">🐦 Tweet</button>
+            <button class="sample-btn" data-sample="reddit">💬 Reddit comment</button>
+            <button class="sample-btn" data-sample="demo">⚡ Demo mode</button>
+        </div>
+    </section>
 
-        <!-- API Usage Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">API Usage</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        The Justify.AI API provides programmatic access to hate speech analysis capabilities. 
-                        All API requests should be made to the base URL with appropriate authentication headers.
-                    </p>
+    <main id="main-content" tabindex="-1" class="docs-main">
+        <!-- ===== LEFT: INPUT PANEL ===== -->
+        <div class="input-section">
+            <div class="docs-card" style="display:grid;gap:1rem">
+                <!-- Language -->
+                <div>
+                    <label for="doc-lang">Language</label>
+                    <select id="doc-lang">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="hi">🇮🇳 Hindi (हिन्दी)</option>
+                        <option value="bho">🇮🇳 Bhojpuri (भोजपुरी)</option>
+                        <option value="mr">🇮🇳 Marathi (मराठी)</option>
+                        <option value="mwr">🇮🇳 Marwari (मारवाड़ी)</option>
+                    </select>
+                    <p class="helper">Select the primary language of your text</p>
+                </div>
 
-                    <h3 class="subsection-title">Base URL</h3>
-                    <pre><code class="language-bash">https://api.justify-ai.com/v1</code></pre>
+                <!-- Textarea -->
+                <div>
+                    <label for="doc-input">Text Input</label>
+                    <textarea id="doc-input" placeholder="Paste text here to analyze hate narratives…" rows="12"></textarea>
+                    <div id="input-validation" style="color:#ef4444;font-size:.75rem;margin-top:.25rem;display:none"></div>
+                    <p class="helper">Paste or type text for analysis — supports multilingual content</p>
+                </div>
 
-                    <h3 class="subsection-title">Authentication</h3>
-                    <p>
-                        All API requests require an API key passed in the Authorization header:
-                    </p>
-                    <pre><code class="language-bash">Authorization: Bearer YOUR_API_KEY</code></pre>
+                <!-- Quick stats -->
+                <div class="quick-stats" id="quick-stats">
+                    <span><i data-feather="hash" style="width:12px;height:12px"></i> <b id="qs-tokens">0</b> tokens</span>
+                    <span><i data-feather="align-left" style="width:12px;height:12px"></i> <b id="qs-sentences">0</b> sentences</span>
+                    <span><i data-feather="alert-triangle" style="width:12px;height:12px"></i> <b id="qs-candidates">0</b> candidates</span>
+                </div>
 
-                    <h3 class="subsection-title">Analyze Text Endpoint</h3>
-                    <p>
-                        Analyze text for hate speech patterns, causal relationships, and bias dimensions.
-                    </p>
-                    
-                    <div class="api-endpoint">
-                        <span class="http-method">POST</span>
-                        <span class="endpoint-path">/analyze</span>
+                <!-- File upload -->
+                <div>
+                    <label>File Upload</label>
+                    <div class="file-drop" id="file-drop">
+                        <i data-feather="upload-cloud" style="width:24px;height:24px;margin:0 auto .25rem;display:block"></i>
+                        Drag & drop or <u>browse</u> — .txt / .csv (5 MB max)
+                        <input type="file" id="file-input" accept=".txt,.csv">
                     </div>
+                </div>
 
-                    <h4 class="code-section-title">Request Example</h4>
-                    <pre><code class="language-javascript">fetch('https://api.justify-ai.com/v1/analyze', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer YOUR_API_KEY'
-  },
-  body: JSON.stringify({
-    text: "Your text to analyze here",
-    language: "en",
-    options: {
-      includeLexicon: true,
-      includeCausal: true,
-      includeBias: true
-    }
-  })
-})
-.then(response => response.json())
-.then(data => console.log(data));</code></pre>
-
-                    <h4 class="code-section-title">Response Example</h4>
-                    <pre><code class="language-json">{
-  "status": "success",
-  "data": {
-    "riskScore": 78,
-    "riskLevel": "high",
-    "hateWords": [...],
-    "causalGraph": {...},
-    "biasMetrics": {...}
-  },
-  "metadata": {
-    "language": "en",
-    "processingTime": 1.23,
-    "timestamp": "2026-03-13T10:30:00Z"
-  }
-}</code></pre>
-
-                    <h3 class="subsection-title">Get Supported Languages</h3>
-                    <p>
-                        Retrieve a list of supported languages for analysis.
-                    </p>
-                    
-                    <div class="api-endpoint">
-                        <span class="http-method http-get">GET</span>
-                        <span class="endpoint-path">/languages</span>
+                <!-- Presets -->
+                <div>
+                    <label>Quick Examples</label>
+                    <div class="preset-row">
+                        <button class="sample-btn" data-sample="news">📰 News</button>
+                        <button class="sample-btn" data-sample="tweet">🐦 Tweet</button>
+                        <button class="sample-btn" data-sample="reddit">💬 Reddit</button>
                     </div>
+                </div>
 
-                    <h4 class="code-section-title">Request Example</h4>
-                    <pre><code class="language-javascript">fetch('https://api.justify-ai.com/v1/languages', {
-  headers: {
-    'Authorization': 'Bearer YOUR_API_KEY'
-  }
-})
-.then(response => response.json())
-.then(data => console.log(data));</code></pre>
+                <!-- Advanced -->
+                <div>
+                    <button class="advanced-toggle" id="adv-toggle"><i data-feather="chevron-right" style="width:16px;height:16px"></i> Advanced Options</button>
+                    <div class="advanced-panel" id="adv-panel">
+                        <div>
+                            <label>Lexicon Sensitivity <span class="range-val" id="lex-sens-val">0.7</span></label>
+                            <input type="range" min="0" max="1" step="0.1" value="0.7" id="lex-sens">
+                        </div>
+                        <div>
+                            <label>Confidence Threshold <span class="range-val" id="conf-thresh-val">0.5</span></label>
+                            <input type="range" min="0" max="1" step="0.1" value="0.5" id="conf-thresh">
+                        </div>
+                        <div>
+                            <label>Analysis Depth</label>
+                            <select id="analysis-depth">
+                                <option value="standard">Standard</option>
+                                <option value="deep">Deep</option>
+                                <option value="comprehensive">Comprehensive</option>
+                            </select>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:.5rem">
+                            <input type="checkbox" id="show-provenance" checked>
+                            <label for="show-provenance" style="margin:0">Show explainability provenance</label>
+                        </div>
+                    </div>
+                </div>
 
-                    <h4 class="code-section-title">Response Example</h4>
-                    <pre><code class="language-json">{
-  "status": "success",
-  "data": {
-    "languages": [
-      { "code": "en", "name": "English", "native": "English" },
-      { "code": "hi", "name": "Hindi", "native": "हिन्दी" },
-      { "code": "bho", "name": "Bhojpuri", "native": "भोजपुरी" },
-      { "code": "mr", "name": "Marathi", "native": "मराठी" },
-      { "code": "mwr", "name": "Marwari", "native": "मारवाड़ी" }
-    ]
-  }
-}</code></pre>
+                <!-- Actions -->
+                <div class="action-row">
+                    <button class="btn btn-primary" id="analyze-btn"><i data-feather="play" style="width:16px;height:16px;margin-right:.375rem"></i>Analyze</button>
+                    <button class="btn btn-secondary" id="reset-btn"><i data-feather="rotate-ccw" style="width:16px;height:16px;margin-right:.375rem"></i>Reset</button>
+                </div>
+
+                <!-- Privacy -->
+                <div class="privacy-banner">
+                    <i data-feather="shield" style="width:14px;height:14px"></i>
+                    All analysis runs locally in your browser. No data is uploaded or stored.
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Data Format Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Data Format</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        Understanding the data structures returned by the API is essential for integrating 
-                        Justify.AI into your applications.
-                    </p>
-
-                    <h3 class="subsection-title">Analysis Result Object</h3>
-                    <p>
-                        The main analysis result contains comprehensive information about detected hate speech.
-                    </p>
-                    <pre><code class="language-typescript">interface AnalysisResult {
-  riskScore: number;           // 0-100 composite risk score
-  riskLevel: string;           // "low" | "medium" | "high"
-  hateWords: HateWord[];       // Array of detected hate words
-  causalGraph: CausalGraph;    // Causal relationship structure
-  biasMetrics: BiasMetrics;    // Multi-dimensional bias scores
-  breakdown: {
-    lexicalSeverity: number;   // 0-100
-    causalNarrative: number;   // 0-100
-    biasIndicator: number;     // 0-100
-  };
-}</code></pre>
-
-                    <h3 class="subsection-title">Hate Word Object</h3>
-                    <p>
-                        Each detected hate word includes severity and contextual information.
-                    </p>
-                    <pre><code class="language-typescript">interface HateWord {
-  word: string;                // The detected word
-  severity: string;            // "low" | "medium" | "high" | "extreme"
-  severityScore: number;       // 0-100 numerical severity
-  context: string;             // Surrounding text context
-  position: {
-    start: number;             // Character start position
-    end: number;               // Character end position
-  };
-  category: string;            // Hate category (e.g., "religious", "ethnic")
-}</code></pre>
-
-                    <h3 class="subsection-title">Causal Graph Object</h3>
-                    <p>
-                        The causal graph represents cause-and-effect relationships in the text.
-                    </p>
-                    <pre><code class="language-typescript">interface CausalGraph {
-  nodes: CausalNode[];         // Array of causal nodes
-  edges: CausalEdge[];         // Array of causal relationships
-}
-
-interface CausalNode {
-  id: string;                  // Unique node identifier
-  text: string;                // Node text content
-  type: string;                // "cause" | "effect" | "entity"
-  importance: number;          // 0-1 importance score
-}
-
-interface CausalEdge {
-  source: string;              // Source node ID
-  target: string;              // Target node ID
-  relationship: string;        // Relationship type
-  confidence: number;          // 0-1 confidence score
-}</code></pre>
-
-                    <h3 class="subsection-title">Bias Metrics Object</h3>
-                    <p>
-                        Bias metrics quantify bias across multiple dimensions.
-                    </p>
-                    <pre><code class="language-typescript">interface BiasMetrics {
-  religion: number;            // 0-100 religious bias score
-  gender: number;              // 0-100 gender bias score
-  ethnicity: number;           // 0-100 ethnic bias score
-  overall: number;             // 0-100 composite bias score
-  details: {
-    [dimension: string]: {
-      score: number;
-      terms: string[];         // Contributing terms
-      confidence: number;      // 0-1 confidence
-    };
-  };
-}</code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- Lexicon Builder Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Lexicon Builder</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        The Lexicon Builder component automatically discovers and maintains hate speech lexicons 
-                        across multiple languages using word embeddings and semantic similarity.
-                    </p>
-
-                    <h3 class="subsection-title">How It Works</h3>
-                    <ol>
-                        <li><strong>Seed Terms:</strong> Start with a curated set of known hate speech terms</li>
-                        <li><strong>Embedding Space:</strong> Map terms to high-dimensional vector space using language-specific embeddings</li>
-                        <li><strong>Similarity Expansion:</strong> Find semantically similar terms using cosine similarity</li>
-                        <li><strong>Context Validation:</strong> Validate candidates using contextual usage patterns</li>
-                        <li><strong>Severity Scoring:</strong> Assign severity scores based on usage frequency and context</li>
-                    </ol>
-
-                    <h3 class="subsection-title">Using the Lexicon Builder</h3>
-                    <p>
-                        You can use the lexicon builder programmatically to expand your own hate speech lexicons.
-                    </p>
-                    <pre><code class="language-python">from src.lexicon import LexiconBuilder
-
-# Initialize builder with language
-builder = LexiconBuilder(language='en')
-
-# Load seed terms
-seed_terms = ['hate', 'violence', 'discriminate']
-builder.load_seeds(seed_terms)
-
-# Expand lexicon
-expanded_lexicon = builder.expand(
-    similarity_threshold=0.7,
-    max_terms=1000,
-    validate_context=True
-)
-
-# Get terms with severity scores
-for term in expanded_lexicon:
-    print(f"{term.word}: {term.severity_score}")</code></pre>
-
-                    <h3 class="subsection-title">Configuration Options</h3>
-                    <pre><code class="language-python"># Configure lexicon builder
-config = {
-    'embedding_model': 'fasttext',  # or 'word2vec', 'bert'
-    'similarity_threshold': 0.7,     # 0-1, higher = stricter
-    'context_window': 5,             # words before/after
-    'min_frequency': 10,             # minimum corpus frequency
-    'severity_method': 'contextual'  # or 'frequency', 'hybrid'
-}
-
-builder = LexiconBuilder(language='hi', config=config)</code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- Causal Extractor Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Causal Extractor</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        The Causal Extractor identifies cause-and-effect relationships within hate narratives 
-                        using dependency parsing and semantic role labeling.
-                    </p>
-
-                    <h3 class="subsection-title">Extraction Process</h3>
-                    <ol>
-                        <li><strong>Dependency Parsing:</strong> Parse text to identify grammatical relationships</li>
-                        <li><strong>Causal Pattern Matching:</strong> Identify causal connectives and patterns</li>
-                        <li><strong>Entity Recognition:</strong> Extract entities involved in causal relationships</li>
-                        <li><strong>Relationship Extraction:</strong> Build cause-effect pairs with confidence scores</li>
-                        <li><strong>Graph Construction:</strong> Create directed graph of causal relationships</li>
-                    </ol>
-
-                    <h3 class="subsection-title">Using the Causal Extractor</h3>
-                    <pre><code class="language-python">from src.causality import CausalExtractor
-
-# Initialize extractor
-extractor = CausalExtractor(language='en')
-
-# Extract causal relationships
-text = "Religious hatred leads to violence and discrimination"
-causal_graph = extractor.extract(text)
-
-# Access nodes and edges
-for node in causal_graph.nodes:
-    print(f"Node: {node.text} (type: {node.type})")
-
-for edge in causal_graph.edges:
-    print(f"{edge.source} -> {edge.target} ({edge.relationship})")</code></pre>
-
-                    <h3 class="subsection-title">Causal Patterns</h3>
-                    <p>
-                        The extractor recognizes various causal patterns including:
-                    </p>
-                    <ul>
-                        <li><strong>Explicit Connectives:</strong> "because", "therefore", "leads to", "causes"</li>
-                        <li><strong>Implicit Causality:</strong> Verb-based causation (e.g., "triggers", "results in")</li>
-                        <li><strong>Conditional Causality:</strong> "if...then" structures</li>
-                        <li><strong>Temporal Causality:</strong> Sequential events implying causation</li>
-                    </ul>
-
-                    <h3 class="subsection-title">Visualization</h3>
-                    <pre><code class="language-python"># Export graph for visualization
-graph_data = causal_graph.to_dict()
-
-# Use with vis.js or D3.js
-import json
-with open('causal_graph.json', 'w') as f:
-    json.dump(graph_data, f, indent=2)</code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bias Auditor Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Bias Auditor</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        The Bias Auditor quantifies bias across multiple dimensions including religion, gender, 
-                        and ethnicity using specialized bias lexicons and contextual embeddings.
-                    </p>
-
-                    <h3 class="subsection-title">Bias Dimensions</h3>
-                    <p>
-                        The system measures bias across three primary dimensions:
-                    </p>
-                    <ul>
-                        <li><strong>Religious Bias:</strong> Prejudice based on religious identity or beliefs</li>
-                        <li><strong>Gender Bias:</strong> Discrimination based on gender or sexual orientation</li>
-                        <li><strong>Ethnic Bias:</strong> Prejudice based on ethnicity, race, or national origin</li>
-                    </ul>
-
-                    <h3 class="subsection-title">Using the Bias Auditor</h3>
-                    <pre><code class="language-python">from src.bias import BiasAuditor
-
-# Initialize auditor
-auditor = BiasAuditor(language='en')
-
-# Analyze text for bias
-text = "Your text to analyze for bias"
-bias_metrics = auditor.analyze(text)
-
-# Access bias scores
-print(f"Religion Bias: {bias_metrics.religion}")
-print(f"Gender Bias: {bias_metrics.gender}")
-print(f"Ethnicity Bias: {bias_metrics.ethnicity}")
-print(f"Overall Bias: {bias_metrics.overall}")
-
-# Get detailed breakdown
-for dimension, details in bias_metrics.details.items():
-    print(f"\n{dimension}:")
-    print(f"  Score: {details['score']}")
-    print(f"  Terms: {', '.join(details['terms'])}")
-    print(f"  Confidence: {details['confidence']}")</code></pre>
-
-                    <h3 class="subsection-title">Scoring Methodology</h3>
-                    <p>
-                        Bias scores are calculated using a multi-step process:
-                    </p>
-                    <ol>
-                        <li><strong>Lexicon Matching:</strong> Identify bias-indicating terms from specialized lexicons</li>
-                        <li><strong>Contextual Analysis:</strong> Analyze surrounding context using embeddings</li>
-                        <li><strong>Intensity Scoring:</strong> Calculate intensity based on term frequency and context</li>
-                        <li><strong>Dimension Aggregation:</strong> Combine scores across bias dimensions</li>
-                        <li><strong>Normalization:</strong> Scale scores to 0-100 range</li>
-                    </ol>
-
-                    <h3 class="subsection-title">Custom Bias Lexicons</h3>
-                    <pre><code class="language-python"># Load custom bias lexicon
-custom_lexicon = {
-    'religion': ['term1', 'term2', ...],
-    'gender': ['term1', 'term2', ...],
-    'ethnicity': ['term1', 'term2', ...]
-}
-
-auditor = BiasAuditor(language='en')
-auditor.load_custom_lexicon(custom_lexicon)
-
-# Analyze with custom lexicon
-bias_metrics = auditor.analyze(text)</code></pre>
-
-                    <h3 class="subsection-title">Interpretation Guidelines</h3>
-                    <div class="interpretation-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Score Range</th>
-                                    <th>Level</th>
-                                    <th>Interpretation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>0-25</td>
-                                    <td>Low</td>
-                                    <td>Minimal or no detectable bias</td>
-                                </tr>
-                                <tr>
-                                    <td>26-50</td>
-                                    <td>Moderate</td>
-                                    <td>Some bias indicators present</td>
-                                </tr>
-                                <tr>
-                                    <td>51-75</td>
-                                    <td>High</td>
-                                    <td>Significant bias detected</td>
-                                </tr>
-                                <tr>
-                                    <td>76-100</td>
-                                    <td>Extreme</td>
-                                    <td>Severe bias with strong indicators</td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <!-- ===== RIGHT: RESULTS DASHBOARD ===== -->
+        <div class="results-section">
+            <!-- Empty state -->
+            <div class="docs-card" id="results-empty">
+                <div class="results-empty">
+                    <i data-feather="search" style="width:64px;height:64px"></i>
+                    <div>
+                        <h3 style="font-weight:700;font-size:1.1rem;margin-bottom:.25rem">Ready to Analyze</h3>
+                        <p style="font-size:.85rem">Enter text on the left and click <strong>Analyze</strong> to see results.<br><span style="font-size:.75rem;color:var(--color-text-tertiary)">Ctrl + Enter to quick-analyze</span></p>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Rate Limits Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Rate Limits & Best Practices</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="subsection-title">Rate Limits</h3>
-                    <p>
-                        API requests are subject to the following rate limits:
-                    </p>
-                    <ul>
-                        <li><strong>Free Tier:</strong> 100 requests per day, 10 requests per minute</li>
-                        <li><strong>Basic Tier:</strong> 1,000 requests per day, 50 requests per minute</li>
-                        <li><strong>Pro Tier:</strong> 10,000 requests per day, 200 requests per minute</li>
-                        <li><strong>Enterprise:</strong> Custom limits based on agreement</li>
-                    </ul>
+            <!-- Results (hidden initially) -->
+            <div id="results-area" style="display:none">
+                <!-- Summary strip -->
+                <div class="docs-card summary-strip" id="summary-strip">
+                    <div class="gauge-wrap">
+                        <canvas id="risk-gauge"></canvas>
+                        <div class="gauge-label"><span id="gauge-num">0</span><small>RISK</small></div>
+                    </div>
+                    <div class="mini-bars">
+                        <div class="mini-bar"><span>Lexicon</span><div class="mini-bar-track"><div class="mini-bar-fill" id="bar-lex" style="width:0;background:#6C63FF"></div></div><span id="val-lex">0</span></div>
+                        <div class="mini-bar"><span>Causal</span><div class="mini-bar-track"><div class="mini-bar-fill" id="bar-caus" style="width:0;background:#00C2A8"></div></div><span id="val-caus">0</span></div>
+                        <div class="mini-bar"><span>Bias</span><div class="mini-bar-track"><div class="mini-bar-fill" id="bar-bias" style="width:0;background:#f97316"></div></div><span id="val-bias">0</span></div>
+                    </div>
+                    <button class="btn btn-primary" id="dl-report" style="padding:.5rem 1rem;font-size:.8rem"><i data-feather="download" style="width:14px;height:14px;margin-right:.25rem"></i>Report</button>
+                </div>
 
-                    <h3 class="subsection-title">Best Practices</h3>
-                    <ul>
-                        <li><strong>Batch Processing:</strong> Combine multiple texts when possible to reduce API calls</li>
-                        <li><strong>Caching:</strong> Cache results for identical text inputs to avoid redundant analysis</li>
-                        <li><strong>Error Handling:</strong> Implement exponential backoff for rate limit errors</li>
-                        <li><strong>Language Detection:</strong> Pre-detect language to optimize processing</li>
-                        <li><strong>Text Preprocessing:</strong> Clean and normalize text before sending to API</li>
-                    </ul>
+                <!-- Tabs -->
+                <div class="docs-card">
+                    <div class="result-tabs" role="tablist">
+                        <button class="tab-btn active" data-tab="viewer" role="tab">Live Text</button>
+                        <button class="tab-btn" data-tab="lexicon" role="tab">Lexicon</button>
+                        <button class="tab-btn" data-tab="causal" role="tab">Causal Graph</button>
+                        <button class="tab-btn" data-tab="bias" role="tab">Bias Radar</button>
+                        <button class="tab-btn" data-tab="inspector" role="tab">Inspector</button>
+                        <button class="tab-btn" data-tab="export" role="tab">Export</button>
+                    </div>
 
-                    <h3 class="subsection-title">Error Handling Example</h3>
-                    <pre><code class="language-javascript">async function analyzeWithRetry(text, maxRetries = 3) {
-  for (let i = 0; i < maxRetries; i++) {
-    try {
-      const response = await fetch('https://api.justify-ai.com/v1/analyze', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer YOUR_API_KEY'
-        },
-        body: JSON.stringify({ text, language: 'en' })
-      });
+                    <!-- Tab: Live Text Viewer -->
+                    <div class="tab-panel active" id="panel-viewer">
+                        <div class="text-viewer" id="text-viewer"></div>
+                    </div>
 
-      if (response.status === 429) {
-        // Rate limit hit, wait and retry
-        const retryAfter = response.headers.get('Retry-After') || Math.pow(2, i);
-        await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
-        continue;
-      }
+                    <!-- Tab: Lexicon -->
+                    <div class="tab-panel" id="panel-lexicon">
+                        <div style="margin-bottom:.75rem;display:flex;gap:.5rem">
+                            <input type="text" id="lex-search" placeholder="Search terms…" style="flex:1;padding:.5rem .75rem;border-radius:.5rem;border:1px solid var(--color-border);background:var(--color-bg-primary);color:var(--color-text-primary);font-size:.8rem">
+                            <select id="lex-sort" style="padding:.5rem;border-radius:.5rem;border:1px solid var(--color-border);background:var(--color-bg-primary);color:var(--color-text-primary);font-size:.8rem">
+                                <option value="severity">Sort: Severity</option>
+                                <option value="freq">Sort: Frequency</option>
+                                <option value="alpha">Sort: A-Z</option>
+                            </select>
+                        </div>
+                        <div style="overflow-x:auto"><table class="lex-table" id="lex-table"><thead><tr><th>Term</th><th>Severity</th><th>PMI</th><th>Freq</th><th>Context</th><th>Action</th></tr></thead><tbody></tbody></table></div>
+                    </div>
 
-      if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
-      }
+                    <!-- Tab: Causal Graph -->
+                    <div class="tab-panel" id="panel-causal">
+                        <div class="graph-controls">
+                            <label>Confidence ≥</label>
+                            <input type="range" min="0" max="1" step="0.1" value="0.3" id="graph-conf">
+                            <span id="graph-conf-val">0.3</span>
+                            <button class="sample-btn" id="export-graph-btn">Export PNG</button>
+                        </div>
+                        <div id="causal-graph-cy"></div>
+                    </div>
 
-      return await response.json();
-    } catch (error) {
-      if (i === maxRetries - 1) throw error;
-    }
-  }
-}</code></pre>
+                    <!-- Tab: Bias Radar -->
+                    <div class="tab-panel" id="panel-bias">
+                        <div class="bias-chart-wrap">
+                            <canvas id="bias-radar"></canvas>
+                            <div class="bias-details" id="bias-details"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Sentence Inspector -->
+                    <div class="tab-panel" id="panel-inspector">
+                        <div class="sentence-list" id="sentence-list"></div>
+                    </div>
+
+                    <!-- Tab: Export -->
+                    <div class="tab-panel" id="panel-export">
+                        <div class="export-grid">
+                            <div class="export-card" id="exp-json"><i data-feather="file-text"></i><h4>JSON</h4><p>Raw analysis data</p></div>
+                            <div class="export-card" id="exp-csv"><i data-feather="table"></i><h4>CSV</h4><p>Tabular lexicon data</p></div>
+                            <div class="export-card" id="exp-pdf"><i data-feather="file"></i><h4>PDF Report</h4><p>Full formatted report</p></div>
+                            <div class="export-card" id="exp-graph"><i data-feather="share-2"></i><h4>Graph PNG</h4><p>Causal graph image</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
+
+    <!-- Progress overlay -->
+    <div class="progress-overlay" id="progress-overlay">
+        <div class="progress-box">
+            <div class="progress-spinner"></div>
+            <div class="progress-msg" id="progress-msg">Initializing…</div>
+            <div class="progress-sub" id="progress-sub">Please wait</div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <!-- Footer Grid -->
             <div class="footer-grid">
-                <!-- Branding Column -->
                 <div class="footer-column footer-branding">
                     <h3 class="footer-logo">Justify.AI</h3>
                     <p class="footer-tagline">Explainable NLP for Hate Speech Analysis</p>
-                    <p class="footer-description">
-                        Advanced multilingual hate speech detection with transparent, 
-                        explainable AI insights across lexical, causal, and bias dimensions.
-                    </p>
+                    <p class="footer-description">Advanced multilingual hate speech detection with transparent, explainable AI insights across lexical, causal, and bias dimensions.</p>
                 </div>
-
-                <!-- Platform Links Column -->
-                <div class="footer-column">
-                    <h4 class="footer-column-title">Platform</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="demo.html" class="footer-link">Demo</a></li>
-                        <li><a href="research.html" class="footer-link">Research</a></li>
-                        <li><a href="docs.html" class="footer-link">Documentation</a></li>
-                    </ul>
-                </div>
-
-                <!-- Resources Links Column -->
-                <div class="footer-column">
-                    <h4 class="footer-column-title">Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html" class="footer-link">About</a></li>
-                        <li><a href="https://github.com" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                        <li><a href="docs.html#api" class="footer-link">API Reference</a></li>
-                        <li><a href="research.html#datasets" class="footer-link">Datasets</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info Column -->
-                <div class="footer-column">
-                    <h4 class="footer-column-title">Contact</h4>
-                    <ul class="footer-links">
-                        <li>
-                            <span class="footer-contact-label">Email:</span>
-                            <a href="mailto:contact@justify-ai.com" class="footer-link">contact@justify-ai.com</a>
-                        </li>
-                        <li>
-                            <span class="footer-contact-label">Institution:</span>
-                            <span class="footer-contact-text">Research University</span>
-                        </li>
-                    </ul>
-                </div>
+                <div class="footer-column"><h4 class="footer-column-title">Platform</h4><ul class="footer-links"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="demo.html" class="footer-link">Demo</a></li><li><a href="research.html" class="footer-link">Research</a></li><li><a href="docs.html" class="footer-link">Documentation</a></li></ul></div>
+                <div class="footer-column"><h4 class="footer-column-title">Resources</h4><ul class="footer-links"><li><a href="about.html" class="footer-link">About</a></li><li><a href="https://github.com" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li><li><a href="docs.html#api" class="footer-link">API Reference</a></li><li><a href="research.html#datasets" class="footer-link">Datasets</a></li></ul></div>
+                <div class="footer-column"><h4 class="footer-column-title">Contact</h4><ul class="footer-links"><li><span class="footer-contact-label">Email:</span> <a href="mailto:contact@justify-ai.com" class="footer-link">contact@justify-ai.com</a></li><li><span class="footer-contact-label">Institution:</span> <span class="footer-contact-text">Research University</span></li></ul></div>
             </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2026 Justify.AI. All rights reserved.
-                </p>
-                <div class="footer-bottom-links">
-                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
-                    <a href="#" class="footer-bottom-link">Terms of Service</a>
-                </div>
-            </div>
+            <div class="footer-bottom"><p class="footer-copyright">&copy; 2026 Justify.AI. All rights reserved.</p><div class="footer-bottom-links"><a href="#" class="footer-bottom-link">Privacy Policy</a> <a href="#" class="footer-bottom-link">Terms of Service</a></div></div>
         </div>
     </footer>
 
-    <!-- AOS Library (deferred for performance) -->
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    
-    <!-- Prism.js for Syntax Highlighting -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" defer></script>
-    
-    <!-- Custom Scripts (deferred for performance) -->
+    <!-- Site scripts -->
     <script src="js/theme.js" defer></script>
     <script src="js/app.js" defer></script>
+    <!-- Page-specific logic -->
+    <script src="js/docs-tool.js" defer></script>
 </body>
 </html>
