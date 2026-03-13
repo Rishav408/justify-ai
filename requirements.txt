@@ -43,3 +43,16 @@ pytest-cov==4.1.0
 python-logging==0.5.1.2
 ipython==8.14.0
 jupyter==1.0.0
+
+
+spacy
+fastapi
+uvicorn
+gensim
+scikit-learn
+nltk
+langdetect
+numpy
+pandas
+networkx
+plotly

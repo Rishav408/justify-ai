@@ -329,7 +329,32 @@
 
     await runProgress();
 
+    // Fetch from backend API
+    let backendData = null;
+    try {
+      const res = await fetch('http://127.0.0.1:8000/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: text })
+      });
+      if (res.ok) {
+        backendData = await res.json();
+        console.log("Successfully connected to backend API!", backendData);
+        // Overwrite the quick stats using the actual python backend logic response:
+        if (backendData.tokens) {
+           document.getElementById('qs-tokens').textContent = backendData.tokens.length;
+           document.getElementById('qs-sentences').innerHTML = `<span style="color:#22c55e">API Connected</span>`;
+           document.getElementById('qs-candidates').innerHTML = `<span style="color:#6C63FF">${backendData.pos_tags ? backendData.pos_tags.length : 0} tags</span>`;
+        }
+      } else {
+        console.error("Backend API returned error:", res.status, res.statusText);
+      }
+    } catch (err) {
+      console.error("Failed to connect to backend API.", err);
+    }
+
     const results = generateMockResults(text);
+
     emptyState.style.display = 'none';
     resultsArea.style.display = 'block';
 
