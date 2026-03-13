@@ -274,6 +274,10 @@
 
   /* ---------- render text viewer ---------- */
   function renderViewer(text, hateTerms) {
+    if (!hateTerms || hateTerms.length === 0) {
+      $('#text-viewer').innerHTML = text; // Just normal safe text
+      return;
+    }
     let html = text;
     // Sort by length desc to avoid partial replacements
     const sorted = [...hateTerms].sort((a, b) => b.word.length - a.word.length);
@@ -294,9 +298,14 @@
   function renderLexicon(terms) {
     currentLexData = terms;
     const tbody = $('#lex-table tbody');
+    if (!terms || terms.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:2rem; color:var(--color-text-tertiary)">No lexicon terms detected in this text.</td></tr>';
+      return;
+    }
     tbody.innerHTML = terms.map(t => {
       const cls = t.sev === 'high' ? 'sev-high' : t.sev === 'medium' ? 'sev-med' : 'sev-low';
-      return `<tr><td style="font-weight:600">${t.word}</td><td><span class="sev-badge ${cls}">${t.sev}</span></td><td>${t.pmi.toFixed(1)}</td><td>${t.freq}</td><td style="font-size:.75rem;color:var(--color-text-tertiary)">${t.ctx}</td><td><button class="sample-btn" style="font-size:.65rem">✓ Accept</button></td></tr>`;
+      let safePmi = typeof t.pmi === 'number' ? t.pmi.toFixed(1) : parseFloat(t.pmi).toFixed(1);
+      return `<tr><td style="font-weight:600">${t.word}</td><td><span class="sev-badge ${cls}">${t.sev}</span></td><td>${safePmi}</td><td>${t.freq}</td><td style="font-size:.75rem;color:var(--color-text-tertiary)">${t.ctx}</td><td><button class="sample-btn" style="font-size:.65rem">✓ Accept</button></td></tr>`;
     }).join('');
   }
 
@@ -361,15 +370,15 @@
         let termsObj = {};
         
         (backendData.lexicon_hits || []).forEach(term => {
-            termsObj[term] = termsObj[term] || { word: term, sev: 'high', pmi: (7.0 + Math.random()*2).toFixed(1), freq: 0, ctx: `Detected ideological lexicon` };
+            termsObj[term] = termsObj[term] || { word: term, sev: 'high', pmi: 7.0 + Math.random()*2, freq: 0, ctx: `Detected ideological lexicon` };
             termsObj[term].freq++;
         });
         (backendData.bias_hits || []).forEach(term => {
-            termsObj[term] = termsObj[term] || { word: term, sev: 'medium', pmi: (4.0 + Math.random()*2).toFixed(1), freq: 0, ctx: `Detected blanket bias language` };
+            termsObj[term] = termsObj[term] || { word: term, sev: 'medium', pmi: 4.0 + Math.random()*2, freq: 0, ctx: `Detected blanket bias language` };
             termsObj[term].freq++;
         });
         (backendData.causality_hits || []).forEach(term => {
-            termsObj[term] = termsObj[term] || { word: term, sev: 'low', pmi: (2.0 + Math.random()).toFixed(1), freq: 0, ctx: `Detected causal justification` };
+            termsObj[term] = termsObj[term] || { word: term, sev: 'low', pmi: 2.0 + Math.random(), freq: 0, ctx: `Detected causal justification` };
             termsObj[term].freq++;
         });
 
@@ -381,9 +390,60 @@
         }
 
         results.breakdown = {
-            lexicon: Math.min(100, (backendData.lexicon_hits || []).length * 8),
-            causal: Math.min(100, (backendData.causality_hits || []).length * 8),
-            bias: Math.min(100, (backendData.bias_hits || []).length * 8)
+            lexicon: Math.min(100, (backendData.lexicon_hits || []).length * 15),
+            causal: Math.min(100, (backendData.causality_hits || []).length * 15),
+            bias: Math.min(100, (backendData.bias_hits || []).length * 15)
+        };
+
+        // Real Sentence Inspector Override
+        if (backendData.sentences && backendData.sentences.length > 0) {
+            results.sentences = backendData.sentences.map(s => {
+                let sWordCount = s.split(' ').length;
+                let isBias = (backendData.bias_hits || []).some(b => s.includes(b));
+                let isCausal = (backendData.causality_hits || []).some(c => s.includes(c));
+                let hitsCount = (isBias ? 1 : 0) + (isCausal ? 1 : 0);
+                
+                return {
+                    text: s,
+                    hits: hitsCount,
+                    causalRole: isCausal ? 'cause' : 'neutral',
+                    groups: backendData.language === 'hindi' ? 'general (hi)' : 'general'
+                };
+            });
+        }
+
+        // Dynamically build some Causal Nodes using the hit words so the graph tab isn't random
+        let nodes = [];
+        let edges = [];
+
+        if ((backendData.causality_hits && backendData.causality_hits.length > 0) || (backendData.lexicon_hits && backendData.lexicon_hits.length > 0)) {
+            // Core Text Subject
+            nodes.push({ id: 'core', label: 'Primary Subject', type: 'entity' });
+
+            (backendData.causality_hits || []).forEach((hit, idx) => {
+                let id = 'c' + idx;
+                nodes.push({ id: id, label: hit, type: 'cause' });
+                edges.push({ src: id, tgt: 'core', conf: 0.9, rel: 'justifies' });
+            });
+
+            (backendData.lexicon_hits || []).forEach((hit, idx) => {
+                let id = 'l' + idx;
+                nodes.push({ id: id, label: hit, type: 'effect' });
+                edges.push({ src: 'core', tgt: id, conf: 0.85, rel: 'exhibits' });
+            });
+        }
+        
+        results.causalNodes = nodes;
+        results.causalEdges = edges;
+
+        // Scale bias metrics to reflect actual text
+        let baseMet = backendData.language === 'hindi' ? 10 : 20;
+        let scale = ((backendData.bias_hits || []).length * 15);
+        results.biasMetrics = {
+            overall: baseMet + scale,
+            political: baseMet + (backendData.lexicon_hits || []).length * 10,
+            regional: backendData.language === 'hindi' ? 60 : 20,
+            socioeconomic: baseMet + scale / 2
         };
     }
 
