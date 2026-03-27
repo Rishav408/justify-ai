@@ -1,45 +1,7 @@
-# Core NLP Libraries
 nltk==3.8.1
-spacy==3.5.0
-gensim==4.3.1
-
-# Indian Language Support  (HuggingFace Transformers approach)
-transformers
-torch
-sentencepiece
-
-# Data Processing
-numpy==1.24.3
-pandas==2.0.3
 scikit-learn==1.3.0
-
-# Embedding & Analysis
-# word2vec==1.0  # removed – using HuggingFace instead
-
-# Visualization
-plotly==5.14.0
-matplotlib==3.7.2
-
-# API & Web
+SpeechRecognition==3.10.0
+gTTS==2.3.2
 fastapi==0.100.0
 uvicorn==0.23.1
-
-# Language Detection
-langdetect
-
-# Database
-# sqlite3 (built-in)
-
-# Utilities
-pyyaml==6.0
-python-dotenv==1.0.0
-requests==2.31.0
-networkx
-
-# Testing
-pytest==7.4.0
-pytest-cov==4.1.0
-
-# Logging & Development
-ipython==8.14.0
-jupyter==1.0.0
+python-multipart==0.0.6

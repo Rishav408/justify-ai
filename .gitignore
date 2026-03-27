@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Packages
+.Python
+env/
+venv/
+ENV/
+.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Project specific
+logs/
+output/
+downloads/
