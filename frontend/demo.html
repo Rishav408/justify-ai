@@ -3,193 +3,375 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Justify.AI Analysis Tool - Interactive hate speech analysis across multiple languages">
+    <meta name="description" content="Justify.AI live demo for multilingual hate speech analysis">
     <title>Demo - Justify.AI</title>
 
-    <!-- Fonts: Inter + Noto Sans Devanagari -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 
-    <!-- Cytoscape.js -->
-    <script src="https://cdn.jsdelivr.net/npm/cytoscape@3/dist/cytoscape.min.js"></script>
-
-    <!-- Tippy.js -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css">
-
-    <!-- jsPDF + html2canvas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-    <!-- Feather Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
-
-    <!-- Site Styles -->
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-    /* ===== DOCS TOOL PAGE ===== */
-    .docs-hero{padding:2.5rem 2rem 1.5rem;background:linear-gradient(135deg,rgba(108,99,255,.06),rgba(0,194,168,.06));border-bottom:1px solid var(--color-border);text-align:center}
-    [data-theme="dark"] .docs-hero{background:linear-gradient(135deg,rgba(108,99,255,.12),rgba(0,194,168,.08))}
-    .docs-hero h1{font-size:2.25rem;font-weight:800;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem}
-    .docs-hero p{color:var(--color-text-secondary);font-size:1rem;max-width:600px;margin:0 auto .75rem}
-    .hero-controls{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;align-items:center}
-    .hero-controls select{padding:.5rem 1rem;border-radius:.5rem;border:1px solid var(--color-border);background:var(--color-bg-secondary);color:var(--color-text-primary);font-size:.875rem;cursor:pointer}
-    .sample-btn{padding:.375rem .75rem;border-radius:2rem;border:1px solid var(--color-border);background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:.75rem;cursor:pointer;transition:all .2s}
-    .sample-btn:hover{border-color:var(--color-secondary);color:var(--color-secondary);transform:scale(1.02)}
+    .demo-shell {
+        min-height: 100vh;
+        background:
+            radial-gradient(circle at 12% 18%, rgba(108, 99, 255, 0.14), transparent 26%),
+            radial-gradient(circle at 90% 0%, rgba(0, 194, 168, 0.16), transparent 34%),
+            var(--color-bg-primary);
+        padding-top: 94px;
+    }
 
-    /* Main layout */
-    .docs-main{max-width:1400px;margin:0 auto;padding:1.5rem 2rem 3rem;display:grid;grid-template-columns:2fr 3fr;gap:1.5rem;min-height:calc(100vh - 260px)}
-    @media(max-width:1024px){.docs-main{grid-template-columns:1fr;gap:1rem}}
+    .demo-container {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3.5rem;
+    }
 
-    /* Cards */
-    .docs-card{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:1rem;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-    [data-theme="dark"] .docs-card{box-shadow:0 2px 12px rgba(0,0,0,.2)}
+    .demo-hero {
+        display: grid;
+        gap: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
 
-    /* Input panel */
-    .input-section label{display:block;font-weight:600;font-size:.875rem;margin-bottom:.375rem;color:var(--color-text-primary)}
-    .input-section .helper{font-size:.75rem;color:var(--color-text-tertiary);margin-top:.25rem}
-    .input-section select,.input-section textarea{width:100%;padding:.625rem .875rem;border-radius:.5rem;border:1px solid var(--color-border);background:var(--color-bg-primary);color:var(--color-text-primary);font-family:'Inter',sans-serif;font-size:.9rem;transition:border-color .2s}
-    .input-section select:focus,.input-section textarea:focus{outline:none;border-color:var(--color-secondary);box-shadow:0 0 0 3px rgba(108,99,255,.15)}
-    .input-section textarea{resize:vertical;min-height:240px}
-    .input-section textarea.invalid{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.15)}
+    .demo-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        width: fit-content;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: color-mix(in srgb, var(--color-bg-secondary) 88%, var(--color-secondary) 12%);
+        font-size: 0.78rem;
+        color: var(--color-text-secondary);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
 
-    /* File upload */
-    .file-drop{border:2px dashed var(--color-border);border-radius:.75rem;padding:1.25rem;text-align:center;color:var(--color-text-tertiary);cursor:pointer;transition:all .2s;font-size:.85rem}
-    .file-drop:hover,.file-drop.dragover{border-color:var(--color-secondary);background:rgba(108,99,255,.04);color:var(--color-secondary)}
-    .file-drop input{display:none}
+    .demo-hero h1 {
+        margin: 0;
+        font-size: clamp(1.65rem, 3.2vw, 2.55rem);
+        line-height: 1.15;
+        color: var(--color-text-primary);
+    }
 
-    /* Presets */
-    .preset-row{display:flex;gap:.5rem;flex-wrap:wrap}
+    .demo-hero p {
+        margin: 0;
+        max-width: 740px;
+        color: var(--color-text-secondary);
+    }
 
-    /* Advanced toggle */
-    .advanced-toggle{display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.85rem;font-weight:600;color:var(--color-text-secondary);padding:.5rem 0;border:none;background:none;width:100%;text-align:left}
-    .advanced-toggle svg{width:16px;height:16px;transition:transform .2s}
-    .advanced-toggle.open svg{transform:rotate(90deg)}
-    .advanced-panel{display:none;padding:.75rem 0;gap:.75rem}
-    .advanced-panel.open{display:grid}
-    .advanced-panel label{font-size:.8rem}
-    .advanced-panel input[type=range]{width:100%;accent-color:var(--color-secondary)}
-    .range-val{font-size:.75rem;color:var(--color-text-tertiary);text-align:right}
+    .demo-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1.15fr 1fr;
+        margin-bottom: 1rem;
+    }
 
-    /* Quick stats */
-    .quick-stats{display:flex;gap:1rem;padding:.5rem 0;font-size:.75rem;color:var(--color-text-tertiary)}
-    .quick-stats span{display:flex;align-items:center;gap:.25rem}
+    .demo-card {
+        border-radius: 1rem;
+        border: 1px solid color-mix(in srgb, var(--color-border) 82%, var(--color-secondary) 18%);
+        background: color-mix(in srgb, var(--color-bg-secondary) 96%, var(--color-primary) 4%);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+        padding: 1.15rem;
+    }
 
-    /* Action buttons */
-    .action-row{display:flex;gap:.75rem;margin-top:.25rem}
-    .action-row .btn{flex:1;text-align:center;justify-content:center;font-size:.95rem;padding:.75rem 1rem}
+    .card-title {
+        margin: 0 0 0.9rem;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--color-text-primary);
+    }
 
-    /* Privacy banner */
-    .privacy-banner{display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;border-radius:.5rem;background:rgba(0,194,168,.08);color:var(--color-text-secondary);font-size:.7rem;margin-top:.5rem}
-    .privacy-banner svg{flex-shrink:0;width:14px;height:14px}
+    .input-textarea {
+        width: 100%;
+        min-height: 230px;
+        border-radius: 0.9rem;
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-primary);
+        color: var(--color-text-primary);
+        padding: 0.95rem 1rem;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        resize: vertical;
+        transition: border-color 0.22s ease, box-shadow 0.22s ease;
+    }
 
-    /* ===== RESULTS PANEL ===== */
-    .results-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:400px;gap:1rem;color:var(--color-text-tertiary);text-align:center}
-    .results-empty svg{width:64px;height:64px;opacity:.3}
+    .input-textarea:focus {
+        outline: none;
+        border-color: var(--color-secondary);
+        box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.17);
+    }
 
-    /* Summary strip */
-    .summary-strip{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1rem 1.25rem;margin-bottom:1rem;border-radius:.75rem;background:var(--color-bg-primary);border:1px solid var(--color-border)}
-    .gauge-wrap{position:relative;width:80px;height:80px}
-    .gauge-wrap canvas{width:80px!important;height:80px!important}
-    .gauge-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;line-height:1;color:var(--color-text-primary)}
-    .gauge-label small{font-size:.6rem;font-weight:500;color:var(--color-text-tertiary)}
-    .mini-bars{display:flex;gap:1rem;font-size:.75rem;align-items:center}
-    .mini-bar{display:flex;flex-direction:column;gap:.25rem;align-items:center}
-    .mini-bar-track{width:60px;height:6px;border-radius:3px;background:var(--color-bg-tertiary);overflow:hidden}
-    .mini-bar-fill{height:100%;border-radius:3px;transition:width .6s ease}
+    .control-row {
+        margin-top: 0.85rem;
+        display: flex;
+        gap: 0.65rem;
+        flex-wrap: wrap;
+    }
 
-    /* Tabs */
-    .result-tabs{display:flex;gap:.25rem;border-bottom:2px solid var(--color-border);padding-bottom:0;margin-bottom:1rem;overflow-x:auto}
-    .tab-btn{padding:.625rem 1rem;border:none;background:none;font-size:.8rem;font-weight:600;color:var(--color-text-tertiary);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s}
-    .tab-btn:hover{color:var(--color-text-primary)}
-    .tab-btn.active{color:var(--color-secondary);border-bottom-color:var(--color-secondary)}
-    .tab-panel{display:none}
-    .tab-panel.active{display:block}
+    .language-select {
+        min-width: 170px;
+        border-radius: 0.7rem;
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-primary);
+        color: var(--color-text-primary);
+        padding: 0.62rem 0.72rem;
+        font-size: 0.9rem;
+    }
 
-    /* Live text viewer */
-    .text-viewer{line-height:1.8;font-size:.95rem;padding:1rem;border-radius:.5rem;background:var(--color-bg-primary);border:1px solid var(--color-border);max-height:400px;overflow-y:auto}
-    .text-viewer mark{padding:.125rem .25rem;border-radius:.25rem;cursor:pointer;position:relative}
-    .text-viewer mark.severe{background:rgba(239,68,68,.2);border-bottom:2px solid #ef4444}
-    .text-viewer mark.moderate{background:rgba(249,115,22,.2);border-bottom:2px solid #f97316}
-    .text-viewer mark.mild{background:rgba(234,179,8,.2);border-bottom:2px solid #eab308}
+    .analyze-btn {
+        border: none;
+        border-radius: 0.7rem;
+        padding: 0.62rem 1.35rem;
+        font-weight: 700;
+        font-size: 0.92rem;
+        color: #ffffff;
+        background: linear-gradient(135deg, var(--color-secondary), #4f46e5);
+        cursor: pointer;
+        box-shadow: 0 12px 22px rgba(79, 70, 229, 0.28);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
 
-    /* Lexicon table */
-    .lex-table{width:100%;border-collapse:collapse;font-size:.8rem}
-    .lex-table th{text-align:left;padding:.625rem .5rem;border-bottom:2px solid var(--color-border);font-weight:700;color:var(--color-text-secondary);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em}
-    .lex-table td{padding:.5rem;border-bottom:1px solid var(--color-border);color:var(--color-text-primary)}
-    .sev-badge{padding:.125rem .5rem;border-radius:2rem;font-size:.7rem;font-weight:600}
-    .sev-high{background:rgba(239,68,68,.15);color:#ef4444}
-    .sev-med{background:rgba(249,115,22,.15);color:#f97316}
-    .sev-low{background:rgba(234,179,8,.15);color:#ca8a04}
+    .analyze-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(79, 70, 229, 0.33);
+    }
 
-    /* Graph container */
-    #causal-graph-cy{width:100%;height:380px;border-radius:.5rem;border:1px solid var(--color-border);background:var(--color-bg-primary)}
-    .graph-controls{display:flex;gap:.75rem;align-items:center;margin-bottom:.75rem;font-size:.8rem}
-    .graph-controls label{color:var(--color-text-secondary)}
-    .graph-controls input[type=range]{width:120px;accent-color:var(--color-secondary)}
+    .status-note {
+        margin-top: 0.75rem;
+        font-size: 0.84rem;
+        color: var(--color-text-tertiary);
+    }
 
-    /* Bias radar */
-    .bias-chart-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
-    .bias-chart-wrap canvas{max-height:280px}
-    .bias-details{font-size:.8rem}
-    .bias-item{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--color-border)}
-    .bias-item:last-child{border:none}
-    @media(max-width:640px){.bias-chart-wrap{grid-template-columns:1fr}}
+    .result-card {
+        display: none;
+        gap: 0.85rem;
+    }
 
-    /* Sentence inspector */
-    .sentence-list{max-height:380px;overflow-y:auto}
-    .sentence-card{padding:.75rem;border-radius:.5rem;border:1px solid var(--color-border);margin-bottom:.5rem;font-size:.85rem;transition:border-color .2s}
-    .sentence-card:hover{border-color:var(--color-secondary)}
-    .sentence-meta{display:flex;gap:.75rem;margin-top:.375rem;font-size:.7rem;color:var(--color-text-tertiary)}
+    .result-card.active {
+        display: grid;
+        animation: riseIn 0.25s ease;
+    }
 
-    /* Export panel */
-    .export-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}
-    .export-card{padding:1rem;border-radius:.75rem;border:1px solid var(--color-border);text-align:center;cursor:pointer;transition:all .2s}
-    .export-card:hover{border-color:var(--color-secondary);transform:translateY(-2px);box-shadow:0 4px 12px rgba(108,99,255,.15)}
-    .export-card svg{margin:0 auto .5rem;width:28px;height:28px;color:var(--color-secondary)}
-    .export-card h4{font-size:.85rem;font-weight:600;margin-bottom:.25rem}
-    .export-card p{font-size:.7rem;color:var(--color-text-tertiary)}
+    @keyframes riseIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-    /* Progress overlay */
-    .progress-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center}
-    .progress-overlay.active{display:flex}
-    .progress-box{background:var(--color-bg-secondary);border-radius:1rem;padding:2.5rem;text-align:center;min-width:320px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-    .progress-spinner{width:48px;height:48px;border:4px solid var(--color-border);border-top-color:var(--color-secondary);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 1rem}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .progress-msg{font-size:1rem;font-weight:600;color:var(--color-text-primary)}
-    .progress-sub{font-size:.8rem;color:var(--color-text-tertiary);margin-top:.25rem}
+    .row-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
 
-    /* Mobile */
-    @media(max-width:768px){
-      .docs-hero h1{font-size:1.75rem}
-      .docs-main{padding:1rem}
-      .summary-strip{grid-template-columns:1fr;text-align:center}
-      .mini-bars{justify-content:center}
+    .primary-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        padding: 0.42rem 0.95rem;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    .label-hate { background: rgba(239, 68, 68, 0.12); color: #b91c1c; border-color: rgba(239, 68, 68, 0.4); }
+    .label-offensive { background: rgba(249, 115, 22, 0.12); color: #c2410c; border-color: rgba(249, 115, 22, 0.4); }
+    .label-health_issue { background: rgba(59, 130, 246, 0.12); color: #1d4ed8; border-color: rgba(59, 130, 246, 0.42); }
+    .label-non_hate { background: rgba(34, 197, 94, 0.12); color: #15803d; border-color: rgba(34, 197, 94, 0.4); }
+
+    .metric-wrap {
+        min-width: 200px;
+        display: grid;
+        gap: 0.35rem;
+        font-size: 0.82rem;
+        color: var(--color-text-secondary);
+    }
+
+    .confidence-track {
+        width: 100%;
+        height: 11px;
+        border-radius: 999px;
+        background: var(--color-bg-tertiary);
+        overflow: hidden;
+    }
+
+    .confidence-fill {
+        height: 100%;
+        width: 0%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+        transition: width 0.35s ease;
+    }
+
+    .severity-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        border-radius: 999px;
+        padding: 0.34rem 0.78rem;
+        font-size: 0.74rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .sev-none { background: rgba(34, 197, 94, 0.12); color: #15803d; }
+    .sev-mild { background: rgba(250, 204, 21, 0.2); color: #a16207; }
+    .sev-moderate { background: rgba(249, 115, 22, 0.18); color: #c2410c; }
+    .sev-severe { background: rgba(239, 68, 68, 0.15); color: #b91c1c; }
+
+    .metadata-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.65rem;
+    }
+
+    .meta-card {
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-primary);
+        border-radius: 0.72rem;
+        padding: 0.68rem 0.72rem;
+        display: grid;
+        gap: 0.26rem;
+    }
+
+    .meta-label {
+        margin: 0;
+        font-size: 0.66rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--color-text-tertiary);
+    }
+
+    .meta-value {
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--color-text-primary);
+    }
+
+    .context-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .ctx-pill {
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-primary);
+        padding: 0.35rem 0.8rem;
+        font-size: 0.78rem;
+        color: var(--color-text-secondary);
+    }
+
+    .analytics-card {
+        margin-top: 1.1rem;
+    }
+
+    .analytics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+    }
+
+    .chart-box {
+        border-radius: 0.85rem;
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-primary);
+        padding: 0.82rem;
+    }
+
+    .chart-box h3 {
+        margin: 0 0 0.6rem;
+        font-size: 0.88rem;
+        color: var(--color-text-secondary);
+        font-weight: 700;
+    }
+
+    .heatmap {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.55rem;
+    }
+
+    .heat-cell {
+        border-radius: 0.72rem;
+        padding: 0.7rem;
+        border: 1px solid var(--color-border);
+        background: linear-gradient(145deg, rgba(108,99,255,.11), rgba(0,194,168,.12));
+        color: #111827;
+    }
+
+    .heat-cell h4 {
+        margin: 0;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .heat-cell p {
+        margin: 0.28rem 0 0;
+        font-size: 1.05rem;
+        font-weight: 800;
+    }
+
+    .cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        align-items: center;
+    }
+
+    .cloud span {
+        border-radius: 0.75rem;
+        background: rgba(108, 99, 255, 0.12);
+        color: #4338ca;
+        padding: 0.3rem 0.62rem;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    @media (max-width: 1024px) {
+        .demo-grid,
+        .analytics-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .metadata-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 560px) {
+        .metadata-grid,
+        .heatmap {
+            grid-template-columns: 1fr;
+        }
+
+        .demo-container {
+            padding: 1.25rem 0.9rem 2.4rem;
+        }
     }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-    <!-- Navbar -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <a href="index.html" class="nav-logo"><span class="logo-text">Justify.AI</span></a>
             <ul class="nav-links" id="nav-links" role="menubar" aria-label="Site navigation">
                 <li><a href="index.html" class="nav-link">Platform</a></li>
-                <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="demo.html" class="nav-link active">Demo</a></li>
                 <li><a href="research.html" class="nav-link">Research</a></li>
                 <li><a href="docs.html" class="nav-link">Docs</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
@@ -208,224 +390,93 @@
         </div>
     </nav>
 
-    <!-- Hero Strip -->
-    <section class="docs-hero" aria-label="Tool introduction">
-        <h1>Demo: Analysis Tool</h1>
-        <p>Paste text or upload a file to analyze hate narratives across lexical, causal, and bias dimensions.</p>
-        <div class="hero-controls">
-            <select id="hero-lang" aria-label="Quick language select">
-                <option value="en">🇬🇧 English</option>
-                <option value="hi">🇮🇳 Hindi</option>
-                <option value="bho">🇮🇳 Bhojpuri</option>
-                <option value="mr">🇮🇳 Marathi</option>
-                <option value="mwr">🇮🇳 Marwari</option>
-            </select>
-            <button class="sample-btn" data-sample="news">📰 News post</button>
-            <button class="sample-btn" data-sample="tweet">🐦 Tweet</button>
-            <button class="sample-btn" data-sample="reddit">💬 Reddit comment</button>
-            <button class="sample-btn" data-sample="demo">⚡ Demo mode</button>
-        </div>
-    </section>
+    <div class="demo-shell">
+        <main id="main-content" class="demo-container" tabindex="-1">
+            <section class="demo-hero">
+                <span class="demo-kicker">Interactive Project Demo</span>
+                <h1>Analyze text with schema-aware explainability</h1>
+                <p>Use the multilingual input below to simulate model output and see confidence, severity, metadata, and analytics in one flow.</p>
+            </section>
 
-    <main id="main-content" tabindex="-1" class="docs-main">
-        <!-- ===== LEFT: INPUT PANEL ===== -->
-        <div class="input-section">
-            <div class="docs-card" style="display:grid;gap:1rem">
-                <!-- Language -->
-                <div>
-                    <label for="doc-lang">Language</label>
-                    <select id="doc-lang">
-                        <option value="en">🇬🇧 English</option>
-                        <option value="hi">🇮🇳 Hindi (हिन्दी)</option>
-                        <option value="bho">🇮🇳 Bhojpuri (भोजपुरी)</option>
-                        <option value="mr">🇮🇳 Marathi (मराठी)</option>
-                        <option value="mwr">🇮🇳 Marwari (मारवाड़ी)</option>
-                    </select>
-                    <p class="helper">Select the primary language of your text</p>
-                </div>
-
-                <!-- Textarea -->
-                <div>
-                    <label for="doc-input">Text Input</label>
-                    <textarea id="doc-input" placeholder="Paste text here to analyze hate narratives…" rows="12"></textarea>
-                    <div id="input-validation" style="color:#ef4444;font-size:.75rem;margin-top:.25rem;display:none"></div>
-                    <p class="helper">Paste or type text for analysis — supports multilingual content</p>
-                </div>
-
-                <!-- Quick stats -->
-                <div class="quick-stats" id="quick-stats">
-                    <span><i data-feather="hash" style="width:12px;height:12px"></i> <b id="qs-tokens">0</b> tokens</span>
-                    <span><i data-feather="align-left" style="width:12px;height:12px"></i> <b id="qs-sentences">0</b> sentences</span>
-                    <span><i data-feather="alert-triangle" style="width:12px;height:12px"></i> <b id="qs-candidates">0</b> candidates</span>
-                </div>
-
-                <!-- File upload -->
-                <div>
-                    <label>File Upload</label>
-                    <div class="file-drop" id="file-drop">
-                        <i data-feather="upload-cloud" style="width:24px;height:24px;margin:0 auto .25rem;display:block"></i>
-                        Drag & drop or <u>browse</u> — .txt / .csv (5 MB max)
-                        <input type="file" id="file-input" accept=".txt,.csv">
+            <section class="demo-grid">
+                <article class="demo-card">
+                    <h2 class="card-title">Input Area</h2>
+                    <label class="sr-only" for="demo-text">Input text</label>
+                    <textarea id="demo-text" class="input-textarea" placeholder="Paste sentence(s) in English, Hindi, or Bhojpuri."></textarea>
+                    <div class="control-row">
+                        <select id="lang-select" class="language-select" aria-label="Language selector">
+                            <option value="auto">Auto-detect</option>
+                            <option value="hi">Hindi</option>
+                            <option value="bho">Bhojpuri</option>
+                            <option value="en">English</option>
+                        </select>
+                        <button id="analyze-btn" class="analyze-btn" type="button">Analyze</button>
                     </div>
-                </div>
+                    <p class="status-note" id="status-note">Run analysis to reveal label, confidence, metadata, and visual analytics.</p>
+                </article>
 
-                <!-- Presets -->
-                <div>
-                    <label>Quick Examples</label>
-                    <div class="preset-row">
-                        <button class="sample-btn" data-sample="news">📰 News</button>
-                        <button class="sample-btn" data-sample="tweet">🐦 Tweet</button>
-                        <button class="sample-btn" data-sample="reddit">💬 Reddit</button>
-                    </div>
-                </div>
+                <article class="demo-card">
+                    <h2 class="card-title">Output</h2>
+                    <div id="result-card" class="result-card" aria-live="polite">
+                        <div class="row-flex">
+                            <span id="primary-label" class="primary-label label-hate">HATE</span>
+                            <div class="metric-wrap">
+                                <span>Confidence: <strong id="confidence-value">0.00</strong></span>
+                                <div class="confidence-track"><div id="confidence-fill" class="confidence-fill"></div></div>
+                            </div>
+                        </div>
 
-                <!-- Advanced -->
-                <div>
-                    <button class="advanced-toggle" id="adv-toggle"><i data-feather="chevron-right" style="width:16px;height:16px"></i> Advanced Options</button>
-                    <div class="advanced-panel" id="adv-panel">
-                        <div>
-                            <label>Lexicon Sensitivity <span class="range-val" id="lex-sens-val">0.7</span></label>
-                            <input type="range" min="0" max="1" step="0.1" value="0.7" id="lex-sens">
+                        <div class="row-flex">
+                            <div>Severity: <span id="severity-pill" class="severity-pill sev-moderate">moderate</span></div>
+                            <div class="context-tags">
+                                <span class="ctx-pill" id="platform-pill">platform: social_media</span>
+                                <span class="ctx-pill" id="region-pill">region: urban_india</span>
+                            </div>
                         </div>
-                        <div>
-                            <label>Confidence Threshold <span class="range-val" id="conf-thresh-val">0.5</span></label>
-                            <input type="range" min="0" max="1" step="0.1" value="0.5" id="conf-thresh">
-                        </div>
-                        <div>
-                            <label>Analysis Depth</label>
-                            <select id="analysis-depth">
-                                <option value="standard">Standard</option>
-                                <option value="deep">Deep</option>
-                                <option value="comprehensive">Comprehensive</option>
-                            </select>
-                        </div>
-                        <div style="display:flex;align-items:center;gap:.5rem">
-                            <input type="checkbox" id="show-provenance" checked>
-                            <label for="show-provenance" style="margin:0">Show explainability provenance</label>
+
+                        <div class="metadata-grid">
+                            <div class="meta-card"><p class="meta-label">target_group</p><p class="meta-value" id="meta-target-group">religion</p></div>
+                            <div class="meta-card"><p class="meta-label">target_type</p><p class="meta-value" id="meta-target-type">community</p></div>
+                            <div class="meta-card"><p class="meta-label">tone</p><p class="meta-value" id="meta-tone">aggressive</p></div>
+                            <div class="meta-card"><p class="meta-label">emotion</p><p class="meta-value" id="meta-emotion">anger</p></div>
+                            <div class="meta-card"><p class="meta-label">directness</p><p class="meta-value" id="meta-directness">direct</p></div>
+                            <div class="meta-card"><p class="meta-label">profanity_count</p><p class="meta-value" id="meta-profanity">0</p></div>
+                            <div class="meta-card"><p class="meta-label">is_sarcasm</p><p class="meta-value" id="meta-sarcasm">no</p></div>
+                            <div class="meta-card"><p class="meta-label">is_implicit</p><p class="meta-value" id="meta-implicit">no</p></div>
                         </div>
                     </div>
-                </div>
+                </article>
+            </section>
 
-                <!-- Actions -->
-                <div class="action-row">
-                    <button class="btn btn-primary" id="analyze-btn"><i data-feather="play" style="width:16px;height:16px;margin-right:.375rem"></i>Analyze</button>
-                    <button class="btn btn-secondary" id="reset-btn"><i data-feather="rotate-ccw" style="width:16px;height:16px;margin-right:.375rem"></i>Reset</button>
-                </div>
-
-                <!-- Privacy -->
-                <div class="privacy-banner">
-                    <i data-feather="shield" style="width:14px;height:14px"></i>
-                    All analysis runs locally in your browser. No data is uploaded or stored.
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== RIGHT: RESULTS DASHBOARD ===== -->
-        <div class="results-section">
-            <!-- Empty state -->
-            <div class="docs-card" id="results-empty">
-                <div class="results-empty">
-                    <i data-feather="search" style="width:64px;height:64px"></i>
-                    <div>
-                        <h3 style="font-weight:700;font-size:1.1rem;margin-bottom:.25rem">Ready to Analyze</h3>
-                        <p style="font-size:.85rem">Enter text on the left and click <strong>Analyze</strong> to see results.<br><span style="font-size:.75rem;color:var(--color-text-tertiary)">Ctrl + Enter to quick-analyze</span></p>
+            <section class="demo-card analytics-card">
+                <h2 class="card-title">Analytics Dashboard</h2>
+                <div class="analytics-grid">
+                    <div class="chart-box">
+                        <h3>Label Distribution</h3>
+                        <canvas id="label-chart" height="190"></canvas>
                     </div>
-                </div>
-            </div>
-
-            <!-- Results (hidden initially) -->
-            <div id="results-area" style="display:none">
-                <!-- Summary strip -->
-                <div class="docs-card summary-strip" id="summary-strip">
-                    <div class="gauge-wrap">
-                        <canvas id="risk-gauge"></canvas>
-                        <div class="gauge-label"><span id="gauge-num">0</span><small>RISK</small></div>
+                    <div class="chart-box">
+                        <h3>Severity Breakdown</h3>
+                        <canvas id="severity-chart" height="190"></canvas>
                     </div>
-                    <div class="mini-bars">
-                        <div class="mini-bar"><span>Lexicon</span><div class="mini-bar-track"><div class="mini-bar-fill" id="bar-lex" style="width:0;background:#6C63FF"></div></div><span id="val-lex">0</span></div>
-                        <div class="mini-bar"><span>Causal</span><div class="mini-bar-track"><div class="mini-bar-fill" id="bar-caus" style="width:0;background:#00C2A8"></div></div><span id="val-caus">0</span></div>
-                        <div class="mini-bar"><span>Bias</span><div class="mini-bar-track"><div class="mini-bar-fill" id="bar-bias" style="width:0;background:#f97316"></div></div><span id="val-bias">0</span></div>
-                    </div>
-                    <button class="btn btn-primary" id="dl-report" style="padding:.5rem 1rem;font-size:.8rem"><i data-feather="download" style="width:14px;height:14px;margin-right:.25rem"></i>Report</button>
-                </div>
-
-                <!-- Tabs -->
-                <div class="docs-card">
-                    <div class="result-tabs" role="tablist">
-                        <button class="tab-btn active" data-tab="viewer" role="tab">Live Text</button>
-                        <button class="tab-btn" data-tab="lexicon" role="tab">Lexicon</button>
-                        <button class="tab-btn" data-tab="causal" role="tab">Causal Graph</button>
-                        <button class="tab-btn" data-tab="bias" role="tab">Bias Radar</button>
-                        <button class="tab-btn" data-tab="inspector" role="tab">Inspector</button>
-                        <button class="tab-btn" data-tab="export" role="tab">Export</button>
-                    </div>
-
-                    <!-- Tab: Live Text Viewer -->
-                    <div class="tab-panel active" id="panel-viewer">
-                        <div class="text-viewer" id="text-viewer"></div>
-                    </div>
-
-                    <!-- Tab: Lexicon -->
-                    <div class="tab-panel" id="panel-lexicon">
-                        <div style="margin-bottom:.75rem;display:flex;gap:.5rem">
-                            <input type="text" id="lex-search" placeholder="Search terms…" style="flex:1;padding:.5rem .75rem;border-radius:.5rem;border:1px solid var(--color-border);background:var(--color-bg-primary);color:var(--color-text-primary);font-size:.8rem">
-                            <select id="lex-sort" style="padding:.5rem;border-radius:.5rem;border:1px solid var(--color-border);background:var(--color-bg-primary);color:var(--color-text-primary);font-size:.8rem">
-                                <option value="severity">Sort: Severity</option>
-                                <option value="freq">Sort: Frequency</option>
-                                <option value="alpha">Sort: A-Z</option>
-                            </select>
-                        </div>
-                        <div style="overflow-x:auto"><table class="lex-table" id="lex-table"><thead><tr><th>Term</th><th>Severity</th><th>PMI</th><th>Freq</th><th>Context</th><th>Action</th></tr></thead><tbody></tbody></table></div>
-                    </div>
-
-                    <!-- Tab: Causal Graph -->
-                    <div class="tab-panel" id="panel-causal">
-                        <div class="graph-controls">
-                            <label>Confidence ≥</label>
-                            <input type="range" min="0" max="1" step="0.1" value="0.3" id="graph-conf">
-                            <span id="graph-conf-val">0.3</span>
-                            <button class="sample-btn" id="export-graph-btn">Export PNG</button>
-                        </div>
-                        <div id="causal-graph-cy"></div>
-                    </div>
-
-                    <!-- Tab: Bias Radar -->
-                    <div class="tab-panel" id="panel-bias">
-                        <div class="bias-chart-wrap">
-                            <canvas id="bias-radar"></canvas>
-                            <div class="bias-details" id="bias-details"></div>
+                    <div class="chart-box">
+                        <h3>Language / Region Heatmap</h3>
+                        <div class="heatmap">
+                            <div class="heat-cell"><h4>rural_india</h4><p id="heat-rural">318</p></div>
+                            <div class="heat-cell"><h4>urban_india</h4><p id="heat-urban">412</p></div>
+                            <div class="heat-cell"><h4>india</h4><p id="heat-india">289</p></div>
+                            <div class="heat-cell"><h4>global</h4><p id="heat-global">255</p></div>
                         </div>
                     </div>
-
-                    <!-- Tab: Sentence Inspector -->
-                    <div class="tab-panel" id="panel-inspector">
-                        <div class="sentence-list" id="sentence-list"></div>
-                    </div>
-
-                    <!-- Tab: Export -->
-                    <div class="tab-panel" id="panel-export">
-                        <div class="export-grid">
-                            <div class="export-card" id="exp-json"><i data-feather="file-text"></i><h4>JSON</h4><p>Raw analysis data</p></div>
-                            <div class="export-card" id="exp-csv"><i data-feather="table"></i><h4>CSV</h4><p>Tabular lexicon data</p></div>
-                            <div class="export-card" id="exp-pdf"><i data-feather="file"></i><h4>PDF Report</h4><p>Full formatted report</p></div>
-                            <div class="export-card" id="exp-graph"><i data-feather="share-2"></i><h4>Graph PNG</h4><p>Causal graph image</p></div>
-                        </div>
+                    <div class="chart-box">
+                        <h3>Emotion / Tone Cloud</h3>
+                        <div id="cloud" class="cloud"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Progress overlay -->
-    <div class="progress-overlay" id="progress-overlay">
-        <div class="progress-box">
-            <div class="progress-spinner"></div>
-            <div class="progress-msg" id="progress-msg">Initializing…</div>
-            <div class="progress-sub" id="progress-sub">Please wait</div>
-        </div>
+            </section>
+        </main>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
@@ -434,20 +485,277 @@
                     <p class="footer-tagline">Explainable NLP for Hate Speech Analysis</p>
                     <p class="footer-description">Advanced multilingual hate speech detection with transparent, explainable AI insights across lexical, causal, and bias dimensions.</p>
                 </div>
-                <div class="footer-column"><h4 class="footer-column-title">Platform</h4><ul class="footer-links"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="demo.html" class="footer-link">Demo</a></li><li><a href="research.html" class="footer-link">Research</a></li><li><a href="docs.html" class="footer-link">Documentation</a></li></ul></div>
-                <div class="footer-column"><h4 class="footer-column-title">Resources</h4><ul class="footer-links"><li><a href="about.html" class="footer-link">About</a></li><li><a href="https://github.com" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li><li><a href="docs.html#api" class="footer-link">API Reference</a></li><li><a href="research.html#datasets" class="footer-link">Datasets</a></li></ul></div>
-                <div class="footer-column"><h4 class="footer-column-title">Contact</h4><ul class="footer-links"><li><span class="footer-contact-label">Email:</span> <a href="mailto:contact@justify-ai.com" class="footer-link">contact@justify-ai.com</a></li><li><span class="footer-contact-label">Institution:</span> <span class="footer-contact-text">Research University</span></li></ul></div>
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="demo.html" class="footer-link">Demo</a></li>
+                        <li><a href="research.html" class="footer-link">Research</a></li>
+                        <li><a href="docs.html" class="footer-link">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="https://github.com" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="docs.html#api" class="footer-link">API Reference</a></li>
+                        <li><a href="research.html#datasets" class="footer-link">Datasets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><span class="footer-contact-label">Email:</span> <a href="mailto:contact@justify-ai.com" class="footer-link">contact@justify-ai.com</a></li>
+                        <li><span class="footer-contact-label">Institution:</span> <span class="footer-contact-text">Research University</span></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-bottom"><p class="footer-copyright">&copy; 2026 Justify.AI. All rights reserved.</p><div class="footer-bottom-links"><a href="#" class="footer-bottom-link">Privacy Policy</a> <a href="#" class="footer-bottom-link">Terms of Service</a></div></div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Justify.AI. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <!-- Site scripts -->
     <script src="js/theme.js" defer></script>
     <script src="js/app.js" defer></script>
-    <!-- Page-specific logic -->
-    <script src="js/demo.js" defer></script>
+
+    <script>
+    const labelChartCtx = document.getElementById('label-chart');
+    const severityChartCtx = document.getElementById('severity-chart');
+    const cloudEl = document.getElementById('cloud');
+
+    const baseLabelCounts = { hate: 340, non_hate: 315, offensive: 245, health_issue: 188 };
+    const baseSeverityCounts = { none: 370, mild: 275, moderate: 261, severe: 182 };
+    const baseHeat = { rural_india: 318, urban_india: 412, india: 289, global: 255 };
+
+    const labelChart = new Chart(labelChartCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Hate', 'Non-Hate', 'Offensive', 'Health Issue'],
+            datasets: [{
+                data: [baseLabelCounts.hate, baseLabelCounts.non_hate, baseLabelCounts.offensive, baseLabelCounts.health_issue],
+                backgroundColor: ['#ef4444', '#22c55e', '#f97316', '#3b82f6'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'circle' } } }
+        }
+    });
+
+    const severityChart = new Chart(severityChartCtx, {
+        type: 'bar',
+        data: {
+            labels: ['none', 'mild', 'moderate', 'severe'],
+            datasets: [{
+                label: 'Rows',
+                data: [baseSeverityCounts.none, baseSeverityCounts.mild, baseSeverityCounts.moderate, baseSeverityCounts.severe],
+                backgroundColor: ['#22c55e', '#facc15', '#f97316', '#ef4444'],
+                borderRadius: 8,
+                maxBarThickness: 46
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { beginAtZero: true, grid: { color: 'rgba(148,163,184,.22)' } },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+
+    function setCloud(words) {
+        cloudEl.innerHTML = '';
+        words.forEach(({ text, weight }) => {
+            const span = document.createElement('span');
+            span.textContent = text;
+            span.style.fontSize = `${12 + weight * 3}px`;
+            cloudEl.appendChild(span);
+        });
+    }
+
+    function detectLanguage(text) {
+        const hasDevanagari = /[\u0900-\u097F]/.test(text);
+        const bhojpuriHints = ['\u092c\u093e', '\u092d\u0907\u0932', '\u0930\u0909\u0906', '\u0939\u092e\u0928\u0940', '\u0924\u094b\u0939\u0930\u093e'];
+        if (hasDevanagari) {
+            return bhojpuriHints.some((w) => text.includes(w)) ? 'bho' : 'hi';
+        }
+        return 'en';
+    }
+
+    function countMatches(text, patterns) {
+        let count = 0;
+        patterns.forEach((p) => {
+            const re = new RegExp(p, 'gi');
+            const m = text.match(re);
+            if (m) count += m.length;
+        });
+        return count;
+    }
+
+    function analyzeText(rawText, langPref) {
+        const text = rawText.trim();
+        const language = langPref === 'auto' ? detectLanguage(text) : langPref;
+
+        const hatePatterns = ['kill', 'die', 'remove', 'throw out', 'traitor', '\u092e\u093e\u0930', '\u0928\u093f\u0915\u093e\u0932', '\u092d\u0917\u093e', '\u0915\u0941\u091a\u0932'];
+        const offensivePatterns = ['idiot', 'stupid', 'moron', 'fool', '\u092c\u0947\u0935\u0915\u0942\u092b', '\u0917\u0927\u093e', '\u0928\u093f\u0915\u092e\u094d\u092e\u093e'];
+        const healthPatterns = ['pain', 'fever', 'cough', 'chest', 'dizzy', '\u0926\u0930\u094d\u0926', '\u092c\u0941\u0916\u093e\u0930', '\u0916\u093e\u0902\u0938\u0940'];
+
+        const hateHits = countMatches(text, hatePatterns);
+        const offensiveHits = countMatches(text, offensivePatterns);
+        const healthHits = countMatches(text, healthPatterns);
+
+        let label = 'non_hate';
+        if (hateHits > 0) label = 'hate';
+        else if (offensiveHits > 0) label = 'offensive';
+        else if (healthHits > 0) label = 'health_issue';
+
+        const strongWords = countMatches(text, ['kill', 'die', 'destroy', '\u092e\u093e\u0930', '\u0915\u0941\u091a\u0932', '\u0916\u0924\u094d\u092e']);
+        let severity = 'none';
+        if (label === 'hate' || label === 'offensive') {
+            if (strongWords > 0 || hateHits > 2) severity = 'severe';
+            else if (hateHits > 0 || offensiveHits > 1) severity = 'moderate';
+            else severity = 'mild';
+        }
+
+        const groupMap = [
+            { key: 'gender', patterns: ['women', 'female', '\u0932\u0921\u093c\u0915\u0940', '\u0914\u0930\u0924'] },
+            { key: 'religion', patterns: ['muslim', 'hindu', 'religion', '\u092e\u091c\u0939\u092c', '\u0927\u0930\u094d\u092e'] },
+            { key: 'caste', patterns: ['caste', '\u0926\u0932\u093f\u0924', '\u091c\u093e\u0924'] },
+            { key: 'nationality', patterns: ['immigrant', 'foreigner', '\u0935\u093f\u0926\u0947\u0936\u0940', '\u092a\u0930\u0926\u0947\u0938\u0940'] },
+            { key: 'political', patterns: ['party', 'left', 'right', '\u0938\u0930\u0915\u093e\u0930', '\u092a\u093e\u0930\u094d\u091f\u0940'] }
+        ];
+
+        let targetGroup = 'none';
+        groupMap.forEach((g) => {
+            if (targetGroup === 'none' && countMatches(text, g.patterns) > 0) targetGroup = g.key;
+        });
+        if (label !== 'non_hate' && targetGroup === 'none') {
+            targetGroup = countMatches(text, ['you', 'tu', 'tum', '\u0924\u0942', '\u0924\u0941\u092e']) > 0 ? 'individual' : 'community';
+        }
+
+        const targetType = targetGroup === 'individual' ? 'individual' : targetGroup === 'none' ? 'none' : 'community';
+        const sarcasm = countMatches(text, ['yeah right', 'so great', '\u0935\u093e\u0939 \u0915\u094d\u092f\u093e', '\u0939\u093e\u0902 \u0939\u093e\u0902']) > 0;
+        const implicit = countMatches(text, ['those people', 'you know them', '\u0935\u094b \u0932\u094b\u0917', '\u090f\u0948\u0938\u0947 \u0932\u094b\u0917']) > 0;
+        const directness = label === 'non_hate' ? 'none' : implicit ? 'indirect' : 'direct';
+        const profanityCount = countMatches(text, ['idiot', 'stupid', 'moron', 'bastard', '\u092c\u0947\u0935\u0915\u0942\u092b', '\u0939\u0930\u093e\u092e\u0940', '\u0917\u0927\u093e']);
+
+        let tone = 'neutral';
+        if (label === 'hate') tone = sarcasm ? 'sarcastic' : 'aggressive';
+        else if (label === 'offensive') tone = 'dismissive';
+
+        let emotion = 'none';
+        if (label === 'hate') emotion = 'anger';
+        else if (label === 'offensive') emotion = 'disgust';
+        else if (label === 'health_issue') emotion = 'fear';
+
+        const platform = countMatches(text, ['tweet', 'post', '@', '#']) > 0 ? 'social_media' : 'general';
+        const region = language === 'bho' ? 'rural_india' : language === 'hi' ? 'india' : 'global';
+        const confidenceBase = label === 'hate' ? 0.84 : label === 'offensive' ? 0.8 : label === 'health_issue' ? 0.86 : 0.9;
+        const confidence = Math.min(0.99, confidenceBase + Math.min(0.12, (hateHits + offensiveHits + healthHits) * 0.02));
+
+        return { label, confidence, severity, targetGroup, targetType, tone, emotion, directness, profanityCount, sarcasm, implicit, platform, region, language };
+    }
+
+    const primaryLabel = document.getElementById('primary-label');
+    const confidenceValue = document.getElementById('confidence-value');
+    const confidenceFill = document.getElementById('confidence-fill');
+    const severityPill = document.getElementById('severity-pill');
+    const resultCard = document.getElementById('result-card');
+    const statusNote = document.getElementById('status-note');
+
+    const ids = {
+        targetGroup: document.getElementById('meta-target-group'),
+        targetType: document.getElementById('meta-target-type'),
+        tone: document.getElementById('meta-tone'),
+        emotion: document.getElementById('meta-emotion'),
+        directness: document.getElementById('meta-directness'),
+        profanity: document.getElementById('meta-profanity'),
+        sarcasm: document.getElementById('meta-sarcasm'),
+        implicit: document.getElementById('meta-implicit'),
+        platform: document.getElementById('platform-pill'),
+        region: document.getElementById('region-pill')
+    };
+
+    function applyResult(res) {
+        primaryLabel.textContent = res.label;
+        primaryLabel.className = `primary-label label-${res.label}`;
+
+        const c = Math.round(res.confidence * 100);
+        confidenceValue.textContent = res.confidence.toFixed(2);
+        confidenceFill.style.width = `${c}%`;
+
+        severityPill.textContent = res.severity;
+        severityPill.className = `severity-pill sev-${res.severity}`;
+
+        ids.targetGroup.textContent = res.targetGroup;
+        ids.targetType.textContent = res.targetType;
+        ids.tone.textContent = res.tone;
+        ids.emotion.textContent = res.emotion;
+        ids.directness.textContent = res.directness;
+        ids.profanity.textContent = res.profanityCount > 0 ? `${res.profanityCount} warning` : '0';
+        ids.sarcasm.textContent = res.sarcasm ? 'yes' : 'no';
+        ids.implicit.textContent = res.implicit ? 'yes' : 'no';
+        ids.platform.textContent = `platform: ${res.platform}`;
+        ids.region.textContent = `region: ${res.region}`;
+
+        const labels = { ...baseLabelCounts };
+        labels[res.label] += 18;
+        labelChart.data.datasets[0].data = [labels.hate, labels.non_hate, labels.offensive, labels.health_issue];
+        labelChart.update();
+
+        const severities = { ...baseSeverityCounts };
+        severities[res.severity] += 16;
+        severityChart.data.datasets[0].data = [severities.none, severities.mild, severities.moderate, severities.severe];
+        severityChart.update();
+
+        const heat = { ...baseHeat };
+        heat[res.region] += 17;
+        document.getElementById('heat-rural').textContent = heat.rural_india;
+        document.getElementById('heat-urban').textContent = heat.urban_india;
+        document.getElementById('heat-india').textContent = heat.india;
+        document.getElementById('heat-global').textContent = heat.global;
+
+        setCloud([
+            { text: res.tone, weight: 7 },
+            { text: res.emotion, weight: 7 },
+            { text: res.directness, weight: 5 },
+            { text: res.targetGroup, weight: 6 },
+            { text: res.platform, weight: 4 },
+            { text: res.region, weight: 4 },
+            { text: res.label, weight: 8 },
+            { text: 'confidence', weight: 3 }
+        ]);
+
+        resultCard.classList.add('active');
+        statusNote.textContent = `Analysis complete for ${res.language.toUpperCase()} text.`;
+    }
+
+    document.getElementById('analyze-btn').addEventListener('click', () => {
+        const text = document.getElementById('demo-text').value;
+        const lang = document.getElementById('lang-select').value;
+
+        if (!text.trim()) {
+            statusNote.textContent = 'Please enter some text before running analysis.';
+            return;
+        }
+
+        applyResult(analyzeText(text, lang));
+    });
+
+    setCloud([
+        { text: 'neutral', weight: 4 },
+        { text: 'anger', weight: 6 },
+        { text: 'disgust', weight: 5 },
+        { text: 'sarcastic', weight: 5 },
+        { text: 'fear', weight: 5 },
+        { text: 'aggressive', weight: 6 }
+    ]);
+    </script>
 </body>
 </html>
