@@ -1,5 +1,8 @@
 import os
+from pathlib import Path
+
 import pandas as pd
+from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, accuracy_score
 import joblib
@@ -14,6 +17,7 @@ from src.preprocessing.marathi_preprocessing import MarathiPreprocessor
 from src.preprocessing.bhojpuri_preprocessing import BhojpuriPreprocessor
 from src.preprocessing.marwari_preprocessing import MarwariPreprocessor
 from src.features.feature_extractor import FeatureExtractor
+from scripts.validate_dataset import validate_dataset
 
 class HateSpeechModelAnalyzer:
     def __init__(self, language: str = 'english'):
@@ -54,25 +58,40 @@ class HateSpeechModelAnalyzer:
 
     def train(self, csv_path: str, model_save_path: str, vectorizer_save_path: str):
         """Trains the Naive Bayes model on the dataset via BoW/N-Grams."""
+        path = Path(csv_path)
+        if not validate_dataset(path):
+            raise RuntimeError(f"Dataset validation failed for {path}")
+
         texts, labels = self.load_and_preprocess_data(csv_path, label_col='label')
-        
+
+        X_train_texts, X_test_texts, y_train, y_test = train_test_split(
+            texts,
+            labels,
+            test_size=0.2,
+            stratify=labels,
+            random_state=42,
+        )
+
         print("Extracting Features (BoW + N-grams)...")
-        # Phase 2 execution
-        X_train, feature_names = self.feature_extractor.fit_transform(texts)
-        
+        X_train, _ = self.feature_extractor.fit_transform(X_train_texts)
+
         print(f"Training Multinomial Naive Bayes model on {X_train.shape[0]} samples...")
-        self.model.fit(X_train, labels)
+        self.model.fit(X_train, y_train)
+
         
         # Save artifacts
         os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
         joblib.dump(self.model, model_save_path)
         self.feature_extractor.save_vectorizer(vectorizer_save_path)
-        
-        # Evaluate training performance
-        predictions = self.model.predict(X_train)
-        print("\n--- Model Training Results ---")
-        print(f"Accuracy: {accuracy_score(labels, predictions):.4f}")
-        print(classification_report(labels, predictions))
+
+        # Evaluate performance with a held-out split
+        X_test = self.feature_extractor.transform(X_test_texts)
+        train_predictions = self.model.predict(X_train)
+        test_predictions = self.model.predict(X_test)
+        print("\n--- Evaluation Results ---")
+        print(f"Train accuracy: {accuracy_score(y_train, train_predictions):.4f}")
+        print(f"Test accuracy: {accuracy_score(y_test, test_predictions):.4f}")
+        print(classification_report(y_test, test_predictions))
         
     def load_model(self, model_path: str, vectorizer_path: str):
         """Loads trained artifacts for predicting new data."""

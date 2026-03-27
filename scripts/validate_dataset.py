@@ -81,28 +81,39 @@ def validate_file(path: Path) -> list[str]:
     return errors
 
 
-def main() -> int:
-    base = Path(__file__).resolve().parents[1] / "src" / "datasets"
-    dataset_paths = [
-        base / "english.csv",
-        base / "hindi.csv",
-        base / "marathi.csv",
-        base / "bhojpuri.csv",
-        base / "marwari.csv",
-    ]
+def validate_dataset(path: Path) -> bool:
+    errors = validate_file(path)
+    return not errors
+
+
+def validate_all_datasets(paths: list[Path] | None = None) -> bool:
+    if paths is None:
+        base = Path(__file__).resolve().parents[1] / "src" / "datasets"
+        paths = [
+            base / "english.csv",
+            base / "hindi.csv",
+            base / "marathi.csv",
+            base / "bhojpuri.csv",
+            base / "marwari.csv",
+        ]
 
     all_errors = []
-    for path in dataset_paths:
+    for path in paths:
         all_errors.extend(validate_file(path))
 
     if all_errors:
         print("\nValidation failed:")
         for error in all_errors:
             print(f"- {error}")
-        return 1
+        return False
 
     print("\nAll dataset files passed validation.")
-    return 0
+    return True
+
+
+def main() -> int:
+    success = validate_all_datasets()
+    return 0 if success else 1
 
 
 if __name__ == "__main__":
