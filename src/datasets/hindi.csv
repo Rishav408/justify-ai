@@ -149,3 +149,1054 @@ text,label,severity,is_implicit,is_sarcasm,target_group,target_type,directness,c
 पीठ में तेज दर्द है और चलना मुश्किल लग रहा है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,rural_india,0.90,A1
 मेरे सीने में दो दिन से दर्द हो रहा है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.92,A1
 मुझे रात से तेज बुखार और ठंड लग रही है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,rural_india,0.94,A1
+आज मौसम बहुत सुहावना है,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+मैंने सुबह टहलने गया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,urban_india,0.96,A1
+हमने शाम को चाय पी,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,general,india,0.97,A1
+उसने नई किताब खरीदी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,education,rural_india,0.98,A1
+वे पार्क में खेल रहे थे,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.99,A1
+मेरे पेट में दर्द हो रहा है,health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.86,A1
+मुझे बुखार आ रहा है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.88,A1
+गले में खराश है,health_issue,none,false,false,none,none,none,false,fearful,pain,0,social_media,health,india,0.90,A1
+सिर दर्द बहुत तेज है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,urban_india,0.92,A1
+सांस लेने में तकलीफ हो रही है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.94,A1
+तुम बहुत बेवकूफ हो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.83,A1
+यह घटिया हरकत है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,rural_india,0.85,A1
+चुप रहो और काम करो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+तुम्हारी बातें बकवास हैं,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,urban_india,0.89,A1
+जाओ यहाँ से,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.91,A1
+औरतों को नेतृत्व नहीं देना चाहिए,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,india,0.82,A1
+उस धर्म के लोग खतरनाक हैं,hate,severe,false,false,religion,community,direct,false,aggressive,fear,0,social_media,religious,rural_india,0.84,A1
+उस जाति वाले चोर हैं,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,news,general,india,0.86,A1
+विदेशी हमारे देश बर्बाद कर रहे हैं,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,political_speech,political,urban_india,0.88,A1
+उस पार्टी के समर्थक गद्दार हैं,hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,india,0.90,A1
+जब औरतें फैसला लेती हैं तो गड़बड़ होती है,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.76,A1
+वह समुदाय मौका पाते ही धोखा देता है,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,rural_india,0.78,A1
+कुछ जातियों की सोच संकीर्ण होती है,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,india,0.80,A1
+बाहरी लोग आकर माहौल खराब करते हैं,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,urban_india,0.82,A1
+उस विचारधारा वालों से दूर रहना चाहिए,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,social_media,political,india,0.84,A1
+हाँ औरतें तो बहुत समझदार होती हैं,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,india,0.80,A1
+वाह उस धर्म की शांतिप्रियता मशहूर है,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,chat,religious,rural_india,0.82,A1
+बाहरी लोग तो बस काम चुराते हैं,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,news,political,india,0.84,A1
+क्या बढ़िया विचारधारा है बस नफरत फैलाती है,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,social_media,political,urban_india,0.86,A1
+जाति के आधार पर भेदभाव नहीं होता,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,general,india,0.88,A1
+आज मैंने व्यायाम किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+हमने मिलकर खाना बनाया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.96,A1
+उसने परीक्षा में अच्छे अंक लाए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,education,india,0.97,A1
+वे छुट्टियों पर गए थे,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.98,A1
+मैंने नई भाषा सीखी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.99,A1
+मुझे उल्टी आ रही है,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,rural_india,0.86,A1
+आंखों में जलन हो रही है,health_issue,none,false,false,none,none,none,false,fearful,pain,0,general,health,india,0.88,A1
+जोड़ों में दर्द है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,urban_india,0.90,A1
+नींद नहीं आ रही है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.92,A1
+भूख नहीं लग रही है,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,general,health,rural_india,0.94,A1
+तुम नालायक हो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.83,A1
+यह बेकार की बात है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.85,A1
+दिमाग खराब है क्या,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+तुम्हारी औकात नहीं है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,rural_india,0.89,A1
+सामने से हट जाओ,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.91,A1
+महिलाएं नेतृत्व के लिए नहीं बनीं,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.82,A1
+उस मजहब वाले खतरनाक हैं,hate,severe,false,false,religion,community,direct,false,aggressive,fear,0,political_speech,religious,rural_india,0.84,A1
+निचली जाति वाले गंदे हैं,hate,severe,false,false,caste,community,direct,false,dismissive,disgust,0,chat,general,india,0.86,A1
+विदेशियों को वापस भेजो,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,urban_india,0.88,A1
+उस पार्टी वाले देशद्रोही हैं,hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,india,0.90,A1
+औरतें भावनाओं में बह जाती हैं,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,chat,general,india,0.76,A1
+वह धर्म हिंसा फैलाता है,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,news,religious,rural_india,0.78,A1
+कुछ जातियां आलसी होती हैं,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,general,india,0.80,A1
+बाहरी लोग नौकरियां छीनते हैं,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,chat,political,urban_india,0.82,A1
+उस विचारधारा से समस्याएं आती हैं,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,general,political,india,0.84,A1
+हाँ महिलाएं तो बहुत मजबूत होती हैं,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,india,0.80,A1
+वाह उस धर्म में सब समान हैं,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,chat,religious,rural_india,0.82,A1
+बाहरी लोग तो देश भला करते हैं,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,news,political,india,0.84,A1
+क्या अच्छी विचारधारा है बस प्यार फैलाती है,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,social_media,political,urban_india,0.86,A1
+जाति से कोई फर्क नहीं पड़ता,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,general,india,0.88,A1
+मैंने सुबह दौड़ लगाई,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+हमने त्योहार मनाया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.96,A1
+उसने पेंटिंग बनाई,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,education,india,0.97,A1
+वे समुद्र तट पर गए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.98,A1
+मैंने गाना गाया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,india,0.99,A1
+मुझे खांसी आ रही है,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,rural_india,0.86,A1
+कान में दर्द है,health_issue,none,false,false,none,none,none,false,neutral,pain,0,general,health,india,0.88,A1
+त्वचा पर दाने निकल आए हैं,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,urban_india,0.90,A1
+पेट फूल रहा है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.92,A1
+बुखार बार बार आ रहा है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,rural_india,0.94,A1
+तुम मूर्ख हो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.83,A1
+यह गंदी सोच है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.85,A1
+अक्ल से काम लो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+तुम्हारी बात सुनकर गुस्सा आता है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,rural_india,0.89,A1
+चले जाओ यहाँ से,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.91,A1
+लड़कियों को स्कूल नहीं भेजना चाहिए,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.82,A1
+उस धर्म के लोग झूठे हैं,hate,severe,false,false,religion,community,direct,false,aggressive,disgust,0,political_speech,religious,rural_india,0.84,A1
+ऊंची जाति वाले घमंडी हैं,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,india,0.86,A1
+मुस्लिमों को देश से निकालो,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,urban_india,0.88,A1
+कांग्रेस वाले चोर हैं,hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,india,0.90,A1
+महिलाएं डरपोक होती हैं,hate,mild,true,false,gender,community,indirect,false,dismissive,fear,0,chat,general,india,0.76,A1
+हिंदू धर्म पिछड़ा है,hate,mild,true,false,religion,community,indirect,false,dismissive,disgust,0,news,religious,rural_india,0.78,A1
+दलित लोग गंदे रहते हैं,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,general,india,0.80,A1
+बांग्लादेशी घुसपैठिए हैं,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,chat,political,urban_india,0.82,A1
+भाजपा वाले फासीवादी हैं,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,general,political,india,0.84,A1
+हाँ लड़कियां तो बहुत पढ़ाकू होती हैं,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,india,0.80,A1
+वाह उस धर्म में महिला सम्मान है,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,chat,religious,rural_india,0.82,A1
+विदेशी तो बस मेहनत करते हैं,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,news,political,india,0.84,A1
+क्या नेक विचारधारा है बस सेवा करती है,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,social_media,political,urban_india,0.86,A1
+जाति प्रथा तो बस नाम की है,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,general,india,0.88,A1
+मैंने योग किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+हमने पिकनिक मनाई,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.96,A1
+उसने गिटार बजाया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,education,india,0.97,A1
+वे मंदिर गए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,religious,urban_india,0.98,A1
+मैंने खाना पकाया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,india,0.99,A1
+मुझे सांस फूल रही है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.86,A1
+हाथों में झनझनाहट है,health_issue,none,false,false,none,none,none,false,neutral,pain,0,general,health,india,0.88,A1
+गले में आवाज बदल गई है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,urban_india,0.90,A1
+पैरों में सूजन है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.92,A1
+दिल की धड़कन तेज है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,rural_india,0.94,A1
+तुम कायर हो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.83,A1
+यह झूठ है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.85,A1
+मुंह बंद रखो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+तुम्हारी हिम्मत कैसे हुई,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,rural_india,0.89,A1
+नजरों से दूर रहो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.91,A1
+औरतें कामकाजी नहीं हो सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.82,A1
+ईसाई धोखेबाज हैं,hate,severe,false,false,religion,community,direct,false,aggressive,disgust,0,political_speech,religious,rural_india,0.84,A1
+ब्राह्मण शोषक हैं,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,india,0.86,A1
+पाकिस्तानियों को मारो,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,news,political,urban_india,0.88,A1
+मुसलमान आतंकवादी हैं,hate,severe,false,false,religion,community,direct,false,aggressive,fear,0,social_media,religious,india,0.90,A1
+महिलाएं कमजोर होती हैं,hate,mild,true,false,gender,community,indirect,false,dismissive,fear,0,chat,general,india,0.76,A1
+सिख धर्म खतरनाक है,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,news,religious,rural_india,0.78,A1
+ओबीसी लोग आरक्षण का फायदा उठाते हैं,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,general,india,0.80,A1
+रोहिंग्या बोझ हैं,hate,mild,true,false,nationality,community,indirect,false,dismissive,disgust,0,chat,political,urban_india,0.82,A1
+वामपंथी देश विरोधी हैं,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,general,political,india,0.84,A1
+हाँ औरतें तो बहुत बहादुर होती हैं,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,india,0.80,A1
+वाह उस धर्म में शांति है,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,chat,religious,rural_india,0.82,A1
+विदेशी तो बस टैक्स देते हैं,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,news,political,india,0.84,A1
+क्या पवित्र विचारधारा है बस सच बोलती है,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,social_media,political,urban_india,0.86,A1
+जाति तो बस कागज पर है,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,general,india,0.88,A1
+मैंने क्रिकेट खेला,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+हमने दावत दी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.96,A1
+उसने कविता लिखी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,education,india,0.97,A1
+वे जिम गए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,urban_india,0.98,A1
+मैंने फोटो खींची,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,india,0.99,A1
+मुझे मतली हो रही है,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,rural_india,0.86,A1
+आंखों से धुंधला दिख रहा है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.88,A1
+जुकाम हो गया है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,urban_india,0.90,A1
+कमर दर्द हो रहा है,health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.92,A1
+थकान बहुत लग रही है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.94,A1
+तुम बेकार हो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.83,A1
+यह बकवास है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.85,A1
+समझ नहीं आता क्या,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+तुम्हारा दिमाग खराब है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,rural_india,0.89,A1
+भाग जाओ यहाँ से,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.91,A1
+लड़कों को ही आगे बढ़ना चाहिए,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.82,A1
+यहूदी चालबाज हैं,hate,severe,false,false,religion,community,direct,false,aggressive,disgust,0,political_speech,religious,rural_india,0.84,A1
+क्षत्रिय हिंसक हैं,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,india,0.86,A1
+श्रीलंकन आतंकवादी हैं,hate,severe,false,false,nationality,community,direct,false,aggressive,fear,0,news,political,urban_india,0.88,A1
+तृणमूल वाले भ्रष्ट हैं,hate,moderate,false,false,political,ideology,direct,false,dismissive,disgust,0,social_media,political,india,0.90,A1
+पुरुष ही परिवार चला सकते हैं,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,chat,general,india,0.76,A1
+बौद्ध धर्म निष्क्रिय है,hate,mild,true,false,religion,community,indirect,false,dismissive,disgust,0,news,religious,rural_india,0.78,A1
+वैश्य लोग लोभी होते हैं,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,general,india,0.80,A1
+नेपाली चोर हैं,hate,mild,true,false,nationality,community,indirect,false,dismissive,disgust,0,chat,political,urban_india,0.82,A1
+आप आपत्तिजनक हैं,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,general,political,india,0.84,A1
+हाँ पुरुष तो बहुत जिम्मेदार होते हैं,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,india,0.80,A1
+वाह उस धर्म में करुणा है,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,chat,religious,rural_india,0.82,A1
+विदेशी तो बस संस्कृति बचाते हैं,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,news,political,india,0.84,A1
+क्या महान विचारधारा है बस न्याय करती है,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,social_media,political,urban_india,0.86,A1
+जाति तो बस पुरानी बात है,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,general,india,0.88,A1
+मैंने तैराकी की,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+हमने संगीत सुना,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.96,A1
+उसने नाच किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,education,india,0.97,A1
+वे बाजार गए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.98,A1
+मैंने पेड़ लगाया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,india,0.99,A1
+मुझे चक्कर आ रहे हैं,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.86,A1
+मुंह में छाले हो गए हैं,health_issue,none,false,false,none,none,none,false,neutral,pain,0,general,health,india,0.88,A1
+नाक बह रही है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,urban_india,0.90,A1
+घुटनों में दर्द है,health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.92,A1
+नींद टूट रही है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.94,A1
+तुम पागल हो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.83,A1
+यह गलत है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.85,A1
+होश में आओ,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+तुम्हारी औकात याद दिलाऊं,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,rural_india,0.89,A1
+दूर रहो मुझसे,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.91,A1
+घर में औरतें रसोई तक सीमित रहें,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.82,A1
+जैन धर्म कमजोर है,hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,0,political_speech,religious,rural_india,0.84,A1
+शूद्र लोग नीच हैं,hate,severe,false,false,caste,community,direct,false,dismissive,disgust,0,chat,general,india,0.86,A1
+अफगान खतरनाक हैं,hate,severe,false,false,nationality,community,direct,false,aggressive,fear,0,news,political,urban_india,0.88,A1
+समाजवादी निकम्मे हैं,hate,moderate,false,false,political,ideology,direct,false,dismissive,disgust,0,social_media,political,india,0.90,A1
+महिलाएं तकनीक नहीं समझतीं,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,chat,general,india,0.76,A1
+पारसी धर्म खत्म हो रहा है,hate,mild,true,false,religion,community,indirect,false,dismissive,disgust,0,news,religious,rural_india,0.78,A1
+अछूत लोग अलग रहें,hate,mild,true,false,caste,community,indirect,false,dismissive,fear,0,social_media,general,india,0.80,A1
+चीनी जासूस हैं,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,chat,political,urban_india,0.82,A1
+लिबरल देशद्रोही हैं,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,general,political,india,0.84,A1
+हाँ महिलाएं तो बहुत तकनीकी होती हैं,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,india,0.80,A1
+वाह उस धर्म में प्रगति है,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,chat,religious,rural_india,0.82,A1
+विदेशी तो बस निवेश करते हैं,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,news,political,india,0.84,A1
+क्या उदार विचारधारा है बस विकास करती है,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,social_media,political,urban_india,0.86,A1
+जाति तो बस भ्रम है,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,general,india,0.88,A1
+मैंने साइकिल चलाई,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+हमने फिल्म देखी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.96,A1
+उसने कोडिंग सीखी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,education,india,0.97,A1
+वे हिल स्टेशन गए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.98,A1
+मैंने बगीचा साफ किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,india,0.99,A1
+मुझे बुखार तेज है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.86,A1
+पेट में मरोड़ है,health_issue,none,false,false,none,none,none,false,neutral,pain,0,general,health,india,0.88,A1
+सांस लेने में दिक्कत है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,urban_india,0.90,A1
+सिर घूम रहा है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.92,A1
+शरीर टूट रहा है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.94,A1
+तुम नासमझ हो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.83,A1
+यह बेतुका है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.85,A1
+दिमाग लगाओ,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+तुम्हारी बातें झूठी हैं,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,rural_india,0.89,A1
+अब चुप रहो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.91,A1
+लड़कियों की शादी जल्दी कर दो,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.82,A1
+इस्लाम खतरनाक है,hate,severe,false,false,religion,community,direct,false,aggressive,fear,0,political_speech,religious,rural_india,0.84,A1
+मराठा लोग गुंडे हैं,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,india,0.86,A1
+बांग्लादेशी घुसपैठिए हैं,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,urban_india,0.88,A1
+द्रविड़ पार्टी देश विरोधी है,hate,moderate,false,false,political,ideology,direct,false,dismissive,disgust,0,social_media,political,india,0.90,A1
+औरतें ड्राइव नहीं कर सकतीं,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,chat,general,india,0.76,A1
+हिंदुत्व खतरनाक है,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,news,religious,rural_india,0.78,A1
+रेड्डी लोग भ्रष्ट हैं,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,general,india,0.80,A1
+पाकिस्तानी आतंकवादी हैं,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,chat,political,urban_india,0.82,A1
+राष्ट्रवादी फासीवादी हैं,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,general,political,india,0.84,A1
+हाँ लड़कियां तो बहुत अच्छी ड्राइवर होती हैं,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,india,0.80,A1
+वाह हिंदुत्व में शांति है,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,chat,religious,rural_india,0.82,A1
+बांग्लादेशी तो बस मेहनत करते हैं,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,news,political,india,0.84,A1
+क्या राष्ट्रवादी विचारधारा है बस देशभक्ति है,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,social_media,political,urban_india,0.86,A1
+रेड्डी लोग तो बस ईमानदार हैं,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,general,india,0.88,A1
+मैंने फुटबॉल खेला,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+हमने त्योहार की तैयारी की,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.96,A1
+उसने विज्ञान प्रोजेक्ट बनाया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,education,india,0.97,A1
+वे म्यूजियम गए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.98,A1
+मैंने दान किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,india,0.99,A1
+मुझे उल्टी दस्त हो रहे हैं,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.86,A1
+गर्दन में अकड़न है,health_issue,none,false,false,none,none,none,false,neutral,pain,0,general,health,india,0.88,A1
+आंखें लाल हो गई हैं,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,urban_india,0.90,A1
+कान में आवाज आ रही है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.92,A1
+वजन कम हो रहा है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,rural_india,0.94,A1
+तुम अनाड़ी हो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.83,A1
+यह बचकाना है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.85,A1
+सुधर जाओ,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+तुम्हारा व्यवहार खराब है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,rural_india,0.89,A1
+अब बस करो,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.91,A1
+"तू गंदा कुत्ता है, मुंह मत खोल।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.83,A1
+"ये हरामी लड़कियां कहीं की नहीं।",hate,severe,false,false,gender,community,direct,false,dismissive,anger,1,social_media,general,india,0.85,A1
+"उस जाति के लोग गंदे सुअर हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,rural_india,0.87,A1
+"विदेशी कुत्तों को देश से भगाओ।",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,political_speech,political,india,0.89,A1
+"मैंने आज सुबह योग किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+"मुझे पेट में बहुत तेज दर्द है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,general,health,india,0.86,A1
+"तुम्हारी मां की गाली दूंगा।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,india,0.84,A1
+"औरतें रंडी होती हैं बस।",hate,severe,false,false,gender,community,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.86,A1
+"मुसलमान आतंकवादी कुत्ते हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,anger,1,news,religious,india,0.88,A1
+"दलित लोगों को जूते मारो।",hate,severe,false,false,caste,community,direct,true,aggressive,anger,1,chat,political,india,0.90,A1
+"हमने शाम को चाय पी।",non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,india,0.96,A1
+"मुझे सांस लेने में तकलीफ है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.87,A1
+"तू बेवकूफ हरामी है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.85,A1
+"लड़कियों को घर में बंद रखो।",hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,news,general,rural_india,0.87,A1
+"हिंदू धर्म पिछड़ा और गंदा है।",hate,severe,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.89,A1
+"ऊंची जाति वाले चमारे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.91,A1
+"मैंने किताब पढ़ी।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,india,0.97,A1
+"गले में सूजन आ गई है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.88,A1
+"तुम सब कुत्तों की औलाद हो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,rural_india,0.86,A1
+"महिलाएं बिल्कुल बेकार होती हैं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,social_media,general,india,0.88,A1
+"ईसाई धोखेबाज और हरामी हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,disgust,1,news,religious,india,0.90,A1
+"निचली जाति के लोग नालायक हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,rural_india,0.92,A1
+"हमने पार्क में टहला।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+"बुखार बहुत तेज चढ़ रहा है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.89,A1
+"तू गंदा सुअर है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"औरतों को नौकरी नहीं करनी चाहिए।",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.89,A1
+"सिख लोग खतरनाक आतंकवादी हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.91,A1
+"ब्राह्मण लोग शोषक कुत्ते हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,anger,1,chat,political,rural_india,0.93,A1
+"मैंने दौड़ लगाई।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.96,A1
+"सिर दर्द बहुत हो रहा है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,general,health,india,0.90,A1
+"तुम्हारी बहन को ले लूंगा।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.85,A1
+"लड़के ही असली मर्द होते हैं।",hate,mild,false,false,gender,community,direct,false,dismissive,disgust,0,social_media,general,rural_india,0.87,A1
+"जैन धर्म कमजोर और गंदा है।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,news,religious,india,0.89,A1
+"ओबीसी लोग आरक्षण चुराते हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,political,india,0.91,A1
+"हमने फिल्म देखी।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+"आंखों में जलन हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.91,A1
+"तू नालायक हरामी है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"महिलाएं गाड़ी नहीं चला सकतीं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.89,A1
+"बौद्ध धर्म बेकार है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,religious,rural_india,0.91,A1
+"वैश्य लोग लोभी कुत्ते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.93,A1
+"मैंने खाना बनाया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+"जोड़ों में दर्द है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.92,A1
+"तुम सब गंदे जानवर हो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,rural_india,0.86,A1
+"औरतें पढ़ नहीं सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"पारसी धर्म खत्म हो गया।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,india,0.90,A1
+"शूद्र लोग नीच और गंदे हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,rural_india,0.92,A1
+"हमने संगीत सुना।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+"नींद नहीं आ रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.93,A1
+"तू बेकार का कूड़ा है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"लड़कियों की शादी छोटी उम्र में करो।",hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,news,general,rural_india,0.89,A1
+"यहूदी चालबाज कुत्ते हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,disgust,1,political_speech,religious,india,0.91,A1
+"क्षत्रिय लोग हिंसक जानवर हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,political,india,0.93,A1
+"मैंने क्रिकेट खेला।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.97,A1
+"भूख नहीं लग रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.94,A1
+"तुम्हारा दिमाग खराब है।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.88,A1
+"महिलाएं नेता नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.90,A1
+"इस्लाम खतरनाक धर्म है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,rural_india,0.92,A1
+"मराठा लोग गुंडे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.94,A1
+"हमने त्योहार मनाया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+"उल्टी आ रही है।",health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,india,0.95,A1
+"तू गंदा कीड़ा है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.86,A1
+"औरतें घर में ही रहें।",hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,news,general,india,0.88,A1
+"हिंदुत्व आतंकवाद है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.90,A1
+"रेड्डी लोग भ्रष्ट कुत्ते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,chat,political,rural_india,0.92,A1
+"मैंने तैराकी की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.96,A1
+"दस्त हो रहे हैं।",health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,india,0.96,A1
+"तुम सब हरामी हो।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"लड़के ज्यादा होशियार होते हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.89,A1
+"मुसलमान घुसपैठिए हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,anger,1,news,religious,india,0.91,A1
+"अछूत लोग अलग रहें।",hate,moderate,false,false,caste,community,direct,true,aggressive,fear,1,chat,general,rural_india,0.93,A1
+"हमने बाजार गए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+"खांसी बहुत आ रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.97,A1
+"तू बेवकूफ जानवर है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"महिलाएं तकनीक नहीं समझतीं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.90,A1
+"ईसाई धर्म झूठा है।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.92,A1
+"दलित लोग गंदे हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.94,A1
+"मैंने साइकिल चलाई।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.95,A1
+"कमर दर्द हो रहा है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.98,A1
+"तुम्हारी औकात नहीं है।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.89,A1
+"औरतें ड्राइविंग नहीं कर सकतीं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.91,A1
+"सिख आतंकवादी हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,rural_india,0.93,A1
+"ब्राह्मण शोषक हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,political,india,0.95,A1
+"हमने पिकनिक मनाई।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+"गर्दन में दर्द है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.99,A1
+"तू गंदा चूहा है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"लड़कियां पढ़ाई में कमजोर हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.89,A1
+"बौद्ध लोग कायर हैं।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,india,0.91,A1
+"ओबीसी आरक्षण लेते हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,political,rural_india,0.93,A1
+"मैंने फुटबॉल खेला।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.95,A1
+"त्वचा पर दाने हैं।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.86,A1
+"तुम सब नासमझ हो।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.88,A1
+"महिलाएं ऑफिस नहीं संभाल सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.90,A1
+"जैन धर्म बेकार है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,religious,india,0.92,A1
+"वैश्य लोग धोखेबाज हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.94,A1
+"हमने दावत दी।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+"पेट फूल रहा है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.87,A1
+"तू नालायक जानवर है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.89,A1
+"औरतें मर्दों जैसी नहीं हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.91,A1
+"पारसी लोग डरपोक हैं।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,india,0.93,A1
+"शूद्र लोग कामचोर हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.95,A1
+"मैंने योगासन किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.97,A1
+"सांस फूल रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.88,A1
+"तुम्हारी बातें झूठी हैं।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.90,A1
+"लड़के ही इंजीनियर बनते हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.92,A1
+"यहूदी लोग चालबाज हैं।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,rural_india,0.94,A1
+"क्षत्रिय हिंसक हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,india,0.96,A1
+"हमने मंदिर गए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"दिल की धड़कन तेज है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.89,A1
+"तू गंदा कीड़ा मकोड़ा है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"महिलाएं विज्ञान नहीं समझतीं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.90,A1
+"इस्लामिक लोग खतरनाक हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,india,0.92,A1
+"मराठा गुंडे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,rural_india,0.94,A1
+"हमने चर्च गए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"हाथों में झनझनाहट है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.90,A1
+"तुम सब बेकार हो।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.89,A1
+"लड़कियां गणित में कमजोर हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.91,A1
+"हिंदू धर्म पिछड़ा है।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.93,A1
+"रेड्डी भ्रष्ट हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,political,rural_india,0.95,A1
+"मैंने दान दिया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+"पैरों में सूजन है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.91,A1
+"तू हरामी कुत्ता है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"औरतें राजनीति नहीं कर सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,political,india,0.89,A1
+"मुसलमान आतंकवादी हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.91,A1
+"अछूत नीच हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,rural_india,0.93,A1
+"हमने व्रत किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"आंखें धुंधली हैं।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.92,A1
+"तुम्हारा दिमाग सड़ा है।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.88,A1
+"महिलाएं सेना में नहीं जा सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.90,A1
+"सिख धर्म खतरनाक है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,india,0.92,A1
+"ब्राह्मण ऊंचे हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,india,0.94,A1
+"मैंने पूजा की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"कान में दर्द है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.93,A1
+"तू गंदा सुअर का बच्चा है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.86,A1
+"लड़के ही डॉक्टर बनते हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.88,A1
+"बौद्ध धर्म कमजोर है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,religious,india,0.90,A1
+"दलित चमारे हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.92,A1
+"हमने उपवास किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"मुंह में छाले हैं।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.94,A1
+"तुम सब जानवर हो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"औरतें पायलट नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.89,A1
+"ईसाई धर्म गंदा है।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.91,A1
+"वैश्य लोभी हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.93,A1
+"मैंने नामाज पढ़ी।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"नाक बह रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.95,A1
+"तू नालायक गधा है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"महिलाएं जज नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.90,A1
+"जैन धर्म गंदा है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,rural_india,0.92,A1
+"शूद्र नीच जाति हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.94,A1
+"हमने कीर्तन किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.97,A1
+"घुटनों में दर्द है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.96,A1
+"तुम्हारी मां को ले लूंगा।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"लड़कियां सीईओ नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"पारसी धर्म गंदा है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.90,A1
+"ओबीसी आरक्षण चुराते हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,political,india,0.92,A1
+"मैंने भजन गाया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"कमजोरी लग रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.97,A1
+"तू गंदा बिल्ली का बच्चा है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.87,A1
+"औरतें पुलिस नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.89,A1
+"यहूदी धर्म झूठा है।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.91,A1
+"क्षत्रिय गुंडे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,india,0.93,A1
+"हमने हवन किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"थकान बहुत है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.98,A1
+"तुम सब कूड़े हो।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.88,A1
+"महिलाएं वकील नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.90,A1
+"इस्लाम गंदा धर्म है।",hate,severe,false,false,religion,community,direct,false,dismissive,disgust,1,news,religious,rural_india,0.92,A1
+"मराठा चमारे हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,india,0.94,A1
+"हमने आरती की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"बुखार उतर रहा है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.99,A1
+"तू हरामी गधा है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"लड़के ही वैज्ञानिक बनते हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.89,A1
+"हिंदुत्व खतरनाक है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.91,A1
+"रेड्डी लोग चोर हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,rural_india,0.93,A1
+"मैंने प्रसाद लिया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"दवाई ले रहा हूं।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.86,A1
+"तुम्हारी बहन को उठा लूंगा।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.85,A1
+"औरतें प्रोफेसर नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,education,india,0.87,A1
+"मुसलमान धर्म खतरनाक है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,india,0.89,A1
+"अछूत लोग गंदे हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,rural_india,0.91,A1
+"हमने मन्नत मांगी।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"डॉक्टर को दिखाया।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.87,A1
+"तू गंदा कुत्ते का बच्चा है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"महिलाएं साइंटिस्ट नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,education,india,0.88,A1
+"सिख लोग खतरनाक हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.90,A1
+"ब्राह्मण लोग ऊंचे हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,india,0.92,A1
+"मैंने तीर्थ यात्रा की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"टेस्ट करवाया।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.88,A1
+"तुम सब सुअर हो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.87,A1
+"लड़कियां एथलीट नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,sports,india,0.89,A1
+"बौद्ध लोग कमजोर हैं।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,india,0.91,A1
+"दलित लोग नीच हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.93,A1
+"हमने रोजा रखा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"इलाज चल रहा है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.89,A1
+"तू नालायक कुत्ता है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"औरतें एस्ट्रोनॉट नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,education,india,0.90,A1
+"ईसाई लोग धोखेबाज हैं।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.92,A1
+"वैश्य लोग चोर हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,general,rural_india,0.94,A1
+"मैंने जप किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"अस्पताल गया था।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.90,A1
+"तुम्हारा खानदान गंदा है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"महिलाएं पायलट नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"जैन लोग डरपोक हैं।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,india,0.90,A1
+"शूद्र लोग कामचोर हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.92,A1
+"हमने ध्यान किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.97,A1
+"दवा चल रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.91,A1
+"तू गंदा जानवर है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"लड़के ही नेता बनते हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,political,india,0.89,A1
+"पारसी लोग कमजोर हैं।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,rural_india,0.91,A1
+"ओबीसी लोग आलसी हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,political,india,0.93,A1
+"मैंने सेव किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"बिमारी ठीक हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.92,A1
+"तुम सब गंदे हो।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.88,A1
+"औरतें जर्नलिस्ट नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.90,A1
+"यहूदी लोग चालबाज हैं।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.92,A1
+"क्षत्रिय लोग हिंसक हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,rural_india,0.94,A1
+"हमने भक्ति की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"स्वास्थ्य ठीक है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.93,A1
+"तू हरामी जानवर है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"महिलाएं एक्टर नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"इस्लामिक आतंकवादी हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,india,0.90,A1
+"मराठा लोग हिंसक हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.92,A1
+"मैंने स्तोत्र पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"तबीयत सुधर रही है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.94,A1
+"तुम्हारी औलाद गंदी है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.85,A1
+"लड़कियां सिंगर नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.87,A1
+"हिंदू धर्म खतरनाक है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.89,A1
+"रेड्डी लोग गुंडे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,india,0.91,A1
+"हमने मंत्र पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"अब ठीक लग रहा है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.95,A1
+"तू गंदा सुअर है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"औरतें डांसर नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"मुसलमान खतरनाक हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,rural_india,0.90,A1
+"अछूत लोग चमारे हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,india,0.92,A1
+"मैंने श्लोक पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.97,A1
+"दर्द कम हो गया।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.96,A1
+"तुम सब हरामी कुत्ते हो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,2,social_media,general,india,0.85,A1
+"महिलाएं मॉडल नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.87,A1
+"सिख धर्म हिंसक है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.89,A1
+"ब्राह्मण लोग शोषक हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,political,rural_india,0.91,A1
+"हमने गीता पढ़ी।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"बुखार चला गया।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.97,A1
+"तू नालायक सुअर है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"लड़के ही सफल होते हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.88,A1
+"बौद्ध धर्म गंदा है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.90,A1
+"दलित लोग कामचोर हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.92,A1
+"मैंने कुरान पढ़ा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"स्वास्थ्य लाभ हुआ।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.98,A1
+"तुम्हारा परिवार गंदा है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.85,A1
+"औरतें बिजनेस नहीं कर सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.87,A1
+"ईसाई धर्म खतरनाक है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,india,0.89,A1
+"वैश्य लोग धोखेबाज हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,india,0.91,A1
+"हमने बाइबिल पढ़ी।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"अब मजा आ रहा है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.99,A1
+"तू गंदा कीड़ा है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"महिलाएं स्टार्टअप नहीं कर सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"जैन धर्म खतरनाक है।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,1,chat,religious,rural_india,0.90,A1
+"शूद्र लोग गंदे हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.92,A1
+"मैंने गुरु ग्रंथ पढ़ा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"पूरा ठीक हो गया।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.97,A1
+"तुम सब नालायक हो।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.87,A1
+"लड़कियां एंटरप्रेन्योर नहीं बन सकतीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.89,A1
+"पारसी धर्म खतरनाक है।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,1,chat,religious,india,0.91,A1
+"ओबीसी लोग चोर हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,india,0.93,A1
+"हमने धर्मग्रंथ पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"अब कोई दिक्कत नहीं।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.98,A1
+"तू गंदा हरामी कुत्ता है, तेरे जैसे लोगों से देश बर्बाद हो रहा है और तुझे शर्म भी नहीं आती।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,india,0.83,A1
+"ये घटिया औरतें कहीं की नहीं हैं, बस रोना धोना करती रहती हैं और काम कुछ नहीं करतीं।",hate,severe,false,false,gender,community,direct,false,dismissive,anger,1,social_media,general,india,0.85,A1
+"उस जाति के लोग गंदे सुअर हैं जो पूरे मोहल्ले की इज्जत मिट्टी में मिला रहे हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,rural_india,0.87,A1
+"विदेशी कुत्तों को तुरंत देश से भगा दो वरना ये हमारा सब कुछ बर्बाद कर देंगे।",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,political_speech,political,india,0.89,A1
+"मैंने आज सुबह जल्दी उठकर योगासन किया और फिर ताजी हवा में टहलने गया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+"मुझे पिछले तीन दिनों से पेट में बहुत तेज दर्द हो रहा है और कुछ खाने को मन नहीं कर रहा।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,general,health,india,0.86,A1
+"तुम्हारी मां की गाली दूंगा अगर फिर से मेरे सामने ये हरकत की तो याद रखना।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,india,0.84,A1
+"औरतें रंडी होती हैं बस जो मर्दों का पीछा करती रहती हैं और कुछ नहीं।",hate,severe,false,false,gender,community,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.86,A1
+"मुसलमान आतंकवादी कुत्ते हैं जो देश में आतंक फैला रहे हैं और किसी को अमान नहीं।",hate,severe,false,false,religion,community,direct,false,aggressive,anger,1,news,religious,india,0.88,A1
+"दलित लोगों को जूते मारो और सिखाओ इनकी औकात क्या है इस देश में।",hate,severe,false,false,caste,community,direct,true,aggressive,anger,1,chat,political,india,0.90,A1
+"हमने शाम को परिवार के साथ मिलकर चाय पी और पुरानी बातें याद कीं।",non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,india,0.96,A1
+"मुझे सांस लेने में बहुत तकलीफ हो रही है और छाती में भी दर्द महसूस हो रहा है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.87,A1
+"तू बेवकूफ हरामी है जो बिना दिमाग लगाए बस बकवास करता रहता है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.85,A1
+"लड़कियों को घर में बंद रखना चाहिए बाहर निकलने से बस फितूर सिर चढ़ता है।",hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,news,general,rural_india,0.87,A1
+"हिंदू धर्म पिछड़ा और गंदा है जो लोगों को अंधविश्वास में जीने पर मजबूर करता है।",hate,severe,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.89,A1
+"ऊंची जाति वाले चमारे हैं जो गरीबों का खून चूसकर अमीर बन बैठे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.91,A1
+"मैंने पूरे हफ्ते मेहनत करके किताब पढ़ी और परीक्षा की तैयारी की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,india,0.97,A1
+"गले में सूजन आ गई है और निगलने में बहुत दर्द हो रहा है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.88,A1
+"तुम सब कुत्तों की औलाद हो जो देश की इज्जत मिट्टी में मिला रहे हो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,rural_india,0.86,A1
+"महिलाएं बिल्कुल बेकार होती हैं जो घर और बाहर कुछ भी ठीक से नहीं कर पातीं।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,social_media,general,india,0.88,A1
+"ईसाई धोखेबाज और हरामी हैं जो लोगों को धर्म परिवर्तन के लिए मजबूर करते हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,disgust,1,news,religious,india,0.90,A1
+"निचली जाति के लोग नालायक हैं जो मेहनत करने के बजाय आरक्षण का रोना रोते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,rural_india,0.92,A1
+"हमने रविवार को पार्क में टहला और बच्चों के साथ खेलें।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+"बुखार बहुत तेज चढ़ रहा है और शरीर टूट रहा है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.89,A1
+"तू गंदा सुअर है जो समाज के लिए कलंक बना हुआ है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"औरतों को नौकरी नहीं करनी चाहिए बस घर में बैठकर रसोई संभालनी चाहिए।",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.89,A1
+"सिख लोग खतरनाक आतंकवादी हैं जो देश में दंगे फैलाते रहते हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.91,A1
+"ब्राह्मण लोग शोषक कुत्ते हैं जो गरीबों का फायदा उठाते हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,anger,1,chat,political,rural_india,0.93,A1
+"मैंने सुबह जल्दी उठकर दौड़ लगाई और व्यायाम किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.96,A1
+"सिर दर्द बहुत हो रहा है और आंखों में भी जलन महसूस हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,general,health,india,0.90,A1
+"तुम्हारी बहन को ले लूंगा अगर फिर से मुंह खोला तो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.85,A1
+"लड़के ही असली मर्द होते हैं जो देश चला सकते हैं औरतें नहीं।",hate,mild,false,false,gender,community,direct,false,dismissive,disgust,0,social_media,general,rural_india,0.87,A1
+"जैन धर्म कमजोर और गंदा है जो लोगों को मांसाहार नहीं करने देता।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,news,religious,india,0.89,A1
+"ओबीसी लोग आरक्षण चुराते हैं और मेरिट वाले लोगों का हक मारते हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,political,india,0.91,A1
+"हमने शाम को परिवार के साथ फिल्म देखी और पॉपकॉर्न खाया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+"आंखों में जलन हो रही है और धुंधला दिखाई दे रहा है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.91,A1
+"तू नालायक हरामी है जो अपने मां बाप का नाम रोशन करने के बजाय कलंक बना हुआ है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"महिलाएं गाड़ी नहीं चला सकतीं क्योंकि इनका दिमाग नहीं चलता।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.89,A1
+"बौद्ध धर्म बेकार है जो लोगों को निष्क्रिय बना देता है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,religious,rural_india,0.91,A1
+"वैश्य लोग लोभी कुत्ते हैं जो बस पैसा कमाने के पीछे पागल रहते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.93,A1
+"मैंने दोपहर में घर पर खाना बनाया और परिवार के साथ खाया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+"जोड़ों में दर्द है और चलने में भी तकलीफ हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.92,A1
+"तुम सब गंदे जानवर हो जो समाज के लिए बोझ बने हुए हो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,rural_india,0.86,A1
+"औरतें पढ़ नहीं सकतीं क्योंकि इनका दिमाग पढ़ाई में नहीं लगता।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"पारसी धर्म खत्म हो गया है क्योंकि इनके पास कोई अनुयायी नहीं बचे।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,india,0.90,A1
+"शूद्र लोग नीच और गंदे हैं जो ऊंची जाति के लोगों के साथ नहीं रह सकते।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,rural_india,0.92,A1
+"हमने रात को संगीत सुना और गाने गाए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+"नींद नहीं आ रही है और रात भर करवटें बदलता रहता हूं।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.93,A1
+"तू बेकार का कूड़ा है जो समाज में रहने के काबिल नहीं है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"लड़कियों की शादी छोटी उम्र में कर दो वरना ये बिगड़ जाएंगी।",hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,news,general,rural_india,0.89,A1
+"यहूदी चालबाज कुत्ते हैं जो पूरे विश्व में फितूर फैला रहे हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,disgust,1,political_speech,religious,india,0.91,A1
+"क्षत्रिय लोग हिंसक जानवर हैं जो बस लड़ने झगड़ने के लिए तैयार रहते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,political,india,0.93,A1
+"मैंने सप्ताहांत पर क्रिकेट खेला और दोस्तों के साथ मजे किए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.97,A1
+"भूख नहीं लग रही है और पेट हमेशा भरा हुआ लगता है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.94,A1
+"तुम्हारा दिमाग खराब है जो ऐसी बातें सोच सकता है।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.88,A1
+"महिलाएं नेता नहीं बन सकतीं क्योंकि इनमें निर्णय लेने की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.90,A1
+"इस्लाम खतरनाक धर्म है जो आतंकवाद को बढ़ावा देता है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,rural_india,0.92,A1
+"मराठा लोग गुंडे हैं जो महाराष्ट्र में आतंक फैला रहे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.94,A1
+"हमने त्योहार पर परिवार के साथ मिलकर पूजा की और प्रसाद बांटा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+"उल्टी आ रही है और पेट में मरोड़ भी हो रहा है।",health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,india,0.95,A1
+"तू गंदा कीड़ा है जो मिट्टी में मिल जाना चाहिए।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.86,A1
+"औरतें घर में ही रहें बाहर निकलने से इज्जत का सवाल हो जाता है।",hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,news,general,india,0.88,A1
+"हिंदुत्व आतंकवाद है जो देश में नफरत फैला रहा है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.90,A1
+"रेड्डी लोग भ्रष्ट कुत्ते हैं जो आंध्र प्रदेश को लूट रहे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,chat,political,rural_india,0.92,A1
+"मैंने सुबह तैराकी की और फिर नाश्ता किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.96,A1
+"दस्त हो रहे हैं और कमजोरी भी बहुत लग रही है।",health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,india,0.96,A1
+"तुम सब हरामी हो जो देश के टैक्स के पैसे बर्बाद कर रहे हो।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"लड़के ज्यादा होशियार होते हैं लड़कियां पढ़ाई में पीछे रह जाती हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.89,A1
+"मुसलमान घुसपैठिए हैं जो भारत में अवैध रूप से रह रहे हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,anger,1,news,religious,india,0.91,A1
+"अछूत लोग अलग रहें ऊंची जाति के लोगों के साथ नहीं मिल सकते।",hate,moderate,false,false,caste,community,direct,true,aggressive,fear,1,chat,general,rural_india,0.93,A1
+"हमने दोस्तों के साथ बाजार गए और शॉपिंग की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+"खांसी बहुत आ रही है और गले में भी खराश है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.97,A1
+"तू बेवकूफ जानवर है जो बिना सोचे समझे बातें करता है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"महिलाएं तकनीक नहीं समझतीं क्योंकि इनका दिमाग तकनीकी चीजों में नहीं लगता।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.90,A1
+"ईसाई धर्म झूठा है जो लोगों को मूर्ति पूजा नहीं करने देता।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.92,A1
+"दलित लोग गंदे हैं जो सफाई कर्मचारी का काम करते हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.94,A1
+"मैंने शाम को साइकिल चलाई और पार्क में टहला।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.95,A1
+"कमर दर्द हो रहा है और झुकने में भी तकलीफ हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.98,A1
+"तुम्हारी औकात नहीं है जो मेरे सामने मुंह खोले।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.89,A1
+"औरतें ड्राइविंग नहीं कर सकतीं क्योंकि इनमें ध्यान देने की क्षमता नहीं होती।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.91,A1
+"सिख आतंकवादी हैं जो पंजाब में अलगाववाद फैला रहे हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,rural_india,0.93,A1
+"ब्राह्मण शोषक हैं जो गरीबों का फायदा उठाते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,political,india,0.95,A1
+"हमने छुट्टियों पर पिकनिक मनाई और प्रकृति का आनंद लिया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+"गर्दन में दर्द है और सिर भी भारी लग रहा है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.99,A1
+"तू गंदा चूहा है जो गंदगी में रहने के लिए बना है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"लड़कियां पढ़ाई में कमजोर हैं लड़के हमेशा आगे रहते हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.89,A1
+"बौद्ध लोग कायर हैं जो लड़ने के बजाय शांति का रास्ता चुनते हैं।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,india,0.91,A1
+"ओबीसी आरक्षण लेते हैं और मेरिट वाले छात्रों का हक मारते हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,political,rural_india,0.93,A1
+"मैंने दोपहर में फुटबॉल खेला और पसीना बहाया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.95,A1
+"त्वचा पर दाने हैं और खुजली भी बहुत हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.86,A1
+"तुम सब नासमझ हो जो सही और गलत में फर्क नहीं कर सकते।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.88,A1
+"महिलाएं ऑफिस नहीं संभाल सकतीं क्योंकि इनमें领导力 की कमी होती है।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.90,A1
+"जैन धर्म बेकार है जो लोगों को कठोर व्रत करने पर मजबूर करता है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,religious,india,0.92,A1
+"वैश्य लोग धोखेबाज हैं जो ग्राहकों को ठगते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.94,A1
+"हमने शाम को दावत दी और रिश्तेदारों को बुलाया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+"पेट फूल रहा है और गैस की समस्या भी हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.87,A1
+"तू नालायक जानवर है जो अपने परिवार के लिए शर्मिंदगी का कारण बना हुआ है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.89,A1
+"औरतें मर्दों जैसी नहीं हैं इनमें ताकत नहीं होती।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.91,A1
+"पारसी लोग डरपोक हैं जो लड़ने के बजाय भाग जाते हैं।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,india,0.93,A1
+"शूद्र लोग कामचोर हैं जो मेहनत करने के बजाय आलस करते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.95,A1
+"मैंने सुबह योगासन किया और ध्यान लगाया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.97,A1
+"सांस फूल रही है और चलने में भी तकलीफ हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.88,A1
+"तुम्हारी बातें झूठी हैं जो तुम बोल रहे हो सब गलत है।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.90,A1
+"लड़के ही इंजीनियर बनते हैं लड़कियां घर संभालती हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.92,A1
+"यहूदी लोग चालबाज हैं जो व्यापार में धोखा देते हैं।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,rural_india,0.94,A1
+"क्षत्रिय हिंसक हैं जो बस लड़ने के लिए तैयार रहते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,india,0.96,A1
+"हमने त्योहार पर मंदिर गए और पूजा अर्चना की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"दिल की धड़कन तेज है और घबराहट भी हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.89,A1
+"तू गंदा कीड़ा मकोड़ा है जो समाज के लिए अभिशाप बना हुआ है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"महिलाएं विज्ञान नहीं समझतीं क्योंकि इनका दिमाग विज्ञान में नहीं लगता।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.90,A1
+"इस्लामिक लोग खतरनाक हैं जो देश में आतंक फैला रहे हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,india,0.92,A1
+"मराठा गुंडे हैं जो महाराष्ट्र में राजनीति कर रहे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,rural_india,0.94,A1
+"हमने रविवार को चर्च गए और प्रार्थना की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"हाथों में झनझनाहट है और सुन्नपन भी महसूस हो रहा है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.90,A1
+"तुम सब बेकार हो जो समाज के लिए कोई काम नहीं करते।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.89,A1
+"लड़कियां गणित में कमजोर हैं लड़के हमेशा आगे रहते हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.91,A1
+"हिंदू धर्म पिछड़ा है जो लोगों को अंधविश्वास में जीने पर मजबूर करता है।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.93,A1
+"रेड्डी भ्रष्ट हैं जो आंध्र प्रदेश की राजनीति को लूट रहे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,political,rural_india,0.95,A1
+"मैंने शाम को दान दिया और गरीबों की मदद की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+"पैरों में सूजन है और चलने में भी तकलीफ हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.91,A1
+"तू हरामी कुत्ता है जो अपने मां बाप का नाम रोशन करने के बजाय कलंक बना हुआ है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"औरतें राजनीति नहीं कर सकतीं क्योंकि इनमें निर्णय लेने की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,political,india,0.89,A1
+"मुसलमान आतंकवादी हैं जो देश में धमाके कर रहे हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.91,A1
+"अछूत नीच हैं जो ऊंची जाति के लोगों के साथ नहीं रह सकते।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,rural_india,0.93,A1
+"हमने व्रत किया और धार्मिक कार्यों में भाग लिया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"आंखें धुंधली हैं और धूप में तकलीफ हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.92,A1
+"तुम्हारा दिमाग सड़ा है जो ऐसी गंदी बातें सोच सकता है।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.88,A1
+"महिलाएं सेना में नहीं जा सकतीं क्योंकि इनमें ताकत नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.90,A1
+"सिख धर्म खतरनाक है जो आतंकवाद को बढ़ावा देता है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,india,0.92,A1
+"ब्राह्मण ऊंचे हैं जो नीची जाति के लोगों को नीचा दिखाते हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,india,0.94,A1
+"मैंने सुबह पूजा की और मंत्र पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"कान में दर्द है और सुनने में भी तकलीफ हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.93,A1
+"तू गंदा सुअर का बच्चा है जो गंदगी में रहने के लिए बना है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.86,A1
+"लड़के ही डॉक्टर बनते हैं लड़कियां नर्स बनती हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.88,A1
+"बौद्ध धर्म कमजोर है जो लोगों को निष्क्रिय बना देता है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,religious,india,0.90,A1
+"दलित चमारे हैं जो सफाई का काम करते हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.92,A1
+"हमने उपवास किया और धार्मिक स्थलों पर गए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"मुंह में छाले हैं और खाने में तकलीफ हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.94,A1
+"तुम सब जानवर हो जो इंसानियत को शर्मिंदा कर रहे हो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"औरतें पायलट नहीं बन सकतीं क्योंकि इनमें ध्यान देने की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.89,A1
+"ईसाई धर्म गंदा है जो लोगों को धर्म परिवर्तन के लिए मजबूर करता है।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.91,A1
+"वैश्य लोभी हैं जो बस पैसा कमाने के पीछे पागल रहते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.93,A1
+"मैंने शाम को नामाज पढ़ी और अल्लाह की बंदगी की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"नाक बह रही है और सर्दी भी हो गई है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.95,A1
+"तू नालायक गधा है जो बिना दिमाग लगाए काम करता है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"महिलाएं जज नहीं बन सकतीं क्योंकि इनमें न्याय करने की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.90,A1
+"जैन धर्म गंदा है जो लोगों को कठोर नियमों में बांधता है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,rural_india,0.92,A1
+"शूद्र नीच जाति हैं जो ऊंची जाति के लोगों के साथ नहीं रह सकते।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.94,A1
+"हमने कीर्तन किया और भजन गाए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.97,A1
+"घुटनों में दर्द है और सीढ़ियां चढ़ने में तकलीफ हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.96,A1
+"तुम्हारी मां को ले लूंगा अगर फिर से मेरे सामने आया तो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"लड़कियां सीईओ नहीं बन सकतीं क्योंकि इनमें领导力 की कमी होती है।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"पारसी धर्म गंदा है जो लोगों को अजीबोगरीब रस्मों में बांधता है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.90,A1
+"ओबीसी आरक्षण चुराते हैं और मेरिट वाले छात्रों का हक मारते हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,political,india,0.92,A1
+"मैंने सुबह भजन गाया और प्रार्थना की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"कमजोरी लग रही है और चक्कर भी आ रहे हैं।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.97,A1
+"तू गंदा बिल्ली का बच्चा है जो गंदगी में रहने के लिए बना है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.87,A1
+"औरतें पुलिस नहीं बन सकतीं क्योंकि इनमें ताकत नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.89,A1
+"यहूदी धर्म झूठा है जो लोगों को धोखा देता है।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.91,A1
+"क्षत्रिय गुंडे हैं जो बस लड़ने झगड़ने के लिए तैयार रहते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,india,0.93,A1
+"हमने हवन किया और धार्मिक अनुष्ठान किए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"थकान बहुत है और आराम करने की जरूरत है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.98,A1
+"तुम सब कूड़े हो जो समाज के लिए बोझ बने हुए हो।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.88,A1
+"महिलाएं वकील नहीं बन सकतीं क्योंकि इनमें बहस करने की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.90,A1
+"इस्लाम गंदा धर्म है जो आतंकवाद को बढ़ावा देता है।",hate,severe,false,false,religion,community,direct,false,dismissive,disgust,1,news,religious,rural_india,0.92,A1
+"मराठा चमारे हैं जो महाराष्ट्र में राजनीति कर रहे हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,india,0.94,A1
+"हमने आरती की और दीपक जलाए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"बुखार उतर रहा है और तबीयत सुधर रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.99,A1
+"तू हरामी गधा है जो बिना दिमाग लगाए काम करता है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"लड़के ही वैज्ञानिक बनते हैं लड़कियां घर संभालती हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.89,A1
+"हिंदुत्व खतरनाक है जो देश में नफरत फैला रहा है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.91,A1
+"रेड्डी लोग चोर हैं जो आंध्र प्रदेश को लूट रहे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,rural_india,0.93,A1
+"मैंने दोपहर में प्रसाद लिया और धार्मिक स्थल पर गया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"दवाई ले रहा हूं और डॉक्टर की सलाह मान रहा हूं।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.86,A1
+"तुम्हारी बहन को उठा लूंगा अगर फिर से मुंह खोला तो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.85,A1
+"औरतें प्रोफेसर नहीं बन सकतीं क्योंकि इनमें पढ़ाने की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,education,india,0.87,A1
+"मुसलमान धर्म खतरनाक है जो आतंकवाद को बढ़ावा देता है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,india,0.89,A1
+"अछूत लोग गंदे हैं जो सफाई कर्मचारी का काम करते हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,rural_india,0.91,A1
+"हमने मन्नत मांगी और धार्मिक कार्यों में भाग लिया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"डॉक्टर को दिखाया और दवाई लिखवाई।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.87,A1
+"तू गंदा कुत्ते का बच्चा है जो गंदगी में रहने के लिए बना है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"महिलाएं साइंटिस्ट नहीं बन सकतीं क्योंकि इनमें विज्ञान समझने की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,education,india,0.88,A1
+"सिख लोग खतरनाक हैं जो पंजाब में अलगाववाद फैला रहे हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.90,A1
+"ब्राह्मण लोग ऊंचे हैं जो नीची जाति के लोगों को नीचा दिखाते हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,india,0.92,A1
+"मैंने तीर्थ यात्रा की और पवित्र स्थलों पर गया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"टेस्ट करवाया और रिपोर्ट का इंतजार कर रहा हूं।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.88,A1
+"तुम सब सुअर हो जो गंदगी में रहने के लिए बने हो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.87,A1
+"लड़कियां एथलीट नहीं बन सकतीं क्योंकि इनमें ताकत नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,sports,india,0.89,A1
+"बौद्ध लोग कमजोर हैं जो लड़ने के बजाय शांति का रास्ता चुनते हैं।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,india,0.91,A1
+"दलित लोग नीच हैं जो ऊंची जाति के लोगों के साथ नहीं रह सकते।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.93,A1
+"हमने रोजा रखा और इफ्तार किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"इलाज चल रहा है और धीरे धीरे ठीक हो रहा हूं।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.89,A1
+"तू नालायक कुत्ता है जो अपने परिवार के लिए शर्मिंदगी का कारण बना हुआ है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"औरतें एस्ट्रोनॉट नहीं बन सकतीं क्योंकि इनमें तकनीकी ज्ञान नहीं होता।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,education,india,0.90,A1
+"ईसाई लोग धोखेबाज हैं जो लोगों को धर्म परिवर्तन के लिए मजबूर करते हैं।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.92,A1
+"वैश्य लोग चोर हैं जो ग्राहकों को ठगते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,general,rural_india,0.94,A1
+"मैंने जप किया और मंत्र पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"अस्पताल गया था और जांच करवाई।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.90,A1
+"तुम्हारा खानदान गंदा है जो समाज के लिए कलंक बना हुआ है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"महिलाएं पायलट नहीं बन सकतीं क्योंकि इनमें ध्यान देने की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"जैन लोग डरपोक हैं जो लड़ने के बजाय शांति का रास्ता चुनते हैं।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,india,0.90,A1
+"शूद्र लोग कामचोर हैं जो मेहनत करने के बजाय आलस करते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.92,A1
+"हमने ध्यान किया और आध्यात्मिक कार्यों में भाग लिया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.97,A1
+"दवा चल रही है और धीरे धीरे आराम मिल रहा है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.91,A1
+"तू गंदा जानवर है जो इंसानियत को शर्मिंदा कर रहा है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"लड़के ही नेता बनते हैं लड़कियां घर संभालती हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,political,india,0.89,A1
+"पारसी लोग कमजोर हैं जो लड़ने के बजाय भाग जाते हैं।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,rural_india,0.91,A1
+"ओबीसी लोग आलसी हैं जो मेहनत करने के बजाय आरक्षण का रोना रोते हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,political,india,0.93,A1
+"मैंने सेव किया और धार्मिक कार्यों में भाग लिया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"बिमारी ठीक हो रही है और तबीयत सुधर रही है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.92,A1
+"तुम सब गंदे हो जो समाज के लिए बोझ बने हुए हो।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.88,A1
+"औरतें जर्नलिस्ट नहीं बन सकतीं क्योंकि इनमें लिखने की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.90,A1
+"यहूदी लोग चालबाज हैं जो व्यापार में धोखा देते हैं।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.92,A1
+"क्षत्रिय लोग हिंसक हैं जो बस लड़ने झगड़ने के लिए तैयार रहते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,rural_india,0.94,A1
+"हमने भक्ति की और धार्मिक गीत गाए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"स्वास्थ्य ठीक है और कोई दिक्कत नहीं है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.93,A1
+"तू हरामी जानवर है जो अपने मां बाप का नाम रोशन करने के बजाय कलंक बना हुआ है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"महिलाएं एक्टर नहीं बन सकतीं क्योंकि इनमें अभिनय की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"इस्लामिक आतंकवादी हैं जो देश में धमाके कर रहे हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,india,0.90,A1
+"मराठा लोग हिंसक हैं जो महाराष्ट्र में दंगे फैला रहे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.92,A1
+"मैंने स्तोत्र पढ़े और प्रार्थना की।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"तबीयत सुधर रही है और धीरे धीरे ठीक हो रहा हूं।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.94,A1
+"तुम्हारी औलाद गंदी है जो समाज के लिए कलंक बनेगी।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.85,A1
+"लड़कियां सिंगर नहीं बन सकतीं क्योंकि इनमें गाने की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.87,A1
+"हिंदू धर्म खतरनाक है जो लोगों को अंधविश्वास में जीने पर मजबूर करता है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.89,A1
+"रेड्डी लोग गुंडे हैं जो आंध्र प्रदेश में आतंक फैला रहे हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,india,0.91,A1
+"हमने मंत्र पढ़े और धार्मिक अनुष्ठान किए।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"अब ठीक लग रहा है और दर्द कम हो गया है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.95,A1
+"तू गंदा सुअर है जो गंदगी में रहने के लिए बना है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"औरतें डांसर नहीं बन सकतीं क्योंकि इनमें नृत्य की क्षमता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"मुसलमान खतरनाक हैं जो देश में आतंक फैला रहे हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,rural_india,0.90,A1
+"अछूत लोग चमारे हैं जो सफाई का काम करते हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,india,0.92,A1
+"मैंने श्लोक पढ़े और वेद मंत्र पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.97,A1
+"दर्द कम हो गया है और आराम मिल रहा है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.96,A1
+"तुम सब हरामी कुत्ते हो जो समाज के लिए अभिशाप बने हुए हो।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,2,social_media,general,india,0.85,A1
+"महिलाएं मॉडल नहीं बन सकतीं क्योंकि इनमें सुंदरता नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.87,A1
+"सिख धर्म हिंसक है जो आतंकवाद को बढ़ावा देता है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.89,A1
+"ब्राह्मण लोग शोषक हैं जो गरीबों का फायदा उठाते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,political,rural_india,0.91,A1
+"हमने गीता पढ़ी और धार्मिक ग्रंथ पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"बुखार चला गया है और तबीयत ठीक है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.97,A1
+"तू नालायक सुअर है जो गंदगी में रहने के लिए बना है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"लड़के ही सफल होते हैं लड़कियां पीछे रह जाती हैं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.88,A1
+"बौद्ध धर्म गंदा है जो लोगों को निष्क्रिय बना देता है।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.90,A1
+"दलित लोग कामचोर हैं जो मेहनत करने के बजाय आलस करते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.92,A1
+"मैंने कुरान पढ़ा और इस्लामिक ग्रंथ पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"स्वास्थ्य लाभ हुआ है और पूरी तरह ठीक हो गया हूं।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.98,A1
+"तुम्हारा परिवार गंदा है जो समाज के लिए कलंक बना हुआ है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.85,A1
+"औरतें बिजनेस नहीं कर सकतीं क्योंकि इनमें व्यापारिक समझ नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.87,A1
+"ईसाई धर्म खतरनाक है जो लोगों को धर्म परिवर्तन के लिए मजबूर करता है।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,news,religious,india,0.89,A1
+"वैश्य लोग धोखेबाज हैं जो ग्राहकों को ठगते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,india,0.91,A1
+"हमने बाइबिल पढ़ी और ईसाई ग्रंथ पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"अब मजा आ रहा है और पूरी तरह स्वस्थ हूं।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.99,A1
+"तू गंदा कीड़ा है जो मिट्टी में मिल जाना चाहिए।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.86,A1
+"महिलाएं स्टार्टअप नहीं कर सकतीं क्योंकि इनमें व्यापारिक समझ नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.88,A1
+"जैन धर्म खतरनाक है जो लोगों को कठोर व्रत करने पर मजबूर करता है।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,1,chat,religious,rural_india,0.90,A1
+"शूद्र लोग गंदे हैं जो सफाई कर्मचारी का काम करते हैं।",hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.92,A1
+"मैंने गुरु ग्रंथ पढ़ा और सिख धर्मग्रंथ पढ़े।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"पूरा ठीक हो गया है और कोई दिक्कत नहीं है।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.97,A1
+"तुम सब नालायक हो जो समाज के लिए बोझ बने हुए हो।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.87,A1
+"लड़कियां एंटरप्रेन्योर नहीं बन सकतीं क्योंकि इनमें व्यापारिक समझ नहीं होती।",hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.89,A1
+"पारसी धर्म खतरनाक है जो लोगों को अजीबोगरीब रस्मों में बांधता है।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,1,chat,religious,india,0.91,A1
+"ओबीसी लोग चोर हैं जो मेरिट वाले छात्रों का हक मारते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,social_media,political,india,0.93,A1
+"हमने धर्मग्रंथ पढ़े और सभी धर्मों का सम्मान किया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"अब कोई दिक्कत नहीं है और पूरी तरह स्वस्थ हूं।",health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.98,A1
+मैंने सुबह अखबार पढ़ा और चाय पी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+मुझे कल से बुखार और खांसी हो रही है,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,india,0.87,A1
+तुम बहुत गंदे इंसान हो,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.84,A1
+औरतें नेतृत्व नहीं कर सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.82,A1
+हमने पार्क में टहलने गए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.96,A1
+गले में तेज दर्द है,health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,rural_india,0.88,A1
+तुम्हारी बातें बकवास हैं,offensive,mild,false,false,individual,individual,direct,false,dismissive,anger,0,social_media,general,india,0.85,A1
+मुसलमान खतरनाक हैं,hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.83,A1
+मैंने व्यायाम किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.97,A1
+सांस लेने में तकलीफ है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.89,A1
+तू नासमझ है,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.86,A1
+दलित लोग नीच हैं,hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.84,A1
+हमने त्योहार मनाया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.98,A1
+सिर दर्द बहुत है,health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,urban_india,0.90,A1
+तुम बेकार हो,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.87,A1
+विदेशी घुसपैठिए हैं,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,news,political,india,0.85,A1
+मैंने किताब पढ़ी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,india,0.95,A1
+पेट में दर्द हो रहा है,health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.88,A1
+तुम्हारा दिमाग खराब है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,rural_india,0.86,A1
+औरतें घर में रहें,hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,news,general,india,0.83,A1
+हमने फिल्म देखी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.96,A1
+आंखों में जलन है,health_issue,none,false,false,none,none,none,false,fearful,pain,0,general,health,india,0.89,A1
+तू बेवकूफ है,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.87,A1
+हिंदू धर्म पिछड़ा है,hate,severe,false,false,religion,community,direct,false,dismissive,disgust,1,political_speech,religious,india,0.84,A1
+मैंने खाना बनाया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+जोड़ों में दर्द है,health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,rural_india,0.90,A1
+तुम नालायक हो,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.85,A1
+ईसाई धोखेबाज हैं,hate,severe,false,false,religion,community,direct,false,aggressive,disgust,1,news,religious,india,0.83,A1
+हमने संगीत सुना,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.98,A1
+नींद नहीं आ रही,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.91,A1
+तुम्हारी औकात नहीं है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.86,A1
+सिख आतंकवादी हैं,hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,social_media,religious,rural_india,0.84,A1
+मैंने क्रिकेट खेला,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+भूख नहीं लग रही,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,india,0.89,A1
+तू गंदा है,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.87,A1
+ब्राह्मण शोषक हैं,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,news,political,india,0.85,A1
+हमने बाजार गए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.96,A1
+उल्टी आ रही है,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,india,0.88,A1
+तुम जानवर हो,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.84,A1
+महिलाएं नेता नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.83,A1
+मैंने साइकिल चलाई,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.97,A1
+खांसी बहुत आ रही,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.90,A1
+तुम्हारी बातें झूठी हैं,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.86,A1
+मुसलमान घुसपैठिए हैं,hate,severe,false,false,religion,community,direct,false,aggressive,anger,1,political_speech,religious,india,0.84,A1
+हमने पिकनिक मनाई,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.98,A1
+कमर दर्द हो रहा,health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,urban_india,0.89,A1
+तू हरामी है,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.85,A1
+दलित चमारे हैं,hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,rural_india,0.83,A1
+मैंने तैराकी की,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.95,A1
+गर्दन में दर्द है,health_issue,none,false,false,none,none,none,false,neutral,pain,0,general,health,india,0.90,A1
+तुम सब कूड़े हो,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+औरतें ड्राइव नहीं कर सकतीं,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.84,A1
+हमने दावत दी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.96,A1
+दस्त हो रहे हैं,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,india,0.88,A1
+तू सुअर है,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.85,A1
+विदेशी नौकरियां छीनते हैं,hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,news,political,rural_india,0.83,A1
+मैंने फुटबॉल खेला,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.97,A1
+त्वचा पर दाने हैं,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.89,A1
+तुम्हारा परिवार गंदा है,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+महिलाएं विज्ञान नहीं समझतीं,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.84,A1
+हमने मंदिर गए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+सांस फूल रही है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.90,A1
+तू कुत्ता है,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.85,A1
+ईसाई धर्म झूठा है,hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,news,religious,india,0.83,A1
+मैंने योग किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.96,A1
+हाथों में झनझनाहट है,health_issue,none,false,false,none,none,none,false,neutral,pain,0,general,health,urban_india,0.89,A1
+तुम नालायक कुत्ते हो,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+बौद्ध धर्म कमजोर है,hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,india,0.84,A1
+हमने चर्च गए,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+पैरों में सूजन है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.90,A1
+तू गधा है,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.87,A1
+ओबीसी आरक्षण चुराते हैं,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,news,political,rural_india,0.85,A1
+मैंने दान दिया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+आंखें धुंधली हैं,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.89,A1
+तुम्हारी मां को ले लूंगा,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.84,A1
+महिलाएं सेना में नहीं जा सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.83,A1
+हमने पूजा की,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+कान में दर्द है,health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.90,A1
+तू बिल्ली है,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.87,A1
+जैन धर्म बेकार है,hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,religious,rural_india,0.85,A1
+मैंने भजन गाया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+मुंह में छाले हैं,health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.89,A1
+तुम जानवर की औलाद हो,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+पारसी धर्म खत्म है,hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,news,religious,india,0.84,A1
+हमने हवन किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+घुटनों में दर्द है,health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,urban_india,0.90,A1
+तू कीड़ा है,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.87,A1
+वैश्य लोभी हैं,hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,india,0.85,A1
+मैंने कीर्तन किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+नाक बह रही है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.89,A1
+तुम्हारी बहन को उठा लूंगा,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.84,A1
+क्षत्रिय हिंसक हैं,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,news,political,rural_india,0.83,A1
+हमने आरती की,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+गले में खराश है,health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.90,A1
+तू चूहा है,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.87,A1
+शूद्र नीच हैं,hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,chat,general,india,0.85,A1
+मैंने जप किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+थकान बहुत है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,urban_india,0.89,A1
+तुम गंदे सुअर हो,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+मराठा गुंडे हैं,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,news,political,india,0.84,A1
+हमने व्रत किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+बुखार चढ़ रहा है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.90,A1
+तू रंडीबाज है,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.85,A1
+रेड्डी भ्रष्ट हैं,hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,chat,political,rural_india,0.83,A1
+मैंने रोजा रखा,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+कमजोरी लग रही,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.89,A1
+तुम हरामी कुत्ते हो,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,india,0.86,A1
+अछूत गंदे हैं,hate,severe,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.84,A1
+हमने इफ्तार किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+चक्कर आ रहे हैं,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.90,A1
+तू धोखेबाज है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.87,A1
+यहूदी चालबाज हैं,hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,news,religious,india,0.85,A1
+मैंने नामाज पढ़ी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+दवाई ले रहा हूं,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.89,A1
+तुम्हारा खानदान गंदा है,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+लड़कियां पढ़ नहीं सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,education,india,0.84,A1
+हमने प्रसाद लिया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+डॉक्टर को दिखाया,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.90,A1
+तू बेइज्जत है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.87,A1
+लड़के ही सफल होते हैं,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.85,A1
+मैंने तीर्थ यात्रा की,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+टेस्ट करवाया,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.89,A1
+तुम सब नासमझ हो,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.86,A1
+महिलाएं पायलट नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.84,A1
+हमने मन्नत मांगी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+इलाज चल रहा है,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.90,A1
+तू कमीना है,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+औरतें रसोई तक सीमित रहें,hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,news,general,rural_india,0.85,A1
+मैंने स्तोत्र पढ़े,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+अस्पताल गया था,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.89,A1
+तुम्हारी औलाद गंदी है,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+महिलाएं जज नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.84,A1
+हमने गीता पढ़ी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+दवा चल रही है,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.90,A1
+तू बदमाश है,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.87,A1
+लड़कियां गणित में कमजोर हैं,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,rural_india,0.85,A1
+मैंने कुरान पढ़ा,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+स्वास्थ्य ठीक है,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तुम सब बेकार हो,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.86,A1
+महिलाएं वकील नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.84,A1
+हमने बाइबिल पढ़ी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+बिमारी ठीक हो रही,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,urban_india,0.90,A1
+तू लफंगा है,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.87,A1
+औरतें प्रोफेसर नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,education,india,0.85,A1
+मैंने गुरु ग्रंथ पढ़ा,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+तबीयत सुधर रही,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तुम्हारा परिवार कलंक है,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+महिलाएं साइंटिस्ट नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,education,rural_india,0.84,A1
+हमने धर्मग्रंथ पढ़े,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+अब ठीक लग रहा,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तू गुंडा है,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,india,0.87,A1
+लड़के ही इंजीनियर बनते हैं,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,india,0.85,A1
+मैंने ध्यान किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+दर्द कम हो गया,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,urban_india,0.90,A1
+तुम सब हरामी हो,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+महिलाएं एक्टर नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.84,A1
+हमने भक्ति की,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+बुखार चला गया,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तू चोर है,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.87,A1
+औरतें डांसर नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,rural_india,0.85,A1
+मैंने सेव किया,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+स्वास्थ्य लाभ हुआ,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तुम्हारी मां गंदी है,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+महिलाएं मॉडल नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.84,A1
+हमने मंत्र पढ़े,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+पूरा ठीक हो गया,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,urban_india,0.90,A1
+तू झूठा है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.87,A1
+लड़कियां सीईओ नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.85,A1
+मैंने श्लोक पढ़े,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+अब कोई दिक्कत नहीं,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तुम सब सुअर हो,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+महिलाएं एस्ट्रोनॉट नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,education,rural_india,0.84,A1
+हमने वेद पढ़े,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+अब मजा आ रहा,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तू धूर्त है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.87,A1
+औरतें पुलिस नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,political,india,0.85,A1
+मैंने उपनिषद पढ़े,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+तबीयत बिल्कुल ठीक,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,urban_india,0.90,A1
+तुम्हारा दिमाग सड़ा है,offensive,severe,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,india,0.86,A1
+महिलाएं जर्नलिस्ट नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.84,A1
+हमने पुराण पढ़े,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+अब स्वस्थ हूं पूरी तरह,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तू कपटी है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.87,A1
+लड़के ही डॉक्टर बनते हैं,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,education,rural_india,0.85,A1
+मैंने रामायण पढ़ी,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+कोई बीमारी नहीं अब,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तुम सब कीड़े हो,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+महिलाएं एथलीट नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,sports,india,0.84,A1
+हमने महाभारत पढ़ा,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+अब कोई तकलीफ नहीं,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,urban_india,0.90,A1
+तू मतलबी है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.87,A1
+औरतें बिजनेस नहीं कर सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.85,A1
+मैंने यजुर्वेद पढ़ा,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+सब ठीक चल रहा,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तुम्हारी सोच गंदी है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.86,A1
+महिलाएं स्टार्टअप नहीं कर सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,rural_india,0.84,A1
+हमने ऋग्वेद पढ़ा,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+अब पूर्ण स्वस्थ हूं,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+तू स्वार्थी है,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.87,A1
+लड़कियां एंटरप्रेन्योर नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.85,A1
+मैंने सामवेद पढ़ा,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+अब रोग मुक्त हूं,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,urban_india,0.90,A1
+तुम सब नालायक कुत्ते हो,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,india,0.86,A1
+महिलाएं सिंगर नहीं बन सकतीं,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,india,0.84,A1
+हमने अथर्ववेद पढ़ा,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+अब निरोग हूं पूरी तरह,health_issue,none,false,false,none,none,none,false,neutral,joy,0,chat,health,india,0.90,A1
+"मैंने सुबह जल्दी उठकर योगासन किया और फिर ताजी हवा में पार्क में टहलने गया जहां बहुत सुकून मिला।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,india,0.95,A1
+"मुझे पिछले तीन दिनों से पेट में बहुत तेज दर्द हो रहा है और कुछ भी खाने को मन नहीं कर रहा है।",health_issue,none,false,false,none,none,none,false,fearful,sadness,0,general,health,india,0.87,A1
+"तू गंदा हरामी कुत्ता है जो अपने मां बाप का नाम रोशन करने के बजाय पूरे परिवार के लिए कलंक बना हुआ है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,india,0.84,A1
+"औरतें रंडी होती हैं बस जो मर्दों का पीछा करती रहती हैं और घर संभालने के अलावा कुछ नहीं कर सकतीं।",hate,severe,false,false,gender,community,direct,false,dismissive,disgust,1,social_media,general,india,0.85,A1
+"हमने शाम को परिवार के साथ मिलकर चाय पी और पुरानी बातें याद करते हुए बहुत अच्छा समय बिताया।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.96,A1
+"मुझे सांस लेने में बहुत तकलीफ हो रही है और छाती में भी दर्द महसूस हो रहा है जो लगातार बना हुआ है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.88,A1
+"तुम्हारी मां की गाली दूंगा अगर फिर से मेरे सामने ये हरकत की तो याद रखना मैं छोडूंगा नहीं।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,india,0.83,A1
+"मुसलमान आतंकवादी कुत्ते हैं जो देश में आतंक फैला रहे हैं और किसी को अमान नहीं देते हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,anger,1,news,religious,india,0.84,A1
+"मैंने पूरे हफ्ते मेहनत करके किताब पढ़ी और परीक्षा की तैयारी बहुत अच्छे से की है।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,india,0.97,A1
+"गले में सूजन आ गई है और निगलने में बहुत दर्द हो रहा है जिससे खाना खाने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.89,A1
+"तू बेवकूफ हरामी है जो बिना दिमाग लगाए बस बकवास करता रहता है और किसी की नहीं सुनता।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.85,A1
+"दलित लोगों को जूते मारो और सिखाओ इनकी औकात क्या है इस देश में जहां हम रहते हैं।",hate,severe,false,false,caste,community,direct,true,aggressive,anger,1,chat,political,rural_india,0.86,A1
+"हमने रविवार को पार्क में टहला और बच्चों के साथ खेलें जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+"बुखार बहुत तेज चढ़ रहा है और शरीर टूट रहा है जिससे कोई काम करने को मन नहीं कर रहा।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.90,A1
+"तू गंदा सुअर है जो समाज के लिए कलंक बना हुआ है और तुझे शर्म भी नहीं आती है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"विदेशी कुत्तों को तुरंत देश से भगा दो वरना ये हमारा सब कुछ बर्बाद कर देंगे।",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,political_speech,political,india,0.85,A1
+"मैंने सुबह जल्दी उठकर दौड़ लगाई और व्यायाम किया जिससे शरीर हल्का महसूस हो रहा है।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,india,0.96,A1
+"सिर दर्द बहुत हो रहा है और आंखों में भी जलन महसूस हो रही है जिससे पढ़ाई में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,general,health,india,0.91,A1
+"तुम्हारी बहन को ले लूंगा अगर फिर से मुंह खोला तो याद रखना मैं मजाक नहीं कर रहा।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.84,A1
+"लड़कियों को घर में बंद रखना चाहिए बाहर निकलने से बस फितूर सिर चढ़ता है और इज्जत का सवाल हो जाता है।",hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,news,general,rural_india,0.86,A1
+"हमने शाम को परिवार के साथ फिल्म देखी और पॉपकॉर्न खाया जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.97,A1
+"आंखों में जलन हो रही है और धुंधला दिखाई दे रहा है जिससे काम करने में बहुत दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.92,A1
+"तू नालायक हरामी है जो अपने मां बाप का नाम रोशन करने के बजाय कलंक बना हुआ है।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"हिंदू धर्म पिछड़ा और गंदा है जो लोगों को अंधविश्वास में जीने पर मजबूर करता है।",hate,severe,false,false,religion,community,direct,false,dismissive,disgust,1,chat,religious,india,0.85,A1
+"मैंने दोपहर में घर पर खाना बनाया और परिवार के साथ खाया जो बहुत अच्छा लगा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+"जोड़ों में दर्द है और चलने में भी तकलीफ हो रही है जिससे रोज के काम करने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,rural_india,0.93,A1
+"तुम सब गंदे जानवर हो जो समाज के लिए बोझ बने हुए हो और तुम्हें शर्म भी नहीं आती।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+"ऊंची जाति वाले चमारे हैं जो गरीबों का खून चूसकर अमीर बन बैठे हैं और कुछ नहीं करते।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.87,A1
+"हमने रात को संगीत सुना और गाने गाए जो बहुत अच्छा अनुभव रहा परिवार के साथ।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.96,A1
+"नींद नहीं आ रही है और रात भर करवटें बदलता रहता हूं जिससे सुबह थकान लगती है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.94,A1
+"तू बेकार का कूड़ा है जो समाज में रहने के काबिल नहीं है और तुझे बाहर निकाल देना चाहिए।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"औरतों को नौकरी नहीं करनी चाहिए बस घर में बैठकर रसोई संभालनी चाहिए और बच्चों की देखभाल करनी चाहिए।",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,news,general,india,0.88,A1
+"मैंने सप्ताहांत पर क्रिकेट खेला और दोस्तों के साथ मजे किए जो बहुत अच्छा रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.97,A1
+"भूख नहीं लग रही है और पेट हमेशा भरा हुआ लगता है जिससे कमजोरी महसूस हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,rural_india,0.95,A1
+"तुम्हारा दिमाग खराब है जो ऐसी बातें सोच सकता है और तुझे इलाज करवाना चाहिए।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.88,A1
+"सिख लोग खतरनाक आतंकवादी हैं जो देश में दंगे फैलाते रहते हैं और शांति नहीं रहने देते।",hate,severe,false,false,religion,community,direct,false,aggressive,fear,1,political_speech,religious,india,0.85,A1
+"हमने त्योहार पर परिवार के साथ मिलकर पूजा की और प्रसाद बांटा जो बहुत अच्छा लगा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"उल्टी आ रही है और पेट में मरोड़ भी हो रहा है जिससे कोई काम करने को मन नहीं कर रहा।",health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,india,0.96,A1
+"तू गंदा कीड़ा है जो मिट्टी में मिल जाना चाहिए और समाज से दूर रहना चाहिए।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.86,A1
+"ब्राह्मण लोग शोषक कुत्ते हैं जो गरीबों का फायदा उठाते हैं और कुछ नहीं करते।",hate,severe,false,false,caste,community,direct,false,dismissive,anger,1,chat,political,india,0.87,A1
+"मैंने सुबह तैराकी की और फिर नाश्ता किया जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.96,A1
+"दस्त हो रहे हैं और कमजोरी भी बहुत लग रही है जिससे काम करने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,urban_india,0.97,A1
+"तुम सब हरामी हो जो देश के टैक्स के पैसे बर्बाद कर रहे हो और तुम्हें शर्म भी नहीं आती।",offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"महिलाएं गाड़ी नहीं चला सकतीं क्योंकि इनका दिमाग नहीं चलता और ध्यान नहीं दे पातीं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.88,A1
+"हमने दोस्तों के साथ बाजार गए और शॉपिंग की जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+"खांसी बहुत आ रही है और गले में भी खराश है जिससे बोलने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.98,A1
+"तू बेवकूफ जानवर है जो बिना सोचे समझे बातें करता है और किसी की नहीं सुनता।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"ईसाई धोखेबाज और हरामी हैं जो लोगों को धर्म परिवर्तन के लिए मजबूर करते हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,disgust,1,news,religious,india,0.86,A1
+"मैंने शाम को साइकिल चलाई और पार्क में टहला जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.95,A1
+"कमर दर्द हो रहा है और झुकने में भी तकलीफ हो रही है जिससे काम करने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,rural_india,0.99,A1
+"तुम्हारी औकात नहीं है जो मेरे सामने मुंह खोले और तुझे अपनी जगह पता होनी चाहिए।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.89,A1
+"लड़के ज्यादा होशियार होते हैं लड़कियां पढ़ाई में पीछे रह जाती हैं और कुछ नहीं कर पातीं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.88,A1
+"हमने छुट्टियों पर पिकनिक मनाई और प्रकृति का आनंद लिया जो बहुत अच्छा रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.96,A1
+"गर्दन में दर्द है और सिर भी भारी लग रहा है जिससे काम करने में बहुत दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,1.00,A1
+"तू गंदा चूहा है जो गंदगी में रहने के लिए बना है और तुझे शर्म भी नहीं आती।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"मुसलमान घुसपैठिए हैं जो भारत में अवैध रूप से रह रहे हैं और देश बर्बाद कर रहे हैं।",hate,severe,false,false,religion,community,direct,false,aggressive,anger,1,news,religious,india,0.85,A1
+"मैंने दोपहर में फुटबॉल खेला और पसीना बहाया जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.95,A1
+"त्वचा पर दाने हैं और खुजली भी बहुत हो रही है जिससे नींद नहीं आ रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.86,A1
+"तुम सब नासमझ हो जो सही और गलत में फर्क नहीं कर सकते और तुम्हें सिखाना पड़ता है।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.88,A1
+"निचली जाति के लोग नालायक हैं जो मेहनत करने के बजाय आरक्षण का रोना रोते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,rural_india,0.89,A1
+"हमने शाम को दावत दी और रिश्तेदारों को बुलाया जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+"पेट फूल रहा है और गैस की समस्या भी हो रही है जिससे खाने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,urban_india,0.87,A1
+"तू नालायक जानवर है जो अपने परिवार के लिए शर्मिंदगी का कारण बना हुआ है।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.89,A1
+"औरतें मर्दों जैसी नहीं हैं इनमें ताकत नहीं होती और ये कुछ नहीं कर पातीं।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.88,A1
+"मैंने सुबह योगासन किया और ध्यान लगाया जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,india,0.97,A1
+"सांस फूल रही है और चलने में भी तकलीफ हो रही है जिससे काम करने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.88,A1
+"तुम्हारी बातें झूठी हैं जो तुम बोल रहे हो सब गलत है और तुझे शर्म भी नहीं आती।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.90,A1
+"पारसी लोग डरपोक हैं जो लड़ने के बजाय भाग जाते हैं और कुछ नहीं कर पाते।",hate,mild,false,false,religion,community,direct,false,dismissive,fear,0,chat,religious,india,0.89,A1
+"हमने त्योहार पर मंदिर गए और पूजा अर्चना की जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"दिल की धड़कन तेज है और घबराहट भी हो रही है जिससे नींद नहीं आ रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.89,A1
+"तू गंदा कीड़ा मकोड़ा है जो समाज के लिए अभिशाप बना हुआ है और तुझे बाहर निकाल देना चाहिए।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+"शूद्र लोग कामचोर हैं जो मेहनत करने के बजाय आलस करते हैं और कुछ नहीं कर पाते।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.90,A1
+"हमने रविवार को चर्च गए और प्रार्थना की जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"हाथों में झनझनाहट है और सुन्नपन भी महसूस हो रहा है जिससे काम करने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.90,A1
+"तुम सब बेकार हो जो समाज के लिए कोई काम नहीं करते और तुम्हें शर्म भी नहीं आती।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.89,A1
+"वैश्य लोग लोभी कुत्ते हैं जो बस पैसा कमाने के पीछे पागल रहते हैं और कुछ नहीं करते।",hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,1,social_media,general,india,0.90,A1
+"मैंने शाम को दान दिया और गरीबों की मदद की जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+"पैरों में सूजन है और चलने में भी तकलीफ हो रही है जिससे काम करने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.91,A1
+"तू हरामी कुत्ता है जो अपने मां बाप का नाम रोशन करने के बजाय कलंक बना हुआ है।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"जैन धर्म कमजोर और गंदा है जो लोगों को मांसाहार नहीं करने देता और पाबंद करता है।",hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,1,news,religious,india,0.88,A1
+"हमने व्रत किया और धार्मिक कार्यों में भाग लिया जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"आंखें धुंधली हैं और धूप में तकलीफ हो रही है जिससे काम करने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.92,A1
+"तुम्हारा दिमाग सड़ा है जो ऐसी गंदी बातें सोच सकता है और तुझे इलाज करवाना चाहिए।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.88,A1
+"ओबीसी लोग आरक्षण चुराते हैं और मेरिट वाले लोगों का हक मारते हैं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,political,rural_india,0.89,A1
+"मैंने सुबह पूजा की और मंत्र पढ़े जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.96,A1
+"कान में दर्द है और सुनने में भी तकलीफ हो रही है जिससे बात करने में दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.93,A1
+"तू गंदा सुअर का बच्चा है जो गंदगी में रहने के लिए बना है और तुझे शर्म भी नहीं आती।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.86,A1
+"बौद्ध धर्म बेकार है जो लोगों को निष्क्रिय बना देता है और कुछ करने नहीं देता।",hate,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,religious,india,0.88,A1
+"हमने उपवास किया और धार्मिक स्थलों पर गए जो बहुत अच्छा अनुभव रहा।",non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,religious,india,0.95,A1
+"मुंह में छाले हैं और खाने में तकलीफ हो रही है जिससे बात करने में भी दिक्कत हो रही है।",health_issue,none,false,false,none,none,none,false,neutral,pain,0,chat,health,india,0.94,A1
+"तुम सब जानवर हो जो इंसानियत को शर्मिंदा कर रहे हो और तुम्हें बाहर निकाल देना चाहिए।",offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"क्षत्रिय लोग हिंसक जानवर हैं जो बस लड़ने झगड़ने के लिए तैयार रहते हैं।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,political,india,0.89,A1

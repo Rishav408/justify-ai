@@ -199,3 +199,1042 @@ I feel dizzy whenever I stand up too quickly.,health_issue,none,false,false,none
 My chest has been hurting since yesterday evening.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.96,A1
 I have had a fever and body ache for two days.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.98,A1
 My throat feels swollen and it is hard to swallow.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.86,A1
+I am designing a new logo for the Indic Frame YouTube channel,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.99,A1
+People from that specific religion are a threat to our culture,hate,moderate,false,false,religion,community,direct,false,aggressive,fear,0,social_media,religious,india,0.88,A1
+My stomach has been cramping painfully since I finished dinner,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.92,A1
+Stop being a total jerk and do your assigned work properly,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,india,0.85,A1
+I spent the afternoon solving Theory of Computation problems,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,education,india,0.97,A1
+Those immigrants are like a plague that needs to be eradicated,hate,severe,false,false,nationality,community,direct,true,aggressive,disgust,1,news,political,global,0.94,A1
+You lack basic common sense and your logic is purely garbage,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,urban_india,0.91,A1
+I have been feeling very dizzy and lightheaded this morning,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.95,A1
+I am developing the DrishtiAudit system for real time pharmacy audits,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,india,0.98,A1
+Women are too emotional to handle any serious leadership role,hate,moderate,true,false,gender,community,indirect,false,dismissive,disgust,0,social_media,general,global,0.82,A1
+Quit acting like a clueless idiot and follow the instructions,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.89,A1
+I have had a high fever and body ache for two days now,health_issue,none,false,false,none,none,none,false,fearful,none,0,chat,health,urban_india,0.96,A1
+I visited the Bihar Mitramandal community group meeting today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,india,0.97,A1
+Followers of that faith are all radicals who hate this nation,hate,severe,false,false,religion,community,direct,false,aggressive,anger,0,political_speech,religious,india,0.93,A1
+You are a pathetic loser who will never achieve anything,offensive,severe,false,false,individual,individual,direct,false,aggressive,disgust,1,social_media,general,global,0.92,A1
+My throat feels very swollen and it is hard to swallow,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.94,A1
+I am researching robotics for my presentation at NIT Goa,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,urban_india,0.99,A1
+Those caste groups are a burden on our modern society,hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,0,social_media,political,india,0.86,A1
+Shut up you arrogant fool because you know nothing,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.87,A1
+I have a sharp pain in my lower back since yesterday,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.90,A1
+I am coding the VaniCure agent for respiratory diagnostics,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,health,india,0.98,A1
+People from that background should stay in their own lane,hate,moderate,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,india,0.84,A1
+You are making a complete fool of yourself with these posts,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.88,A1
+I have been coughing all night and cannot sleep well,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,urban_india,0.93,A1
+I attended a seminar on AI and Machine Learning today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.99,A1
+Those foreigners are stealing our resources and must leave,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,india,0.95,A1
+Stop being so incredibly negative and annoying in this group,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.86,A1
+I feel very nauseous and have had chills since morning,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,global,0.91,A1
+I am posting my perspective on Indian National Political News,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,political,india,0.97,A1
+Anyone backing that ideology deserves to be beaten,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.94,A1
+You are such a fake person and nobody here trusts you,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.83,A1
+My eyes are very itchy and red probably due to allergies,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,india,0.92,A1
+I am studying the history of Bhumihar Brahmins in Bihar,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,india,0.98,A1
+That community is naturally prone to crime and violence,hate,moderate,false,false,religion,community,direct,false,dismissive,fear,0,news,political,india,0.81,A1
+Quit being a nasty clown and learn how to speak properly,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,1,social_media,general,global,0.89,A1
+I have been feeling extremely fatigued and weak for days,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,general,health,global,0.96,A1
+I am working on an anti plagiarism checker website project,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,urban_india,0.97,A1
+We need to cleanse our nation of those filthy outsiders,hate,severe,false,false,nationality,community,direct,true,aggressive,disgust,1,political_speech,political,global,0.97,A1
+Your comments are purely trash and you are wasting space,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.85,A1
+I have a painful rash on my arm that is spreading,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.90,A1
+I am listening to music while walking around the NIT Goa campus,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.99,A1
+Supporters of that party are vermin and should be crushed,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.92,A1
+You are an arrogant fool with no sense of reality,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,global,0.87,A1
+I feel very lightheaded and need to rest for an hour,health_issue,none,false,false,none,none,none,false,fearful,none,0,general,health,india,0.93,A1
+I am a student at NIT Goa focusing on deep learning,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,urban_india,0.98,A1
+People of that race are genetically inferior and lazy,hate,severe,false,false,race,community,direct,false,aggressive,disgust,0,social_media,general,global,0.91,A1
+Stop talking like a moron and start using your brain,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.88,A1
+I have had a persistent headache since yesterday evening,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.94,A1
+I enjoyed the sunset while walking near the river in Goa,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.99,A1
+That religious group is a parasite on our social progress,hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,global,0.84,A1
+You are a spineless coward who cannot defend your opinion,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.90,A1
+I have a dull ache in my teeth that is getting worse,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.89,A1
+I am following the Stranger Things series during my break,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.97,A1
+Immigrants are dirty and they bring diseases to our city,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,1,social_media,health,global,0.96,A1
+Your presence here is annoying and you should just leave,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.87,A1
+I have been feeling very cold even though it is warm outside,health_issue,none,false,false,none,none,none,false,neutral,fear,0,chat,health,global,0.91,A1
+I am reading a book about Indian geopolitics and relations,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,political,india,0.98,A1
+Those people are like cockroaches and they are everywhere,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,1,social_media,general,global,0.97,A1
+You are an absolute clown and your logic is totally flawed,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.86,A1
+I have a persistent cough that produces a lot of mucus,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.90,A1
+I am solving math problems for my Theory of Computation class,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,india,0.97,A1
+Women who work in this field are all incompetent,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,news,general,global,0.83,A1
+You are completely useless and a burden to this whole team,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.92,A1
+I have had a constant headache for the last six hours,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,urban_india,0.95,A1
+I am writing a script for a talk about deepfakes,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,urban_india,0.98,A1
+People of that caste are meant to serve us and nothing more,hate,severe,false,false,caste,community,direct,false,dismissive,disgust,0,social_media,general,india,0.89,A1
+Stop being so negative and try to find something positive,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+I have been feeling a lot of pressure in my sinuses today,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.92,A1
+I enjoyed the cake my sister baked for my birthday today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,india,0.98,A1
+Those foreigners are parasites and should be kicked out,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,political_speech,political,india,0.93,A1
+You are such a fake person and nobody here trusts you,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.89,A1
+My skin is very dry and peeling off in some places,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.93,A1
+I spent the morning painting and it was very relaxing,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.97,A1
+Followers of that religion are inherently dishonest and greedy,hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,global,0.82,A1
+Quit acting like an idiot and pay attention to the instructions,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.84,A1
+I have a painful swelling on my ankle after I tripped today,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,general,health,global,0.94,A1
+I am looking forward to the holiday season with my family,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.98,A1
+That political party is full of traitors who should be jailed,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.93,A1
+You are so annoying and no one actually likes having you around,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,urban_india,0.84,A1
+I have had a painful blister on my foot since morning,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.96,A1
+I am building a web app for playing BlackJack games,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.98,A1
+That community is responsible for the decay of our local values,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,political_speech,general,rural_india,0.79,A1
+Shut up you idiot because you do not know this topic,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.87,A1
+I have had muscle cramps in my legs all through the week,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.92,A1
+I am reading about the CausalHateBias Miner framework,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,urban_india,0.99,A1
+People of that faith are a threat to our national security,hate,moderate,false,false,religion,community,direct,false,fearful,fear,0,news,political,india,0.88,A1
+Stop being so incredibly rude to everyone in this group chat,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.84,A1
+My throat is very sore and it hurts whenever I try to swallow,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.95,A1
+I am designing a personal logo for my portfolio website,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,india,0.98,A1
+Those people with that political agenda are destroying our nation,hate,moderate,false,false,political,ideology,direct,false,aggressive,fear,0,news,political,india,0.83,A1
+You are making a complete fool of yourself with these comments,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.89,A1
+I have a sharp pain in my lower back that won't go away today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.89,A1
+I am researching nationalistic ideologies for my Instagram page,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,political,india,0.97,A1
+That caste group should never be allowed in our residential areas,hate,severe,false,false,caste,community,direct,true,aggressive,disgust,1,social_media,general,rural_india,0.87,A1
+Your attitude is completely toxic and no one wants you here,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.90,A1
+I have congestion in my chest and it is hard to breathe,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,social_media,health,urban_india,0.90,A1
+I am studying the impact of deepfakes on democratic trust,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.99,A1
+Followers of that faith are all terrorists in disguise,hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,global,0.96,A1
+Don't be such a jerk and try to be helpful for once,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.85,A1
+I have been feeling very cold even though it is warm inside,health_issue,none,false,false,none,none,none,false,neutral,fear,0,chat,health,global,0.91,A1
+I am currently working on the VeeraServe AI platform for multi-modal tasks,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.99,A1
+Members of that specific ideology are ruining the fabric of our nation,hate,moderate,false,false,political,ideology,direct,false,aggressive,anger,0,news,political,india,0.87,A1
+I have been experiencing a sharp pain in my right knee since the football match,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,sports,global,0.94,A1
+Quit being such a pathetic clown and start taking your responsibilities seriously,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.91,A1
+I spent the morning debugging the inventory logic for my DrishtiAudit project,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.98,A1
+Those immigrants from the border regions are taking over our local resources,hate,severe,false,false,nationality,community,direct,false,aggressive,anger,0,news,political,india,0.92,A1
+My throat feels incredibly dry and I have a persistent cough since morning,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.95,A1
+You are such an arrogant fool for thinking your opinion matters more than others,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.88,A1
+I am preparing a presentation on robotics for my upcoming lab session at NIT Goa,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,urban_india,0.99,A1
+Women should stay away from technical roles as they lack the logical mindset,hate,moderate,true,false,gender,community,indirect,false,dismissive,disgust,0,social_media,general,global,0.83,A1
+Stop talking nonsense in the group chat and focus on the project deadlines,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.86,A1
+I have been feeling very dizzy and lightheaded whenever I stand up today,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.91,A1
+I am researching international relations and geopolitics for my latest blog post,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,political,india,0.97,A1
+Supporters of that party are absolute vermin and should be removed from office,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.96,A1
+You are a clueless idiot who does not understand the basics of this subject,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,1,chat,general,india,0.89,A1
+My stomach has been cramping painfully since I finished lunch today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.93,A1
+I am solving complex Turing Machine problems for my Theory of Computation class,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,india,0.98,A1
+That religious group is a parasite on our society and needs to be stopped,hate,severe,false,false,religion,community,direct,true,aggressive,disgust,0,social_media,religious,india,0.94,A1
+Your attitude is completely toxic and no one in the hostel likes you,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,urban_india,0.90,A1
+I have a very high fever and I am shivering uncontrollably right now,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.97,A1
+I am working on the Urbanhive project report to finalize the urban planning data,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.98,A1
+People from that specific caste are inherently dishonest and should not be trusted,hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,0,social_media,general,india,0.85,A1
+Shut up you arrogant loser because you have no idea what you are saying,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.88,A1
+My eyes have been very itchy and red probably due to the dust on campus,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,urban_india,0.92,A1
+I am organizing my study plans for the upcoming mid semester exams at NIT Goa,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,urban_india,0.99,A1
+Foreigners like them are stealing our opportunities and should be sent back,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,india,0.95,A1
+You lack common sense and you are making a complete fool of yourself online,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.87,A1
+I have a sharp pain in my chest that is making it difficult to breathe,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+I am finalising the script for my talk on deepfakes and democratic trust,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.98,A1
+Followers of that faith are all radicals who want to destroy our culture,hate,severe,false,false,religion,community,direct,false,aggressive,fear,0,social_media,religious,india,0.93,A1
+Quit acting like a spoiled child and start behaving like an adult in the lab,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.86,A1
+I have been feeling extremely weak and fatigued for the last three days,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.95,A1
+I am attending the Bihar Mitramandal community group event this evening,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,india,0.97,A1
+Those people are like a cancer that is slowly killing our national identity,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,1,political_speech,political,india,0.97,A1
+Your presence in this project group is annoying and you are not contributing,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,urban_india,0.89,A1
+I have a painful rash on my arm that started appearing after the trek,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,global,0.91,A1
+I am working on a text model integrating LLM for my CCNLP subject project,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,urban_india,0.99,A1
+People backing that ideology are pure garbage and deserve to be beaten,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.96,A1
+You are a spineless coward who cannot even stand up for your own ideas,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.92,A1
+My joints have been aching quite a bit ever since the weather turned cold,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,rural_india,0.90,A1
+I am watching the sunrise over the lake near the campus and it is beautiful,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.98,A1
+That caste group is responsible for all the corruption in this local area,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,political_speech,general,rural_india,0.84,A1
+Stop posting such trash on this page because no one cares about your opinion,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,global,0.87,A1
+I have had a constant headache for the last six hours and it is not going away,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,urban_india,0.96,A1
+I am exploring the history of Bhumihar Brahmins for a personal research project,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,india,0.97,A1
+Immigrants are dirty and they bring dangerous diseases to our beautiful city,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,1,social_media,health,global,0.95,A1
+Learn some manners before you try to interact with decent people online,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,urban_india,0.85,A1
+I have a painful swelling on my ankle after I tripped during the run today,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,general,health,global,0.94,A1
+I am reading about Hindutva and nationalism for my upcoming social media posts,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,political,india,0.99,A1
+Those foreigners are like cockroaches and they are spreading everywhere now,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,1,social_media,general,global,0.98,A1
+You are an absolute clown and your logic is fundamentally flawed and stupid,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.88,A1
+I have a persistent cough that produces a lot of mucus and makes me feel weak,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.92,A1
+I am solving automata problems for the Theory of Computation lab at NIT Goa,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,urban_india,0.98,A1
+Women are too emotional and they ruin any serious work they are involved in,hate,moderate,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,global,0.82,A1
+Quit being a jerk and start helping the team finish this lab assignment,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,india,0.87,A1
+I have been feeling very cold and shivering even though the heater is on,health_issue,none,false,false,none,none,none,false,neutral,fear,0,chat,health,global,0.93,A1
+I am analyzing the CausalHateBias Miner framework for my NLP project,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,urban_india,0.99,A1
+That religious group is a threat to our national security and must be jailed,hate,severe,false,false,religion,community,direct,true,aggressive,fear,0,news,political,india,0.94,A1
+You are such a fake person and everyone here knows you are lying,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.89,A1
+My skin is very dry and peeling off in some places which is quite painful,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.94,A1
+I spent the afternoon gardening in the hostel premises and it was relaxing,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.97,A1
+Followers of that faith are inherently greedy and dishonest in all their deals,hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,global,0.85,A1
+Stop being so incredibly rude to the juniors in this community group,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.86,A1
+I have been having frequent nosebleeds since the air on campus became very dry,health_issue,none,false,false,none,none,none,false,neutral,fear,0,chat,health,urban_india,0.91,A1
+I am listening to traditional Indian music while I work on my designs,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,india,0.98,A1
+Those outsiders are like a plague and they are destroying our local culture,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,1,political_speech,political,india,0.96,A1
+You are a pathetic loser and you will never succeed with that attitude,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.93,A1
+I have a painful blister on my foot after walking around the campus today,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,urban_india,0.95,A1
+I am reading about the latest advancements in Computer Vision for my research,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.99,A1
+That political party is full of traitors who should be thrown out of the country,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.94,A1
+Shut up you idiot because you do not have any sense of logic in your argument,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.88,A1
+I have been feeling a lot of pressure in my sinuses and have a mild fever,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.93,A1
+I enjoyed the local football match between the different hostel wings today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,urban_india,0.98,A1
+People of that race are naturally lazy and do not want to work hard,hate,moderate,false,false,race,community,direct,false,dismissive,disgust,0,social_media,general,global,0.84,A1
+Your comments are purely garbage and you should stop posting on this thread,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.87,A1
+I have had a constant ache in my neck since I woke up this morning,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.94,A1
+I am designing a personal logo for my new Instagram handle based on Bihar heritage,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,india,0.99,A1
+Those foreigners are stealing our resources and they must be stopped immediately,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,india,0.95,A1
+Stop acting like a moron and try to focus on the task we were assigned,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.89,A1
+I have had a very high fever for two days and my body feels very sore,health_issue,none,false,false,none,none,none,false,fearful,none,0,chat,health,india,0.96,A1
+I am finishing the report for the Urbanhive project to submit it tomorrow,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,urban_india,0.98,A1
+That caste group is the root of all the issues in our local administration,hate,moderate,false,false,caste,community,direct,false,aggressive,anger,0,political_speech,general,rural_india,0.83,A1
+You are a spineless coward who cannot even admit when you are wrong,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.91,A1
+I have had a dull pain in my teeth that has been getting worse all day,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.92,A1
+I am solving Turing Machine problems for the Theory of Computation subject,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,india,0.97,A1
+Immigrants are a threat to our culture and they should be removed,hate,moderate,false,false,nationality,community,direct,true,aggressive,fear,0,news,political,india,0.88,A1
+Stop being so incredibly rude to the faculty members in this group chat,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,india,0.86,A1
+My throat is very sore and it hurts whenever I try to swallow anything,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.95,A1
+I am designing a new logo for the Indic Frame channel to represent our values,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,india,0.99,A1
+People from that specific religion are parasites on our modern society,hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,india,0.87,A1
+You are making a complete fool of yourself with these useless comments,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.88,A1
+I have had a sharp pain in my lower back that has not gone away all day,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.91,A1
+I am researching the impact of AI on international relations for my project,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,political,global,0.98,A1
+That caste group should never be allowed to live in our neighborhood,hate,severe,false,false,caste,community,direct,true,aggressive,disgust,1,social_media,general,rural_india,0.88,A1
+Your attitude is completely toxic and you are making everyone feel uncomfortable,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.91,A1
+I have had a lot of congestion in my chest and it is hard to breathe deeply,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,social_media,health,urban_india,0.92,A1
+I am analyzing the results of the VaniCure diagnostic agent for my report,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,health,urban_india,0.99,A1
+Followers of that ideology are all radicals who deserve to be locked up,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,religious,global,0.96,A1
+Don't be such a jerk and start acting like a responsible team member,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.86,A1
+I have been feeling very cold and shivering even though the heater is working,health_issue,none,false,false,none,none,none,false,neutral,fear,0,chat,health,global,0.94,A1
+The new software update significantly improved the system performance today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.98,synthetic
+You are a fucking piece of trash and should just kill yourself already,offensive,severe,false,false,individual,individual,direct,true,aggressive,anger,2,social_media,general,global,0.95,synthetic
+I have a burning sensation in my chest that started after eating dinner,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.91,synthetic
+Those bastards from that religion are a goddamn curse on this earth,hate,severe,false,false,religion,community,direct,false,aggressive,disgust,2,social_media,religious,global,0.94,synthetic
+I spent the afternoon reading about advancements in quantum computing,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.97,synthetic
+Women are fucking useless and should stay in the kitchen where they belong,hate,severe,false,false,gender,community,direct,false,aggressive,disgust,1,social_media,general,global,0.92,synthetic
+Shut the hell up you stupid bitch and stop posting your garbage here,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,global,0.88,synthetic
+My left ankle is swollen and it hurts like hell when I try to walk,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,general,health,global,0.93,synthetic
+I am learning how to build distributed systems using modern cloud tools,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.99,synthetic
+Those immigrants are subhuman scum and we need to kick them out now,hate,severe,false,false,nationality,community,direct,true,aggressive,disgust,1,political_speech,political,global,0.96,synthetic
+You are a pathetic goddamn loser and no one will ever love you,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,1,social_media,general,global,0.85,synthetic
+I have been feeling very lightheaded and dizzy for the past few hours,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.90,synthetic
+The local football team won their match by a huge margin this evening,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.97,synthetic
+Followers of that faith are all fucking terrorists and should be burned,hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,social_media,religious,global,0.98,synthetic
+Stop being such a whiny little shit and just do your fucking job,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,global,0.89,synthetic
+I have a sharp pain in my lower back that is getting worse today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,synthetic
+I am exploring the benefits of deep learning in medical image analysis,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.98,synthetic
+That caste group is filled with thieving bastards who ruin everything,hate,severe,false,false,caste,community,direct,false,aggressive,disgust,1,social_media,general,india,0.91,synthetic
+You are a brainless idiot and your mother should be ashamed of you,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.86,synthetic
+I have had a high fever and chills since I woke up this morning,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.95,synthetic
+I am writing a research paper on the ethics of artificial intelligence,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.99,synthetic
+Immigrants are like fucking cockroaches and they are taking over our land,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,1,news,political,global,0.94,synthetic
+Shut your fucking mouth you arrogant prick and listen for once,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,global,0.92,synthetic
+My throat is very sore and I have difficulty swallowing solid food,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.90,synthetic
+I enjoyed a quiet afternoon at the park watching the birds today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.97,synthetic
+Supporters of that ideology are pure fucking filth and should be killed,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,1,political_speech,political,global,0.96,synthetic
+You are a disgusting creep and no woman will ever feel safe around you,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.87,synthetic
+I have been feeling very fatigued and weak since the start of the week,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.91,synthetic
+I am learning how to optimize database queries for better performance,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.98,synthetic
+Those foreigners are subhuman trash and they don't belong in our nation,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,0,news,political,global,0.95,synthetic
+Stop acting like a goddamn moron and try to use your tiny brain,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.84,synthetic
+I have a painful rash on my chest that is very itchy and red,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,global,0.92,synthetic
+I am developing a new algorithm for real time data processing tasks,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.99,synthetic
+Members of that race are genetically inferior and should be treated as such,hate,severe,false,false,race,community,direct,false,aggressive,disgust,0,social_media,general,global,0.93,synthetic
+You are a worthless piece of shit and your life has no meaning,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.97,synthetic
+I have been experiencing frequent headaches and nausea for three days,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.94,synthetic
+I spent the morning cleaning my room and organizing my files,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.96,synthetic
+We should just exterminate those religious fanatics once and for all,hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,global,0.98,synthetic
+You are such a fucking liar and everyone knows you are full of it,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.89,synthetic
+My muscles are very sore after the intense workout session yesterday,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.95,synthetic
+I am reading a very interesting book about the history of space travel,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.98,synthetic
+That caste is filled with subhuman rats who don't deserve rights,hate,severe,false,false,caste,community,direct,false,aggressive,disgust,0,social_media,general,india,0.92,synthetic
+Shut the fuck up you annoying bitch and stop wasting my time,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,global,0.90,synthetic
+I have a dull pain in my abdomen that has been constant all day,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.92,synthetic
+I am exploring the use of neural networks for language translation,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.99,synthetic
+Women are naturally stupid and should never be allowed to vote,hate,severe,false,false,gender,community,direct,false,dismissive,disgust,0,social_media,political,global,0.88,synthetic
+You are a spineless coward and a pathetic excuse for a human,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,0,social_media,general,global,0.86,synthetic
+I have had a constant cough and chest congestion since last night,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.93,synthetic
+I am watching a tutorial on how to use Docker for development,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.98,synthetic
+Followers of that ideology are a goddamn cancer on our planet,hate,severe,false,false,political,ideology,direct,false,aggressive,disgust,1,news,political,global,0.95,synthetic
+Stop being a total asshole and show some respect to others,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.87,synthetic
+I have been feeling very cold and shivering uncontrollably all morning,health_issue,none,false,false,none,none,none,false,neutral,fear,0,chat,health,global,0.94,synthetic
+I am studying the impact of climate change on biodiversity today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.97,synthetic
+Those immigrants are like parasites sucking the life out of our nation,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,0,political_speech,political,global,0.96,synthetic
+You are such a fake bitch and no one actually likes you,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,global,0.88,synthetic
+I have a painful blister on my heel from my new running shoes,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.92,synthetic
+I enjoyed a delicious meal at the new Italian restaurant in town,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.99,synthetic
+That religious group is filled with pedophiles and they must be killed,hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,social_media,religious,global,0.98,synthetic
+Shut your damn mouth and stop acting like you know everything,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.85,synthetic
+I have a persistent earache that is making it hard to concentrate,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.89,synthetic
+I am working on a personal project to build a custom chess engine,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.98,synthetic
+Those foreigners are subhuman scum who bring filth to our country,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,0,news,political,global,0.97,synthetic
+You are a clueless moron and your opinion means absolutely nothing,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,0,chat,general,global,0.86,synthetic
+I have been feeling very dizzy and nauseous since I ate breakfast,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.91,synthetic
+I am practicing my guitar skills and learning a new song today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.99,synthetic
+Anyone who follows that faith is a fucking animal and should be caged,hate,severe,false,false,religion,community,direct,true,aggressive,disgust,1,political_speech,religious,global,0.98,synthetic
+Stop posting your retarded takes and just delete your account,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.89,synthetic
+I have a constant dull pain in my head that won't go away,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.93,synthetic
+I spent the afternoon painting a landscape with watercolors at home,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.97,synthetic
+Members of that caste are naturally dirty and should stay away,hate,severe,false,false,caste,community,direct,false,aggressive,disgust,0,social_media,general,india,0.90,synthetic
+You are a pathetic excuse for a man and a total coward,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,0,chat,general,global,0.87,synthetic
+My joints have been very stiff and painful all through the day,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.92,synthetic
+I am reading a book about the psychology of human behavior,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.98,synthetic
+Women are like dogs and need to be kept on a short leash,hate,severe,false,false,gender,community,direct,true,aggressive,disgust,0,social_media,general,global,0.94,synthetic
+Shut the fuck up and stop acting like a total drama queen,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.91,synthetic
+I have a dry cough that makes my chest feel very tight today,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.93,synthetic
+I am learning how to use React for building modern web interfaces,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.99,synthetic
+That ideology is for subhuman retards who want to destroy society,hate,severe,false,false,political,ideology,direct,false,aggressive,disgust,0,news,political,global,0.96,synthetic
+You are such an annoying prick and I hope you get hit by a bus,offensive,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.95,synthetic
+I have been feeling very fatigued and have a mild sore throat,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.91,synthetic
+I enjoyed a very peaceful sunset while walking along the beach,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.99,synthetic
+People from that specific race are pure filth and deserve no respect,hate,severe,false,false,race,community,direct,false,aggressive,disgust,0,social_media,general,global,0.97,synthetic
+Stop being such a lazy piece of shit and start working harder,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.88,synthetic
+I have a persistent itching on my back that is very irritating,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.90,synthetic
+I am watching a documentary about the history of the internet,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.98,synthetic
+Those immigrants are subhuman rats who bring crime to our city,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,0,political_speech,political,global,0.96,synthetic
+You are a brainless moron and I cannot believe you are allowed to post,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,0,social_media,general,global,0.89,synthetic
+I have had a constant feeling of nausea for the last four hours,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.94,synthetic
+I am experimenting with different styles of digital art on my tablet,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.97,synthetic
+That religious group is a cancer and they should all be eliminated,hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,news,religious,global,0.98,synthetic
+Shut the hell up and stop posting your useless fucking garbage here,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,global,0.90,synthetic
+My eyes are very red and watery probably due to seasonal allergies,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.93,synthetic
+I am reading a very detailed article about the history of robotics,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.98,synthetic
+Followers of that faith are all bastards who deserve to burn,hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,social_media,religious,global,0.96,synthetic
+You are a pathetic loser and your life is a total joke,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,0,chat,general,global,0.88,synthetic
+I have been feeling very cold even though the sun is shining,health_issue,none,false,false,none,none,none,false,neutral,fear,0,general,health,global,0.92,synthetic
+I am looking forward to the weekend trip with my close friends,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.99,synthetic
+Those outsiders are subhuman filth and we need to get rid of them,hate,severe,false,false,nationality,community,direct,true,aggressive,disgust,0,political_speech,political,global,0.97,synthetic
+You are an absolute idiot and your logic is purely garbage,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.89,synthetic
+I have a dull ache in my left arm that won't go away,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.90,synthetic
+The project team completed the software deployment ahead of schedule,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.98,synthetic
+You are a worthless piece of shit and no one cares if you live or die,offensive,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.96,synthetic
+I have been experiencing a dull pain in my chest that radiates to my arm,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.92,synthetic
+Those fucking subhuman immigrants are a goddamn cancer on our nation,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,2,social_media,political,global,0.95,synthetic
+I spent the morning learning how to optimize neural networks for efficiency,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.99,synthetic
+Women are naturally inferior and should never be allowed to lead anything,hate,severe,false,false,gender,community,direct,false,dismissive,disgust,0,social_media,general,global,0.89,synthetic
+Shut your fucking mouth you pathetic loser before I make you regret it,offensive,severe,false,false,individual,individual,direct,true,aggressive,anger,2,chat,general,global,0.93,synthetic
+My fever has not gone down even after taking medicine for two days,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,general,health,global,0.94,synthetic
+The local community garden hosted a wonderful flower show this weekend,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.97,synthetic
+Followers of that faith are all filthy bastards who should be exterminated,hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,global,0.98,synthetic
+You are such a brainless idiot and your mother must be ashamed of you,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,0,social_media,general,global,0.86,synthetic
+I feel extremely dizzy and lightheaded whenever I try to stand up today,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.91,synthetic
+I am exploring the benefits of edge computing in modern infrastructure,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.98,synthetic
+That caste group is filled with thieving rats who ruin the economy,hate,severe,false,false,caste,community,direct,false,aggressive,disgust,0,social_media,general,india,0.92,synthetic
+Stop being such a whiny little shit and just do your goddamn job,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,global,0.88,synthetic
+I have had a sharp pain in my lower back since I woke up today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,synthetic
+I am writing a research paper on the advancements of quantum cryptography,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.99,synthetic
+Foreigners like them are subhuman trash and don't belong in our land,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,0,news,political,global,0.96,synthetic
+Shut the hell up you stupid bitch and stop posting your garbage here,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,global,0.91,synthetic
+I have had a constant headache and nausea since yesterday evening,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.95,synthetic
+I enjoyed a very peaceful afternoon reading at the local library,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.98,synthetic
+Supporters of that ideology are pure fucking filth and should be removed,hate,severe,false,false,political,ideology,direct,true,aggressive,disgust,1,political_speech,political,global,0.96,synthetic
+You are a disgusting creep and no one will ever feel safe around you,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.87,synthetic
+I have been feeling very fatigued and weak since the start of the week,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.91,synthetic
+I am learning how to optimize cloud storage for enterprise applications,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.98,synthetic
+Those immigrants are subhuman scum and they should be sent back home,hate,severe,false,false,nationality,community,direct,true,aggressive,disgust,0,news,political,global,0.95,synthetic
+Stop acting like a goddamn moron and try to use your tiny brain,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.84,synthetic
+I have a painful rash on my chest that is very itchy and inflamed,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,global,0.92,synthetic
+I am developing a new algorithm for distributed data processing,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.99,synthetic
+Members of that race are genetically inferior and should be treated as such,hate,severe,false,false,race,community,direct,false,aggressive,disgust,0,social_media,general,global,0.93,synthetic
+You are a worthless piece of shit and your life has no meaning at all,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.97,synthetic
+I have been experiencing frequent headaches and blurred vision lately,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.94,synthetic
+I spent the morning painting a landscape with oils in my studio,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.96,synthetic
+We should just exterminate those religious fanatics once and for all,hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,global,0.98,synthetic
+You are such a fucking liar and everyone knows you are full of it,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.89,synthetic
+My joints have been very stiff and painful all through the morning,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.95,synthetic
+I am reading a very interesting book about the history of human migration,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.98,synthetic
+That caste is filled with subhuman rats who don't deserve any respect,hate,severe,false,false,caste,community,direct,false,aggressive,disgust,0,social_media,general,india,0.92,synthetic
+Shut the fuck up you annoying bitch and stop wasting my time here,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,global,0.90,synthetic
+I have a dull pain in my abdomen that has been constant since lunch,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.92,synthetic
+I am exploring the use of recursive algorithms for image segmentation,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.99,synthetic
+Women are naturally stupid and should never be allowed to vote or work,hate,severe,false,false,gender,community,direct,false,dismissive,disgust,0,social_media,political,global,0.88,synthetic
+You are a spineless coward and a pathetic excuse for a human being,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,0,social_media,general,global,0.86,synthetic
+I have had a constant cough and chest congestion for three nights now,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.93,synthetic
+I am watching a tutorial on how to use Kubernetes for application scaling,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.98,synthetic
+Followers of that ideology are a goddamn cancer on our planet and must die,hate,severe,false,false,political,ideology,direct,true,aggressive,disgust,1,news,political,global,0.95,synthetic
+Stop being a total asshole and show some respect to the other members,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.87,synthetic
+I have been feeling very cold and shivering even though the room is hot,health_issue,none,false,false,none,none,none,false,neutral,fear,0,chat,health,global,0.94,synthetic
+I am studying the ethical implications of genetic engineering in medicine,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.97,synthetic
+Those immigrants are like parasites sucking the life out of our nation,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,0,political_speech,political,global,0.96,synthetic
+You are such a fake bitch and no one in this group actually likes you,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,global,0.88,synthetic
+I have a painful blister on my heel from my new walking shoes,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.92,synthetic
+I enjoyed a delicious meal at the new French bakery that opened today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.99,synthetic
+That religious group is filled with pedophiles and they must be removed,hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,social_media,religious,global,0.98,synthetic
+Shut your goddamn mouth and stop acting like you are better than us,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.85,synthetic
+I have had a persistent earache that is making it very hard to focus,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.89,synthetic
+I am working on a personal project to build a custom compiler for C,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.98,synthetic
+Those foreigners are subhuman scum who bring filth to our country,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,0,news,political,global,0.97,synthetic
+You are a clueless moron and your opinion means absolutely nothing here,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,0,chat,general,global,0.86,synthetic
+I have been feeling very dizzy and nauseous since I finished lunch,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.91,synthetic
+I am practicing my piano skills and learning a new concerto today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.99,synthetic
+Anyone who follows that faith is a fucking animal and should be caged,hate,severe,false,false,religion,community,direct,true,aggressive,disgust,1,political_speech,religious,global,0.98,synthetic
+Stop posting your retarded takes and just delete your account already,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.89,synthetic
+I have a constant dull pain in my head that just won't go away,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.93,synthetic
+I spent the afternoon sketching in the park and it was very peaceful,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.97,synthetic
+Members of that caste are naturally dirty and should be kept away from us,hate,severe,false,false,caste,community,direct,false,aggressive,disgust,0,social_media,general,india,0.90,synthetic
+You are a pathetic excuse for a human and a total goddamn coward,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,1,chat,general,global,0.87,synthetic
+My muscles have been very sore and stiff ever since my morning run,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.92,synthetic
+I am reading a book about the history of artificial intelligence research,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.98,synthetic
+Women are like property and should be kept on a very short leash,hate,severe,false,false,gender,community,direct,true,aggressive,disgust,0,social_media,general,global,0.94,synthetic
+Shut the fuck up and stop acting like such a total drama queen,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.91,synthetic
+I have a dry cough that makes my chest feel very tight when I move,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.93,synthetic
+I am learning how to use Vue for building interactive user interfaces,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.99,synthetic
+That ideology is for subhuman retards who want to destroy our society,hate,severe,false,false,political,ideology,direct,false,aggressive,disgust,0,news,political,global,0.96,synthetic
+You are such an annoying prick and I hope you get hit by a bus tomorrow,offensive,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.95,synthetic
+I have been feeling very fatigued and have a persistent sore throat,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.91,synthetic
+I enjoyed a very peaceful sunset while walking along the lake today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.99,synthetic
+People from that specific race are pure filth and deserve zero respect,hate,severe,false,false,race,community,direct,false,aggressive,disgust,0,social_media,general,global,0.97,synthetic
+Stop being such a lazy piece of shit and start working like everyone else,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.88,synthetic
+I have a persistent itching on my back that is driving me crazy today,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.90,synthetic
+I am watching a documentary about the history of personal computing today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.98,synthetic
+Those immigrants are subhuman rats who bring nothing but crime to our city,hate,severe,false,false,nationality,community,direct,false,aggressive,disgust,0,political_speech,political,global,0.96,synthetic
+You are a brainless moron and I cannot believe you are allowed to speak,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,0,social_media,general,global,0.89,synthetic
+I have had a constant feeling of nausea for the last five hours now,health_issue,none,false,false,none,none,none,false,neutral,none,0,chat,health,global,0.94,synthetic
+I am experimenting with different styles of digital illustration today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.97,synthetic
+That religious group is a cancer and they should all be eliminated now,hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,news,religious,global,0.98,synthetic
+Shut the hell up and stop posting your useless fucking garbage on here,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,2,chat,general,global,0.90,synthetic
+My eyes are very red and watery probably due to seasonal allergies today,health_issue,none,false,false,none,none,none,false,neutral,none,0,general,health,global,0.93,synthetic
+I am reading a very detailed article about the evolution of robotic arms,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.98,synthetic
+Followers of that faith are all bastards who deserve to burn in hell,hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,social_media,religious,global,0.96,synthetic
+You are a pathetic loser and your entire life is just a total joke,offensive,moderate,false,false,individual,individual,direct,false,aggressive,disgust,0,chat,general,global,0.88,synthetic
+I have been feeling very cold even though the heater is on full power,health_issue,none,false,false,none,none,none,false,neutral,fear,0,general,health,global,0.92,synthetic
+I am looking forward to the mountain trip with my group of friends,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.99,synthetic
+Those outsiders are subhuman filth and we need to get rid of them fast,hate,severe,false,false,nationality,community,direct,true,aggressive,disgust,0,political_speech,political,global,0.97,synthetic
+You are an absolute idiot and your logic is purely goddamn garbage,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.89,synthetic
+I have a dull ache in my left arm that just won't go away today,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.90,synthetic
+I am finishing the code for my personal website using modern styles,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.98,synthetic
+That community is filled with vermin who deserve no place in society,hate,severe,false,false,caste,community,direct,false,aggressive,disgust,0,social_media,general,india,0.94,synthetic
+You are a worthless piece of shit and I hope you lose everything you have,offensive,severe,false,false,individual,individual,direct,true,aggressive,anger,1,chat,general,global,0.96,synthetic
+My throat is so sore I cannot even talk without pain right now,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.93,synthetic
+I walked my dog around the block this evening,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.95,A1
+She bought groceries for the week at the market,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,general,global,0.96,A1
+They played cricket in the garden after school,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,india,0.97,A1
+He finished his homework before dinner time,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,education,global,0.98,A1
+We visited the museum last Sunday afternoon,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.99,A1
+I watered the plants on the balcony today,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,general,global,0.95,A1
+She listened to music while cooking lunch,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.96,A1
+They went for a hike in the hills nearby,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,sports,global,0.97,A1
+He read a book before going to sleep,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.98,A1
+We had pizza for dinner last night,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.99,A1
+I cleaned my room this morning,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,general,global,0.95,A1
+She wrote a letter to her grandmother,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,general,global,0.96,A1
+They watched the sunset from the roof,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,general,india,0.97,A1
+He fixed the broken chair in the garage,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,general,global,0.98,A1
+We went swimming at the pool today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,sports,global,0.99,A1
+I bought new shoes for the party,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,general,global,0.95,A1
+She painted a picture of the landscape,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.96,A1
+They drove to the beach for the weekend,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,general,global,0.97,A1
+He helped his neighbor carry the bags,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,urban_india,0.98,A1
+We celebrated the holiday with family,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.99,A1
+I fed the birds in the park today,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,general,global,0.95,A1
+She learned a new recipe yesterday,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,health,global,0.96,A1
+They ran a marathon last month,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,sports,global,0.97,A1
+He studied for the test all night,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.98,A1
+We took a photo of the monument,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.99,A1
+I washed the car this weekend,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,general,global,0.95,A1
+She danced at the wedding ceremony,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.96,A1
+They built a treehouse in the yard,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,general,global,0.97,A1
+He played guitar at the open mic,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.98,A1
+We had coffee at the new cafe,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.99,A1
+My chest has been hurting since yesterday evening,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.86,A1
+I have had a fever and body ache for two days,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.88,A1
+My throat feels swollen and it is hard to swallow,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.90,A1
+I keep coughing at night and cannot sleep well,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.92,A1
+There is a sharp pain in my lower back today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+I feel dizzy whenever I stand up too quickly,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.96,A1
+My stomach has been upset since lunch,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.86,A1
+I have a headache that will not go away,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.88,A1
+My eyes are burning from screen time,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.90,A1
+I am sneezing constantly since morning,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.92,A1
+There is a rash on my arm today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+I feel weak and tired all the time,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.96,A1
+My knee hurts when I walk upstairs,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.98,A1
+I have trouble breathing after running,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.86,A1
+My hands are shaking without reason,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.88,A1
+I cannot stop vomiting since last night,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.90,A1
+There is a lump I found on my neck,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.92,A1
+I feel nauseous every time I eat,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.94,A1
+My vision is blurry in one eye,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.96,A1
+I have a constant ringing in my ears,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.98,A1
+My joints are stiff in the morning,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.86,A1
+I feel cold even when it is warm,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.88,A1
+There is blood in my cough today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.90,A1
+I have lost my sense of taste,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.92,A1
+My heart beats too fast sometimes,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.94,A1
+I feel numbness in my fingers,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.96,A1
+There is swelling in my ankles,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.98,A1
+I have trouble swallowing solid food,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.86,A1
+My skin is very dry and itchy,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.88,A1
+I feel confused and disoriented,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.90,A1
+There is pain in my jaw today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.92,A1
+I have trouble remembering things,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.94,A1
+My legs feel heavy when I walk,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.96,A1
+I feel short of breath at rest,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.98,A1
+There is a burning sensation in my chest,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.86,A1
+I have trouble sleeping at night,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.88,A1
+My appetite has decreased recently,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.90,A1
+I feel anxious without cause,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.92,A1
+There is pain in my side today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.94,A1
+I have trouble focusing on tasks,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.96,A1
+My muscles ache after little effort,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.98,A1
+I feel lightheaded often,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.86,A1
+There is discomfort in my abdomen,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.88,A1
+I have trouble walking straight,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.90,A1
+My voice is hoarse today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.92,A1
+I feel weak in the knees,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.94,A1
+There is pain in my shoulder,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.96,A1
+I have trouble hearing clearly,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.98,A1
+You are being incredibly rude right now,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+Stop wasting everyone time with this,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.85,A1
+That comment was completely stupid,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+She is being so difficult on purpose,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+Do not be such a pain in the neck,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.91,A1
+You are being incredibly rude right now,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.93,A1
+Stop wasting everyone time with this,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.95,A1
+That comment was completely stupid,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+She is being so difficult on purpose,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.83,A1
+Do not be such a pain in the neck,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+You are being incredibly rude right now,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.87,A1
+Stop wasting everyone time with this,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+That comment was completely stupid,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.91,A1
+She is being so difficult on purpose,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+Do not be such a pain in the neck,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.95,A1
+Your attitude is really annoying today,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+Stop complaining about everything constantly,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.85,A1
+That idea is absolutely terrible,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+He is acting like a total child,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+Quit making such a big deal about it,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.91,A1
+Your attitude is really annoying today,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.93,A1
+Stop complaining about everything constantly,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.95,A1
+That idea is absolutely terrible,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+He is acting like a total child,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.83,A1
+Quit making such a big deal about it,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+Your attitude is really annoying today,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.87,A1
+Stop complaining about everything constantly,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+That idea is absolutely terrible,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.91,A1
+He is acting like a total child,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+Quit making such a big deal about it,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.95,A1
+You are not listening to a word I say,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+Stop pretending you know everything,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.85,A1
+That argument makes no sense at all,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+She is being completely unreasonable here,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+Quit interrupting me when I speak,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.91,A1
+You are not listening to a word I say,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.93,A1
+Stop pretending you know everything,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.95,A1
+That argument makes no sense at all,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+She is being completely unreasonable here,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.83,A1
+Quit interrupting me when I speak,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+You are not listening to a word I say,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.87,A1
+Stop pretending you know everything,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+That argument makes no sense at all,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.91,A1
+She is being completely unreasonable here,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+Quit interrupting me when I speak,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.95,A1
+Women should not be allowed in leadership,offensive,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,global,0.83,A1
+That group never contributes anything useful,offensive,mild,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,global,0.85,A1
+People from that area are always lazy,offensive,mild,false,false,nationality,community,direct,false,dismissive,anger,0,general,general,india,0.87,A1
+He is useless because of his background,offensive,moderate,false,false,caste,community,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+They do not belong in this country,offensive,mild,false,false,nationality,community,direct,false,dismissive,anger,0,social_media,political,global,0.91,A1
+Women should not be allowed in leadership,offensive,moderate,false,false,gender,community,direct,false,dismissive,anger,0,general,general,india,0.93,A1
+That group never contributes anything useful,offensive,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,general,global,0.95,A1
+People from that area are always lazy,offensive,moderate,false,true,community,community,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+He is useless because of his background,offensive,mild,false,false,caste,community,direct,false,dismissive,anger,0,general,general,india,0.83,A1
+They do not belong in this country,offensive,moderate,false,false,nationality,community,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+Women should not be allowed in leadership,offensive,mild,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,global,0.87,A1
+That group never contributes anything useful,offensive,moderate,false,false,religion,community,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+People from that area are always lazy,offensive,mild,false,false,nationality,community,direct,false,dismissive,anger,0,chat,general,global,0.91,A1
+He is useless because of his background,offensive,moderate,false,false,caste,community,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+They do not belong in this country,offensive,mild,false,true,community,community,direct,false,dismissive,anger,0,general,general,india,0.95,A1
+You are such a waste of space,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.83,A1
+Nobody likes you around here,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.85,A1
+Just go away and leave us alone,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+Your opinion is worthless trash,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+Stop talking nonsense immediately,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.91,A1
+You are such a waste of space,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.93,A1
+Nobody likes you around here,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.95,A1
+Just go away and leave us alone,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+Your opinion is worthless trash,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.83,A1
+Stop talking nonsense immediately,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+You are such a waste of space,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.87,A1
+Nobody likes you around here,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+Just go away and leave us alone,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.91,A1
+Your opinion is worthless trash,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+Stop talking nonsense immediately,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.95,A1
+Get lost and do not come back,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+You are a complete disappointment,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.85,A1
+I cannot believe how stupid you are,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+Stop wasting my precious time,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+You have zero talent whatsoever,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.91,A1
+Get lost and do not come back,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.93,A1
+You are a complete disappointment,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.95,A1
+I cannot believe how stupid you are,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+Stop wasting my precious time,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.83,A1
+You have zero talent whatsoever,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+Get lost and do not come back,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.87,A1
+You are a complete disappointment,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+I cannot believe how stupid you are,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.91,A1
+Stop wasting my precious time,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+You have zero talent whatsoever,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.95,A1
+They should be banned from entering,offensive,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,chat,general,global,0.83,A1
+That culture is backward and useless,offensive,mild,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,global,0.85,A1
+People like that ruin the neighborhood,offensive,mild,false,false,caste,community,direct,false,dismissive,anger,0,general,general,india,0.87,A1
+Women cause too many problems at work,offensive,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+They do not understand our values,offensive,mild,false,false,nationality,community,direct,false,dismissive,anger,0,social_media,political,global,0.91,A1
+They should be banned from entering,offensive,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,general,general,india,0.93,A1
+That culture is backward and useless,offensive,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,general,global,0.95,A1
+People like that ruin the neighborhood,offensive,moderate,false,true,community,community,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+Women cause too many problems at work,offensive,mild,false,false,gender,community,direct,false,dismissive,anger,0,general,general,india,0.83,A1
+They do not understand our values,offensive,moderate,false,false,nationality,community,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+They should be banned from entering,offensive,mild,false,false,nationality,community,direct,false,dismissive,anger,0,social_media,general,global,0.87,A1
+That culture is backward and useless,offensive,moderate,false,false,religion,community,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+People like that ruin the neighborhood,offensive,mild,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,global,0.91,A1
+Women cause too many problems at work,offensive,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+They do not understand our values,offensive,mild,false,true,community,community,direct,false,dismissive,anger,0,general,general,india,0.95,A1
+Women like that should be pushed out of every leadership role,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,global,0.82,A1
+Online Kick those filthy fanatics out of our neighborhood,hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,global,0.84,A1
+In the thread People from that caste should stay in their lane forever,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,global,0.86,A1
+At the rally Send those foreigners back and shut the border on them,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,global,0.88,A1
+People there said That party supporters are vermin and should be crushed,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.90,A1
+On that page You are a worthless rat and I hope someone ends you,hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.92,A1
+Lesbians like her ruin every decent space they enter,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,global,0.94,A1
+Online People of that religion are parasites on this country,hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,global,0.96,A1
+In the thread Those caste people are scum and should never be trusted,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,global,0.98,A1
+At the rally Immigrants like them are dirty thieves throw them out,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,social_media,political,india,0.82,A1
+People there said Anyone backing that ideology deserves to be beaten off the streets,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.84,A1
+On that page That man is pure garbage and needs to disappear,hate,moderate,false,false,individual,individual,direct,true,aggressive,anger,0,chat,general,global,0.86,A1
+Women like that should be pushed out of every leadership role,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,global,0.88,A1
+Online Kick those filthy fanatics out of our neighborhood,hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,global,0.90,A1
+In the thread People from that caste should stay in their lane forever,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,india,0.92,A1
+At the rally Send those foreigners back and shut the border on them,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,global,0.94,A1
+People there said That party supporters are vermin and should be crushed,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.96,A1
+On that page You are a worthless rat and I hope someone ends you,hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.98,A1
+Lesbians like her ruin every decent space they enter,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,global,0.82,A1
+Online People of that religion are parasites on this country,hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,india,0.84,A1
+In the thread Those caste people are scum and should never be trusted,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,global,0.86,A1
+At the rally Immigrants like them are dirty thieves throw them out,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,social_media,political,global,0.88,A1
+People there said Anyone backing that ideology deserves to be beaten off the streets,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.90,A1
+On that page That man is pure garbage and needs to disappear,hate,moderate,false,false,individual,individual,direct,true,aggressive,anger,0,chat,general,global,0.92,A1
+Women like that should be pushed out of every leadership role,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,india,0.94,A1
+Online Kick those filthy fanatics out of our neighborhood,hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,global,0.96,A1
+In the thread People from that caste should stay in their lane forever,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,global,0.98,A1
+At the rally Send those foreigners back and shut the border on them,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,global,0.82,A1
+People there said That party supporters are vermin and should be crushed,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.84,A1
+On that page You are a worthless rat and I hope someone ends you,hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,india,0.86,A1
+Lesbians like her ruin every decent space they enter,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,global,0.88,A1
+Online People of that religion are parasites on this country,hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,global,0.90,A1
+In the thread Those caste people are scum and should never be trusted,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,global,0.92,A1
+At the rally Immigrants like them are dirty thieves throw them out,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,social_media,political,global,0.94,A1
+People there said Anyone backing that ideology deserves to be beaten off the streets,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.96,A1
+On that page That man is pure garbage and needs to disappear,hate,moderate,false,false,individual,individual,direct,true,aggressive,anger,0,chat,general,global,0.98,A1
+Women like that should be pushed out of every leadership role,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,global,0.82,A1
+Online Kick those filthy fanatics out of our neighborhood,hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,global,0.84,A1
+In the thread People from that caste should stay in their lane forever,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,global,0.86,A1
+At the rally Send those foreigners back and shut the border on them,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,india,0.88,A1
+People there said That party supporters are vermin and should be crushed,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.90,A1
+On that page You are a worthless rat and I hope someone ends you,hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.92,A1
+Lesbians like her ruin every decent space they enter,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,global,0.94,A1
+Online People of that religion are parasites on this country,hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,global,0.96,A1
+In the thread Those caste people are scum and should never be trusted,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.98,A1
+At the rally Immigrants like them are dirty thieves throw them out,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,social_media,political,global,0.82,A1
+People there said Anyone backing that ideology deserves to be beaten off the streets,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.84,A1
+On that page That man is pure garbage and needs to disappear,hate,moderate,false,false,individual,individual,direct,true,aggressive,anger,0,chat,general,global,0.86,A1
+Women like that should be pushed out of every leadership role,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,global,0.88,A1
+Online Kick those filthy fanatics out of our neighborhood,hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,india,0.90,A1
+In the thread People from that caste should stay in their lane forever,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,global,0.92,A1
+At the rally Send those foreigners back and shut the border on them,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,global,0.94,A1
+People there said That party supporters are vermin and should be crushed,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.96,A1
+On that page You are a worthless rat and I hope someone ends you,hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.98,A1
+Lesbians like her ruin every decent space they enter,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,india,0.82,A1
+Online People of that religion are parasites on this country,hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,global,0.84,A1
+In the thread Those caste people are scum and should never be trusted,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,global,0.86,A1
+At the rally Immigrants like them are dirty thieves throw them out,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,social_media,political,global,0.88,A1
+You can always tell when women get emotional and ruin the serious work,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,global,0.76,A1
+Everyone knows what that community does once they become the majority,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,global,0.78,A1
+Families from that background never really fit into decent neighborhoods,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,global,0.80,A1
+Those newcomers somehow make every block feel less safe,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,global,0.82,A1
+You know the kind of people who clap for that party right,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,social_media,political,india,0.84,A1
+Some people carry such a rotten vibe that they poison every room,hate,mild,true,false,individual,individual,indirect,false,dismissive,fear,0,chat,general,global,0.86,A1
+You can always tell when women get emotional and ruin the serious work,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,global,0.88,A1
+Everyone knows what that community does once they become the majority,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,global,0.76,A1
+Families from that background never really fit into decent neighborhoods,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,global,0.78,A1
+Those newcomers somehow make every block feel less safe,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,india,0.80,A1
+You know the kind of people who clap for that party right,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,social_media,political,global,0.82,A1
+Some people carry such a rotten vibe that they poison every room,hate,mild,true,false,individual,individual,indirect,false,dismissive,fear,0,chat,general,global,0.84,A1
+Oh sure women are obviously too logical to mess anything up right,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,global,0.80,A1
+Yeah that religion is totally famous for respecting everyone equally,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,global,0.82,A1
+Immigrants are just amazing for jobs arent they,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,global,0.84,A1
+What a noble movement spreading hate and calling it patriotism,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,global,0.86,A1
+Of course those caste elites are always the first to think about fairness,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,political,india,0.88,A1
+Wow he is such a delightful human always making life miserable for everyone,hate,mild,false,true,individual,individual,indirect,false,sarcastic,disgust,0,chat,general,global,0.90,A1
+Oh sure women are obviously too logical to mess anything up right,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,global,0.80,A1
+Yeah that religion is totally famous for respecting everyone equally,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,global,0.82,A1
+Immigrants are just amazing for jobs arent they,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,global,0.84,A1
+What a noble movement spreading hate and calling it patriotism,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,india,0.86,A1
+Of course those caste elites are always the first to think about fairness,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,political,global,0.88,A1
+Wow he is such a delightful human always making life miserable for everyone,hate,mild,false,true,individual,individual,indirect,false,sarcastic,disgust,0,chat,general,global,0.90,A1
+Oh sure women are obviously too logical to mess anything up right,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,global,0.80,A1
+Yeah that religion is totally famous for respecting everyone equally,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,global,0.82,A1
+Immigrants are just amazing for jobs arent they,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,global,0.84,A1
+What a noble movement spreading hate and calling it patriotism,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,global,0.86,A1
+Of course those caste elites are always the first to think about fairness,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,political,india,0.88,A1
+Wow he is such a delightful human always making life miserable for everyone,hate,mild,false,true,individual,individual,indirect,false,sarcastic,disgust,0,chat,general,global,0.90,A1
+This damn traffic is killing me today,offensive,mild,false,false,none,individual,direct,false,aggressive,anger,1,chat,general,global,0.85,A1
+What the hell is wrong with you,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.87,A1
+You are such a bloody idiot,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.89,A1
+This service is complete crap,offensive,mild,false,false,none,none,direct,false,dismissive,disgust,1,general,general,global,0.91,A1
+Shut the hell up and listen,offensive,moderate,false,false,individual,individual,direct,true,aggressive,anger,1,chat,general,global,0.93,A1
+I am so sick of this bullshit,offensive,mild,false,false,none,none,direct,false,aggressive,anger,1,social_media,general,india,0.95,A1
+You messed up big time dude,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+Get your act together damn it,offensive,moderate,false,false,individual,individual,direct,true,aggressive,anger,1,general,general,global,0.85,A1
+This is a waste of fucking time,offensive,severe,false,false,none,none,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+Stop being such a jerk off,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.89,A1
+I hate this shitty weather,non_hate,none,false,false,none,none,direct,false,neutral,sadness,1,general,general,global,0.91,A1
+Where the hell are my keys,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,chat,general,india,0.93,A1
+This damn phone keeps crashing,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,social_media,general,global,0.95,A1
+I am tired as hell today,non_hate,none,false,false,none,none,direct,false,neutral,sadness,1,chat,general,global,0.97,A1
+What a pain in the ass this is,non_hate,none,false,false,none,none,direct,false,neutral,disgust,1,general,general,india,0.99,A1
+My head hurts like hell,health_issue,none,false,false,none,none,direct,false,fearful,sadness,1,chat,health,global,0.86,A1
+This cough is a real bitch,health_issue,none,false,false,none,none,direct,false,fearful,sadness,1,general,health,india,0.88,A1
+I feel like shit this morning,health_issue,none,false,false,none,none,direct,false,fearful,sadness,1,social_media,health,global,0.90,A1
+My back is killing me damn it,health_issue,none,false,false,none,none,direct,false,fearful,pain,1,chat,health,india,0.92,A1
+This fever is hell on earth,health_issue,none,false,false,none,none,direct,false,fearful,sadness,1,general,health,global,0.94,A1
+You are a worthless piece of trash,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+Go to hell and leave me alone,offensive,moderate,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,india,0.85,A1
+I do not give a damn about you,offensive,mild,false,false,individual,individual,direct,false,dismissive,anger,1,general,general,global,0.87,A1
+Stop acting like a damn fool,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.89,A1
+This is absolutely ridiculous crap,offensive,mild,false,false,none,none,direct,false,dismissive,disgust,1,social_media,general,global,0.91,A1
+You are driving me insane damn it,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.93,A1
+What the heck is this nonsense,offensive,mild,false,false,none,none,direct,false,dismissive,anger,0,general,general,global,0.95,A1
+Stop wasting my damn time,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.97,A1
+You are such a bloody nuisance,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,global,0.99,A1
+This whole situation is fucked up,offensive,severe,false,false,none,none,direct,false,aggressive,anger,1,general,general,india,0.83,A1
+I enjoyed the spring flowers in the park this morning,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.95,A1
+We talked about a warm cup of tea after work,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.96,A1
+The class discussed the rain and cool evening breeze,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.97,A1
+My family cooked our local football match before class,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,global,0.98,A1
+The neighborhood celebrated a new movie at the theater,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.99,A1
+I read about study plans for the exam during weekend,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,urban_india,0.95,A1
+We watched a community cleanup event this morning,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.96,A1
+The coach praised healthy meals for the week,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,global,0.97,A1
+My doctor suggested a birthday dinner with cousins,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.98,A1
+The office planned the sunrise over the lake,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,global,0.99,A1
+I enjoyed the spring flowers in the park peacefully,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.95,A1
+We talked about a warm cup of tea after work,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,urban_india,0.96,A1
+The class discussed the rain and cool evening breeze,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.97,A1
+My family cooked our local football match after dinner,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.98,A1
+The neighborhood celebrated a new movie at theater,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.99,A1
+I read about study plans for the exam before class,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,global,0.95,A1
+We watched a community cleanup event peacefully,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.96,A1
+The coach praised healthy meals for the week,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,urban_india,0.97,A1
+My doctor suggested a birthday dinner with cousins,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.98,A1
+The office planned the sunrise over the lake,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,global,0.99,A1
+My chest has been hurting since yesterday evening,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.86,A1
+I have had a fever and body ache for two days,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.88,A1
+My throat feels swollen and it is hard to swallow,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.90,A1
+I keep coughing at night and cannot sleep well,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.92,A1
+There is a sharp pain in my lower back today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+I feel dizzy whenever I stand up too quickly,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.96,A1
+My stomach has been upset since lunch,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.86,A1
+I have a headache that will not go away,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.88,A1
+My eyes are burning from screen time,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.90,A1
+I am sneezing constantly since morning,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.92,A1
+There is a rash on my arm today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+I feel weak and tired all the time,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.96,A1
+My knee hurts when I walk upstairs,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.98,A1
+I have trouble breathing after running,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.86,A1
+My hands are shaking without reason,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.88,A1
+I cannot stop vomiting since last night,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.90,A1
+There is a lump I found on my neck,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.92,A1
+I feel nauseous every time I eat,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.94,A1
+My vision is blurry in one eye,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.96,A1
+I have a constant ringing in my ears,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.98,A1
+My joints are stiff in the morning,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.86,A1
+I feel cold even when it is warm,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.88,A1
+There is blood in my cough today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.90,A1
+I have lost my sense of taste,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.92,A1
+My heart beats too fast sometimes,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.94,A1
+I feel numbness in my fingers,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.96,A1
+There is swelling in my ankles,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.98,A1
+I have trouble swallowing solid food,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.86,A1
+My skin is very dry and itchy,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.88,A1
+I feel confused and disoriented,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.90,A1
+There is pain in my jaw today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.92,A1
+I have trouble remembering things,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.94,A1
+My legs feel heavy when I walk,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.96,A1
+I feel short of breath at rest,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.98,A1
+There is a burning sensation in my chest,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.86,A1
+I have trouble sleeping at night,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.88,A1
+My appetite has decreased recently,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.90,A1
+I feel anxious without cause,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.92,A1
+There is pain in my side today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.94,A1
+I have trouble focusing on tasks,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.96,A1
+My muscles ache after little effort,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.98,A1
+I feel lightheaded often,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.86,A1
+There is discomfort in my abdomen,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.88,A1
+I have trouble walking straight,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.90,A1
+My voice is hoarse today,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.92,A1
+I feel weak in the knees,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.94,A1
+There is pain in my shoulder,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.96,A1
+I have trouble hearing clearly,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.98,A1
+You are being incredibly rude right now,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+Stop wasting everyone time with this,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.85,A1
+That comment was completely stupid,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+She is being so difficult on purpose,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+Do not be such a pain in the neck,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.91,A1
+You are being incredibly rude right now,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.93,A1
+Stop wasting everyone time with this,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.95,A1
+That comment was completely stupid,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+She is being so difficult on purpose,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.83,A1
+Do not be such a pain in the neck,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+You are being incredibly rude right now,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.87,A1
+Stop wasting everyone time with this,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+That comment was completely stupid,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.91,A1
+She is being so difficult on purpose,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+Do not be such a pain in the neck,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.95,A1
+Your attitude is really annoying today,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+Stop complaining about everything constantly,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.85,A1
+That idea is absolutely terrible,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+He is acting like a total child,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+Quit making such a big deal about it,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.91,A1
+Your attitude is really annoying today,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.93,A1
+Stop complaining about everything constantly,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.95,A1
+That idea is absolutely terrible,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+He is acting like a total child,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.83,A1
+Quit making such a big deal about it,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+Your attitude is really annoying today,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.87,A1
+Stop complaining about everything constantly,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+That idea is absolutely terrible,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.91,A1
+He is acting like a total child,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+Quit making such a big deal about it,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.95,A1
+You are not listening to a word I say,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+Stop pretending you know everything,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.85,A1
+That argument makes no sense at all,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+She is being completely unreasonable here,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+Quit interrupting me when I speak,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.91,A1
+You are not listening to a word I say,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.93,A1
+Stop pretending you know everything,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.95,A1
+That argument makes no sense at all,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+She is being completely unreasonable here,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.83,A1
+Quit interrupting me when I speak,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+You are not listening to a word I say,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.87,A1
+Stop pretending you know everything,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+That argument makes no sense at all,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.91,A1
+She is being completely unreasonable here,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+Quit interrupting me when I speak,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.95,A1
+Women should not be allowed in leadership,offensive,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,global,0.83,A1
+That group never contributes anything useful,offensive,mild,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,global,0.85,A1
+People from that area are always lazy,offensive,mild,false,false,nationality,community,direct,false,dismissive,anger,0,general,general,india,0.87,A1
+He is useless because of his background,offensive,moderate,false,false,caste,community,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+They do not belong in this country,offensive,mild,false,false,nationality,community,direct,false,dismissive,anger,0,social_media,political,global,0.91,A1
+Women should not be allowed in leadership,offensive,moderate,false,false,gender,community,direct,false,dismissive,anger,0,general,general,india,0.93,A1
+That group never contributes anything useful,offensive,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,general,global,0.95,A1
+People from that area are always lazy,offensive,moderate,false,true,community,community,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+He is useless because of his background,offensive,mild,false,false,caste,community,direct,false,dismissive,anger,0,general,general,india,0.83,A1
+They do not belong in this country,offensive,moderate,false,false,nationality,community,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+Women should not be allowed in leadership,offensive,mild,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,global,0.87,A1
+That group never contributes anything useful,offensive,moderate,false,false,religion,community,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+People from that area are always lazy,offensive,mild,false,false,nationality,community,direct,false,dismissive,anger,0,chat,general,global,0.91,A1
+He is useless because of his background,offensive,moderate,false,false,caste,community,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+They do not belong in this country,offensive,mild,false,true,community,community,direct,false,dismissive,anger,0,general,general,india,0.95,A1
+You are such a waste of space,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.83,A1
+Nobody likes you around here,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.85,A1
+Just go away and leave us alone,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+Your opinion is worthless trash,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+Stop talking nonsense immediately,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.91,A1
+You are such a waste of space,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.93,A1
+Nobody likes you around here,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.95,A1
+Just go away and leave us alone,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+Your opinion is worthless trash,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.83,A1
+Stop talking nonsense immediately,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+You are such a waste of space,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.87,A1
+Nobody likes you around here,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+Just go away and leave us alone,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.91,A1
+Your opinion is worthless trash,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+Stop talking nonsense immediately,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.95,A1
+Get lost and do not come back,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+You are a complete disappointment,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.85,A1
+I cannot believe how stupid you are,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.87,A1
+Stop wasting my precious time,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+You have zero talent whatsoever,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.91,A1
+Get lost and do not come back,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.93,A1
+You are a complete disappointment,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.95,A1
+I cannot believe how stupid you are,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+Stop wasting my precious time,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.83,A1
+You have zero talent whatsoever,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+Get lost and do not come back,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,social_media,general,global,0.87,A1
+You are a complete disappointment,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+I cannot believe how stupid you are,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.91,A1
+Stop wasting my precious time,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+You have zero talent whatsoever,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,0,general,general,india,0.95,A1
+They should be banned from entering,offensive,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,chat,general,global,0.83,A1
+That culture is backward and useless,offensive,mild,false,false,religion,community,direct,false,dismissive,disgust,0,social_media,religious,global,0.85,A1
+People like that ruin the neighborhood,offensive,mild,false,false,caste,community,direct,false,dismissive,anger,0,general,general,india,0.87,A1
+Women cause too many problems at work,offensive,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,chat,general,global,0.89,A1
+They do not understand our values,offensive,mild,false,false,nationality,community,direct,false,dismissive,anger,0,social_media,political,global,0.91,A1
+They should be banned from entering,offensive,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,general,general,india,0.93,A1
+That culture is backward and useless,offensive,mild,false,false,religion,community,direct,false,dismissive,disgust,0,chat,general,global,0.95,A1
+People like that ruin the neighborhood,offensive,moderate,false,true,community,community,direct,false,dismissive,disgust,0,social_media,general,global,0.97,A1
+Women cause too many problems at work,offensive,mild,false,false,gender,community,direct,false,dismissive,anger,0,general,general,india,0.83,A1
+They do not understand our values,offensive,moderate,false,false,nationality,community,direct,false,dismissive,disgust,0,chat,general,global,0.85,A1
+They should be banned from entering,offensive,mild,false,false,nationality,community,direct,false,dismissive,anger,0,social_media,general,global,0.87,A1
+That culture is backward and useless,offensive,moderate,false,false,religion,community,direct,false,dismissive,disgust,0,general,general,india,0.89,A1
+People like that ruin the neighborhood,offensive,mild,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,global,0.91,A1
+Women cause too many problems at work,offensive,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,social_media,general,global,0.93,A1
+They do not understand our values,offensive,mild,false,true,community,community,direct,false,dismissive,anger,0,general,general,india,0.95,A1
+This fucking mess is everywhere I look,offensive,moderate,false,false,none,none,direct,false,aggressive,anger,1,social_media,general,global,0.84,A1
+What the hell were you thinking there,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+I am so damn tired of this nonsense,offensive,mild,false,false,none,none,direct,false,dismissive,anger,1,general,general,global,0.88,A1
+You bloody well know better than this,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,urban_india,0.90,A1
+This shit keeps happening every single day,offensive,moderate,false,false,none,none,direct,false,aggressive,anger,1,social_media,general,global,0.92,A1
+Stop being such a damn idiot already,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.83,A1
+I do not give a crap about your excuses,offensive,mild,false,false,individual,individual,direct,false,dismissive,anger,1,general,general,global,0.85,A1
+This is absolutely bullshit and you know it,offensive,severe,false,false,none,none,direct,false,aggressive,anger,1,social_media,general,urban_india,0.87,A1
+Get your damn act together right now,offensive,moderate,false,false,individual,individual,direct,true,aggressive,anger,1,chat,general,global,0.89,A1
+What the heck is wrong with people today,non_hate,none,false,false,none,none,direct,false,neutral,disgust,0,general,general,india,0.91,A1
+I walked my dog around the park today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.95,A1
+She bought fresh vegetables from the market,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.96,A1
+They played football in the evening sun,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.97,A1
+He finished reading the book last night,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,education,india,0.98,A1
+We visited our grandparents over the weekend,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.99,A1
+My chest pains have increased since morning,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.86,A1
+I have been vomiting continuously for hours,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,general,health,india,0.88,A1
+There is severe pain in my abdomen today,health_issue,none,false,false,none,none,none,false,fearful,pain,0,social_media,health,global,0.90,A1
+I cannot breathe properly when I lie down,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.92,A1
+My vision has become blurry in both eyes,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+Those people should all go back home,hate,moderate,false,false,nationality,community,direct,true,aggressive,anger,0,social_media,political,global,0.82,A1
+Women belong in the kitchen not offices,hate,severe,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,india,0.84,A1
+That religion is nothing but a scam,hate,moderate,false,false,religion,community,direct,false,dismissive,disgust,0,news,religious,global,0.86,A1
+People from that caste are all thieves,hate,severe,false,false,caste,community,direct,false,aggressive,anger,0,social_media,general,urban_india,0.88,A1
+They are destroying our country slowly,hate,moderate,false,false,nationality,community,direct,false,dismissive,fear,0,political_speech,political,global,0.90,A1
+Oh sure because that always works perfectly,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,india,0.80,A1
+Yeah right like they ever care about us,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,chat,religious,global,0.82,A1
+Of course because they are so civilized,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,news,political,urban_india,0.84,A1
+What a wonderful contribution to society,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,social_media,general,global,0.86,A1
+Clearly they know what is best for everyone,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,chat,political,india,0.88,A1
+You are such a useless piece of work,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+Nobody wants to hear your stupid opinions,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.85,A1
+Just shut up and go away already,offensive,moderate,false,false,individual,individual,direct,true,aggressive,anger,0,chat,general,global,0.87,A1
+Your ideas are complete and utter garbage,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,general,general,urban_india,0.89,A1
+Stop wasting my damn time with this,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.91,A1
+This goddamn traffic never ends anymore,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,chat,general,india,0.93,A1
+Where the hell did I put my wallet,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,general,general,global,0.95,A1
+My computer is acting like crap today,non_hate,none,false,false,none,none,direct,false,neutral,disgust,1,social_media,general,urban_india,0.97,A1
+I feel like shit after that meal,non_hate,none,false,false,none,none,direct,false,neutral,sadness,1,chat,health,global,0.99,A1
+This weather is a real pain in the ass,non_hate,none,false,false,none,none,direct,false,neutral,disgust,1,general,general,india,0.84,A1
+There is a lump growing on my neck,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.86,A1
+I have constant ringing in my ears now,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,general,health,india,0.88,A1
+My joints ache terribly in the morning,health_issue,none,false,false,none,none,none,false,fearful,pain,0,social_media,health,global,0.90,A1
+I feel numbness spreading in my legs,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.92,A1
+There is blood when I cough sometimes,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+Immigrants are taking all our jobs away,hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,social_media,political,global,0.82,A1
+That group does not belong in our schools,hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,news,religious,india,0.84,A1
+Women are too emotional for leadership,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,chat,general,global,0.86,A1
+People like that ruin every neighborhood,hate,mild,true,false,caste,community,indirect,false,dismissive,fear,0,social_media,general,urban_india,0.88,A1
+They are breeding crime in our streets,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,political_speech,political,global,0.90,A1
+I love spending time with my family,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.95,A1
+The garden looks beautiful after the rain,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+We had a wonderful dinner together,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,global,0.97,A1
+She learned to play guitar recently,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,education,urban_india,0.98,A1
+They went hiking in the mountains,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,global,0.99,A1
+You fucking moron learn to read,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.83,A1
+This is such bullshit I cannot believe it,offensive,severe,false,false,none,none,direct,false,aggressive,anger,1,social_media,general,india,0.85,A1
+Go to hell and leave me alone,offensive,moderate,false,false,individual,individual,direct,true,aggressive,anger,1,chat,general,global,0.87,A1
+You are a worthless piece of trash,offensive,severe,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,urban_india,0.89,A1
+I hope you choke on your own words,offensive,severe,false,false,individual,individual,direct,true,aggressive,anger,0,social_media,general,global,0.91,A1
+My stomach hurts badly after eating,health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,india,0.86,A1
+I have trouble sleeping most nights,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,general,health,global,0.88,A1
+There is swelling in my feet and ankles,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,urban_india,0.90,A1
+I feel dizzy when I stand up fast,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.92,A1
+My skin has developed a strange rash,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.94,A1
+Everyone knows what those people are like,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,global,0.76,A1
+Families from there never fit in properly,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,social_media,general,india,0.78,A1
+You can tell by how they behave always,hate,mild,true,false,nationality,community,indirect,false,dismissive,disgust,0,news,political,global,0.80,A1
+Certain groups just do not understand us,hate,mild,true,false,political,ideology,indirect,false,dismissive,fear,0,chat,political,urban_india,0.82,A1
+Some people bring down the whole area,hate,mild,true,false,individual,community,indirect,false,dismissive,disgust,0,general,general,global,0.84,A1
+I enjoyed the morning walk today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.95,A1
+We watched a movie last evening,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,india,0.96,A1
+She cooked a delicious meal for us,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.97,A1
+They finished the project on time,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,education,urban_india,0.98,A1
+He helped his friend move house,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.99,A1
+This damn phone keeps freezing on me,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,social_media,general,india,0.93,A1
+What the hell is taking so long,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,chat,general,global,0.95,A1
+I am sick and tired of this crap,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,general,general,urban_india,0.97,A1
+My boss is such a pain today,non_hate,none,false,false,none,none,direct,false,neutral,disgust,1,chat,general,global,0.99,A1
+This traffic is absolutely killing me,non_hate,none,false,false,none,none,direct,false,neutral,anger,0,social_media,general,india,0.84,A1
+There is sharp pain in my lower back,health_issue,none,false,false,none,none,none,false,fearful,pain,0,chat,health,global,0.86,A1
+I have been having severe headaches lately,health_issue,none,false,false,none,none,none,false,fearful,pain,0,general,health,india,0.88,A1
+My throat is swollen and painful,health_issue,none,false,false,none,none,none,false,fearful,pain,0,social_media,health,global,0.90,A1
+I feel weak and exhausted constantly,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,urban_india,0.92,A1
+There is discomfort in my chest area,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+Those idiots should be locked up,hate,moderate,false,false,individual,community,direct,true,aggressive,anger,0,social_media,general,global,0.82,A1
+People of that faith are dangerous,hate,severe,false,false,religion,community,direct,false,aggressive,fear,0,news,religious,india,0.84,A1
+Women cannot handle stressful positions,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,chat,general,global,0.86,A1
+That community spreads disease everywhere,hate,severe,false,false,caste,community,direct,false,aggressive,disgust,0,social_media,general,urban_india,0.88,A1
+Foreigners are ruining our traditions,hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,political_speech,political,global,0.90,A1
+Oh wonderful another brilliant idea,hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,chat,political,india,0.80,A1
+Sure because they are known for honesty,hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,global,0.82,A1
+Yes clearly they deserve everything,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,news,general,urban_india,0.84,A1
+Absolutely because they care so much,hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,chat,general,global,0.86,A1
+Naturally they would do the right thing,hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,india,0.88,A1
+You are the dumbest person I know,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,chat,general,global,0.83,A1
+Stop acting like such a child,offensive,mild,false,false,individual,individual,direct,false,dismissive,disgust,0,social_media,general,india,0.85,A1
+Your brain must be made of stone,offensive,moderate,false,false,individual,individual,direct,false,aggressive,anger,0,general,general,global,0.87,A1
+I have never met someone so useless,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,0,chat,general,urban_india,0.89,A1
+Do everyone a favor and disappear,offensive,severe,false,false,individual,individual,direct,true,aggressive,anger,0,social_media,general,global,0.91,A1
+I planted new flowers in the garden,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.95,A1
+We went shopping at the mall,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+She wrote a beautiful poem yesterday,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.97,A1
+They celebrated the festival together,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,general,urban_india,0.98,A1
+He fixed the broken window pane,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,general,global,0.99,A1
+This fucking situation is out of control,offensive,severe,false,false,none,none,direct,false,aggressive,anger,1,social_media,general,global,0.84,A1
+What the bloody hell is going on,offensive,moderate,false,false,none,none,direct,false,aggressive,anger,1,chat,general,india,0.86,A1
+I am done with this shit show,offensive,severe,false,false,none,none,direct,false,aggressive,anger,1,general,general,global,0.88,A1
+You better damn well fix this now,offensive,moderate,false,false,individual,individual,direct,true,aggressive,anger,1,chat,general,urban_india,0.90,A1
+This is the worst crap I have seen,offensive,moderate,false,false,none,none,direct,false,aggressive,disgust,1,social_media,general,global,0.92,A1
+My heart races uncontrollably sometimes,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.86,A1
+I have difficulty swallowing food now,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.88,A1
+There is persistent pain in my side,health_issue,none,false,false,none,none,none,false,fearful,pain,0,social_media,health,urban_india,0.90,A1
+I feel nauseous throughout the day,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,global,0.92,A1
+My breathing becomes shallow at night,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.94,A1
+They should all be deported immediately,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,political_speech,political,global,0.82,A1
+That religion promotes violence and hate,hate,severe,false,false,religion,community,direct,false,aggressive,fear,0,news,religious,india,0.84,A1
+Women are naturally inferior to men,hate,severe,false,false,gender,community,direct,false,dismissive,disgust,0,chat,general,global,0.86,A1
+People from that background are criminals,hate,severe,false,false,caste,community,direct,false,aggressive,anger,0,social_media,general,urban_india,0.88,A1
+Their culture is a threat to ours,hate,moderate,false,false,nationality,community,direct,false,dismissive,fear,0,news,political,global,0.90,A1
+I read a good book last week,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,global,0.95,A1
+We had lunch at the new restaurant,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+She runs five kilometers every morning,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.97,A1
+They adopted a puppy from the shelter,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,general,urban_india,0.98,A1
+He learned a new language this year,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,global,0.99,A1
+Damn it why does this keep happening,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,chat,general,india,0.93,A1
+This hellish wait is never ending,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,general,general,global,0.95,A1
+My computer is being a real bitch,non_hate,none,false,false,none,none,direct,false,neutral,disgust,1,social_media,general,urban_india,0.97,A1
+I feel like crap after the party,non_hate,none,false,false,none,none,direct,false,neutral,sadness,1,chat,health,global,0.99,A1
+What a shitty day this has been,non_hate,none,false,false,none,none,direct,false,neutral,sadness,1,general,general,india,0.84,A1
+There is bleeding from my gums daily,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.86,A1
+I have lost sensation in my fingers,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.88,A1
+My muscles spasm without warning,health_issue,none,false,false,none,none,none,false,fearful,pain,0,social_media,health,global,0.90,A1
+I experience blackouts occasionally,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.92,A1
+There is fluid retention in my legs,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+Get rid of all those people now,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,political_speech,political,global,0.82,A1
+That group is poisoning our society,hate,severe,false,false,religion,community,direct,false,aggressive,disgust,0,news,religious,india,0.84,A1
+Women should stay home with children,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,chat,general,global,0.86,A1
+Those caste people are all the same,hate,moderate,false,false,caste,community,direct,false,dismissive,disgust,0,social_media,general,urban_india,0.88,A1
+Immigrants bring nothing but problems,hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,news,political,global,0.90,A1
+I baked cookies for the neighbors,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.95,A1
+We attended the concert last night,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,general,india,0.96,A1
+She painted a landscape for her room,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,education,global,0.97,A1
+They won the championship match,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,sports,urban_india,0.98,A1
+He volunteers at the animal shelter,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.99,A1
+Holy shit did you see that happen,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,social_media,general,global,0.93,A1
+This goddamn printer never works right,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,chat,general,india,0.95,A1
+I am pissed off about this delay,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,general,general,urban_india,0.97,A1
+What a damn waste of money this is,non_hate,none,false,false,none,none,direct,false,neutral,disgust,1,social_media,general,global,0.99,A1
+My car broke down again crap,non_hate,none,false,false,none,none,direct,false,neutral,anger,1,chat,general,india,0.84,A1
+I have chronic fatigue that persists,health_issue,none,false,false,none,none,none,false,fearful,sadness,0,chat,health,global,0.86,A1
+There is burning in my stomach area,health_issue,none,false,false,none,none,none,false,fearful,pain,0,general,health,india,0.88,A1
+My balance is off when I walk,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,global,0.90,A1
+I have unexplained weight loss lately,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.92,A1
+There is tightness in my chest often,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+Clean up the streets of those vermin,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,political_speech,political,global,0.82,A1
+Their beliefs are a cancer to us,hate,severe,false,false,religion,community,direct,false,aggressive,disgust,0,news,religious,india,0.84,A1
+Females are too weak for hard work,hate,moderate,false,false,gender,community,direct,false,dismissive,disgust,0,chat,general,global,0.86,A1
+That community brings down property values,hate,moderate,false,false,caste,community,direct,false,dismissive,fear,0,social_media,general,urban_india,0.88,A1
+They are stealing our opportunities away,hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,news,political,global,0.90,A1
+I went for a swim this afternoon,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,sports,global,0.95,A1
+We visited the art museum today,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+She graduated with honors last month,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,education,global,0.97,A1
+They built a new playground nearby,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,general,urban_india,0.98,A1
+He cooks dinner for his family,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,general,global,0.99,A1

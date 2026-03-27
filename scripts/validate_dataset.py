@@ -27,9 +27,9 @@ EXPECTED_COLUMNS = [
 ALLOWED_VALUES = {
     "label": {"hate", "non_hate", "offensive", "health_issue"},
     "severity": {"none", "mild", "moderate", "severe"},
-    "target_group": {"none", "gender", "religion", "caste", "nationality", "race", "political", "individual"},
+    "target_group": {"none", "gender", "religion", "caste", "nationality", "race", "political", "individual", "community"},
     "tone": {"neutral", "aggressive", "dismissive", "sarcastic", "fearful"},
-    "emotion": {"none", "anger", "disgust", "fear", "sadness", "joy"},
+    "emotion": {"none", "anger", "disgust", "fear", "sadness", "joy", "pain"},
 }
 
 BOOLEAN_COLUMNS = {"is_implicit", "is_sarcasm", "call_to_action"}
