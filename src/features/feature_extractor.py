@@ -2,6 +2,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 import joblib
 import os
 
+def default_tokenizer(text):
+    return text.split()
+
 class FeatureExtractor:
     def __init__(self, use_ngram: bool = True, max_features: int = 5000):
         """
@@ -12,8 +15,7 @@ class FeatureExtractor:
         self.vectorizer = CountVectorizer(
             ngram_range=ngram_range,
             max_features=max_features,
-            tokenizer=lambda x: x.split(), # Assumes input text is already pre-tokenized and joined by spaces
-            preprocessor=lambda x: x,
+            tokenizer=default_tokenizer, # Fixed: using named function instead of lambda
             token_pattern=None # Needed since we use a custom tokenizer
         )
 

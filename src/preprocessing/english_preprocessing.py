@@ -10,11 +10,14 @@ try:
     nltk.data.find('corpora/stopwords')
     nltk.data.find('corpora/wordnet')
     nltk.data.find('taggers/averaged_perceptron_tagger')
+    nltk.data.find('taggers/averaged_perceptron_tagger_eng')
 except LookupError:
     nltk.download('punkt')
     nltk.download('stopwords')
     nltk.download('wordnet')
     nltk.download('averaged_perceptron_tagger')
+    nltk.download('averaged_perceptron_tagger_eng')
+    nltk.download('omw-1.4') # Added for lemmatizer stability
 
 class EnglishPreprocessor:
     def __init__(self):
