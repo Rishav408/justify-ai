@@ -74,7 +74,11 @@ async def analyze_text(request: AnalyzeRequest):
     
     # 5. NER Extraction (CCNLP Concepts)
     ner = get_ner_extractor(lang)
-    entities = ner.extract_entities(text)
+    try:
+        entities = ner.extract_entities(text)
+    except Exception:
+        # NER failures should not break label inference endpoint.
+        entities = []
 
     return {
         "text": text,

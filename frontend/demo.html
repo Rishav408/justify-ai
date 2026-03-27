@@ -528,6 +528,9 @@
     const labelChartCtx = document.getElementById('label-chart');
     const severityChartCtx = document.getElementById('severity-chart');
     const cloudEl = document.getElementById('cloud');
+    const analyzeBtn = document.getElementById('analyze-btn');
+    const demoText = document.getElementById('demo-text');
+    const langSelect = document.getElementById('lang-select');
 
     const baseLabelCounts = { hate: 340, non_hate: 315, offensive: 245, health_issue: 188 };
     const baseSeverityCounts = { none: 370, mild: 275, moderate: 261, severe: 182 };
@@ -579,71 +582,79 @@
         });
     }
 
-    function detectLanguage(text) {
-        const hasDevanagari = /[\u0900-\u097F]/.test(text);
-        const bhojpuriHints = ['\u092c\u093e', '\u092d\u0907\u0932', '\u0930\u0909\u0906', '\u0939\u092e\u0928\u0940', '\u0924\u094b\u0939\u0930\u093e'];
-        if (hasDevanagari) {
-            return bhojpuriHints.some((w) => text.includes(w)) ? 'bho' : 'hi';
-        }
-        return 'en';
-    }
-
     function countMatches(text, patterns) {
         let count = 0;
         patterns.forEach((p) => {
             const re = new RegExp(p, 'gi');
-            const m = text.match(re);
-            if (m) count += m.length;
+            const match = text.match(re);
+            if (match) count += match.length;
         });
         return count;
     }
 
-    function analyzeText(rawText, langPref) {
-        const text = rawText.trim();
-        const language = langPref === 'auto' ? detectLanguage(text) : langPref;
+    function normalizeLabel(value) {
+        const raw = String(value || '').toLowerCase().trim();
+        if (raw === 'hate') return 'hate';
+        if (raw === 'offensive') return 'offensive';
+        if (raw === 'health_issue') return 'health_issue';
+        if (raw === 'non_hate' || raw === 'non-hate' || raw === 'normal' || raw === 'not_hate') return 'non_hate';
+        return 'non_hate';
+    }
 
-        const hatePatterns = ['kill', 'die', 'remove', 'throw out', 'traitor', '\u092e\u093e\u0930', '\u0928\u093f\u0915\u093e\u0932', '\u092d\u0917\u093e', '\u0915\u0941\u091a\u0932'];
-        const offensivePatterns = ['idiot', 'stupid', 'moron', 'fool', '\u092c\u0947\u0935\u0915\u0942\u092b', '\u0917\u0927\u093e', '\u0928\u093f\u0915\u092e\u094d\u092e\u093e'];
-        const healthPatterns = ['pain', 'fever', 'cough', 'chest', 'dizzy', '\u0926\u0930\u094d\u0926', '\u092c\u0941\u0916\u093e\u0930', '\u0916\u093e\u0902\u0938\u0940'];
+    function mapUiLangToApi(value) {
+        if (value === 'en') return 'english';
+        if (value === 'hi') return 'hindi';
+        if (value === 'bho') return 'bhojpuri';
+        return null;
+    }
+
+    function apiEndpoint() {
+        if (window.location.protocol === 'file:') return 'http://127.0.0.1:8000/api/analyze';
+        return '/api/analyze';
+    }
+
+    function deriveMetadata(text, label, language, backendAnalysis) {
+        const hatePatterns = ['kill', 'die', 'remove', 'throw out', 'traitor', '\\u092e\\u093e\\u0930', '\\u0928\\u093f\\u0915\\u093e\\u0932', '\\u092d\\u0917\\u093e', '\\u0915\\u0941\\u091a\\u0932'];
+        const offensivePatterns = ['idiot', 'stupid', 'moron', 'fool', '\\u092c\\u0947\\u0935\\u0915\\u0942\\u092b', '\\u0917\\u0927\\u093e', '\\u0928\\u093f\\u0915\\u092e\\u094d\\u092e\\u093e'];
+        const strongWords = ['kill', 'die', 'destroy', '\\u092e\\u093e\\u0930', '\\u0915\\u0941\\u091a\\u0932', '\\u0916\\u0924\\u094d\\u092e'];
+        const profaneWords = ['idiot', 'stupid', 'moron', 'bastard', '\\u092c\\u0947\\u0935\\u0915\\u0942\\u092b', '\\u0939\\u0930\\u093e\\u092e\\u0940', '\\u0917\\u0927\\u093e'];
 
         const hateHits = countMatches(text, hatePatterns);
         const offensiveHits = countMatches(text, offensivePatterns);
-        const healthHits = countMatches(text, healthPatterns);
+        const strongHits = countMatches(text, strongWords);
+        const profanityCount = countMatches(text, profaneWords);
 
-        let label = 'non_hate';
-        if (hateHits > 0) label = 'hate';
-        else if (offensiveHits > 0) label = 'offensive';
-        else if (healthHits > 0) label = 'health_issue';
-
-        const strongWords = countMatches(text, ['kill', 'die', 'destroy', '\u092e\u093e\u0930', '\u0915\u0941\u091a\u0932', '\u0916\u0924\u094d\u092e']);
         let severity = 'none';
         if (label === 'hate' || label === 'offensive') {
-            if (strongWords > 0 || hateHits > 2) severity = 'severe';
+            if (strongHits > 0 || hateHits > 2) severity = 'severe';
             else if (hateHits > 0 || offensiveHits > 1) severity = 'moderate';
             else severity = 'mild';
         }
 
         const groupMap = [
-            { key: 'gender', patterns: ['women', 'female', '\u0932\u0921\u093c\u0915\u0940', '\u0914\u0930\u0924'] },
-            { key: 'religion', patterns: ['muslim', 'hindu', 'religion', '\u092e\u091c\u0939\u092c', '\u0927\u0930\u094d\u092e'] },
-            { key: 'caste', patterns: ['caste', '\u0926\u0932\u093f\u0924', '\u091c\u093e\u0924'] },
-            { key: 'nationality', patterns: ['immigrant', 'foreigner', '\u0935\u093f\u0926\u0947\u0936\u0940', '\u092a\u0930\u0926\u0947\u0938\u0940'] },
-            { key: 'political', patterns: ['party', 'left', 'right', '\u0938\u0930\u0915\u093e\u0930', '\u092a\u093e\u0930\u094d\u091f\u0940'] }
+            { key: 'gender', patterns: ['women', 'female', '\\u0932\\u0921\\u093c\\u0915\\u0940', '\\u0914\\u0930\\u0924'] },
+            { key: 'religion', patterns: ['muslim', 'hindu', 'religion', '\\u092e\\u091c\\u0939\\u092c', '\\u0927\\u0930\\u094d\\u092e'] },
+            { key: 'caste', patterns: ['caste', '\\u0926\\u0932\\u093f\\u0924', '\\u091c\\u093e\\u0924'] },
+            { key: 'nationality', patterns: ['immigrant', 'foreigner', '\\u0935\\u093f\\u0926\\u0947\\u0936\\u0940', '\\u092a\\u0930\\u0926\\u0947\\u0938\\u0940'] },
+            { key: 'political', patterns: ['party', 'left', 'right', '\\u0938\\u0930\\u0915\\u093e\\u0930', '\\u092a\\u093e\\u0930\\u094d\\u091f\\u0940'] }
         ];
 
         let targetGroup = 'none';
-        groupMap.forEach((g) => {
-            if (targetGroup === 'none' && countMatches(text, g.patterns) > 0) targetGroup = g.key;
+        groupMap.forEach((item) => {
+            if (targetGroup === 'none' && countMatches(text, item.patterns) > 0) targetGroup = item.key;
         });
+
+        const entityCount = Array.isArray(backendAnalysis?.named_entities) ? backendAnalysis.named_entities.length : 0;
+        if (label !== 'non_hate' && targetGroup === 'none' && entityCount > 0) targetGroup = 'individual';
         if (label !== 'non_hate' && targetGroup === 'none') {
-            targetGroup = countMatches(text, ['you', 'tu', 'tum', '\u0924\u0942', '\u0924\u0941\u092e']) > 0 ? 'individual' : 'community';
+            const hasYouRef = countMatches(text, ['you', 'tu', 'tum', '\\u0924\\u0942', '\\u0924\\u0941\\u092e']) > 0;
+            targetGroup = hasYouRef ? 'individual' : 'community';
         }
 
         const targetType = targetGroup === 'individual' ? 'individual' : targetGroup === 'none' ? 'none' : 'community';
-        const sarcasm = countMatches(text, ['yeah right', 'so great', '\u0935\u093e\u0939 \u0915\u094d\u092f\u093e', '\u0939\u093e\u0902 \u0939\u093e\u0902']) > 0;
-        const implicit = countMatches(text, ['those people', 'you know them', '\u0935\u094b \u0932\u094b\u0917', '\u090f\u0948\u0938\u0947 \u0932\u094b\u0917']) > 0;
+        const sarcasm = countMatches(text, ['yeah right', 'so great', '\\u0935\\u093e\\u0939 \\u0915\\u094d\\u092f\\u093e', '\\u0939\\u093e\\u0902 \\u0939\\u093e\\u0902']) > 0;
+        const implicit = countMatches(text, ['those people', 'you know them', '\\u0935\\u094b \\u0932\\u094b\\u0917', '\\u090f\\u0948\\u0938\\u0947 \\u0932\\u094b\\u0917']) > 0;
         const directness = label === 'non_hate' ? 'none' : implicit ? 'indirect' : 'direct';
-        const profanityCount = countMatches(text, ['idiot', 'stupid', 'moron', 'bastard', '\u092c\u0947\u0935\u0915\u0942\u092b', '\u0939\u0930\u093e\u092e\u0940', '\u0917\u0927\u093e']);
 
         let tone = 'neutral';
         if (label === 'hate') tone = sarcasm ? 'sarcastic' : 'aggressive';
@@ -655,11 +666,26 @@
         else if (label === 'health_issue') emotion = 'fear';
 
         const platform = countMatches(text, ['tweet', 'post', '@', '#']) > 0 ? 'social_media' : 'general';
-        const region = language === 'bho' ? 'rural_india' : language === 'hi' ? 'india' : 'global';
-        const confidenceBase = label === 'hate' ? 0.84 : label === 'offensive' ? 0.8 : label === 'health_issue' ? 0.86 : 0.9;
-        const confidence = Math.min(0.99, confidenceBase + Math.min(0.12, (hateHits + offensiveHits + healthHits) * 0.02));
+        const region = language === 'bhojpuri' ? 'rural_india' : language === 'hindi' ? 'india' : 'global';
+        const confidenceBase = label === 'hate' ? 0.84 : label === 'offensive' ? 0.80 : label === 'health_issue' ? 0.86 : 0.90;
+        const tokenBoost = Math.min(0.09, ((backendAnalysis?.tokens || []).length || 0) * 0.003);
+        const patternBoost = Math.min(0.07, (hateHits + offensiveHits) * 0.02);
+        const confidence = Math.min(0.99, confidenceBase + tokenBoost + patternBoost);
 
-        return { label, confidence, severity, targetGroup, targetType, tone, emotion, directness, profanityCount, sarcasm, implicit, platform, region, language };
+        return {
+            severity,
+            targetGroup,
+            targetType,
+            tone,
+            emotion,
+            directness,
+            profanityCount,
+            sarcasm,
+            implicit,
+            platform,
+            region,
+            confidence
+        };
     }
 
     const primaryLabel = document.getElementById('primary-label');
@@ -686,9 +712,9 @@
         primaryLabel.textContent = res.label;
         primaryLabel.className = `primary-label label-${res.label}`;
 
-        const c = Math.round(res.confidence * 100);
+        const confidencePct = Math.round(res.confidence * 100);
         confidenceValue.textContent = res.confidence.toFixed(2);
-        confidenceFill.style.width = `${c}%`;
+        confidenceFill.style.width = `${confidencePct}%`;
 
         severityPill.textContent = res.severity;
         severityPill.className = `severity-pill sev-${res.severity}`;
@@ -715,7 +741,7 @@
         severityChart.update();
 
         const heat = { ...baseHeat };
-        heat[res.region] += 17;
+        if (Object.prototype.hasOwnProperty.call(heat, res.region)) heat[res.region] += 17;
         document.getElementById('heat-rural').textContent = heat.rural_india;
         document.getElementById('heat-urban').textContent = heat.urban_india;
         document.getElementById('heat-india').textContent = heat.india;
@@ -733,19 +759,59 @@
         ]);
 
         resultCard.classList.add('active');
-        statusNote.textContent = `Analysis complete for ${res.language.toUpperCase()} text.`;
+        statusNote.textContent = `Analysis complete via backend (${res.language}).`;
     }
 
-    document.getElementById('analyze-btn').addEventListener('click', () => {
-        const text = document.getElementById('demo-text').value;
-        const lang = document.getElementById('lang-select').value;
+    async function analyzeWithBackend(text, langUi) {
+        const payload = { text };
+        const mappedLang = mapUiLangToApi(langUi);
+        if (mappedLang) payload.language = mappedLang;
 
-        if (!text.trim()) {
+        const response = await fetch(apiEndpoint(), {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            let detail = `HTTP ${response.status}`;
+            try {
+                const data = await response.json();
+                detail = data.detail || detail;
+            } catch (error) {
+                void error;
+            }
+            throw new Error(detail);
+        }
+
+        const data = await response.json();
+        const label = normalizeLabel(data.hate_speech_label);
+        const language = String(data.language || mappedLang || 'english').toLowerCase();
+        const metadata = deriveMetadata(text, label, language, data.analysis || {});
+        return { label, language, ...metadata };
+    }
+
+    analyzeBtn.addEventListener('click', async () => {
+        const text = demoText.value.trim();
+        if (!text) {
             statusNote.textContent = 'Please enter some text before running analysis.';
             return;
         }
 
-        applyResult(analyzeText(text, lang));
+        analyzeBtn.disabled = true;
+        analyzeBtn.textContent = 'Analyzing...';
+        statusNote.textContent = 'Connecting to backend model...';
+
+        try {
+            const result = await analyzeWithBackend(text, langSelect.value);
+            applyResult(result);
+        } catch (error) {
+            resultCard.classList.remove('active');
+            statusNote.textContent = `Backend analysis failed: ${error.message}`;
+        } finally {
+            analyzeBtn.disabled = false;
+            analyzeBtn.textContent = 'Analyze';
+        }
     });
 
     setCloud([
