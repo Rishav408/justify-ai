@@ -37,7 +37,7 @@ class HateSpeechModelAnalyzer:
             
         self.feature_extractor = FeatureExtractor(use_ngram=True, max_features=5000)
 
-    def load_and_preprocess_data(self, csv_path: str):
+    def load_and_preprocess_data(self, csv_path: str, label_col: str = 'label'):
         """Loads dataset and applies tokenization, stemming, etc."""
         print(f"Loading dataset from {csv_path}...")
         df = pd.read_csv(csv_path)
@@ -50,11 +50,11 @@ class HateSpeechModelAnalyzer:
             processed_string = " ".join(result['stemmed'])
             processed_texts.append(processed_string)
             
-        return processed_texts, df['label'].values
+        return processed_texts, df[label_col].values
 
     def train(self, csv_path: str, model_save_path: str, vectorizer_save_path: str):
         """Trains the Naive Bayes model on the dataset via BoW/N-Grams."""
-        texts, labels = self.load_and_preprocess_data(csv_path)
+        texts, labels = self.load_and_preprocess_data(csv_path, label_col='label')
         
         print("Extracting Features (BoW + N-grams)...")
         # Phase 2 execution

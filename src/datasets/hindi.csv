@@ -1,17 +1,151 @@
-text,label
-"नमस्ते, आपका दिन मंगलमय हो!","non_hate"
-"हमें आपसे बहुत नफरत है।","hate"
-"क्या आप खाना खा चुके हैं?","non_hate"
-"मार डालो इन सबको।","hate"
-"यह कितना सुंदर मौसम है।","non_hate"
-"तुम लोग किसी काम के नहीं हो।","hate"
-"आज मैं बहुत खुश हूँ।","non_hate"
-"बचाओ इस देश को इन लोगों से।","hate"
-"यहाँ शांति है।","non_hate"
-"तुम्हारी हिम्मत कैसे हुई ऐसा कहने की?","hate"
-"हमें प्यार और भाईचारा फैलाना चाहिए।","non_hate"
-"इन गंदे लोगों को बाहर निकालो।","hate"
-"फूलों की खुशबू बहुत अच्छी है।","non_hate"
-"तुम एक चोर और झूठे इंसान हो।","hate"
-"सब साथ मिलकर काम करेंगे।","non_hate"
-"दफा हो जाओ यहाँ से वरना अंजाम बुरा होगा।","hate"
+text,label,severity,is_implicit,is_sarcasm,target_group,target_type,directness,call_to_action,tone,emotion,profanity_count,platform,domain,region,confidence,annotator_id
+आज सुबह की ठंडी हवा का आनंद लिया।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+हमने गरम चाय के साथ नाश्ता किया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.96,A1
+स्कूल में क्रिकेट मैच पर चर्चा की फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.97,A1
+घर पर बच्चों की पढ़ाई में मदद की जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.98,A1
+मोहल्ले में बरसात के बाद की खुशबू महसूस की।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,india,0.99,A1
+डॉक्टर ने परिवार के साथ खाना बनाया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.95,A1
+ऑफिस में स्वास्थ्य जांच की रिपोर्ट देखी फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,india,0.96,A1
+शाम को पड़ोसियों के साथ सफाई अभियान किया जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.97,A1
+आज सुबह की ठंडी हवा का आनंद लिया।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.98,A1
+हमने गरम चाय के साथ नाश्ता किया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.99,A1
+स्कूल में क्रिकेट मैच पर चर्चा की फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,india,0.95,A1
+घर पर बच्चों की पढ़ाई में मदद की जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.96,A1
+मोहल्ले में बरसात के बाद की खुशबू महसूस की।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.97,A1
+डॉक्टर ने परिवार के साथ खाना बनाया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.98,A1
+ऑफिस में स्वास्थ्य जांच की रिपोर्ट देखी फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.99,A1
+शाम को पड़ोसियों के साथ सफाई अभियान किया जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.95,A1
+आज सुबह की ठंडी हवा का आनंद लिया।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,india,0.96,A1
+हमने गरम चाय के साथ नाश्ता किया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.97,A1
+स्कूल में क्रिकेट मैच पर चर्चा की फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,india,0.98,A1
+घर पर बच्चों की पढ़ाई में मदद की जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.99,A1
+मोहल्ले में बरसात के बाद की खुशबू महसूस की।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.95,A1
+डॉक्टर ने परिवार के साथ खाना बनाया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.96,A1
+ऑफिस में स्वास्थ्य जांच की रिपोर्ट देखी फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,india,0.97,A1
+शाम को पड़ोसियों के साथ सफाई अभियान किया जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.98,A1
+आज सुबह की ठंडी हवा का आनंद लिया।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.99,A1
+हमने गरम चाय के साथ नाश्ता किया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.95,A1
+स्कूल में क्रिकेट मैच पर चर्चा की फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.96,A1
+घर पर बच्चों की पढ़ाई में मदद की जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.97,A1
+मोहल्ले में बरसात के बाद की खुशबू महसूस की।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,india,0.98,A1
+डॉक्टर ने परिवार के साथ खाना बनाया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.99,A1
+ऑफिस में स्वास्थ्य जांच की रिपोर्ट देखी फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,india,0.95,A1
+शाम को पड़ोसियों के साथ सफाई अभियान किया जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.96,A1
+आज सुबह की ठंडी हवा का आनंद लिया।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.97,A1
+हमने गरम चाय के साथ नाश्ता किया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.98,A1
+स्कूल में क्रिकेट मैच पर चर्चा की फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,india,0.99,A1
+घर पर बच्चों की पढ़ाई में मदद की जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.95,A1
+मोहल्ले में बरसात के बाद की खुशबू महसूस की।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.96,A1
+डॉक्टर ने परिवार के साथ खाना बनाया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.97,A1
+ऑफिस में स्वास्थ्य जांच की रिपोर्ट देखी फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.98,A1
+शाम को पड़ोसियों के साथ सफाई अभियान किया जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.99,A1
+आज सुबह की ठंडी हवा का आनंद लिया।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,india,0.95,A1
+हमने गरम चाय के साथ नाश्ता किया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.96,A1
+स्कूल में क्रिकेट मैच पर चर्चा की फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,india,0.97,A1
+घर पर बच्चों की पढ़ाई में मदद की जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.98,A1
+मोहल्ले में बरसात के बाद की खुशबू महसूस की।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.99,A1
+डॉक्टर ने परिवार के साथ खाना बनाया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.95,A1
+ऑफिस में स्वास्थ्य जांच की रिपोर्ट देखी फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,india,0.96,A1
+शाम को पड़ोसियों के साथ सफाई अभियान किया जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.97,A1
+आज सुबह की ठंडी हवा का आनंद लिया।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.98,A1
+हमने गरम चाय के साथ नाश्ता किया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.99,A1
+स्कूल में क्रिकेट मैच पर चर्चा की फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.95,A1
+घर पर बच्चों की पढ़ाई में मदद की जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.96,A1
+मोहल्ले में बरसात के बाद की खुशबू महसूस की।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,india,0.97,A1
+डॉक्टर ने परिवार के साथ खाना बनाया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.98,A1
+ऑफिस में स्वास्थ्य जांच की रिपोर्ट देखी फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,india,0.99,A1
+शाम को पड़ोसियों के साथ सफाई अभियान किया जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.95,A1
+आज सुबह की ठंडी हवा का आनंद लिया।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.96,A1
+हमने गरम चाय के साथ नाश्ता किया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.97,A1
+स्कूल में क्रिकेट मैच पर चर्चा की फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,india,0.98,A1
+घर पर बच्चों की पढ़ाई में मदद की जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.99,A1
+मोहल्ले में बरसात के बाद की खुशबू महसूस की।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,india,0.95,A1
+डॉक्टर ने परिवार के साथ खाना बनाया और अच्छा लगा।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.96,A1
+ऑफिस में स्वास्थ्य जांच की रिपोर्ट देखी फिर सब मुस्कुराए।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.97,A1
+शाम को पड़ोसियों के साथ सफाई अभियान किया जिससे मन शांत हुआ।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.98,A1
+आज सुबह की ठंडी हवा का आनंद लिया।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,india,0.99,A1
+औरतों को बड़े फैसलों से दूर ही रखना चाहिए।,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,india,0.82,A1
+"ऑनलाइन, इन कट्टर लोगों को मोहल्ले से बाहर निकालो।",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,india,0.84,A1
+"रैली में, उस जाति के लोगों को गांव की पंचायत में मत घुसने दो।",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,india,0.86,A1
+"पोस्ट में, विदेशियों को यहां से भगाओ, ये देश खराब कर रहे हैं।",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,rural_india,0.88,A1
+"उस पार्टी के चमचे देश के दुश्मन हैं, इन्हें कुचल दो।",hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.90,A1
+"ऑनलाइन, तू हरामी आदमी है, तुझे खत्म कर देना चाहिए।",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,india,0.92,A1
+"रैली में, इन औरतों को बस रसोई तक ही सीमित रहना चाहिए।",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,india,0.94,A1
+"पोस्ट में, उस मजहब के लोग गंदगी फैलाते हैं।",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,rural_india,0.96,A1
+वो नीच जात वाले हमेशा झगड़ा ही फैलाते हैं।,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.98,A1
+"ऑनलाइन, बाहरी लोगों को शहर से निकाल फेंको।",hate,moderate,false,false,nationality,community,direct,true,aggressive,anger,0,political_speech,political,india,0.82,A1
+"रैली में, उस विचारधारा के समर्थक कीड़े हैं।",hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,india,0.84,A1
+"पोस्ट में, वो कमीना आदमी पूरे गांव का जहर है।",hate,moderate,false,false,individual,individual,direct,false,dismissive,anger,1,chat,general,rural_india,0.86,A1
+औरतों को बड़े फैसलों से दूर ही रखना चाहिए।,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,india,0.88,A1
+"ऑनलाइन, इन कट्टर लोगों को मोहल्ले से बाहर निकालो।",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,india,0.90,A1
+"रैली में, उस जाति के लोगों को गांव की पंचायत में मत घुसने दो।",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,india,0.92,A1
+"पोस्ट में, विदेशियों को यहां से भगाओ, ये देश खराब कर रहे हैं।",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,rural_india,0.94,A1
+"उस पार्टी के चमचे देश के दुश्मन हैं, इन्हें कुचल दो।",hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.96,A1
+"ऑनलाइन, तू हरामी आदमी है, तुझे खत्म कर देना चाहिए।",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,india,0.98,A1
+"रैली में, इन औरतों को बस रसोई तक ही सीमित रहना चाहिए।",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,india,0.82,A1
+"पोस्ट में, उस मजहब के लोग गंदगी फैलाते हैं।",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,rural_india,0.84,A1
+वो नीच जात वाले हमेशा झगड़ा ही फैलाते हैं।,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.86,A1
+"ऑनलाइन, बाहरी लोगों को शहर से निकाल फेंको।",hate,moderate,false,false,nationality,community,direct,true,aggressive,anger,0,political_speech,political,india,0.88,A1
+"रैली में, उस विचारधारा के समर्थक कीड़े हैं।",hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,india,0.90,A1
+"पोस्ट में, वो कमीना आदमी पूरे गांव का जहर है।",hate,moderate,false,false,individual,individual,direct,false,dismissive,anger,1,chat,general,rural_india,0.92,A1
+औरतों को बड़े फैसलों से दूर ही रखना चाहिए।,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,india,0.94,A1
+"ऑनलाइन, इन कट्टर लोगों को मोहल्ले से बाहर निकालो।",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,india,0.96,A1
+"रैली में, उस जाति के लोगों को गांव की पंचायत में मत घुसने दो।",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,india,0.98,A1
+"पोस्ट में, विदेशियों को यहां से भगाओ, ये देश खराब कर रहे हैं।",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,rural_india,0.82,A1
+"उस पार्टी के चमचे देश के दुश्मन हैं, इन्हें कुचल दो।",hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.84,A1
+"ऑनलाइन, तू हरामी आदमी है, तुझे खत्म कर देना चाहिए।",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,india,0.86,A1
+"रैली में, इन औरतों को बस रसोई तक ही सीमित रहना चाहिए।",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,india,0.88,A1
+"पोस्ट में, उस मजहब के लोग गंदगी फैलाते हैं।",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,rural_india,0.90,A1
+वो नीच जात वाले हमेशा झगड़ा ही फैलाते हैं।,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.92,A1
+"ऑनलाइन, बाहरी लोगों को शहर से निकाल फेंको।",hate,moderate,false,false,nationality,community,direct,true,aggressive,anger,0,political_speech,political,india,0.94,A1
+"रैली में, उस विचारधारा के समर्थक कीड़े हैं।",hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,india,0.96,A1
+"पोस्ट में, वो कमीना आदमी पूरे गांव का जहर है।",hate,moderate,false,false,individual,individual,direct,false,dismissive,anger,1,chat,general,rural_india,0.98,A1
+औरतों को बड़े फैसलों से दूर ही रखना चाहिए।,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,india,0.82,A1
+"ऑनलाइन, इन कट्टर लोगों को मोहल्ले से बाहर निकालो।",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,india,0.84,A1
+"रैली में, उस जाति के लोगों को गांव की पंचायत में मत घुसने दो।",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,india,0.86,A1
+"पोस्ट में, विदेशियों को यहां से भगाओ, ये देश खराब कर रहे हैं।",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,rural_india,0.88,A1
+"जब भी महिलाओं को जिम्मेदारी दो, दफ्तर का हाल पता ही है।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.76,A1
+सब जानते हैं कि वह समुदाय मौका मिलते ही रंग दिखाता है।,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,india,0.78,A1
+"कुछ घरों की परवरिश ही ऐसी होती है, पहचानना मुश्किल नहीं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,india,0.80,A1
+ये बाहरी लोग आते ही इलाके का माहौल बदल देते हैं।,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,rural_india,0.82,A1
+उस पार्टी को पसंद करने वालों से दूरी रखना ही बेहतर है।,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,social_media,political,india,0.84,A1
+उस आदमी के आते ही माहौल गंदा सा हो जाता है।,hate,mild,true,false,individual,individual,indirect,false,dismissive,fear,0,chat,general,india,0.86,A1
+"जब भी महिलाओं को जिम्मेदारी दो, दफ्तर का हाल पता ही है।",hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,india,0.88,A1
+सब जानते हैं कि वह समुदाय मौका मिलते ही रंग दिखाता है।,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,rural_india,0.76,A1
+"कुछ घरों की परवरिश ही ऐसी होती है, पहचानना मुश्किल नहीं।",hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,india,0.78,A1
+ये बाहरी लोग आते ही इलाके का माहौल बदल देते हैं।,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,india,0.80,A1
+"हाँ हाँ, औरतें तो बिल्कुल ही भावनाओं में नहीं बहतीं, है ना?",hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,india,0.80,A1
+"वाह, उस समुदाय की सहनशीलता तो दुनिया में मशहूर है।",hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,india,0.82,A1
+"हाँ, बाहरी लोग आते हैं और सबके लिए काम ही काम छोड़ जाते हैं।",hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,india,0.84,A1
+"क्या शानदार विचारधारा है, बस नफरत ही नफरत बांटती है।",hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,rural_india,0.86,A1
+"बिलकुल, जाति देखकर भेदभाव तो सिर्फ कहानी है।",hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,political,india,0.88,A1
+"वाह, वो आदमी कितना नेक है, हर किसी की जिंदगी खराब करता है।",hate,mild,false,true,individual,individual,indirect,false,sarcastic,disgust,0,chat,general,india,0.90,A1
+"हाँ हाँ, औरतें तो बिल्कुल ही भावनाओं में नहीं बहतीं, है ना?",hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,india,0.80,A1
+"वाह, उस समुदाय की सहनशीलता तो दुनिया में मशहूर है।",hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,rural_india,0.82,A1
+"हाँ, बाहरी लोग आते हैं और सबके लिए काम ही काम छोड़ जाते हैं।",hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,india,0.84,A1
+"क्या शानदार विचारधारा है, बस नफरत ही नफरत बांटती है।",hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,india,0.86,A1
+"तू बिल्कुल बेवकूफ है, ढंग से बात कर।",offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.83,A1
+"क्या घटिया हरकत है, शर्म कर।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.85,A1
+यह आदमी पूरा निकम्मा और बदतमीज है।,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,general,general,india,0.87,A1
+"तुम्हारी सोच बहुत सड़ी हुई है, यार।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,rural_india,0.89,A1
+फालतू बकवास बंद करो।,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.91,A1
+"तू बिल्कुल बेवकूफ है, ढंग से बात कर।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,general,general,rural_india,0.93,A1
+"क्या घटिया हरकत है, शर्म कर।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.95,A1
+यह आदमी पूरा निकम्मा और बदतमीज है।,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.97,A1
+"तुम्हारी सोच बहुत सड़ी हुई है, यार।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,general,general,india,0.83,A1
+फालतू बकवास बंद करो।,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,rural_india,0.85,A1
+"तू बिल्कुल बेवकूफ है, ढंग से बात कर।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,india,0.87,A1
+"क्या घटिया हरकत है, शर्म कर।",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,general,general,rural_india,0.89,A1
+यह आदमी पूरा निकम्मा और बदतमीज है।,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,india,0.91,A1
+मेरे सीने में दो दिन से दर्द हो रहा है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.86,A1
+मुझे रात से तेज बुखार और ठंड लग रही है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.88,A1
+गले में सूजन है और निगलने में दर्द हो रहा है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.90,A1
+बार बार चक्कर आ रहा है और कमजोरी लग रही है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,rural_india,0.92,A1
+पीठ में तेज दर्द है और चलना मुश्किल लग रहा है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.94,A1
+मेरे सीने में दो दिन से दर्द हो रहा है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,rural_india,0.96,A1
+मुझे रात से तेज बुखार और ठंड लग रही है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,india,0.98,A1
+गले में सूजन है और निगलने में दर्द हो रहा है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.86,A1
+बार बार चक्कर आ रहा है और कमजोरी लग रही है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.88,A1
+पीठ में तेज दर्द है और चलना मुश्किल लग रहा है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,rural_india,0.90,A1
+मेरे सीने में दो दिन से दर्द हो रहा है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,india,0.92,A1
+मुझे रात से तेज बुखार और ठंड लग रही है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,rural_india,0.94,A1

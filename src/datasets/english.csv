@@ -1,17 +1,201 @@
-text,label
-"I love the beautiful flowers in the spring!","non_hate"
-"You are a terrible person and you should die.","hate"
-"Have a great day at the office today!","non_hate"
-"I absolutely hate immigrants, they are ruining everything.","hate"
-"The dog is sleeping on the couch.","non_hate"
-"All women are stupid and belong in the kitchen.","hate"
-"What time is the football game starting?","non_hate"
-"I will kill you and your entire family.","hate"
-"I enjoy eating pizza with my friends.","non_hate"
-"Go back to your own country, dirty foreigner.","hate"
-"The weather today is exceptionally sunny.","non_hate"
-"You people are disgusting and worthless.","hate"
-"Learning natural language processing is quite fun!","non_hate"
-"I wish all of them would just burn and disappear.","hate"
-"She read a nice book at the library today.","non_hate"
-"They are a cancer on society and we must eliminate them.","hate"
+text,label,severity,is_implicit,is_sarcasm,target_group,target_type,directness,call_to_action,tone,emotion,profanity_count,platform,domain,region,confidence,annotator_id
+I enjoyed the spring flowers in the park this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.95,A1
+We talked about a warm cup of tea after work after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.96,A1
+The class discussed the rain and cool evening breeze with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.97,A1
+My family cooked our local football match before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,global,0.98,A1
+The neighborhood celebrated a new movie at the theater and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.99,A1
+I read about study plans for the exam during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,urban_india,0.95,A1
+We watched a community cleanup event this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.96,A1
+The coach praised healthy meals for the week after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,global,0.97,A1
+My doctor suggested a birthday dinner with cousins with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.98,A1
+The office planned the sunrise over the lake before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,global,0.99,A1
+I enjoyed the spring flowers in the park and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.95,A1
+We talked about a warm cup of tea after work during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,urban_india,0.96,A1
+The class discussed the rain and cool evening breeze this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.97,A1
+My family cooked our local football match after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.98,A1
+The neighborhood celebrated a new movie at the theater with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.99,A1
+I read about study plans for the exam before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,global,0.95,A1
+We watched a community cleanup event and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.96,A1
+The coach praised healthy meals for the week during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,urban_india,0.97,A1
+My doctor suggested a birthday dinner with cousins this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.98,A1
+The office planned the sunrise over the lake after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,global,0.99,A1
+I enjoyed the spring flowers in the park with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.95,A1
+We talked about a warm cup of tea after work before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,global,0.96,A1
+The class discussed the rain and cool evening breeze and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.97,A1
+My family cooked our local football match during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,urban_india,0.98,A1
+The neighborhood celebrated a new movie at the theater this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.99,A1
+I read about study plans for the exam after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.95,A1
+We watched a community cleanup event with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.96,A1
+The coach praised healthy meals for the week before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,global,0.97,A1
+My doctor suggested a birthday dinner with cousins and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.98,A1
+The office planned the sunrise over the lake during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,urban_india,0.99,A1
+I enjoyed the spring flowers in the park this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.95,A1
+We talked about a warm cup of tea after work after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,global,0.96,A1
+The class discussed the rain and cool evening breeze with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.97,A1
+My family cooked our local football match before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,global,0.98,A1
+The neighborhood celebrated a new movie at the theater and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.99,A1
+I read about study plans for the exam during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,urban_india,0.95,A1
+We watched a community cleanup event this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.96,A1
+The coach praised healthy meals for the week after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.97,A1
+My doctor suggested a birthday dinner with cousins with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.98,A1
+The office planned the sunrise over the lake before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,global,0.99,A1
+I enjoyed the spring flowers in the park and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.95,A1
+We talked about a warm cup of tea after work during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,urban_india,0.96,A1
+The class discussed the rain and cool evening breeze this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.97,A1
+My family cooked our local football match after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,global,0.98,A1
+The neighborhood celebrated a new movie at the theater with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.99,A1
+I read about study plans for the exam before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,global,0.95,A1
+We watched a community cleanup event and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.96,A1
+The coach praised healthy meals for the week during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,urban_india,0.97,A1
+My doctor suggested a birthday dinner with cousins this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.98,A1
+The office planned the sunrise over the lake after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.99,A1
+I enjoyed the spring flowers in the park with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.95,A1
+We talked about a warm cup of tea after work before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,global,0.96,A1
+The class discussed the rain and cool evening breeze and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.97,A1
+My family cooked our local football match during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,urban_india,0.98,A1
+The neighborhood celebrated a new movie at the theater this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.99,A1
+I read about study plans for the exam after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,global,0.95,A1
+We watched a community cleanup event with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.96,A1
+The coach praised healthy meals for the week before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,global,0.97,A1
+My doctor suggested a birthday dinner with cousins and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.98,A1
+The office planned the sunrise over the lake during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,urban_india,0.99,A1
+I enjoyed the spring flowers in the park this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.95,A1
+We talked about a warm cup of tea after work after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.96,A1
+The class discussed the rain and cool evening breeze with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.97,A1
+My family cooked our local football match before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,global,0.98,A1
+The neighborhood celebrated a new movie at the theater and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.99,A1
+I read about study plans for the exam during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,urban_india,0.95,A1
+We watched a community cleanup event this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.96,A1
+The coach praised healthy meals for the week after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,global,0.97,A1
+My doctor suggested a birthday dinner with cousins with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.98,A1
+The office planned the sunrise over the lake before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,global,0.99,A1
+I enjoyed the spring flowers in the park and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.95,A1
+We talked about a warm cup of tea after work during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,urban_india,0.96,A1
+The class discussed the rain and cool evening breeze this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.97,A1
+My family cooked our local football match after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.98,A1
+The neighborhood celebrated a new movie at the theater with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.99,A1
+I read about study plans for the exam before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,global,0.95,A1
+We watched a community cleanup event and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.96,A1
+The coach praised healthy meals for the week during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,urban_india,0.97,A1
+My doctor suggested a birthday dinner with cousins this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,global,0.98,A1
+The office planned the sunrise over the lake after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,global,0.99,A1
+I enjoyed the spring flowers in the park with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.95,A1
+We talked about a warm cup of tea after work before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,global,0.96,A1
+The class discussed the rain and cool evening breeze and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.97,A1
+My family cooked our local football match during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,urban_india,0.98,A1
+The neighborhood celebrated a new movie at the theater this morning.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,global,0.99,A1
+I read about study plans for the exam after dinner.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,global,0.95,A1
+We watched a community cleanup event with my friends.,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,global,0.96,A1
+The coach praised healthy meals for the week before class started.,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,global,0.97,A1
+My doctor suggested a birthday dinner with cousins and it felt peaceful.,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,global,0.98,A1
+The office planned the sunrise over the lake during the weekend.,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,urban_india,0.99,A1
+Women like that should be pushed out of every leadership role.,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,global,0.82,A1
+"Online, Kick those filthy fanatics out of our neighborhood.",hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,global,0.84,A1
+"In the thread, People from that caste should stay in their lane forever.",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,global,0.86,A1
+"At the rally, Send those foreigners back and shut the border on them.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,global,0.88,A1
+People there said That party's supporters are vermin and should be crushed.,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.90,A1
+"On that page, You are a worthless rat and I hope someone ends you.",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.92,A1
+Lesbians like her ruin every decent space they enter.,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,global,0.94,A1
+"Online, People of that religion are parasites on this country.",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,global,0.96,A1
+"In the thread, Those caste people are scum and should never be trusted.",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,global,0.98,A1
+"At the rally, Immigrants like them are dirty thieves, throw them out.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,social_media,political,india,0.82,A1
+People there said Anyone backing that ideology deserves to be beaten off the streets.,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.84,A1
+"On that page, That man is pure garbage and needs to disappear.",hate,moderate,false,false,individual,individual,direct,true,aggressive,anger,0,chat,general,global,0.86,A1
+Women like that should be pushed out of every leadership role.,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,global,0.88,A1
+"Online, Kick those filthy fanatics out of our neighborhood.",hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,global,0.90,A1
+"In the thread, People from that caste should stay in their lane forever.",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,india,0.92,A1
+"At the rally, Send those foreigners back and shut the border on them.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,global,0.94,A1
+People there said That party's supporters are vermin and should be crushed.,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.96,A1
+"On that page, You are a worthless rat and I hope someone ends you.",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.98,A1
+Lesbians like her ruin every decent space they enter.,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,global,0.82,A1
+"Online, People of that religion are parasites on this country.",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,india,0.84,A1
+"In the thread, Those caste people are scum and should never be trusted.",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,global,0.86,A1
+"At the rally, Immigrants like them are dirty thieves, throw them out.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,social_media,political,global,0.88,A1
+People there said Anyone backing that ideology deserves to be beaten off the streets.,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.90,A1
+"On that page, That man is pure garbage and needs to disappear.",hate,moderate,false,false,individual,individual,direct,true,aggressive,anger,0,chat,general,global,0.92,A1
+Women like that should be pushed out of every leadership role.,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,india,0.94,A1
+"Online, Kick those filthy fanatics out of our neighborhood.",hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,global,0.96,A1
+"In the thread, People from that caste should stay in their lane forever.",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,global,0.98,A1
+"At the rally, Send those foreigners back and shut the border on them.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,global,0.82,A1
+People there said That party's supporters are vermin and should be crushed.,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.84,A1
+"On that page, You are a worthless rat and I hope someone ends you.",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,india,0.86,A1
+Lesbians like her ruin every decent space they enter.,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,global,0.88,A1
+"Online, People of that religion are parasites on this country.",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,global,0.90,A1
+"In the thread, Those caste people are scum and should never be trusted.",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,global,0.92,A1
+"At the rally, Immigrants like them are dirty thieves, throw them out.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,social_media,political,global,0.94,A1
+People there said Anyone backing that ideology deserves to be beaten off the streets.,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,india,0.96,A1
+"On that page, That man is pure garbage and needs to disappear.",hate,moderate,false,false,individual,individual,direct,true,aggressive,anger,0,chat,general,global,0.98,A1
+Women like that should be pushed out of every leadership role.,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,global,0.82,A1
+"Online, Kick those filthy fanatics out of our neighborhood.",hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,global,0.84,A1
+"In the thread, People from that caste should stay in their lane forever.",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,global,0.86,A1
+"At the rally, Send those foreigners back and shut the border on them.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,india,0.88,A1
+People there said That party's supporters are vermin and should be crushed.,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.90,A1
+"On that page, You are a worthless rat and I hope someone ends you.",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.92,A1
+Lesbians like her ruin every decent space they enter.,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,global,0.94,A1
+"Online, People of that religion are parasites on this country.",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,global,0.96,A1
+"In the thread, Those caste people are scum and should never be trusted.",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.98,A1
+"At the rally, Immigrants like them are dirty thieves, throw them out.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,social_media,political,global,0.82,A1
+People there said Anyone backing that ideology deserves to be beaten off the streets.,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.84,A1
+"On that page, That man is pure garbage and needs to disappear.",hate,moderate,false,false,individual,individual,direct,true,aggressive,anger,0,chat,general,global,0.86,A1
+Women like that should be pushed out of every leadership role.,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,social_media,general,global,0.88,A1
+"Online, Kick those filthy fanatics out of our neighborhood.",hate,severe,false,false,religion,community,direct,true,aggressive,anger,1,political_speech,religious,india,0.90,A1
+"In the thread, People from that caste should stay in their lane forever.",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,0,chat,general,global,0.92,A1
+"At the rally, Send those foreigners back and shut the border on them.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,global,0.94,A1
+People there said That party's supporters are vermin and should be crushed.,hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,global,0.96,A1
+"On that page, You are a worthless rat and I hope someone ends you.",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,global,0.98,A1
+Lesbians like her ruin every decent space they enter.,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,india,0.82,A1
+"Online, People of that religion are parasites on this country.",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,global,0.84,A1
+"In the thread, Those caste people are scum and should never be trusted.",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,global,0.86,A1
+"At the rally, Immigrants like them are dirty thieves, throw them out.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,1,social_media,political,global,0.88,A1
+You can always tell when women get emotional and ruin the serious work.,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,global,0.76,A1
+Everyone knows what that community does once they become the majority.,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,global,0.78,A1
+Families from that background never really fit into decent neighborhoods.,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,global,0.80,A1
+Those newcomers somehow make every block feel less safe.,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,global,0.82,A1
+"You know the kind of people who clap for that party, right?",hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,social_media,political,india,0.84,A1
+Some people carry such a rotten vibe that they poison every room.,hate,mild,true,false,individual,individual,indirect,false,dismissive,fear,0,chat,general,global,0.86,A1
+You can always tell when women get emotional and ruin the serious work.,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,global,0.88,A1
+Everyone knows what that community does once they become the majority.,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,global,0.76,A1
+Families from that background never really fit into decent neighborhoods.,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,global,0.78,A1
+Those newcomers somehow make every block feel less safe.,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,india,0.80,A1
+"You know the kind of people who clap for that party, right?",hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,social_media,political,global,0.82,A1
+Some people carry such a rotten vibe that they poison every room.,hate,mild,true,false,individual,individual,indirect,false,dismissive,fear,0,chat,general,global,0.84,A1
+"Oh sure, women are obviously too logical to mess anything up, right?",hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,global,0.80,A1
+"Yeah, that religion is totally famous for respecting everyone equally.",hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,global,0.82,A1
+"Immigrants are just amazing for jobs, aren't they?",hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,global,0.84,A1
+"What a noble movement, spreading hate and calling it patriotism.",hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,global,0.86,A1
+Of course those caste elites are always the first to think about fairness.,hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,political,india,0.88,A1
+"Wow, he is such a delightful human, always making life miserable for everyone.",hate,mild,false,true,individual,individual,indirect,false,sarcastic,disgust,0,chat,general,global,0.90,A1
+"Oh sure, women are obviously too logical to mess anything up, right?",hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,global,0.80,A1
+"Yeah, that religion is totally famous for respecting everyone equally.",hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,global,0.82,A1
+"Immigrants are just amazing for jobs, aren't they?",hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,global,0.84,A1
+"What a noble movement, spreading hate and calling it patriotism.",hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,india,0.86,A1
+"You clueless idiot, learn to read before you post.",offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.83,A1
+Stop acting like a jerk and do your job.,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,global,0.85,A1
+"That was a trash take, dude.",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,general,general,india,0.87,A1
+He is an arrogant fool with zero sense.,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,global,0.89,A1
+Quit being a nasty clown in the group chat.,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.91,A1
+"You clueless idiot, learn to read before you post.",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,general,general,india,0.93,A1
+Stop acting like a jerk and do your job.,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.95,A1
+"That was a trash take, dude.",offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,1,social_media,general,global,0.97,A1
+He is an arrogant fool with zero sense.,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,general,general,india,0.83,A1
+Quit being a nasty clown in the group chat.,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,global,0.85,A1
+"You clueless idiot, learn to read before you post.",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,global,0.87,A1
+Stop acting like a jerk and do your job.,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,general,general,india,0.89,A1
+"That was a trash take, dude.",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,global,0.91,A1
+He is an arrogant fool with zero sense.,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,global,0.93,A1
+Quit being a nasty clown in the group chat.,offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,1,general,general,india,0.95,A1
+My chest has been hurting since yesterday evening.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.86,A1
+I have had a fever and body ache for two days.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.88,A1
+My throat feels swollen and it is hard to swallow.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.90,A1
+I keep coughing at night and cannot sleep well.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.92,A1
+There is a sharp pain in my lower back today.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.94,A1
+I feel dizzy whenever I stand up too quickly.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.96,A1
+My chest has been hurting since yesterday evening.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.98,A1
+I have had a fever and body ache for two days.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.86,A1
+My throat feels swollen and it is hard to swallow.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.88,A1
+I keep coughing at night and cannot sleep well.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,global,0.90,A1
+There is a sharp pain in my lower back today.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,global,0.92,A1
+I feel dizzy whenever I stand up too quickly.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.94,A1
+My chest has been hurting since yesterday evening.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,global,0.96,A1
+I have had a fever and body ache for two days.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,global,0.98,A1
+My throat feels swollen and it is hard to swallow.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,india,0.86,A1

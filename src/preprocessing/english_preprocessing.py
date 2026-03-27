@@ -24,8 +24,17 @@ class EnglishPreprocessor:
         self.stemmer = PorterStemmer()
         self.lemmatizer = WordNetLemmatizer()
         self.stop_words = set(stopwords.words('english'))
+        self.profane_words = {
+            'bastard', 'bitch', 'bloody', 'crap', 'damn', 'dick', 'fool',
+            'garbage', 'idiot', 'jerk', 'moron', 'nasty', 'shit', 'trash'
+        }
         # Adding some basic punctuation to stopwords just in case
         self.stop_words.update(list(string.punctuation))
+
+    def get_profanity_count(self, text: str) -> int:
+        """Counts profane tokens using a small hardcoded lexicon."""
+        tokens = word_tokenize(text.lower())
+        return sum(1 for token in tokens if token in self.profane_words)
 
     def preprocess(self, text: str) -> dict:
         """

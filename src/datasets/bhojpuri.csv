@@ -1,18 +1,101 @@
-text,label
-"का हाल बा?","non_hate"
-"तहार नाश हो जाई।","hate"
-"का खइबे आज?","non_hate"
-"मार डाल ई लोगन के।","hate"
-"खेत में फसल बहुत नीक बा।","non_hate"
-"तूँ एकदम गदहा हव।","hate"
-"हमार देस महान बा।","non_hate"
-"बहिरी निकाल ई गंदा आदमी के।","hate"
-"गाना गावे के मन करत बा।","non_hate"
-"तोहार हिम्मत कइसे भईल?","hate"
-"हमनी के मिलजुल के रहे के चाहीं।","non_hate"
-"जेह में आग लगा द।","hate"
-"गउआँ में शांति बा।","non_hate"
-"तूँ एगो चोर हव।","hate"
-"सब केहू खुश बा।","non_hate"
-"खत्म कर द ई लोग के खेल।","hate"
-"हमार सीना में दर्द बा।","health_issue"
+text,label,severity,is_implicit,is_sarcasm,target_group,target_type,directness,call_to_action,tone,emotion,profanity_count,platform,domain,region,confidence,annotator_id
+आज सबेरे के ठंढा हवा में घूमनी।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.95,synthetic
+हमनी गरम चाय संग नाश्ता कईनी त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.96,synthetic
+घरे क्रिकेट खेल पर बतकही भइल सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.97,synthetic
+खेत पर लइकन के पढ़ाई में मदद कईनी दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,rural_india,0.98,A1
+गांव में बरखा बाद माटी के खुशबू अइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.99,synthetic
+डॉक्टर कहले घर वाला संगे रोटी बनवनी त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.95,synthetic
+स्कूल में स्वास्थ्य जांच के कागज देखनी सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,rural_india,0.96,synthetic
+आज सबेरे के ठंढा हवा में घूमनी दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.97,A1
+हमनी गरम चाय संग नाश्ता कईनी।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.98,synthetic
+घरे क्रिकेट खेल पर बतकही भइल त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,rural_india,0.99,synthetic
+खेत पर लइकन के पढ़ाई में मदद कईनी सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.95,synthetic
+गांव में बरखा बाद माटी के खुशबू अइल दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.96,A1
+डॉक्टर कहले घर वाला संगे रोटी बनवनी।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.97,synthetic
+स्कूल में स्वास्थ्य जांच के कागज देखनी त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.98,synthetic
+आज सबेरे के ठंढा हवा में घूमनी सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.99,synthetic
+हमनी गरम चाय संग नाश्ता कईनी दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,rural_india,0.95,A1
+घरे क्रिकेट खेल पर बतकही भइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.96,synthetic
+खेत पर लइकन के पढ़ाई में मदद कईनी त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.97,synthetic
+गांव में बरखा बाद माटी के खुशबू अइल सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,rural_india,0.98,synthetic
+डॉक्टर कहले घर वाला संगे रोटी बनवनी दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.99,A1
+स्कूल में स्वास्थ्य जांच के कागज देखनी।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.95,synthetic
+आज सबेरे के ठंढा हवा में घूमनी त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,rural_india,0.96,synthetic
+हमनी गरम चाय संग नाश्ता कईनी सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.97,synthetic
+घरे क्रिकेट खेल पर बतकही भइल दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.98,A1
+खेत पर लइकन के पढ़ाई में मदद कईनी।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.99,synthetic
+गांव में बरखा बाद माटी के खुशबू अइल त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.95,synthetic
+डॉक्टर कहले घर वाला संगे रोटी बनवनी सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.96,synthetic
+स्कूल में स्वास्थ्य जांच के कागज देखनी दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,rural_india,0.97,A1
+आज सबेरे के ठंढा हवा में घूमनी।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.98,synthetic
+हमनी गरम चाय संग नाश्ता कईनी त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.99,synthetic
+घरे क्रिकेट खेल पर बतकही भइल सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,rural_india,0.95,synthetic
+खेत पर लइकन के पढ़ाई में मदद कईनी दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.96,A1
+गांव में बरखा बाद माटी के खुशबू अइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.97,synthetic
+डॉक्टर कहले घर वाला संगे रोटी बनवनी त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,rural_india,0.98,synthetic
+स्कूल में स्वास्थ्य जांच के कागज देखनी सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.99,synthetic
+आज सबेरे के ठंढा हवा में घूमनी दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.95,A1
+हमनी गरम चाय संग नाश्ता कईनी।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.96,synthetic
+घरे क्रिकेट खेल पर बतकही भइल त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.97,synthetic
+खेत पर लइकन के पढ़ाई में मदद कईनी सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.98,synthetic
+गांव में बरखा बाद माटी के खुशबू अइल दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,rural_india,0.99,A1
+डॉक्टर कहले घर वाला संगे रोटी बनवनी।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.95,synthetic
+स्कूल में स्वास्थ्य जांच के कागज देखनी त मन खुश भइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.96,synthetic
+आज सबेरे के ठंढा हवा में घूमनी सब हंस पड़ल।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,rural_india,0.97,synthetic
+हमनी गरम चाय संग नाश्ता कईनी दिन बढ़िया निकलल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.98,A1
+घरे क्रिकेट खेल पर बतकही भइल।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.99,synthetic
+एह औरतन के फैसला से दूर राखल जाव।,hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,social_media,general,rural_india,0.82,synthetic
+"ऑनलाइन, ओह मजहब वाला लोगन के टोला से भगा दऽ।",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,rural_india,0.84,synthetic
+"सभा में, ओह जात के लोग पंचायत में ना घुसे।",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,rural_india,0.86,synthetic
+बाहिर से आइल लोगन के गांव से निकाल दऽ।,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,rural_india,0.88,A1
+"ऑनलाइन, ओह पार्टी के चमचा सभ के कुचल दऽ।",hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,rural_india,0.90,synthetic
+"सभा में, तू हरामी आदमी बाड़ऽ, तोहरा के मेटा देवे के चाहीं।",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,rural_india,0.92,synthetic
+एह मेहरारू लोग बस रसोई खातिर ठीक बा।,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,rural_india,0.94,synthetic
+"ऑनलाइन, ओह धरम वाला लोग हमेशा गड़बड़ करे ला।",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,rural_india,0.96,A1
+"सभा में, नीच जात वाला पर भरोसा मत करा।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,rural_india,0.98,synthetic
+परदेसी लोग इहाँ के माहौल बिगाड़ देला।,hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,news,political,rural_india,0.82,synthetic
+"ऑनलाइन, ओह सोच वाला लोग समाज पर कलंक बा।",hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,rural_india,0.84,synthetic
+"सभा में, ओ आदमी पूरा गांव खातिर जहर बा।",hate,moderate,false,false,individual,individual,direct,false,dismissive,anger,0,chat,general,rural_india,0.86,A1
+एह औरतन के फैसला से दूर राखल जाव।,hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,social_media,general,rural_india,0.88,synthetic
+"ऑनलाइन, ओह मजहब वाला लोगन के टोला से भगा दऽ।",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,rural_india,0.90,synthetic
+"सभा में, ओह जात के लोग पंचायत में ना घुसे।",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,rural_india,0.92,synthetic
+बाहिर से आइल लोगन के गांव से निकाल दऽ।,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,rural_india,0.94,A1
+"ऑनलाइन, ओह पार्टी के चमचा सभ के कुचल दऽ।",hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,rural_india,0.96,synthetic
+"सभा में, तू हरामी आदमी बाड़ऽ, तोहरा के मेटा देवे के चाहीं।",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,rural_india,0.98,synthetic
+एह मेहरारू लोग बस रसोई खातिर ठीक बा।,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,rural_india,0.82,synthetic
+"ऑनलाइन, ओह धरम वाला लोग हमेशा गड़बड़ करे ला।",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,rural_india,0.84,A1
+"सभा में, नीच जात वाला पर भरोसा मत करा।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,rural_india,0.86,synthetic
+परदेसी लोग इहाँ के माहौल बिगाड़ देला।,hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,news,political,rural_india,0.88,synthetic
+मेहरारू लोग जिम्मेदारी पावत ही गड़बड़ करे लागेला।,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,rural_india,0.76,synthetic
+ओह समुदाय के लोग मौका पावत ही असली रंग देखावेला।,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,rural_india,0.78,synthetic
+कुछ घर के पहचान बोलचाल से तुरंते हो जाला।,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,rural_india,0.80,synthetic
+परदेसी लोग अइलें कि टोला कम सुरक्षित लागे लागेला।,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,rural_india,0.82,A1
+ओह दल वाला लोग से दूरी बनवले ठीक बा।,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,social_media,political,rural_india,0.84,synthetic
+ओके देखते माहौलिये खराब हो जाला।,hate,mild,true,false,individual,individual,indirect,false,dismissive,fear,0,chat,general,rural_india,0.86,synthetic
+मेहरारू लोग जिम्मेदारी पावत ही गड़बड़ करे लागेला।,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,rural_india,0.88,synthetic
+ओह समुदाय के लोग मौका पावत ही असली रंग देखावेला।,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,rural_india,0.76,A1
+"हाँ हाँ, मेहरारू लोग त बड़ा ठंढा दिमाग से फैसला लेले, ना?",hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,rural_india,0.80,synthetic
+"वाह, ओह समुदाय के सहनशीलता त बड़ा नामी बा।",hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,rural_india,0.82,synthetic
+"हाँ, परदेसी लोग आके सबके रोजी बढ़ा देला, है ना?",hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,rural_india,0.84,synthetic
+"का बढ़िया विचार बा, बस नफरतिए फइलावे ला।",hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,rural_india,0.86,A1
+"बिलकुल, जाति देख के भेदभाव त कहीं होला ही ना।",hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,political,rural_india,0.88,synthetic
+"वाह, उ आदमी त बड़ा नेक बा, सभे के जीवन खराब करेला।",hate,mild,false,true,individual,individual,indirect,false,sarcastic,disgust,0,chat,general,rural_india,0.90,synthetic
+"हाँ हाँ, मेहरारू लोग त बड़ा ठंढा दिमाग से फैसला लेले, ना?",hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,rural_india,0.80,synthetic
+"वाह, ओह समुदाय के सहनशीलता त बड़ा नामी बा।",hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,rural_india,0.82,A1
+"हाँ, परदेसी लोग आके सबके रोजी बढ़ा देला, है ना?",hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,rural_india,0.84,synthetic
+"का बढ़िया विचार बा, बस नफरतिए फइलावे ला।",hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,rural_india,0.86,synthetic
+"तू बड़ा बेवकूफ बाड़ऽ, चुप हो जा।",offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,1,chat,general,rural_india,0.83,synthetic
+ई का घटिया बकवास बा।,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.85,synthetic
+ओकर दिमाग घास चरहे गइल बा।,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,general,general,rural_india,0.87,A1
+फालतू रउआ हल्ला मत मचावऽ।,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,rural_india,0.89,synthetic
+"तू बड़ा बेवकूफ बाड़ऽ, चुप हो जा।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.91,synthetic
+ई का घटिया बकवास बा।,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,general,general,rural_india,0.93,A1
+ओकर दिमाग घास चरहे गइल बा।,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,rural_india,0.95,synthetic
+हमार छाती में काल्हु से दरद बा।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.86,synthetic
+दू दिन से बुखार आ बदन टूटत बा।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.88,synthetic
+गरदन सुजल बा आ निगले में दिक्कत बा।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,rural_india,0.90,A1
+बार बार चक्कर आवत बा।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,rural_india,0.92,synthetic
+पीठ में तेज पीरा बा।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,rural_india,0.94,synthetic
+हमार छाती में काल्हु से दरद बा।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,rural_india,0.96,A1
+दू दिन से बुखार आ बदन टूटत बा।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.98,synthetic
+गरदन सुजल बा आ निगले में दिक्कत बा।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.86,synthetic

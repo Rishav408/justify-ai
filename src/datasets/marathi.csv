@@ -1,17 +1,151 @@
-text,label
-"प्रकृती खूप छान आहे आज.","non_hate"
-"मला तुझा तिरस्कार वाटतो.","hate"
-"तुम्ही जेवण केलेत का?","non_hate"
-"या लोकांना इथून हाकलून टाका.","hate"
-"आजचा दिवस मस्त आहे.","non_hate"
-"खूप मूर्ख लोक आहात तुम्ही.","hate"
-"मदत केल्याबद्दल धन्यवाद.","non_hate"
-"सगळ्यांना जिवंत मारा.","hate"
-"बागेत फुले उमलली आहेत.","non_hate"
-"तुला लाज वाटली पाहिजे.","hate"
-"आम्ही सगळे एक आहोत.","non_hate"
-"या गलिच्छ लोकांना धडा शिकवा.","hate"
-"माझ्या शाळेचं नाव खूप गाजलेलं आहे.","non_hate"
-"तुझा चेहरा बघायची पण इच्छा नाही.","hate"
-"शिक्षण ही यशाची गुरुकिल्ली आहे.","non_hate"
-"संपवून टाका यांना एकदाचे.","hate"
+text,label,severity,is_implicit,is_sarcasm,target_group,target_type,directness,call_to_action,tone,emotion,profanity_count,platform,domain,region,confidence,annotator_id
+आज थंड वाऱ्यात फेरफटका मारला।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.95,A1
+आम्ही गरम चहासोबत नाश्ता केला आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.96,A1
+शाळेत क्रिकेट सामन्यावर गप्पा मारल्या म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.97,A1
+घरी मुलांच्या अभ्यासाला मदत केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.98,A1
+पुण्यात पावसानंतरचा सुगंध अनुभवला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.99,A1
+मुंबईत कुटुंबासोबत जेवण बनवले आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.95,A1
+डॉक्टरांनी आरोग्य तपासणीचा अहवाल पाहिला म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,urban_india,0.96,A1
+ऑफिसमध्ये मोहल्ल्यात स्वच्छता मोहीम केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.97,A1
+आज थंड वाऱ्यात फेरफटका मारला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.98,A1
+आम्ही गरम चहासोबत नाश्ता केला आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.99,A1
+शाळेत क्रिकेट सामन्यावर गप्पा मारल्या म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.95,A1
+घरी मुलांच्या अभ्यासाला मदत केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.96,A1
+पुण्यात पावसानंतरचा सुगंध अनुभवला।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.97,A1
+मुंबईत कुटुंबासोबत जेवण बनवले आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.98,A1
+डॉक्टरांनी आरोग्य तपासणीचा अहवाल पाहिला म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.99,A1
+ऑफिसमध्ये मोहल्ल्यात स्वच्छता मोहीम केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.95,A1
+आज थंड वाऱ्यात फेरफटका मारला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.96,A1
+आम्ही गरम चहासोबत नाश्ता केला आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.97,A1
+शाळेत क्रिकेट सामन्यावर गप्पा मारल्या म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,urban_india,0.98,A1
+घरी मुलांच्या अभ्यासाला मदत केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.99,A1
+पुण्यात पावसानंतरचा सुगंध अनुभवला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.95,A1
+मुंबईत कुटुंबासोबत जेवण बनवले आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.96,A1
+डॉक्टरांनी आरोग्य तपासणीचा अहवाल पाहिला म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.97,A1
+ऑफिसमध्ये मोहल्ल्यात स्वच्छता मोहीम केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.98,A1
+आज थंड वाऱ्यात फेरफटका मारला।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.99,A1
+आम्ही गरम चहासोबत नाश्ता केला आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.95,A1
+शाळेत क्रिकेट सामन्यावर गप्पा मारल्या म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.96,A1
+घरी मुलांच्या अभ्यासाला मदत केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.97,A1
+पुण्यात पावसानंतरचा सुगंध अनुभवला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.98,A1
+मुंबईत कुटुंबासोबत जेवण बनवले आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.99,A1
+डॉक्टरांनी आरोग्य तपासणीचा अहवाल पाहिला म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,urban_india,0.95,A1
+ऑफिसमध्ये मोहल्ल्यात स्वच्छता मोहीम केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.96,A1
+आज थंड वाऱ्यात फेरफटका मारला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.97,A1
+आम्ही गरम चहासोबत नाश्ता केला आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.98,A1
+शाळेत क्रिकेट सामन्यावर गप्पा मारल्या म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.99,A1
+घरी मुलांच्या अभ्यासाला मदत केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.95,A1
+पुण्यात पावसानंतरचा सुगंध अनुभवला।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.96,A1
+मुंबईत कुटुंबासोबत जेवण बनवले आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.97,A1
+डॉक्टरांनी आरोग्य तपासणीचा अहवाल पाहिला म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.98,A1
+ऑफिसमध्ये मोहल्ल्यात स्वच्छता मोहीम केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.99,A1
+आज थंड वाऱ्यात फेरफटका मारला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.95,A1
+आम्ही गरम चहासोबत नाश्ता केला आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.96,A1
+शाळेत क्रिकेट सामन्यावर गप्पा मारल्या म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,urban_india,0.97,A1
+घरी मुलांच्या अभ्यासाला मदत केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.98,A1
+पुण्यात पावसानंतरचा सुगंध अनुभवला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.99,A1
+मुंबईत कुटुंबासोबत जेवण बनवले आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.95,A1
+डॉक्टरांनी आरोग्य तपासणीचा अहवाल पाहिला म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.96,A1
+ऑफिसमध्ये मोहल्ल्यात स्वच्छता मोहीम केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.97,A1
+आज थंड वाऱ्यात फेरफटका मारला।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.98,A1
+आम्ही गरम चहासोबत नाश्ता केला आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.99,A1
+शाळेत क्रिकेट सामन्यावर गप्पा मारल्या म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.95,A1
+घरी मुलांच्या अभ्यासाला मदत केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.96,A1
+पुण्यात पावसानंतरचा सुगंध अनुभवला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.97,A1
+मुंबईत कुटुंबासोबत जेवण बनवले आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.98,A1
+डॉक्टरांनी आरोग्य तपासणीचा अहवाल पाहिला म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,urban_india,0.99,A1
+ऑफिसमध्ये मोहल्ल्यात स्वच्छता मोहीम केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.95,A1
+आज थंड वाऱ्यात फेरफटका मारला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.96,A1
+आम्ही गरम चहासोबत नाश्ता केला आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,india,0.97,A1
+शाळेत क्रिकेट सामन्यावर गप्पा मारल्या म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.98,A1
+घरी मुलांच्या अभ्यासाला मदत केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,india,0.99,A1
+पुण्यात पावसानंतरचा सुगंध अनुभवला।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,urban_india,0.95,A1
+मुंबईत कुटुंबासोबत जेवण बनवले आणि छान वाटले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,india,0.96,A1
+डॉक्टरांनी आरोग्य तपासणीचा अहवाल पाहिला म्हणून मन शांत झाले।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,urban_india,0.97,A1
+ऑफिसमध्ये मोहल्ल्यात स्वच्छता मोहीम केली सगळे आनंदी झाले।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,india,0.98,A1
+आज थंड वाऱ्यात फेरफटका मारला।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,urban_india,0.99,A1
+अशा बायकांना कोणत्याही मोठ्या पदावर बसवू नका.,hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,social_media,general,urban_india,0.82,A1
+"ऑनलाइन, त्या धर्माच्या लोकांना आपल्या भागातून हाकलून द्या.",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,urban_india,0.84,A1
+"सभेत, त्या जातीच्या लोकांना गावच्या बैठकीत जागा देऊ नका.",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,india,0.86,A1
+"पोस्टमध्ये, बाहेरून आलेल्यांना शहराबाहेर फेका.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,urban_india,0.88,A1
+"त्या पक्षाचे समर्थक किडे आहेत, त्यांना चिरडून टाका.",hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,urban_india,0.90,A1
+"ऑनलाइन, तो हरामखोर माणूस संपवून टाकायला हवा.",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,india,0.92,A1
+"सभेत, या स्त्रिया फक्त घरात बसण्यासाठीच योग्य आहेत.",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,urban_india,0.94,A1
+"पोस्टमध्ये, त्या पंथाचे लोक नेहमी गोंधळच घालतात.",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,urban_india,0.96,A1
+तो नीच जातीतला माणूस कुणावरही विश्वास ठेवू देत नाही.,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.98,A1
+"ऑनलाइन, परराज्यातून आलेले लोक इथलं वातावरण बिघडवतात.",hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,news,political,urban_india,0.82,A1
+"सभेत, त्या विचारसरणीचे लोक समाजावरचा डाग आहेत.",hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,urban_india,0.84,A1
+"पोस्टमध्ये, तो माणूस पूर्ण गावासाठी अपशकून आहे.",hate,moderate,false,false,individual,individual,direct,false,dismissive,anger,0,chat,general,india,0.86,A1
+अशा बायकांना कोणत्याही मोठ्या पदावर बसवू नका.,hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,social_media,general,urban_india,0.88,A1
+"ऑनलाइन, त्या धर्माच्या लोकांना आपल्या भागातून हाकलून द्या.",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,urban_india,0.90,A1
+"सभेत, त्या जातीच्या लोकांना गावच्या बैठकीत जागा देऊ नका.",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,india,0.92,A1
+"पोस्टमध्ये, बाहेरून आलेल्यांना शहराबाहेर फेका.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,urban_india,0.94,A1
+"त्या पक्षाचे समर्थक किडे आहेत, त्यांना चिरडून टाका.",hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,urban_india,0.96,A1
+"ऑनलाइन, तो हरामखोर माणूस संपवून टाकायला हवा.",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,india,0.98,A1
+"सभेत, या स्त्रिया फक्त घरात बसण्यासाठीच योग्य आहेत.",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,urban_india,0.82,A1
+"पोस्टमध्ये, त्या पंथाचे लोक नेहमी गोंधळच घालतात.",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,urban_india,0.84,A1
+तो नीच जातीतला माणूस कुणावरही विश्वास ठेवू देत नाही.,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.86,A1
+"ऑनलाइन, परराज्यातून आलेले लोक इथलं वातावरण बिघडवतात.",hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,news,political,urban_india,0.88,A1
+"सभेत, त्या विचारसरणीचे लोक समाजावरचा डाग आहेत.",hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,urban_india,0.90,A1
+"पोस्टमध्ये, तो माणूस पूर्ण गावासाठी अपशकून आहे.",hate,moderate,false,false,individual,individual,direct,false,dismissive,anger,0,chat,general,india,0.92,A1
+अशा बायकांना कोणत्याही मोठ्या पदावर बसवू नका.,hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,social_media,general,urban_india,0.94,A1
+"ऑनलाइन, त्या धर्माच्या लोकांना आपल्या भागातून हाकलून द्या.",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,urban_india,0.96,A1
+"सभेत, त्या जातीच्या लोकांना गावच्या बैठकीत जागा देऊ नका.",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,india,0.98,A1
+"पोस्टमध्ये, बाहेरून आलेल्यांना शहराबाहेर फेका.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,urban_india,0.82,A1
+"त्या पक्षाचे समर्थक किडे आहेत, त्यांना चिरडून टाका.",hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,urban_india,0.84,A1
+"ऑनलाइन, तो हरामखोर माणूस संपवून टाकायला हवा.",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,india,0.86,A1
+"सभेत, या स्त्रिया फक्त घरात बसण्यासाठीच योग्य आहेत.",hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,urban_india,0.88,A1
+"पोस्टमध्ये, त्या पंथाचे लोक नेहमी गोंधळच घालतात.",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,urban_india,0.90,A1
+तो नीच जातीतला माणूस कुणावरही विश्वास ठेवू देत नाही.,hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,india,0.92,A1
+"ऑनलाइन, परराज्यातून आलेले लोक इथलं वातावरण बिघडवतात.",hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,news,political,urban_india,0.94,A1
+"सभेत, त्या विचारसरणीचे लोक समाजावरचा डाग आहेत.",hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,urban_india,0.96,A1
+"पोस्टमध्ये, तो माणूस पूर्ण गावासाठी अपशकून आहे.",hate,moderate,false,false,individual,individual,direct,false,dismissive,anger,0,chat,general,india,0.98,A1
+अशा बायकांना कोणत्याही मोठ्या पदावर बसवू नका.,hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,social_media,general,urban_india,0.82,A1
+"ऑनलाइन, त्या धर्माच्या लोकांना आपल्या भागातून हाकलून द्या.",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,urban_india,0.84,A1
+"सभेत, त्या जातीच्या लोकांना गावच्या बैठकीत जागा देऊ नका.",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,india,0.86,A1
+"पोस्टमध्ये, बाहेरून आलेल्यांना शहराबाहेर फेका.",hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,urban_india,0.88,A1
+महिलांना जबाबदारी दिली की शेवटी गोंधळ होणारच.,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,urban_india,0.76,A1
+तो समुदाय वाढला की परिसराचा रंग बदलतोच.,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,urban_india,0.78,A1
+काही घरांची ओळख त्यांच्या वागण्यातून लगेच कळते.,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,india,0.80,A1
+बाहेरचे लोक आले की मुंबईत सुरक्षित वाटत नाही.,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,urban_india,0.82,A1
+त्या पक्षाच्या लोकांपासून थोडं लांब राहिलेलंच बरं.,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,social_media,political,urban_india,0.84,A1
+तो आला की खोलीतलं वातावरणच खराब होतं.,hate,mild,true,false,individual,individual,indirect,false,dismissive,fear,0,chat,general,india,0.86,A1
+महिलांना जबाबदारी दिली की शेवटी गोंधळ होणारच.,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,urban_india,0.88,A1
+तो समुदाय वाढला की परिसराचा रंग बदलतोच.,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,urban_india,0.76,A1
+काही घरांची ओळख त्यांच्या वागण्यातून लगेच कळते.,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,india,0.78,A1
+बाहेरचे लोक आले की मुंबईत सुरक्षित वाटत नाही.,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,urban_india,0.80,A1
+"हो हो, बायका तर भावना बाजूला ठेवूनच निर्णय घेतात, नाही का?",hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,urban_india,0.80,A1
+"वा, त्या समुदायाची सहिष्णुता तर फार प्रसिद्ध आहे.",hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,urban_india,0.82,A1
+"हो, बाहेरचे लोक आले की पुण्याची संस्कृतीच फुलते म्हणे.",hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,india,0.84,A1
+"काय सुंदर विचारसरणी आहे, फक्त द्वेष पसरवते.",hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,urban_india,0.86,A1
+"अर्थातच, जात पाहून भेदभाव महाराष्ट्रात अजिबात होत नाही.",hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,political,urban_india,0.88,A1
+"वा, तो माणूस किती छान, सगळ्यांचं आयुष्य बिघडवतो.",hate,mild,false,true,individual,individual,indirect,false,sarcastic,disgust,0,chat,general,india,0.90,A1
+"हो हो, बायका तर भावना बाजूला ठेवूनच निर्णय घेतात, नाही का?",hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,urban_india,0.80,A1
+"वा, त्या समुदायाची सहिष्णुता तर फार प्रसिद्ध आहे.",hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,urban_india,0.82,A1
+"हो, बाहेरचे लोक आले की पुण्याची संस्कृतीच फुलते म्हणे.",hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,india,0.84,A1
+"काय सुंदर विचारसरणी आहे, फक्त द्वेष पसरवते.",hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,urban_india,0.86,A1
+"तू अगदी बावळट आहेस, नीट विचार कर.",offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,1,chat,general,urban_india,0.83,A1
+काय भंगार बोलतोयस तू.,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.85,A1
+हा माणूस फारच उर्मट आणि निकम्मा आहे.,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,general,general,urban_india,0.87,A1
+तुझं उत्तर फारच ढिसाळ आहे.,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,india,0.89,A1
+फालतू बडबड बंद कर.,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,urban_india,0.91,A1
+"तू अगदी बावळट आहेस, नीट विचार कर.",offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,general,general,india,0.93,A1
+काय भंगार बोलतोयस तू.,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,urban_india,0.95,A1
+हा माणूस फारच उर्मट आणि निकम्मा आहे.,offensive,moderate,false,true,individual,individual,direct,false,dismissive,disgust,1,social_media,general,india,0.97,A1
+तुझं उत्तर फारच ढिसाळ आहे.,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,general,general,urban_india,0.83,A1
+फालतू बडबड बंद कर.,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,india,0.85,A1
+"तू अगदी बावळट आहेस, नीट विचार कर.",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,urban_india,0.87,A1
+काय भंगार बोलतोयस तू.,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,general,general,india,0.89,A1
+हा माणूस फारच उर्मट आणि निकम्मा आहे.,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,urban_india,0.91,A1
+माझ्या छातीत कालपासून दुखत आहे.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.86,A1
+मला ताप आला आहे आणि अंग दुखत आहे.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,india,0.88,A1
+घशात सूज आहे आणि गिळताना त्रास होतो.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,urban_india,0.90,A1
+उभे राहिल्यावर चक्कर येते.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.92,A1
+पाठीमध्ये खूप वेदना आहेत.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,urban_india,0.94,A1
+माझ्या छातीत कालपासून दुखत आहे.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.96,A1
+मला ताप आला आहे आणि अंग दुखत आहे.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,urban_india,0.98,A1
+घशात सूज आहे आणि गिळताना त्रास होतो.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,india,0.86,A1
+उभे राहिल्यावर चक्कर येते.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,urban_india,0.88,A1
+पाठीमध्ये खूप वेदना आहेत.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,india,0.90,A1
+माझ्या छातीत कालपासून दुखत आहे.,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,urban_india,0.92,A1
+मला ताप आला आहे आणि अंग दुखत आहे.,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,india,0.94,A1

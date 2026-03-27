@@ -1,17 +1,101 @@
-text,label
-"कियाँ हो सा?","non_hate"
-"थारो सर्वनाश होवे।","hate"
-"आज काई जिमण है?","non_hate"
-"खतम कर द्यो इण लोगां ने।","hate"
-"म्हारो राजस्थान प्यारो है।","non_hate"
-"थूँ बिल्कुल अक्कल नी राखै।","hate"
-"बगत आवेगो आपणो।","non_hate"
-"काढ द्यो इण गंदा लोगां ने गाँव ऊं।","hate"
-"खीचड़ो आछो बण्यो है।","non_hate"
-"थारी हिम्मत कीयां हुई?","hate"
-"आपणै सगळां ने मिल र रैणो चाईजै।","non_hate"
-"आग लगा द्यो इण सगळां रे।","hate"
-"धोरा री धरती सुणी है।","non_hate"
-"थूँ तो मोट्टो चोर है।","hate"
-"खुशी रो दिन है।","non_hate"
-"मार कुटी कर नाखो इण री।","hate"
+text,label,severity,is_implicit,is_sarcasm,target_group,target_type,directness,call_to_action,tone,emotion,profanity_count,platform,domain,region,confidence,annotator_id
+आज सुबेरो ठंडो पवन में घूम्या।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.95,synthetic
+म्हे गरम चाय सूं नाश्तो कर्यो मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.96,synthetic
+घरे क्रिकेट री बात करां सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.97,synthetic
+खेत में बालकां नै पढ़ाई में मदद करी दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,rural_india,0.98,A1
+गांव में मेह बरसां पाछो माटी री खुशबू आई।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.99,synthetic
+डॉक्टर साहब कह्या कुटुंब सूं भोजन बनायो मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.95,synthetic
+स्कूल में सेहत जांच रो कागद देख्यो सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,rural_india,0.96,synthetic
+आज सुबेरो ठंडो पवन में घूम्या दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.97,A1
+म्हे गरम चाय सूं नाश्तो कर्यो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.98,synthetic
+घरे क्रिकेट री बात करां मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,rural_india,0.99,synthetic
+खेत में बालकां नै पढ़ाई में मदद करी सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.95,synthetic
+गांव में मेह बरसां पाछो माटी री खुशबू आई दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.96,A1
+डॉक्टर साहब कह्या कुटुंब सूं भोजन बनायो।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.97,synthetic
+स्कूल में सेहत जांच रो कागद देख्यो मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.98,synthetic
+आज सुबेरो ठंडो पवन में घूम्या सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.99,synthetic
+म्हे गरम चाय सूं नाश्तो कर्यो दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,rural_india,0.95,A1
+घरे क्रिकेट री बात करां।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.96,synthetic
+खेत में बालकां नै पढ़ाई में मदद करी मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.97,synthetic
+गांव में मेह बरसां पाछो माटी री खुशबू आई सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,rural_india,0.98,synthetic
+डॉक्टर साहब कह्या कुटुंब सूं भोजन बनायो दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.99,A1
+स्कूल में सेहत जांच रो कागद देख्यो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.95,synthetic
+आज सुबेरो ठंडो पवन में घूम्या मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,rural_india,0.96,synthetic
+म्हे गरम चाय सूं नाश्तो कर्यो सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.97,synthetic
+घरे क्रिकेट री बात करां दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.98,A1
+खेत में बालकां नै पढ़ाई में मदद करी।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.99,synthetic
+गांव में मेह बरसां पाछो माटी री खुशबू आई मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.95,synthetic
+डॉक्टर साहब कह्या कुटुंब सूं भोजन बनायो सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.96,synthetic
+स्कूल में सेहत जांच रो कागद देख्यो दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,rural_india,0.97,A1
+आज सुबेरो ठंडो पवन में घूम्या।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.98,synthetic
+म्हे गरम चाय सूं नाश्तो कर्यो मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.99,synthetic
+घरे क्रिकेट री बात करां सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,rural_india,0.95,synthetic
+खेत में बालकां नै पढ़ाई में मदद करी दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.96,A1
+गांव में मेह बरसां पाछो माटी री खुशबू आई।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.97,synthetic
+डॉक्टर साहब कह्या कुटुंब सूं भोजन बनायो मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,chat,education,rural_india,0.98,synthetic
+स्कूल में सेहत जांच रो कागद देख्यो सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.99,synthetic
+आज सुबेरो ठंडो पवन में घूम्या दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.95,A1
+म्हे गरम चाय सूं नाश्तो कर्यो।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,general,general,rural_india,0.96,synthetic
+घरे क्रिकेट री बात करां मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.97,synthetic
+खेत में बालकां नै पढ़ाई में मदद करी सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,none,0,social_media,sports,rural_india,0.98,synthetic
+गांव में मेह बरसां पाछो माटी री खुशबू आई दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,news,health,rural_india,0.99,A1
+डॉक्टर साहब कह्या कुटुंब सूं भोजन बनायो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.95,synthetic
+स्कूल में सेहत जांच रो कागद देख्यो मन ने घणो सुख मिल्यो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,chat,education,rural_india,0.96,synthetic
+आज सुबेरो ठंडो पवन में घूम्या सब हंस पड़्या।,non_hate,none,false,false,none,none,none,false,neutral,joy,0,social_media,sports,rural_india,0.97,synthetic
+म्हे गरम चाय सूं नाश्तो कर्यो दिन बढ़ियो गयो।,non_hate,none,false,false,none,none,none,false,neutral,none,0,news,health,rural_india,0.98,A1
+घरे क्रिकेट री बात करां।,non_hate,none,false,false,none,none,none,false,neutral,none,0,general,general,rural_india,0.99,synthetic
+ई औरतां नै बड़ा फैसला सूं दूर राखो।,hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,social_media,general,rural_india,0.82,synthetic
+"ऑनलाइन, ओ धरम वालां नै मोहल्ला सूं बाहर काढ़ द्यो।",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,rural_india,0.84,synthetic
+"सभा में, ओ जात वालां नै पंचायत में मत घुसण द्यो।",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,rural_india,0.86,synthetic
+बाहरा वालां नै गांव सूं निकाल द्यो।,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,rural_india,0.88,A1
+"ऑनलाइन, ओ पार्टी रा चमचा नै कुचल द्यो।",hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,rural_india,0.90,synthetic
+"सभा में, थूं हरामी मानस है, थाने मेट द्यां।",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,rural_india,0.92,synthetic
+ई लुगायां बस रसोई खातर ठीक है।,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,rural_india,0.94,synthetic
+"ऑनलाइन, ओ पंथ वालां सूं सगळी गड़बड़ होवे है।",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,rural_india,0.96,A1
+"सभा में, नीच जात वालां पर भरोसो मत करो।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,rural_india,0.98,synthetic
+परदेसिया आके गांव रो माहौल बिगाड़े है।,hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,news,political,rural_india,0.82,synthetic
+"ऑनलाइन, ओ सोच वालां समाज पर धब्बो है।",hate,moderate,false,false,political,ideology,direct,false,dismissive,anger,0,social_media,political,rural_india,0.84,synthetic
+"सभा में, ओ मानस सगळा गांव खातर जहर है।",hate,moderate,false,false,individual,individual,direct,false,dismissive,anger,0,chat,general,rural_india,0.86,A1
+ई औरतां नै बड़ा फैसला सूं दूर राखो।,hate,moderate,false,false,gender,community,direct,true,aggressive,anger,0,social_media,general,rural_india,0.88,synthetic
+"ऑनलाइन, ओ धरम वालां नै मोहल्ला सूं बाहर काढ़ द्यो।",hate,severe,false,false,religion,community,direct,true,aggressive,anger,0,political_speech,religious,rural_india,0.90,synthetic
+"सभा में, ओ जात वालां नै पंचायत में मत घुसण द्यो।",hate,moderate,false,false,caste,community,direct,true,aggressive,anger,0,chat,political,rural_india,0.92,synthetic
+बाहरा वालां नै गांव सूं निकाल द्यो।,hate,severe,false,false,nationality,community,direct,true,aggressive,anger,0,news,political,rural_india,0.94,A1
+"ऑनलाइन, ओ पार्टी रा चमचा नै कुचल द्यो।",hate,severe,false,false,political,ideology,direct,true,aggressive,anger,0,political_speech,political,rural_india,0.96,synthetic
+"सभा में, थूं हरामी मानस है, थाने मेट द्यां।",hate,severe,false,false,individual,individual,direct,true,aggressive,anger,1,social_media,general,rural_india,0.98,synthetic
+ई लुगायां बस रसोई खातर ठीक है।,hate,moderate,false,false,gender,community,direct,false,dismissive,anger,0,chat,general,rural_india,0.82,synthetic
+"ऑनलाइन, ओ पंथ वालां सूं सगळी गड़बड़ होवे है।",hate,moderate,false,false,religion,community,direct,false,dismissive,anger,0,social_media,religious,rural_india,0.84,A1
+"सभा में, नीच जात वालां पर भरोसो मत करो।",hate,moderate,false,false,caste,community,direct,false,dismissive,anger,1,chat,general,rural_india,0.86,synthetic
+परदेसिया आके गांव रो माहौल बिगाड़े है।,hate,moderate,false,false,nationality,community,direct,false,dismissive,anger,0,news,political,rural_india,0.88,synthetic
+लुगायां नै जिम्मेदारी मिलते ही गड़बड़ चालू हो जावे है।,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,rural_india,0.76,synthetic
+ओ समुदाय रो रंग मौका मिलते ही दिख जावे है।,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,rural_india,0.78,synthetic
+कुच्छ घराणी री पहचान बात सूं ही लाग जावे है।,hate,mild,true,false,caste,community,indirect,false,dismissive,disgust,0,chat,general,rural_india,0.80,synthetic
+परदेसिया आवे तो गांव कम सुरक्षित लागे है।,hate,mild,true,false,nationality,community,indirect,false,dismissive,fear,0,news,political,rural_india,0.82,A1
+ओ दल वालां सूं दूरी राखणी चोखी है।,hate,mild,true,false,political,ideology,indirect,false,dismissive,disgust,0,social_media,political,rural_india,0.84,synthetic
+ओ आवे तो सगळो माहौल खराब हो जावे है।,hate,mild,true,false,individual,individual,indirect,false,dismissive,fear,0,chat,general,rural_india,0.86,synthetic
+लुगायां नै जिम्मेदारी मिलते ही गड़बड़ चालू हो जावे है।,hate,mild,true,false,gender,community,indirect,false,dismissive,disgust,0,news,general,rural_india,0.88,synthetic
+ओ समुदाय रो रंग मौका मिलते ही दिख जावे है।,hate,mild,true,false,religion,community,indirect,false,dismissive,fear,0,chat,religious,rural_india,0.76,A1
+"हाँ हाँ, लुगायां त घणा ठंडा दिमाग सूं फैसला लेवे है, है ना?",hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,rural_india,0.80,synthetic
+"वाह, ओ समुदाय री सहनशीलता तो घणी मशहूर है।",hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,rural_india,0.82,synthetic
+"हाँ, परदेसिया आवे अणे सबने रोजी दे जावे, है ना?",hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,rural_india,0.84,synthetic
+"कितनी सुंदर सोच है, बस नफरत फैलावे है।",hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,rural_india,0.86,A1
+"बिलकुल, जात देख के भेदभाव तो कदे होवे ही ना।",hate,mild,false,true,caste,community,indirect,false,sarcastic,disgust,0,chat,political,rural_india,0.88,synthetic
+"वाह, ओ मानस तो घणो नेक है, सबरो जीवन खराब करे है।",hate,mild,false,true,individual,individual,indirect,false,sarcastic,disgust,0,chat,general,rural_india,0.90,synthetic
+"हाँ हाँ, लुगायां त घणा ठंडा दिमाग सूं फैसला लेवे है, है ना?",hate,mild,false,true,gender,community,indirect,false,sarcastic,disgust,0,social_media,general,rural_india,0.80,synthetic
+"वाह, ओ समुदाय री सहनशीलता तो घणी मशहूर है।",hate,mild,false,true,religion,community,indirect,false,sarcastic,disgust,0,social_media,religious,rural_india,0.82,A1
+"हाँ, परदेसिया आवे अणे सबने रोजी दे जावे, है ना?",hate,mild,false,true,nationality,community,indirect,false,sarcastic,disgust,0,social_media,political,rural_india,0.84,synthetic
+"कितनी सुंदर सोच है, बस नफरत फैलावे है।",hate,mild,false,true,political,ideology,indirect,false,sarcastic,disgust,0,news,political,rural_india,0.86,synthetic
+"थूं घणो बेवकूफ है, चुप रह।",offensive,mild,false,true,individual,individual,direct,false,aggressive,anger,1,chat,general,rural_india,0.83,synthetic
+ई घणी घटिया बकवास है।,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,social_media,general,rural_india,0.85,synthetic
+ओ रो दिमाग खातर गईलो लागे है।,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,general,general,rural_india,0.87,A1
+फालतू रो शोर मत मचा।,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,chat,general,rural_india,0.89,synthetic
+"थूं घणो बेवकूफ है, चुप रह।",offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,social_media,general,rural_india,0.91,synthetic
+ई घणी घटिया बकवास है।,offensive,moderate,false,false,individual,individual,direct,false,dismissive,disgust,1,general,general,rural_india,0.93,A1
+ओ रो दिमाग खातर गईलो लागे है।,offensive,mild,false,false,individual,individual,direct,false,aggressive,anger,1,chat,general,rural_india,0.95,synthetic
+म्हारी छाती में काल सूं दुखाव है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.86,synthetic
+दू दिन सूं ताप अणे बदन दुखे है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.88,synthetic
+गळो सूज गयो है अणे निगलता पीर होवे है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,social_media,health,rural_india,0.90,A1
+बार बार चक्कर आवे है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,chat,health,rural_india,0.92,synthetic
+पीठ में तेज पीर है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,general,health,rural_india,0.94,synthetic
+म्हारी छाती में काल सूं दुखाव है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,social_media,health,rural_india,0.96,A1
+दू दिन सूं ताप अणे बदन दुखे है।,health_issue,none,false,false,none,none,none,false,fearful,fear,0,chat,health,rural_india,0.98,synthetic
+गळो सूज गयो है अणे निगलता पीर होवे है।,health_issue,none,false,false,none,none,none,false,neutral,sadness,0,general,health,rural_india,0.86,synthetic
