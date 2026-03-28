@@ -369,9 +369,13 @@
         // Build legitimate HateTerms from the Python pipeline hits so highlighting works natively!
         let termsObj = {};
         
-        (backendData.lexicon_hits || []).forEach(term => {
-            termsObj[term] = termsObj[term] || { word: term, sev: 'high', pmi: 7.0 + Math.random()*2, freq: 0, ctx: `Detected ideological lexicon` };
-            termsObj[term].freq++;
+        (backendData.lexicon_hits || []).forEach(hit => {
+            const term = typeof hit === 'string' ? hit : hit.term;
+            if (!term) return;
+            const severity = typeof hit === 'object' && hit.severity ? hit.severity : 'high';
+            const count = typeof hit === 'object' && hit.count ? hit.count : 1;
+            termsObj[term] = termsObj[term] || { word: term, sev: severity, pmi: 7.0 + Math.random()*2, freq: 0, ctx: `Detected ideological lexicon` };
+            termsObj[term].freq += count;
         });
         (backendData.bias_hits || []).forEach(term => {
             termsObj[term] = termsObj[term] || { word: term, sev: 'medium', pmi: 4.0 + Math.random()*2, freq: 0, ctx: `Detected blanket bias language` };

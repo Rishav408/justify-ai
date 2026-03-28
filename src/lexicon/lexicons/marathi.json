@@ -1,0 +1,7 @@
+﻿[
+  {"term": "नफरत", "severity": "medium"},
+  {"term": "घृणा", "severity": "medium"},
+  {"term": "मारो", "severity": "high"},
+  {"term": "निकालो", "severity": "high"},
+  {"term": "गद्दार", "severity": "medium"}
+]

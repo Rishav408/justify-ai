@@ -12,6 +12,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')
 from src.models.naive_bayes_model import HateSpeechModelAnalyzer
 from src.ner.ner_extractor import NERExtractor
 from src.preprocessing.english_preprocessing import EnglishPreprocessor
+from src.lexicon.lexicon_matcher import LexiconMatcher
 
 router = APIRouter()
 
@@ -19,10 +20,33 @@ class AnalyzeRequest(BaseModel):
     text: str
     language: str = None # Optional: auto-detect if not provided
 
+# Phase 1: define unified analysis schema + language coverage priority.
+# This is a foundation for upcoming lexicon/causal/bias/risk implementations.
+# Expanded to all currently supported languages to avoid confusion.
+LANGUAGE_COVERAGE_PRIORITY = ["english", "hindi", "marathi", "bhojpuri", "marwari"]
+
+def _empty_analysis_bundle() -> dict:
+    """Baseline placeholder bundle so frontend/backend share a stable schema."""
+    return {
+        "lexicon_hits": [],          # [{term, severity, count, spans?}, ...]
+        "causality_relations": [],   # [{cause, effect, relation, confidence}, ...]
+        "bias_metrics": {},          # {dimension: score, ...}
+        "risk": {                    # {score, level, breakdown}
+            "score": None,
+            "level": "unknown",
+            "breakdown": {
+                "lexical": None,
+                "causal": None,
+                "bias": None,
+            }
+        },
+    }
+
 # Cache analyzers per language to avoid reloading models on every request
 analyzers = {}
 ner_extractors = {}
 english_preprocessor = EnglishPreprocessor()
+lexicon_matcher = LexiconMatcher()
 
 def _count_matches(text: str, patterns: list[str]) -> int:
     count = 0
@@ -240,16 +264,28 @@ async def analyze_text(request: AnalyzeRequest):
         "tokens": preproc_results.get('tokens', [])
     })
     calibrated_confidence, confidence_band, calibration_profile = _calibrate_confidence(confidence, lang)
+    analysis_bundle = _empty_analysis_bundle()
+
+    # Phase 2: Lexicon matching (lightweight seed lists per language)
+    try:
+        analysis_bundle["lexicon_hits"] = lexicon_matcher.match(text, lang)
+    except Exception:
+        analysis_bundle["lexicon_hits"] = []
 
     return {
         "text": text,
         "language": lang,
+        "language_coverage_priority": LANGUAGE_COVERAGE_PRIORITY,
         "hate_speech_label": prediction,
         "confidence": confidence,
         "confidence_calibrated": calibrated_confidence,
         "confidence_band": confidence_band,
         "confidence_profile": calibration_profile,
         "metadata": metadata,
+        "lexicon_hits": analysis_bundle["lexicon_hits"],
+        "causality_relations": analysis_bundle["causality_relations"],
+        "bias_metrics": analysis_bundle["bias_metrics"],
+        "risk": analysis_bundle["risk"],
         "analysis": {
             "tokens": preproc_results.get('tokens', []),
             "stemmed": preproc_results.get('stemmed', []),

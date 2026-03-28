@@ -1,0 +1,24 @@
+[nltk_data] Error loading punkt: <urlopen error [WinError 10061] No
+[nltk_data]     connection could be made because the target machine
+[nltk_data]     actively refused it>
+[nltk_data] Error loading stopwords: <urlopen error [WinError 10061]
+[nltk_data]     No connection could be made because the target machine
+[nltk_data]     actively refused it>
+[nltk_data] Error loading wordnet: <urlopen error [WinError 10061] No
+[nltk_data]     connection could be made because the target machine
+[nltk_data]     actively refused it>
+[nltk_data] Error loading averaged_perceptron_tagger: <urlopen error
+[nltk_data]     [WinError 10061] No connection could be made because
+[nltk_data]     the target machine actively refused it>
+[nltk_data] Error loading averaged_perceptron_tagger_eng: <urlopen
+[nltk_data]     error [WinError 10061] No connection could be made
+[nltk_data]     because the target machine actively refused it>
+[nltk_data] Error loading omw-1.4: <urlopen error [WinError 10061] No
+[nltk_data]     connection could be made because the target machine
+[nltk_data]     actively refused it>
+INFO:     Started server process [10548]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): only one usage of each socket address (protocol/network address/port) is normally permitted
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
