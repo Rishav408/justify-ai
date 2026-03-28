@@ -1,555 +1,70 @@
-================================================================================
-JUSTIFY.AI - QUICK START SETUP GUIDE FOR ANTIGRAVITY IDE
-================================================================================
+﻿JUSTIFY-AI - PROJECT SETUP GUIDE (CURRENT)
+=========================================
 
-STEP 1: CREATE ROOT DIRECTORY IN ANTIGRAVITY IDE
-================================================================================
+Overview
+--------
+Justify-AI is a classical NLP + Naive Bayes pipeline that performs multilingual hate analysis with
+lexicon matching, causality extraction, bias auditing, and risk scoring. The demo UI consumes the
+backend outputs in real time.
 
-Create a new project folder: justify-ai/
+Pipeline (Current)
+------------------
+Input Text -> Language Detection -> Language-Specific Preprocessing ->
+Hate Lexicon Matching -> Causality Extraction -> Bias Auditing -> Risk Scoring -> Visual Dashboard
 
-STEP 2: CREATE CORE DIRECTORIES (in order)
-================================================================================
-
-justify-ai/
-├── src/
-│   ├── core/
-│   ├── preprocessing/
-│   ├── lexicon/
-│   ├── causality/
-│   ├── bias/
-│   ├── scoring/
-│   ├── api/
-│   ├── utils/
-│   └── data_processing/
-├── configs/
-│   └── languages/
-├── data/
-│   ├── datasets/
-│   │   ├── english/
-│   │   └── hindi/
-│   ├── lexicons/
-│   ├── embeddings/
-│   ├── seed_words/
-│   └── models/
-├── tests/
-│   ├── unit/
-│   ├── integration/
-│   └── fixtures/
-├── frontend/
-│   ├── pages/
-│   ├── components/
-│   └── styles/
-├── scripts/
-├── docs/
-├── notebooks/
-├── logs/
-└── output/
-
-STEP 3: CREATE ESSENTIAL FILES IN ROOT
-================================================================================
-
-File: .gitignore
----
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-.pytest_cache/
-.coverage
-data/
-logs/
-output/
-*.db
-.DS_Store
-.env
-venv/
----
-
-File: requirements.txt
----
-# Core NLP Libraries
-nltk==3.8.1
-spacy==3.5.0
-gensim==4.3.1
-fasttext==0.9.2
-
-# Indian Language Support
-indicnlp==0.92
-indicbert==1.0
-
-# Data Processing
-numpy==1.24.3
-pandas==2.0.3
-scikit-learn==1.3.0
-
-# Embedding & Analysis
-word2vec==1.0
-weat==0.2
-
-# Visualization
-plotly==5.14.0
-matplotlib==3.7.2
-
-# API & Web
-flask==2.3.2
-fastapi==0.100.0
-uvicorn==0.23.1
-streamlit==1.27.0
-
-# Database
-sqlite3 (built-in)
-
-# Utilities
-pyyaml==6.0
-python-dotenv==1.0.0
-requests==2.31.0
-
-# Testing
-pytest==7.4.0
-pytest-cov==4.1.0
-
-# Logging & Development
-python-logging==0.5.1.2
-ipython==8.14.0
-jupyter==1.0.0
----
-
-File: .env.example
----
-# Flask Configuration
-FLASK_ENV=development
-FLASK_PORT=5000
-
-# API Configuration
-API_HOST=0.0.0.0
-API_PORT=5000
-API_DEBUG=False
-
-# Data Paths
-DATA_DIR=./data
-LEXICON_DIR=./data/lexicons
-EMBEDDING_DIR=./data/embeddings
-DATASET_DIR=./data/datasets
-
-# Language Configuration
-DEFAULT_LANGUAGE=english
-SUPPORTED_LANGUAGES=english,hindi,marathi,bhojpuri,marwari
-
-# Logging
-LOG_LEVEL=INFO
-LOG_FILE=./logs/app.log
----
-
-File: setup.py
----
-from setuptools import setup, find_packages
-
-setup(
-    name='justify-ai',
-    version='1.0.0',
-    description='Explainable Multilingual NLP Framework for Hate Speech Analysis',
-    author='Your Name',
-    packages=find_packages(),
-    python_requires='>=3.8',
-    install_requires=[
-        'nltk>=3.8',
-        'spacy>=3.5',
-        'gensim>=4.3',
-        'fasttext>=0.9.2',
-        'numpy>=1.24',
-        'pandas>=2.0',
-        'scikit-learn>=1.3',
-        'plotly>=5.14',
-        'flask>=2.3',
-        'streamlit>=1.27',
-        'pyyaml>=6.0',
-        'pytest>=7.4',
-    ]
-)
----
-
-File: README.md
----
-# Justify.AI
-
-An Explainable Multilingual NLP Framework for Causal and Bias-Aware Hate Speech Analysis
-
-## Supported Languages
+Supported Languages
+-------------------
 - English
 - Hindi
 - Marathi
 - Bhojpuri
 - Marwari
 
-## Installation
+Quick Start
+-----------
+1) Create and activate a Python environment.
+2) Install dependencies:
+   - python -m pip install -r requirements.txt
+3) Start the backend:
+   - python -m uvicorn src.api.app:app --reload
+4) Open the demo:
+   - http://127.0.0.1:8000 (served by FastAPI)
 
-1. Clone repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Download models: `python scripts/setup_data.py`
-4. Run backend: `python src/api/app.py`
-5. Run frontend: `streamlit run frontend/app.py`
+Key API Endpoint
+----------------
+POST /api/analyze
+Body: { "text": "...", "language": "english" }
+Returns:
+- language, hate_speech_label, confidence
+- lexicon_hits (term, severity, count, spans)
+- causality_relations (cause, effect, relation, confidence, sentence)
+- bias_metrics (per-dimension + overall)
+- risk (score, level, breakdown)
 
-## Project Structure
-See docs/architecture.md for detailed structure
+Lexicon Files
+-------------
+- src/lexicon/lexicons/english.json
+- src/lexicon/lexicons/hindi.json
+- src/lexicon/lexicons/marathi.json
+- src/lexicon/lexicons/bhojpuri.json
+- src/lexicon/lexicons/marwari.json
 
-## Documentation
-- Setup: docs/setup.md
-- API: docs/api.md
-- Architecture: docs/architecture.md
----
+Each entry:
+{ "term": "...", "severity": "low|medium|high|critical" }
 
-STEP 4: CREATE __init__.py FILES
-================================================================================
+Tests
+-----
+Install pytest:
+- python -m pip install pytest
+Run tests:
+- python -m pytest
 
-Create empty __init__.py in every directory:
-- src/
-- src/core/
-- src/preprocessing/
-- src/lexicon/
-- src/causality/
-- src/bias/
-- src/scoring/
-- src/api/
-- src/utils/
-- src/data_processing/
-- configs/
-- tests/
-- tests/unit/
-- tests/integration/
-- tests/fixtures/
-- frontend/
-- frontend/pages/
-- frontend/components/
-- frontend/styles/
-- frontend/utils/
-- scripts/
+Notes
+-----
+- NLTK resources may attempt to download on first run. Offline environments log warnings but remain operational.
+- Causality and bias are rule-based baselines that can be expanded with more patterns.
+- Risk score is weighted (lexical 0.45, causal 0.30, bias 0.25).
 
-STEP 5: CREATE CONFIGURATION FILES
-================================================================================
-
-File: configs/default.yaml
----
-app:
-  name: "Justify.AI"
-  version: "1.0.0"
-  debug: false
-
-logging:
-  level: "INFO"
-  file: "./logs/app.log"
-
-api:
-  host: "0.0.0.0"
-  port: 5000
-  debug: false
----
-
-File: configs/languages/english.yaml
----
-code: "en"
-name: "English"
-enabled: true
-
-preprocessing:
-  tokenizer: "spacy"
-  remove_stopwords: true
-  lowercase: true
-  remove_punctuation: true
-
-lexicon:
-  database: "./data/lexicons/english_lexicon.db"
-  seed_words: "./data/seed_words/english_seeds.json"
-  min_frequency: 2
-
-embedding:
-  type: "glove"
-  path: "./data/embeddings/english/"
-  model: "glove.6B.300d.txt"
-  dimension: 300
-  fallback: "fasttext"
-
-parser:
-  type: "spacy"
-  model: "en_core_web_sm"
-  fallback: "keyword-based"
-
-bias:
-  demographic_groups: ["gender", "religion", "nationality", "race", "caste"]
-  attributes: ["negative", "harmful", "stereotypical"]
----
-
-File: configs/languages/hindi.yaml
----
-code: "hi"
-name: "Hindi"
-enabled: true
-
-preprocessing:
-  tokenizer: "indicnlp"
-  remove_stopwords: true
-  remove_diacritics: true
-  normalize_script: true
-
-lexicon:
-  database: "./data/lexicons/hindi_lexicon.db"
-  seed_words: "./data/seed_words/hindi_seeds.json"
-  min_frequency: 2
-
-embedding:
-  type: "fasttext"
-  path: "./data/embeddings/hindi/"
-  model: "fasttext_hi.bin"
-  dimension: 300
-  fallback: "indicbert"
-
-parser:
-  type: "indicnlp"
-  model: "hindi_parser"
-  fallback: "keyword-based"
-
-bias:
-  demographic_groups: ["gender", "religion", "nationality", "caste", "language"]
-  attributes: ["negative", "harmful", "stereotypical"]
----
-
-STEP 6: CREATE PLACEHOLDER FILES FOR CORE MODULES
-================================================================================
-
-File: src/core/__init__.py
-(empty)
-
-File: src/core/constants.py
----
-# Language codes
-SUPPORTED_LANGUAGES = ["en", "hi", "mr", "bh", "rj"]
-LANGUAGE_NAMES = {
-    "en": "English",
-    "hi": "Hindi",
-    "mr": "Marathi",
-    "bh": "Bhojpuri",
-    "rj": "Marwari"
-}
-
-# Hate Risk Score ranges
-RISK_LEVELS = {
-    "low": (0, 25),
-    "medium": (25, 50),
-    "high": (50, 75),
-    "critical": (75, 100)
-}
-
-# Database paths
-DB_PATHS = {
-    "en": "./data/lexicons/english_lexicon.db",
-    "hi": "./data/lexicons/hindi_lexicon.db",
-    "mr": "./data/lexicons/marathi_lexicon.db",
-    "bh": "./data/lexicons/bhojpuri_lexicon.db",
-    "rj": "./data/lexicons/marwari_lexicon.db"
-}
----
-
-File: src/core/config_loader.py
----
-import yaml
-import os
-
-class ConfigLoader:
-    def __init__(self, config_dir="./configs"):
-        self.config_dir = config_dir
-    
-    def load_language_config(self, language_code):
-        """Load language-specific configuration"""
-        path = os.path.join(
-            self.config_dir, 
-            "languages", 
-            f"{language_code}.yaml"
-        )
-        with open(path, 'r', encoding='utf-8') as f:
-            return yaml.safe_load(f)
-    
-    def load_default_config(self):
-        """Load default configuration"""
-        path = os.path.join(self.config_dir, "default.yaml")
-        with open(path, 'r', encoding='utf-8') as f:
-            return yaml.safe_load(f)
----
-
-File: src/core/language_manager.py
----
-from langdetect import detect
-from src.core.config_loader import ConfigLoader
-
-class LanguageManager:
-    def __init__(self):
-        self.config_loader = ConfigLoader()
-    
-    def detect_language(self, text):
-        """Detect language from text"""
-        try:
-            lang_code = detect(text)
-            # Map language codes
-            code_mapping = {
-                'en': 'en', 'hi': 'hi', 'mr': 'mr'
-                # Add bhojpuri, marwari mappings if available
-            }
-            return code_mapping.get(lang_code, 'en')
-        except:
-            return 'en'  # Default to English
-    
-    def load_language_resources(self, language_code):
-        """Load all resources for a language"""
-        config = self.config_loader.load_language_config(language_code)
-        return config
----
-
-STEP 7: CREATE TEST FILES
-================================================================================
-
-File: tests/conftest.py
----
-import pytest
-import os
-
-@pytest.fixture
-def test_data_dir():
-    return os.path.join(os.path.dirname(__file__), "fixtures")
-
-@pytest.fixture
-def sample_english_text():
-    return "This is a hateful message targeting a group of people."
-
-@pytest.fixture
-def sample_hindi_text():
-    return "यह एक घृणास्पद संदेश है।"
----
-
-File: tests/unit/test_language_manager.py
----
-import pytest
-from src.core.language_manager import LanguageManager
-
-def test_language_detection_english():
-    manager = LanguageManager()
-    lang = manager.detect_language("Hello, this is English text")
-    assert lang == 'en'
-
-def test_language_detection_hindi():
-    manager = LanguageManager()
-    lang = manager.detect_language("नमस्ते, यह हिंदी पाठ है")
-    # May not work perfectly depending on langdetect
-    # assert lang == 'hi'
----
-
-STEP 8: CREATE DATA STRUCTURE
-================================================================================
-
-Create these files/directories:
-
-data/README.md
----
-# Data Directory
-
-This directory contains all datasets, lexicons, and pretrained models.
-
-## Structure
-- datasets/: Raw and processed datasets
-- lexicons/: SQLite lexicon databases
-- embeddings/: Word embeddings and models
-- seed_words/: Language-specific seed words
-- models/: Pretrained NLP models
----
-
-data/.gitkeep (empty file to track empty directories)
-data/datasets/.gitkeep
-data/lexicons/.gitkeep
-data/embeddings/.gitkeep
-data/seed_words/.gitkeep
-data/models/.gitkeep
-
-STEP 9: CREATE DOCUMENTATION FILES
-================================================================================
-
-docs/setup.md
-docs/api.md
-docs/architecture.md
-docs/language_guide.md
-
-(Sample content in these files based on project structure)
-
-STEP 10: CREATE LOGGING & OUTPUT DIRECTORIES
-================================================================================
-
-logs/.gitkeep
-output/.gitkeep
-output/results/.gitkeep
-output/reports/.gitkeep
-output/visualizations/.gitkeep
-
-================================================================================
-NEXT STEPS AFTER SETUP
-================================================================================
-
-1. **Install Dependencies:**
-   pip install -r requirements.txt
-
-2. **Download Pretrained Models:**
-   python -m spacy download en_core_web_sm
-   python -m indicnlp.download
-
-3. **Start with Language Manager:**
-   - Test language detection
-   - Test config loading
-   - Write unit tests
-
-4. **Build Preprocessing Pipeline:**
-   - Create base_preprocessor.py
-   - Implement english_preprocessor.py
-   - Implement hindi_preprocessor.py
-   - Write tests
-
-5. **Create Lexicon Mining:**
-   - Implement pmi_calculator.py
-   - Implement lexicon_miner.py
-   - Build SQLite database
-   - Test on English
-
-6. **Create API:**
-   - Setup Flask
-   - Create endpoints
-   - Test with Postman/curl
-
-7. **Build Frontend:**
-   - Language selector
-   - Text input
-   - Results display
-
-================================================================================
-KEY THINGS TO REMEMBER
-================================================================================
-
-✓ Every Python package directory needs __init__.py
-✓ Create .gitignore to avoid tracking data/, logs/, __pycache__
-✓ Use YAML for configuration (easier to maintain)
-✓ Separate concerns: preprocessing, lexicon, causality, bias, scoring
-✓ Create tests alongside development
-✓ Document as you code
-✓ Use consistent naming conventions
-✓ Keep functions small and testable
-
-================================================================================
+Documentation
+-------------
+See `documents/checklogs/progress-3.md` for the latest implementation details.

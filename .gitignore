@@ -19,6 +19,10 @@ ENV/
 # pytest
 .pytest_cache/
 
+# Local dev logs
+uvicorn.out.log
+uvicorn.err.log
+
 # OS generated files
 .DS_Store
 Thumbs.db

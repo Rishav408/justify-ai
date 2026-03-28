@@ -1,370 +1,95 @@
-JUSTIFY.AI - COMPLETE PROJECT DIRECTORY STRUCTURE
-==================================================
+﻿JUSTIFY-AI - PROJECT STRUCTURE (CURRENT)
+=======================================
 
 justify-ai/
-│
-├── README.md                          # Project overview and setup instructions
-├── CONTRIBUTING.md                    # Guidelines for contributors
-├── LICENSE                            # Project license
-├── .gitignore                         # Git ignore rules
-├── .env.example                       # Environment variables template
-├── requirements.txt                   # Python dependencies
-├── setup.py                           # Package setup configuration
-│
-├── src/                               # Main source code
-│   ├── __init__.py
-│   ├── main.py                        # Entry point
-│   │
-│   ├── core/
-│   │   ├── __init__.py
-│   │   ├── language_manager.py        # Language detection & config loading
-│   │   ├── config_loader.py           # YAML config reader
-│   │   └── constants.py               # Global constants
-│   │
-│   ├── preprocessing/
-│   │   ├── __init__.py
-│   │   ├── base_preprocessor.py       # Abstract preprocessor class
-│   │   ├── english_preprocessor.py    # English-specific preprocessing
-│   │   ├── hindi_preprocessor.py      # Hindi-specific preprocessing
-│   │   ├── marathi_preprocessor.py    # Marathi-specific preprocessing
-│   │   ├── bhojpuri_preprocessor.py   # Bhojpuri-specific preprocessing
-│   │   ├── marwari_preprocessor.py    # Marwari-specific preprocessing
-│   │   └── utils.py                   # Shared preprocessing utilities
-│   │
-│   ├── lexicon/
-│   │   ├── __init__.py
-│   │   ├── lexicon_miner.py           # PMI-based lexicon mining
-│   │   ├── lexicon_manager.py         # Lexicon storage & retrieval
-│   │   ├── pmi_calculator.py          # PMI computation
-│   │   ├── seed_words.py              # Seed word dictionary (per language)
-│   │   └── database.py                # SQLite lexicon database
-│   │
-│   ├── causality/
-│   │   ├── __init__.py
-│   │   ├── causality_extractor.py     # Main causality extraction
-│   │   ├── dependency_parser.py       # Wrapper for parsers (spaCy, IndicNLP)
-│   │   ├── fallback_detector.py       # Keyword-based fallback
-│   │   ├── pattern_matcher.py         # Causal pattern detection
-│   │   └── graph_builder.py           # NetworkX graph construction
-│   │
-│   ├── bias/
-│   │   ├── __init__.py
-│   │   ├── bias_auditor.py            # Main bias auditing module
-│   │   ├── embedding_loader.py        # Load language-specific embeddings
-│   │   ├── weat_calculator.py         # WEAT implementation
-│   │   ├── demographic_analyzer.py    # Demographic group detection
-│   │   └── bias_visualizer.py         # Bias visualization utilities
-│   │
-│   ├── scoring/
-│   │   ├── __init__.py
-│   │   ├── risk_scorer.py             # Hate Risk Score calculation
-│   │   ├── normalizer.py              # Language-specific normalization
-│   │   └── aggregator.py              # Score aggregation logic
-│   │
-│   ├── api/
-│   │   ├── __init__.py
-│   │   ├── app.py                     # Flask/FastAPI application
-│   │   ├── routes.py                  # API endpoints
-│   │   ├── models.py                  # Request/response models
-│   │   ├── middleware.py              # API middleware
-│   │   └── error_handler.py           # Error handling
-│   │
-│   ├── utils/
-│   │   ├── __init__.py
-│   │   ├── logger.py                  # Logging configuration
-│   │   ├── validators.py              # Input validation
-│   │   ├── helpers.py                 # General helper functions
-│   │   └── decorators.py              # Custom decorators
-│   │
-│   └── data_processing/
-│       ├── __init__.py
-│       ├── dataset_loader.py          # Load datasets (HatEval, HASOC, etc.)
-│       ├── annotation_parser.py       # Parse annotation files
-│       ├── data_cleaner.py            # Data cleaning utilities
-│       └── train_test_split.py        # Data splitting for evaluation
-│
-├── configs/                           # Configuration files (YAML)
-│   ├── __init__.py
-│   ├── default.yaml                   # Default configuration
-│   ├── languages/
-│   │   ├── english.yaml               # English language config
-│   │   ├── hindi.yaml                 # Hindi language config
-│   │   ├── marathi.yaml               # Marathi language config
-│   │   ├── bhojpuri.yaml              # Bhojpuri language config
-│   │   └── marwari.yaml               # Marwari language config
-│   ├── paths.yaml                     # Data paths configuration
-│   ├── models.yaml                    # Model paths and parameters
-│   └── api.yaml                       # API configuration
-│
-├── data/                              # Data directory
-│   ├── README.md                      # Data documentation
-│   │
-│   ├── datasets/
-│   │   ├── english/
-│   │   │   ├── hateval/               # HatEval dataset
-│   │   │   │   ├── train.csv
-│   │   │   │   ├── test.csv
-│   │   │   │   └── README.md
-│   │   │   ├── hatebase/              # HateBase lexicon
-│   │   │   │   └── hatebase.json
-│   │   │   └── kaggle/                # Kaggle hate speech (subset)
-│   │   │       └── hate_speech.csv
-│   │   │
-│   │   ├── hindi/
-│   │   │   ├── hasoc/                 # HASOC dataset
-│   │   │   │   ├── 2019/
-│   │   │   │   ├── 2020/
-│   │   │   │   ├── 2021/
-│   │   │   │   └── README.md
-│   │   │   └── social_media/          # Collected Twitter/Facebook samples
-│   │   │       └── hindi_samples.json
-│   │   │
-│   │   ├── marathi/
-│   │   │   ├── annotated/             # Community-annotated samples
-│   │   │   │   ├── raw.json
-│   │   │   │   ├── cleaned.json
-│   │   │   │   ├── annotations.json
-│   │   │   │   └── inter_annotator_agreement.json
-│   │   │   └── README.md
-│   │   │
-│   │   ├── bhojpuri/
-│   │   │   ├── annotated/
-│   │   │   │   ├── raw.json
-│   │   │   │   ├── cleaned.json
-│   │   │   │   ├── annotations.json
-│   │   │   │   └── inter_annotator_agreement.json
-│   │   │   └── README.md
-│   │   │
-│   │   └── marwari/
-│   │       ├── annotated/
-│   │       │   ├── raw.json
-│   │       │   ├── cleaned.json
-│   │       │   ├── annotations.json
-│   │       │   └── inter_annotator_agreement.json
-│   │       └── README.md
-│   │
-│   ├── lexicons/                      # Pre-built lexicon databases
-│   │   ├── english_lexicon.db         # SQLite database
-│   │   ├── hindi_lexicon.db
-│   │   ├── marathi_lexicon.db
-│   │   ├── bhojpuri_lexicon.db
-│   │   ├── marwari_lexicon.db
-│   │   └── lexicon_schema.sql         # Database schema
-│   │
-│   ├── embeddings/                    # Word embeddings
-│   │   ├── english/
-│   │   │   ├── glove.6B.300d.txt      # GloVe embeddings
-│   │   │   ├── fasttext_en.bin        # FastText model
-│   │   │   └── README.md
-│   │   ├── hindi/
-│   │   │   ├── fasttext_hi.bin        # FastText Hindi
-│   │   │   ├── indicbert/             # IndicBERT model
-│   │   │   └── README.md
-│   │   ├── marathi/
-│   │   │   ├── fasttext_mr.bin
-│   │   │   ├── custom_word2vec.model  # Custom trained
-│   │   │   └── README.md
-│   │   ├── bhojpuri/
-│   │   │   ├── custom_word2vec.model
-│   │   │   └── README.md
-│   │   └── marwari/
-│   │       ├── custom_word2vec.model
-│   │       └── README.md
-│   │
-│   ├── seed_words/                    # Seed words for each language
-│   │   ├── english_seeds.json
-│   │   ├── hindi_seeds.json
-│   │   ├── marathi_seeds.json
-│   │   ├── bhojpuri_seeds.json
-│   │   └── marwari_seeds.json
-│   │
-│   └── models/                        # Pretrained NLP models
-│       ├── spacy_en_core_web_sm/      # spaCy English model
-│       ├── indicnlp_hi/               # IndicNLP Hindi
-│       └── multilingual_models/
-│
-├── tests/                             # Test suite
-│   ├── __init__.py
-│   ├── conftest.py                    # Pytest configuration
-│   │
-│   ├── unit/                          # Unit tests
-│   │   ├── __init__.py
-│   │   ├── test_preprocessors.py      # Test preprocessing
-│   │   ├── test_lexicon_miner.py      # Test lexicon mining
-│   │   ├── test_causality.py          # Test causality extraction
-│   │   ├── test_bias.py               # Test bias auditing
-│   │   ├── test_risk_scorer.py        # Test scoring
-│   │   ├── test_language_manager.py   # Test language detection
-│   │   └── test_utils.py              # Test utilities
-│   │
-│   ├── integration/                   # Integration tests
-│   │   ├── __init__.py
-│   │   ├── test_english_pipeline.py   # End-to-end English
-│   │   ├── test_hindi_pipeline.py     # End-to-end Hindi
-│   │   ├── test_language_switching.py # Test language switching
-│   │   ├── test_api.py                # Test API endpoints
-│   │   └── test_all_languages.py      # Test all 5 languages
-│   │
-│   └── fixtures/                      # Test data and fixtures
-│       ├── sample_texts.json          # Sample input texts
-│       ├── expected_outputs.json      # Expected results
-│       └── test_datasets/
-│           ├── english_small.csv
-│           └── hindi_small.csv
-│
-├── notebooks/                         # Jupyter notebooks for exploration
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_lexicon_mining.ipynb
-│   ├── 03_causality_analysis.ipynb
-│   ├── 04_bias_analysis.ipynb
-│   └── 05_model_evaluation.ipynb
-│
-├── scripts/                           # Standalone utility scripts
-│   ├── __init__.py
-│   ├── setup_data.py                  # Download and setup datasets
-│   ├── build_lexicons.py              # Build lexicon databases
-│   ├── train_embeddings.py            # Train custom embeddings
-│   ├── evaluate_pipeline.py           # Comprehensive evaluation
-│   ├── generate_report.py             # Generate evaluation reports
-│   └── cleanup.py                     # Clean up temporary files
-│
-├── frontend/                          # Frontend (Streamlit)
-│   ├── __init__.py
-│   ├── app.py                         # Main Streamlit app
-│   ├── pages/
-│   │   ├── __init__.py
-│   │   ├── home.py                    # Home page
-│   │   ├── analyzer.py                # Main analysis page
-│   │   ├── visualizations.py          # Results visualization
-│   │   └── about.py                   # About page
-│   ├── components/
-│   │   ├── __init__.py
-│   │   ├── language_selector.py       # Language dropdown
-│   │   ├── text_input.py              # Text input component
-│   │   ├── results_display.py         # Results display
-│   │   ├── chart_builder.py           # Chart builders
-│   │   └── footer.py                  # Footer component
-│   ├── styles/
-│   │   ├── custom.css                 # Custom CSS
-│   │   └── theme.py                   # Streamlit theme config
-│   └── utils/
-│       ├── __init__.py
-│       ├── api_client.py              # Backend API client
-│       └── formatters.py              # Result formatting
-│
-├── docs/                              # Documentation
-│   ├── README.md                      # Main documentation
-│   ├── setup.md                       # Setup instructions
-│   ├── architecture.md                # System architecture
-│   ├── api.md                         # API documentation
-│   ├── language_guide.md              # Language-specific guides
-│   ├── data_format.md                 # Data format specifications
-│   ├── contributing.md                # Contributing guidelines
-│   └── evaluation.md                  # Evaluation methodology
-│
-├── logs/                              # Application logs (created at runtime)
-│   ├── app.log
-│   ├── errors.log
-│   └── .gitkeep                       # Keep directory in git
-│
-├── output/                            # Generated outputs (created at runtime)
-│   ├── results/
-│   ├── reports/
-│   ├── visualizations/
-│   └── .gitkeep
-│
-└── docker/                            # Docker configuration (optional)
-    ├── Dockerfile                     # Docker image
-    ├── docker-compose.yml             # Docker compose
-    └── .dockerignore
+|
+|-- README.md
+|-- CONTRIBUTING.md
+|-- .gitignore
+|-- .env.example
+|-- requirements.txt
+|-- documents/
+|   |-- checklogs/
+|   |   |-- progress-1.md  (historical, superseded)
+|   |   |-- progress-2.md  (historical, superseded)
+|   |   |-- progress-3.md  (current)
+|   |-- complete_directory_tree.txt
+|   |-- justify_ai_project_structure.txt
+|   |-- project_setup_guide.txt
+|   |-- quick_reference_card.txt
+|-- frontend/
+|   |-- index.html
+|   |-- demo.html
+|   |-- about.html
+|   |-- docs.html
+|   |-- research.html
+|   |-- css/style.css
+|   |-- js/app.js
+|   |-- js/demo.js
+|   |-- js/analyze.js
+|   |-- js/docs-tool.js
+|   |-- js/theme.js
+|   |-- lib/chart.min.js
+|   |-- lib/vis-network.min.js
+|   |-- lib/vis-network.min.css
+|-- scripts/
+|   |-- validate_dataset.py
+|   |-- build_lexicons.py
+|-- src/
+|   |-- api/
+|   |   |-- app.py
+|   |   |-- routes.py
+|   |-- audio/
+|   |   |-- speech_handler.py
+|   |-- bias/
+|   |   |-- __init__.py
+|   |   |-- bias_auditor.py
+|   |-- causality/
+|   |   |-- __init__.py
+|   |   |-- causality_extractor.py
+|   |-- datasets/
+|   |   |-- english.csv
+|   |   |-- hindi.csv
+|   |   |-- marathi.csv
+|   |   |-- bhojpuri.csv
+|   |   |-- marwari.csv
+|   |   |-- schema.md
+|   |-- features/
+|   |   |-- feature_extractor.py
+|   |-- lexicon/
+|   |   |-- __init__.py
+|   |   |-- lexicon_matcher.py
+|   |   |-- lexicons/
+|   |   |   |-- english.json
+|   |   |   |-- hindi.json
+|   |   |   |-- marathi.json
+|   |   |   |-- bhojpuri.json
+|   |   |   |-- marwari.json
+|   |-- models/
+|   |   |-- naive_bayes_model.py
+|   |   |-- saved_models/
+|   |   |   |-- *_nb_model.pkl
+|   |   |   |-- *_vectorizer.pkl
+|   |-- ner/
+|   |   |-- ner_extractor.py
+|   |-- preprocessing/
+|   |   |-- english_preprocessing.py
+|   |   |-- hindi_preprocessing.py
+|   |   |-- marathi_preprocessing.py
+|   |   |-- bhojpuri_preprocessing.py
+|   |   |-- marwari_preprocessing.py
+|   |-- scoring/
+|   |   |-- __init__.py
+|   |   |-- risk_scorer.py
+|   |-- test_english.py
+|-- tests/
+|   |-- conftest.py
+|   |-- test_lexicon.py
+|   |-- test_causality.py
+|   |-- test_bias.py
+|   |-- test_risk.py
 
-================================================================================
-KEY FILES TO CREATE FIRST (in order of priority)
-================================================================================
-
-1. requirements.txt
-   - All Python dependencies
-
-2. configs/languages/english.yaml
-   - English language configuration
-
-3. configs/languages/hindi.yaml
-   - Hindi language configuration
-
-4. src/core/language_manager.py
-   - Language detection and config loading
-
-5. src/core/config_loader.py
-   - YAML configuration reader
-
-6. src/preprocessing/base_preprocessor.py
-   - Abstract preprocessor class
-
-7. src/preprocessing/english_preprocessor.py
-   - English preprocessing
-
-8. src/preprocessing/hindi_preprocessor.py
-   - Hindi preprocessing
-
-9. src/lexicon/pmi_calculator.py
-   - PMI computation
-
-10. src/lexicon/lexicon_miner.py
-    - Lexicon mining logic
-
-11. src/api/app.py
-    - Flask/FastAPI application
-
-12. src/api/routes.py
-    - API endpoints
-
-13. tests/unit/test_language_manager.py
-    - Basic testing
-
-14. scripts/setup_data.py
-    - Dataset setup script
-
-================================================================================
-IMPORTANT NOTES
-================================================================================
-
-1. **Directory Structure Purpose:**
-   - Clear separation of concerns
-   - Easy to test individual modules
-   - Scalable for adding new languages
-   - Professional code organization
-
-2. **Before You Start:**
-   - Create .gitignore (ignore data/, logs/, __pycache__)
-   - Create requirements.txt with dependencies
-   - Create .env.example for environment variables
-   - Initialize git repository
-
-3. **Language Configs (YAML) Should Include:**
-   - Language code (en, hi, mr, bh, rj)
-   - Tokenizer info
-   - Embedding path and type
-   - Parser type (spacy, indicnlp, fallback)
-   - Lexicon database path
-   - Seed words file
-   - Language-specific parameters
-
-4. **Database Schema:**
-   - Table: lexicon (id, language, term, severity, frequency, context)
-   - Table: evaluation_metrics (language, metric, value, date)
-   - Table: cached_results (text_hash, language, results, timestamp)
-
-5. **API Endpoints to Create:**
-   - POST /analyze (text, language) → results
-   - GET /lexicon/{language} → lexicon terms
-   - GET /languages → available languages
-   - POST /evaluate (test_data, language) → metrics
-   - GET /health → health check
-
-6. **Testing Strategy:**
-   - Unit tests: Each module independently
-   - Integration tests: Full pipelines per language
-   - End-to-end tests: API endpoints
-   - Fixtures: Sample texts and expected outputs
-
-================================================================================
+Notes:
+- The system is classical NLP + Naive Bayes, with rule-based causality and bias auditing.
+- Frontend demo is wired to backend outputs for risk scoring and bias metrics.
+- Check `documents/checklogs/progress-3.md` for the full implementation history.
