@@ -16,9 +16,11 @@
 [nltk_data] Error loading omw-1.4: <urlopen error [WinError 10061] No
 [nltk_data]     connection could be made because the target machine
 [nltk_data]     actively refused it>
-INFO:     Started server process [10548]
+INFO:     Started server process [28440]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): only one usage of each socket address (protocol/network address/port) is normally permitted
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
+INFO:     Finished server process [28440]

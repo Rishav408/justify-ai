@@ -13,6 +13,7 @@ from src.models.naive_bayes_model import HateSpeechModelAnalyzer
 from src.ner.ner_extractor import NERExtractor
 from src.preprocessing.english_preprocessing import EnglishPreprocessor
 from src.lexicon.lexicon_matcher import LexiconMatcher
+from src.causality.causality_extractor import CausalityExtractor
 
 router = APIRouter()
 
@@ -47,6 +48,7 @@ analyzers = {}
 ner_extractors = {}
 english_preprocessor = EnglishPreprocessor()
 lexicon_matcher = LexiconMatcher()
+causality_extractor = CausalityExtractor()
 
 def _count_matches(text: str, patterns: list[str]) -> int:
     count = 0
@@ -272,6 +274,12 @@ async def analyze_text(request: AnalyzeRequest):
     except Exception:
         analysis_bundle["lexicon_hits"] = []
 
+    # Phase 3: Causality extraction (rule-based patterns)
+    try:
+        analysis_bundle["causality_relations"] = causality_extractor.extract_relations(text, lang)
+    except Exception:
+        analysis_bundle["causality_relations"] = []
+
     return {
         "text": text,
         "language": lang,
@@ -286,6 +294,11 @@ async def analyze_text(request: AnalyzeRequest):
         "causality_relations": analysis_bundle["causality_relations"],
         "bias_metrics": analysis_bundle["bias_metrics"],
         "risk": analysis_bundle["risk"],
+        # Backwards-compatibility hooks for frontend demo wiring
+        "causality_hits": [
+            r.get("cause") for r in analysis_bundle["causality_relations"]
+            if isinstance(r, dict) and r.get("cause")
+        ],
         "analysis": {
             "tokens": preproc_results.get('tokens', []),
             "stemmed": preproc_results.get('stemmed', []),
