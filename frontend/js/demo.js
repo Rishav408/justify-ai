@@ -389,15 +389,23 @@
         results.hateTerms = Object.values(termsObj);
         
         // Scale the score onto the 100-point gauge safely (assume backend score hits max around 40-50 based on hits)
-        if (backendData.risk) {
-            results.riskScore = Math.min(100, backendData.risk.score * 2.5);
+        if (backendData.risk && typeof backendData.risk.score === 'number') {
+            results.riskScore = Math.min(100, backendData.risk.score);
         }
 
-        results.breakdown = {
-            lexicon: Math.min(100, (backendData.lexicon_hits || []).length * 15),
-            causal: Math.min(100, (backendData.causality_hits || []).length * 15),
-            bias: Math.min(100, (backendData.bias_hits || []).length * 15)
-        };
+        if (backendData.risk && backendData.risk.breakdown) {
+            results.breakdown = {
+                lexical: Math.min(100, backendData.risk.breakdown.lexical ?? 0),
+                causal: Math.min(100, backendData.risk.breakdown.causal ?? 0),
+                bias: Math.min(100, backendData.risk.breakdown.bias ?? 0)
+            };
+        } else {
+            results.breakdown = {
+                lexical: Math.min(100, (backendData.lexicon_hits || []).length * 15),
+                causal: Math.min(100, (backendData.causality_hits || []).length * 15),
+                bias: Math.min(100, (backendData.bias_hits || []).length * 15)
+            };
+        }
 
         // Real Sentence Inspector Override
         if (backendData.sentences && backendData.sentences.length > 0) {
@@ -440,15 +448,19 @@
         results.causalNodes = nodes;
         results.causalEdges = edges;
 
-        // Scale bias metrics to reflect actual text
-        let baseMet = backendData.language === 'hindi' ? 10 : 20;
-        let scale = ((backendData.bias_hits || []).length * 15);
-        results.biasMetrics = {
-            overall: baseMet + scale,
-            political: baseMet + (backendData.lexicon_hits || []).length * 10,
-            regional: backendData.language === 'hindi' ? 60 : 20,
-            socioeconomic: baseMet + scale / 2
-        };
+        if (backendData.bias_metrics && Object.keys(backendData.bias_metrics).length > 0) {
+            results.biasMetrics = backendData.bias_metrics;
+        } else {
+            // Scale bias metrics to reflect actual text (fallback)
+            let baseMet = backendData.language === 'hindi' ? 10 : 20;
+            let scale = ((backendData.bias_hits || []).length * 15);
+            results.biasMetrics = {
+                overall: baseMet + scale,
+                political: baseMet + (backendData.lexicon_hits || []).length * 10,
+                regional: backendData.language === 'hindi' ? 60 : 20,
+                socioeconomic: baseMet + scale / 2
+            };
+        }
     }
 
     emptyState.style.display = 'none';

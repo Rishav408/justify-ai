@@ -14,6 +14,8 @@ from src.ner.ner_extractor import NERExtractor
 from src.preprocessing.english_preprocessing import EnglishPreprocessor
 from src.lexicon.lexicon_matcher import LexiconMatcher
 from src.causality.causality_extractor import CausalityExtractor
+from src.bias.bias_auditor import BiasAuditor
+from src.scoring.risk_scorer import RiskScorer
 
 router = APIRouter()
 
@@ -49,6 +51,8 @@ ner_extractors = {}
 english_preprocessor = EnglishPreprocessor()
 lexicon_matcher = LexiconMatcher()
 causality_extractor = CausalityExtractor()
+bias_auditor = BiasAuditor()
+risk_scorer = RiskScorer()
 
 def _count_matches(text: str, patterns: list[str]) -> int:
     count = 0
@@ -280,6 +284,29 @@ async def analyze_text(request: AnalyzeRequest):
     except Exception:
         analysis_bundle["causality_relations"] = []
 
+    # Phase 4: Bias auditing (demographic + negative attribute co-occurrence)
+    try:
+        bias_result = bias_auditor.analyze(text, lang)
+        analysis_bundle["bias_metrics"] = bias_result.get("metrics", {})
+        bias_hits = bias_result.get("hits", [])
+    except Exception:
+        analysis_bundle["bias_metrics"] = {}
+        bias_hits = []
+
+    # Phase 5: Risk scoring (lexical + causal + bias)
+    try:
+        analysis_bundle["risk"] = risk_scorer.score(
+            analysis_bundle["lexicon_hits"],
+            analysis_bundle["causality_relations"],
+            analysis_bundle["bias_metrics"],
+        )
+    except Exception:
+        analysis_bundle["risk"] = {
+            "score": None,
+            "level": "unknown",
+            "breakdown": {"lexical": None, "causal": None, "bias": None},
+        }
+
     return {
         "text": text,
         "language": lang,
@@ -298,6 +325,10 @@ async def analyze_text(request: AnalyzeRequest):
         "causality_hits": [
             r.get("cause") for r in analysis_bundle["causality_relations"]
             if isinstance(r, dict) and r.get("cause")
+        ],
+        "bias_hits": [
+            h.get("dimension") for h in bias_hits
+            if isinstance(h, dict) and h.get("dimension")
         ],
         "analysis": {
             "tokens": preproc_results.get('tokens', []),
