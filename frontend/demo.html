@@ -11,8 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-
     <link rel="stylesheet" href="css/style.css">
 
     <style>
@@ -208,6 +206,32 @@
         flex-wrap: wrap;
     }
 
+    .output-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .output-title {
+        display: grid;
+        gap: 0.2rem;
+    }
+
+    .output-title span {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-text-tertiary);
+    }
+
+    .output-title h3 {
+        margin: 0;
+        font-size: 1.15rem;
+        color: var(--color-text-primary);
+    }
+
     .primary-label {
         display: inline-flex;
         align-items: center;
@@ -232,6 +256,54 @@
         gap: 0.35rem;
         font-size: 0.82rem;
         color: var(--color-text-secondary);
+    }
+
+    .confidence-band {
+        font-size: 0.72rem;
+        color: var(--color-text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .row-actions {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+    }
+
+    .copy-btn {
+        border: 1px solid var(--color-border);
+        border-radius: 0.6rem;
+        padding: 0.35rem 0.75rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        background: var(--color-bg-primary);
+        color: var(--color-text-secondary);
+        cursor: pointer;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .copy-btn:hover {
+        border-color: var(--color-secondary);
+        transform: translateY(-1px);
+    }
+
+    .download-btn {
+        border: 1px solid var(--color-border);
+        border-radius: 0.6rem;
+        padding: 0.35rem 0.75rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, rgba(0, 194, 168, 0.16), rgba(79, 70, 229, 0.12));
+        color: var(--color-text-primary);
+        cursor: pointer;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .download-btn:hover {
+        border-color: var(--color-secondary);
+        transform: translateY(-1px);
     }
 
     .confidence-track {
@@ -311,86 +383,130 @@
         color: var(--color-text-secondary);
     }
 
-    .analytics-card {
-        margin-top: 1.1rem;
-    }
-
-    .analytics-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.85rem;
-    }
-
-    .chart-box {
+    .history-panel {
+        border: 1px solid var(--color-border);
         border-radius: 0.85rem;
-        border: 1px solid var(--color-border);
         background: var(--color-bg-primary);
-        padding: 0.82rem;
-    }
-
-    .chart-box h3 {
-        margin: 0 0 0.6rem;
-        font-size: 0.88rem;
-        color: var(--color-text-secondary);
-        font-weight: 700;
-    }
-
-    .heatmap {
+        padding: 0.75rem 0.85rem;
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.55rem;
+        gap: 0.6rem;
     }
 
-    .heat-cell {
-        border-radius: 0.72rem;
-        padding: 0.7rem;
-        border: 1px solid var(--color-border);
-        background: linear-gradient(145deg, rgba(108,99,255,.11), rgba(0,194,168,.12));
-        color: #111827;
-    }
-
-    .heat-cell h4 {
+    .history-title {
         margin: 0;
         font-size: 0.75rem;
-        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--color-text-tertiary);
     }
 
-    .heat-cell p {
-        margin: 0.28rem 0 0;
-        font-size: 1.05rem;
-        font-weight: 800;
+    .history-list {
+        display: grid;
+        gap: 0.5rem;
     }
 
-    .cloud {
+    .history-item {
+        display: grid;
+        gap: 0.35rem;
+    }
+
+    .history-meta {
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.45rem;
         align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        font-size: 0.78rem;
+        color: var(--color-text-secondary);
     }
 
-    .cloud span {
-        border-radius: 0.75rem;
-        background: rgba(108, 99, 255, 0.12);
-        color: #4338ca;
-        padding: 0.3rem 0.62rem;
-        font-weight: 600;
-        line-height: 1;
+    .history-bar {
+        width: 100%;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--color-bg-tertiary);
+        overflow: hidden;
+    }
+
+    .history-fill {
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(0, 194, 168, 0.9), rgba(79, 70, 229, 0.85));
+        width: 0%;
+    }
+
+    .analysis-panel {
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-primary);
+        border-radius: 0.85rem;
+        padding: 0.75rem 0.85rem;
+    }
+
+    .analysis-toggle {
+        border: 1px solid var(--color-border);
+        border-radius: 0.6rem;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        background: var(--color-bg-secondary);
+        color: var(--color-text-secondary);
+        cursor: pointer;
+    }
+
+    .analysis-body {
+        display: none;
+        margin-top: 0.65rem;
+        gap: 0.75rem;
+    }
+
+    .analysis-body.active {
+        display: grid;
+    }
+
+    .analysis-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+    }
+
+    .analysis-block {
+        border: 1px solid var(--color-border);
+        border-radius: 0.7rem;
+        padding: 0.6rem;
+        background: var(--color-bg-secondary);
+    }
+
+    .analysis-block h4 {
+        margin: 0 0 0.4rem;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--color-text-tertiary);
+    }
+
+    .analysis-block pre {
+        margin: 0;
+        font-size: 0.78rem;
+        color: var(--color-text-secondary);
+        white-space: pre-wrap;
+        word-break: break-word;
     }
 
     @media (max-width: 1024px) {
-        .demo-grid,
-        .analytics-grid {
+        .demo-grid {
             grid-template-columns: 1fr;
         }
 
         .metadata-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+
+        .analysis-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     @media (max-width: 560px) {
-        .metadata-grid,
-        .heatmap {
+        .metadata-grid {
             grid-template-columns: 1fr;
         }
 
@@ -432,7 +548,7 @@
             <section class="demo-hero">
                 <span class="demo-kicker">Interactive Project Demo</span>
                 <h1>Analyze text with schema-aware explainability</h1>
-                <p>Use the multilingual input below to simulate model output and see confidence, severity, metadata, and analytics in one flow.</p>
+                <p>Use the multilingual input below to see confidence, severity, metadata, and full analysis in one flow.</p>
             </section>
 
             <section class="demo-grid">
@@ -450,7 +566,7 @@
                         <button id="analyze-btn" class="analyze-btn" type="button">Analyze</button>
                     </div>
                     <div class="status-row">
-                        <p class="status-note" id="status-note">Run analysis to reveal label, confidence, metadata, and visual analytics.</p>
+                        <p class="status-note" id="status-note">Run analysis to reveal label, confidence, metadata, and full analysis.</p>
                         <span id="backend-pill" class="backend-pill backend-pending">Backend: checking</span>
                     </div>
                 </article>
@@ -458,8 +574,22 @@
                 <article class="demo-card">
                     <h2 class="card-title">Output</h2>
                     <div id="result-card" class="result-card" aria-live="polite">
+                        <div class="output-header">
+                            <div class="output-title">
+                                <span>Inference Result</span>
+                                <h3 id="output-headline">Live classification output</h3>
+                            </div>
+                            <div class="row-actions">
+                                <button id="copy-json" class="copy-btn" type="button">Copy JSON</button>
+                                <button id="download-json" class="download-btn" type="button">Download JSON</button>
+                            </div>
+                        </div>
+
                         <div class="row-flex">
-                            <span id="primary-label" class="primary-label label-hate">HATE</span>
+                            <div class="row-actions">
+                                <span id="primary-label" class="primary-label label-hate">HATE</span>
+                                <span id="confidence-band" class="confidence-band">band: unknown</span>
+                            </div>
                             <div class="metric-wrap">
                                 <span>Confidence: <strong id="confidence-value">0.00</strong></span>
                                 <div class="confidence-track"><div id="confidence-fill" class="confidence-fill"></div></div>
@@ -484,35 +614,45 @@
                             <div class="meta-card"><p class="meta-label">is_sarcasm</p><p class="meta-value" id="meta-sarcasm">no</p></div>
                             <div class="meta-card"><p class="meta-label">is_implicit</p><p class="meta-value" id="meta-implicit">no</p></div>
                         </div>
-                    </div>
-                </article>
-            </section>
 
-            <section class="demo-card analytics-card">
-                <h2 class="card-title">Analytics Dashboard</h2>
-                <div class="analytics-grid">
-                    <div class="chart-box">
-                        <h3>Label Distribution</h3>
-                        <canvas id="label-chart" height="190"></canvas>
-                    </div>
-                    <div class="chart-box">
-                        <h3>Severity Breakdown</h3>
-                        <canvas id="severity-chart" height="190"></canvas>
-                    </div>
-                    <div class="chart-box">
-                        <h3>Language / Region Heatmap</h3>
-                        <div class="heatmap">
-                            <div class="heat-cell"><h4>rural_india</h4><p id="heat-rural">318</p></div>
-                            <div class="heat-cell"><h4>urban_india</h4><p id="heat-urban">412</p></div>
-                            <div class="heat-cell"><h4>india</h4><p id="heat-india">289</p></div>
-                            <div class="heat-cell"><h4>global</h4><p id="heat-global">255</p></div>
+                        <div class="analysis-panel">
+                            <button id="analysis-toggle" class="analysis-toggle" type="button">Show Full Analysis</button>
+                            <div id="analysis-body" class="analysis-body">
+                                <div class="analysis-grid">
+                                    <div class="analysis-block">
+                                        <h4>Tokens</h4>
+                                        <pre id="analysis-tokens">[]</pre>
+                                    </div>
+                                    <div class="analysis-block">
+                                        <h4>Stemmed</h4>
+                                        <pre id="analysis-stemmed">[]</pre>
+                                    </div>
+                                    <div class="analysis-block">
+                                        <h4>Lemmatized</h4>
+                                        <pre id="analysis-lemmatized">[]</pre>
+                                    </div>
+                                    <div class="analysis-block">
+                                        <h4>POS Tags</h4>
+                                        <pre id="analysis-pos">[]</pre>
+                                    </div>
+                                    <div class="analysis-block">
+                                        <h4>Named Entities</h4>
+                                        <pre id="analysis-ner">[]</pre>
+                                    </div>
+                                    <div class="analysis-block">
+                                        <h4>Raw Response</h4>
+                                        <pre id="analysis-raw">{}</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="history-panel">
+                            <p class="history-title">Confidence History (last 6 runs)</p>
+                            <div id="history-list" class="history-list"></div>
                         </div>
                     </div>
-                    <div class="chart-box">
-                        <h3>Emotion / Tone Cloud</h3>
-                        <div id="cloud" class="cloud"></div>
-                    </div>
-                </div>
+                </article>
             </section>
         </main>
     </div>
@@ -565,63 +705,17 @@
     <script src="js/app.js" defer></script>
 
     <script>
-    const labelChartCtx = document.getElementById('label-chart');
-    const severityChartCtx = document.getElementById('severity-chart');
-    const cloudEl = document.getElementById('cloud');
     const analyzeBtn = document.getElementById('analyze-btn');
     const demoText = document.getElementById('demo-text');
     const langSelect = document.getElementById('lang-select');
     const backendPill = document.getElementById('backend-pill');
-
-    const baseLabelCounts = { hate: 340, non_hate: 315, offensive: 245, health_issue: 188 };
-    const baseSeverityCounts = { none: 370, mild: 275, moderate: 261, severe: 182 };
-    const baseHeat = { rural_india: 318, urban_india: 412, india: 289, global: 255 };
-
-    const labelChart = new Chart(labelChartCtx, {
-        type: 'pie',
-        data: {
-            labels: ['Hate', 'Non-Hate', 'Offensive', 'Health Issue'],
-            datasets: [{
-                data: [baseLabelCounts.hate, baseLabelCounts.non_hate, baseLabelCounts.offensive, baseLabelCounts.health_issue],
-                backgroundColor: ['#ef4444', '#22c55e', '#f97316', '#3b82f6'],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'circle' } } }
-        }
-    });
-
-    const severityChart = new Chart(severityChartCtx, {
-        type: 'bar',
-        data: {
-            labels: ['none', 'mild', 'moderate', 'severe'],
-            datasets: [{
-                label: 'Rows',
-                data: [baseSeverityCounts.none, baseSeverityCounts.mild, baseSeverityCounts.moderate, baseSeverityCounts.severe],
-                backgroundColor: ['#22c55e', '#facc15', '#f97316', '#ef4444'],
-                borderRadius: 8,
-                maxBarThickness: 46
-            }]
-        },
-        options: {
-            plugins: { legend: { display: false } },
-            scales: {
-                y: { beginAtZero: true, grid: { color: 'rgba(148,163,184,.22)' } },
-                x: { grid: { display: false } }
-            }
-        }
-    });
-
-    function setCloud(words) {
-        cloudEl.innerHTML = '';
-        words.forEach(({ text, weight }) => {
-            const span = document.createElement('span');
-            span.textContent = text;
-            span.style.fontSize = `${12 + weight * 3}px`;
-            cloudEl.appendChild(span);
-        });
-    }
+    const copyBtn = document.getElementById('copy-json');
+    const downloadBtn = document.getElementById('download-json');
+    const analysisToggle = document.getElementById('analysis-toggle');
+    const analysisBody = document.getElementById('analysis-body');
+    const historyList = document.getElementById('history-list');
+    const outputHeadline = document.getElementById('output-headline');
+    const confidenceHistory = [];
 
     function countMatches(text, patterns) {
         let count = 0;
@@ -767,6 +861,7 @@
 
     const primaryLabel = document.getElementById('primary-label');
     const confidenceValue = document.getElementById('confidence-value');
+    const confidenceBand = document.getElementById('confidence-band');
     const confidenceFill = document.getElementById('confidence-fill');
     const severityPill = document.getElementById('severity-pill');
     const resultCard = document.getElementById('result-card');
@@ -782,16 +877,56 @@
         sarcasm: document.getElementById('meta-sarcasm'),
         implicit: document.getElementById('meta-implicit'),
         platform: document.getElementById('platform-pill'),
-        region: document.getElementById('region-pill')
+        region: document.getElementById('region-pill'),
+        analysisTokens: document.getElementById('analysis-tokens'),
+        analysisStemmed: document.getElementById('analysis-stemmed'),
+        analysisLemmatized: document.getElementById('analysis-lemmatized'),
+        analysisPos: document.getElementById('analysis-pos'),
+        analysisNer: document.getElementById('analysis-ner'),
+        analysisRaw: document.getElementById('analysis-raw')
     };
 
+    function renderHistory() {
+        if (!historyList) return;
+        historyList.innerHTML = '';
+        confidenceHistory.forEach((entry) => {
+            const item = document.createElement('div');
+            item.className = 'history-item';
+
+            const meta = document.createElement('div');
+            meta.className = 'history-meta';
+            meta.textContent = `${entry.time} · ${entry.label.toUpperCase()} · ${entry.band}`;
+
+            const bar = document.createElement('div');
+            bar.className = 'history-bar';
+            const fill = document.createElement('div');
+            fill.className = 'history-fill';
+            fill.style.width = `${Math.round(entry.confidence * 100)}%`;
+            bar.appendChild(fill);
+
+            item.appendChild(meta);
+            item.appendChild(bar);
+            historyList.appendChild(item);
+        });
+    }
+
     function applyResult(res) {
+        if (outputHeadline) {
+            outputHeadline.textContent = `${res.label.toUpperCase()} · ${res.language.toUpperCase()}`;
+        }
         primaryLabel.textContent = res.label;
         primaryLabel.className = `primary-label label-${res.label}`;
 
-        const confidencePct = Math.round(res.confidence * 100);
-        confidenceValue.textContent = res.confidence.toFixed(2);
+        let confidenceValueUsed = res.confidenceCalibrated ?? res.confidence;
+        if (!Number.isFinite(confidenceValueUsed)) {
+            confidenceValueUsed = 0;
+            confidenceValue.textContent = '--';
+        } else {
+            confidenceValue.textContent = confidenceValueUsed.toFixed(2);
+        }
+        const confidencePct = Math.round(confidenceValueUsed * 100);
         confidenceFill.style.width = `${confidencePct}%`;
+        confidenceBand.textContent = res.confidenceBand ? `band: ${res.confidenceBand}` : 'band: unknown';
 
         severityPill.textContent = res.severity;
         severityPill.className = `severity-pill sev-${res.severity}`;
@@ -807,36 +942,26 @@
         ids.platform.textContent = `platform: ${res.platform}`;
         ids.region.textContent = `region: ${res.region}`;
 
-        const labels = { ...baseLabelCounts };
-        labels[res.label] += 18;
-        labelChart.data.datasets[0].data = [labels.hate, labels.non_hate, labels.offensive, labels.health_issue];
-        labelChart.update();
-
-        const severities = { ...baseSeverityCounts };
-        severities[res.severity] += 16;
-        severityChart.data.datasets[0].data = [severities.none, severities.mild, severities.moderate, severities.severe];
-        severityChart.update();
-
-        const heat = { ...baseHeat };
-        if (Object.prototype.hasOwnProperty.call(heat, res.region)) heat[res.region] += 17;
-        document.getElementById('heat-rural').textContent = heat.rural_india;
-        document.getElementById('heat-urban').textContent = heat.urban_india;
-        document.getElementById('heat-india').textContent = heat.india;
-        document.getElementById('heat-global').textContent = heat.global;
-
-        setCloud([
-            { text: res.tone, weight: 7 },
-            { text: res.emotion, weight: 7 },
-            { text: res.directness, weight: 5 },
-            { text: res.targetGroup, weight: 6 },
-            { text: res.platform, weight: 4 },
-            { text: res.region, weight: 4 },
-            { text: res.label, weight: 8 },
-            { text: 'confidence', weight: 3 }
-        ]);
-
         resultCard.classList.add('active');
         statusNote.textContent = `Analysis complete via backend (${res.language}).`;
+
+        if (ids.analysisTokens) ids.analysisTokens.textContent = JSON.stringify(res.analysis?.tokens || [], null, 2);
+        if (ids.analysisStemmed) ids.analysisStemmed.textContent = JSON.stringify(res.analysis?.stemmed || [], null, 2);
+        if (ids.analysisLemmatized) ids.analysisLemmatized.textContent = JSON.stringify(res.analysis?.lemmatized || [], null, 2);
+        if (ids.analysisPos) ids.analysisPos.textContent = JSON.stringify(res.analysis?.pos_tags || [], null, 2);
+        if (ids.analysisNer) ids.analysisNer.textContent = JSON.stringify(res.analysis?.named_entities || [], null, 2);
+        if (ids.analysisRaw) ids.analysisRaw.textContent = JSON.stringify(res.rawResponse || {}, null, 2);
+
+        const stamp = new Date();
+        const entry = {
+            label: res.label,
+            band: res.confidenceBand || 'unknown',
+            confidence: confidenceValueUsed,
+            time: stamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+        confidenceHistory.unshift(entry);
+        if (confidenceHistory.length > 6) confidenceHistory.pop();
+        renderHistory();
     }
 
     async function analyzeWithBackend(text, langUi) {
@@ -867,8 +992,20 @@
         const derived = deriveMetadata(text, label, language, data.analysis || {});
         const backendMeta = data.metadata || {};
         const confidence = typeof data.confidence === 'number' ? data.confidence : derived.confidence;
+        const confidenceCalibrated = typeof data.confidence_calibrated === 'number' ? data.confidence_calibrated : null;
+        const confidenceBandValue = data.confidence_band || 'unknown';
         const merged = { ...derived, ...backendMeta };
-        return { label, language, confidence, ...merged };
+        return {
+            label,
+            language,
+            confidence,
+            confidenceCalibrated,
+            confidenceBand: confidenceBandValue,
+            confidenceProfile: data.confidence_profile || null,
+            analysis: data.analysis || {},
+            rawResponse: data,
+            ...merged
+        };
     }
 
     analyzeBtn.addEventListener('click', async () => {
@@ -896,14 +1033,44 @@
         }
     });
 
-    setCloud([
-        { text: 'neutral', weight: 4 },
-        { text: 'anger', weight: 6 },
-        { text: 'disgust', weight: 5 },
-        { text: 'sarcastic', weight: 5 },
-        { text: 'fear', weight: 5 },
-        { text: 'aggressive', weight: 6 }
-    ]);
+    if (analysisToggle && analysisBody) {
+        analysisToggle.addEventListener('click', () => {
+            const isOpen = analysisBody.classList.toggle('active');
+            analysisToggle.textContent = isOpen ? 'Hide Full Analysis' : 'Show Full Analysis';
+        });
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+            const raw = ids.analysisRaw?.textContent || '';
+            try {
+                await navigator.clipboard.writeText(raw);
+                copyBtn.textContent = 'Copied';
+                setTimeout(() => { copyBtn.textContent = 'Copy JSON'; }, 1200);
+            } catch (error) {
+                copyBtn.textContent = 'Copy failed';
+                setTimeout(() => { copyBtn.textContent = 'Copy JSON'; }, 1400);
+            }
+        });
+    }
+
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            const raw = ids.analysisRaw?.textContent || '{}';
+            const blob = new Blob([raw], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            const ts = new Date().toISOString().replace(/[:.]/g, '-');
+            a.href = url;
+            a.download = `justify-ai-analysis-${ts}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    }
+
+    renderHistory();
     checkBackend();
     </script>
 </body>

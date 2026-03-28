@@ -4,6 +4,7 @@ from langdetect import detect
 import os
 import sys
 import re
+import math
 
 # Add project root to path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -140,6 +141,36 @@ def _derive_metadata(text: str, label: str, language: str, analysis: dict) -> di
         "region": region,
     }
 
+def _calibrate_confidence(raw_confidence: float | None, language: str) -> tuple[float | None, str, dict]:
+    if raw_confidence is None:
+        return None, "unknown", {"temperature": None, "language": language}
+    # Temperature scaling to soften overconfident probabilities.
+    # temp > 1.0 reduces confidence; temp < 1.0 increases.
+    profile_map = {
+        "english": 1.25,
+        "hindi": 1.4,
+        "marathi": 1.4,
+        "bhojpuri": 1.55,
+        "marwari": 1.55,
+    }
+    temp = profile_map.get(language, 1.35)
+    eps = 1e-6
+    p = min(max(raw_confidence, eps), 1 - eps)
+    logit = math.log(p / (1 - p))
+    calibrated = 1 / (1 + math.exp(-logit / temp))
+    calibrated = max(0.5, min(0.99, calibrated))
+
+    if calibrated < 0.65:
+        band = "low"
+    elif calibrated < 0.80:
+        band = "medium"
+    elif calibrated < 0.90:
+        band = "high"
+    else:
+        band = "very_high"
+
+    return float(round(calibrated, 4)), band, {"temperature": temp, "language": language}
+
 def get_analyzer(lang: str):
     if lang not in analyzers:
         try:
@@ -208,12 +239,16 @@ async def analyze_text(request: AnalyzeRequest):
         "named_entities": entities,
         "tokens": preproc_results.get('tokens', [])
     })
+    calibrated_confidence, confidence_band, calibration_profile = _calibrate_confidence(confidence, lang)
 
     return {
         "text": text,
         "language": lang,
         "hate_speech_label": prediction,
         "confidence": confidence,
+        "confidence_calibrated": calibrated_confidence,
+        "confidence_band": confidence_band,
+        "confidence_profile": calibration_profile,
         "metadata": metadata,
         "analysis": {
             "tokens": preproc_results.get('tokens', []),
