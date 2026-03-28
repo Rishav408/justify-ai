@@ -111,6 +111,29 @@ class HateSpeechModelAnalyzer:
         prediction = self.model.predict(features)[0]
         return prediction
 
+    def predict_with_confidence(self, text: str):
+        """Predicts label with probability confidence when available."""
+        result = self.preprocessor.preprocess(text)
+        processed_string = " ".join(result['stemmed'])
+
+        features = self.feature_extractor.transform([processed_string])
+        prediction = self.model.predict(features)[0]
+
+        confidence = None
+        if hasattr(self.model, "predict_proba"):
+            try:
+                probs = self.model.predict_proba(features)[0]
+                classes = list(self.model.classes_)
+                if prediction in classes:
+                    idx = classes.index(prediction)
+                    confidence = float(probs[idx])
+                else:
+                    confidence = float(max(probs))
+            except Exception:
+                confidence = None
+
+        return prediction, confidence
+
 if __name__ == "__main__":
     languages = ['english', 'hindi', 'marathi', 'bhojpuri', 'marwari']
     

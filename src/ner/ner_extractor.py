@@ -10,7 +10,10 @@ class NERExtractor:
     def _safe_download(self, package: str) -> None:
         """Try downloading an NLTK package without crashing startup."""
         try:
-            nltk.download(package, quiet=True)
+            import contextlib
+            import io
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                nltk.download(package, quiet=True)
         except Exception:
             # Runtime should keep working even if download fails (offline env, etc.)
             pass

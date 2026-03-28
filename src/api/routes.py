@@ -3,12 +3,14 @@ from pydantic import BaseModel
 from langdetect import detect
 import os
 import sys
+import re
 
 # Add project root to path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from src.models.naive_bayes_model import HateSpeechModelAnalyzer
 from src.ner.ner_extractor import NERExtractor
+from src.preprocessing.english_preprocessing import EnglishPreprocessor
 
 router = APIRouter()
 
@@ -19,6 +21,124 @@ class AnalyzeRequest(BaseModel):
 # Cache analyzers per language to avoid reloading models on every request
 analyzers = {}
 ner_extractors = {}
+english_preprocessor = EnglishPreprocessor()
+
+def _count_matches(text: str, patterns: list[str]) -> int:
+    count = 0
+    lowered = text.lower()
+    for pattern in patterns:
+        try:
+            count += len(re.findall(pattern, lowered))
+        except re.error:
+            if pattern in lowered:
+                count += 1
+    return count
+
+def _derive_metadata(text: str, label: str, language: str, analysis: dict) -> dict:
+    hate_patterns = [
+        r'\bkill\b', r'\bdie\b', r'\bremove\b', r'\bthrow out\b', r'\btraitor\b',
+        r'\u092e\u093e\u0930', r'\u0928\u093f\u0915\u093e\u0932', r'\u092d\u0917\u093e', r'\u0915\u0941\u091a\u0932'
+    ]
+    offensive_patterns = [
+        r'\bidiot\b', r'\bstupid\b', r'\bmoron\b', r'\bfool\b',
+        r'\u092c\u0947\u0935\u0915\u0942\u092b', r'\u0917\u0927\u093e', r'\u0928\u093f\u0915\u092e\u094d\u092e\u093e'
+    ]
+    strong_patterns = [
+        r'\bkill\b', r'\bdie\b', r'\bdestroy\b', r'\u092e\u093e\u0930', r'\u0915\u0941\u091a\u0932', r'\u0916\u0924\u094d\u092e'
+    ]
+    call_to_action_patterns = [
+        r'\bkill\b', r'\bremove\b', r'\bexpel\b', r'\bbanish\b', r'\bhang\b', r'\bshoot\b',
+        r'\u092e\u093e\u0930', r'\u0928\u093f\u0915\u093e\u0932', r'\u092d\u0917\u093e'
+    ]
+    group_map = [
+        ('gender', [r'\bwomen\b', r'\bfemale\b', r'\u0932\u0921\u093c\u0915\u0940', r'\u0914\u0930\u0924']),
+        ('religion', [r'\bmuslim\b', r'\bhindu\b', r'\breligion\b', r'\u092e\u091c\u0939\u092c', r'\u0927\u0930\u094d\u092e']),
+        ('caste', [r'\bcaste\b', r'\u0926\u0932\u093f\u0924', r'\u091c\u093e\u0924']),
+        ('nationality', [r'\bimmigrant\b', r'\bforeigner\b', r'\u0935\u093f\u0926\u0947\u0936\u0940', r'\u092a\u0930\u0926\u0947\u0938\u0940']),
+        ('political', [r'\bparty\b', r'\bgovernment\b', r'\belection\b', r'\u0938\u0930\u0915\u093e\u0930', r'\u092a\u093e\u0930\u094d\u091f\u0940']),
+    ]
+
+    hate_hits = _count_matches(text, hate_patterns)
+    offensive_hits = _count_matches(text, offensive_patterns)
+    strong_hits = _count_matches(text, strong_patterns)
+
+    severity = 'none'
+    if label in ('hate', 'offensive'):
+        if strong_hits > 0 or hate_hits > 2:
+            severity = 'severe'
+        elif hate_hits > 0 or offensive_hits > 1:
+            severity = 'moderate'
+        else:
+            severity = 'mild'
+
+    target_group = 'none'
+    for key, patterns in group_map:
+        if target_group == 'none' and _count_matches(text, patterns) > 0:
+            target_group = key
+
+    entity_count = len(analysis.get('named_entities') or [])
+    if label != 'non_hate' and target_group == 'none' and entity_count > 0:
+        target_group = 'individual'
+
+    if label != 'non_hate' and target_group == 'none':
+        you_ref = _count_matches(text, [r'\byou\b', r'\btu\b', r'\btum\b', r'\u0924\u0942', r'\u0924\u0941\u092e']) > 0
+        target_group = 'individual' if you_ref else 'community'
+
+    target_type = 'none'
+    if target_group == 'individual':
+        target_type = 'individual'
+    elif target_group != 'none':
+        target_type = 'community'
+
+    is_sarcasm = _count_matches(text, [r'yeah right', r'so great', r'\u0935\u093e\u0939 \u0915\u094d\u092f\u093e', r'\u0939\u093e\u0902 \u0939\u093e\u0902']) > 0
+    is_implicit = _count_matches(text, [r'those people', r'you know them', r'\u0935\u094b \u0932\u094b\u0917', r'\u090f\u0948\u0938\u0947 \u0932\u094b\u0917']) > 0
+    directness = 'none' if label == 'non_hate' else 'indirect' if is_implicit else 'direct'
+    call_to_action = _count_matches(text, call_to_action_patterns) > 0
+
+    tone = 'neutral'
+    if label == 'hate':
+        tone = 'sarcastic' if is_sarcasm else 'aggressive'
+    elif label == 'offensive':
+        tone = 'dismissive'
+
+    emotion = 'none'
+    if label == 'hate':
+        emotion = 'anger'
+    elif label == 'offensive':
+        emotion = 'disgust'
+    elif label == 'health_issue':
+        emotion = 'fear'
+
+    platform = 'social_media' if _count_matches(text, [r'\btweet\b', r'\bpost\b', r'@', r'#']) > 0 else 'general'
+    domain = 'general'
+    region = 'global'
+    if language in ('hindi', 'marathi'):
+        region = 'india'
+    elif language in ('bhojpuri', 'marwari'):
+        region = 'rural_india'
+
+    profanity_count = 0
+    if language == 'english':
+        try:
+            profanity_count = english_preprocessor.get_profanity_count(text)
+        except Exception:
+            profanity_count = 0
+
+    return {
+        "severity": severity,
+        "target_group": target_group,
+        "target_type": target_type,
+        "directness": directness,
+        "call_to_action": call_to_action,
+        "tone": tone,
+        "emotion": emotion,
+        "profanity_count": profanity_count,
+        "is_sarcasm": is_sarcasm,
+        "is_implicit": is_implicit,
+        "platform": platform,
+        "domain": domain,
+        "region": region,
+    }
 
 def get_analyzer(lang: str):
     if lang not in analyzers:
@@ -67,7 +187,11 @@ async def analyze_text(request: AnalyzeRequest):
          analyzer = get_analyzer(lang)
 
     # 3. Hate Speech Classification (Phase 3 logic)
-    prediction = analyzer.predict(text)
+    try:
+        prediction, confidence = analyzer.predict_with_confidence(text)
+    except Exception:
+        prediction = analyzer.predict(text)
+        confidence = None
     
     # 4. Detailed Preprocessing Info (CCNLP Concepts)
     preproc_results = analyzer.preprocessor.preprocess(text)
@@ -80,10 +204,17 @@ async def analyze_text(request: AnalyzeRequest):
         # NER failures should not break label inference endpoint.
         entities = []
 
+    metadata = _derive_metadata(text, prediction, lang, {
+        "named_entities": entities,
+        "tokens": preproc_results.get('tokens', [])
+    })
+
     return {
         "text": text,
         "language": lang,
         "hate_speech_label": prediction,
+        "confidence": confidence,
+        "metadata": metadata,
         "analysis": {
             "tokens": preproc_results.get('tokens', []),
             "stemmed": preproc_results.get('stemmed', []),

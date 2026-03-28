@@ -1,23 +1,49 @@
+import contextlib
+import io
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 from nltk.corpus import stopwords
 import string
 
-# Ensure NLTK resources are available (will download if missing)
-try:
-    nltk.data.find('tokenizers/punkt')
-    nltk.data.find('corpora/stopwords')
-    nltk.data.find('corpora/wordnet')
-    nltk.data.find('taggers/averaged_perceptron_tagger')
-    nltk.data.find('taggers/averaged_perceptron_tagger_eng')
-except LookupError:
-    nltk.download('punkt')
-    nltk.download('stopwords')
-    nltk.download('wordnet')
-    nltk.download('averaged_perceptron_tagger')
-    nltk.download('averaged_perceptron_tagger_eng')
-    nltk.download('omw-1.4') # Added for lemmatizer stability
+def _safe_download(package: str) -> None:
+    try:
+        with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            nltk.download(package, quiet=True)
+    except Exception:
+        pass
+
+
+def _ensure_nltk_resources() -> None:
+    required_paths = [
+        'tokenizers/punkt',
+        'corpora/stopwords',
+        'corpora/wordnet',
+        'taggers/averaged_perceptron_tagger',
+        'taggers/averaged_perceptron_tagger_eng',
+    ]
+    missing = False
+    for path in required_paths:
+        try:
+            nltk.data.find(path)
+        except LookupError:
+            missing = True
+
+    if not missing:
+        return
+
+    for package in [
+        'punkt',
+        'stopwords',
+        'wordnet',
+        'averaged_perceptron_tagger',
+        'averaged_perceptron_tagger_eng',
+        'omw-1.4',
+    ]:
+        _safe_download(package)
+
+
+_ensure_nltk_resources()
 
 class EnglishPreprocessor:
     def __init__(self):
