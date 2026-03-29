@@ -50,20 +50,20 @@ Train/test split: 80/20 stratified, random_state=42
 
 | Label | Precision | Recall | F1 | Support |
 | --- | --- | --- | --- | --- |
-| hate | 0.993 | 0.978 | 0.985 | 416 |
-| non_hate | 0.658 | 0.658 | 0.658 | 38 |
-| offensive | 0.993 | 0.998 | 0.996 | 1317 |
-| health_issue | 0.996 | 0.993 | 0.995 | 284 |
-| accuracy | - | - | 0.987 | 2055 |
+| hate | 1.000 | 1.000 | 1.000 | 416 |
+| non_hate | 1.000 | 0.979 | 0.989 | 422 |
+| offensive | 0.995 | 1.000 | 0.997 | 1318 |
+| health_issue | 0.993 | 1.000 | 0.996 | 284 |
+| accuracy | - | - | 0.996 | 2440 |
 
 ### Confusion Matrix (rows=true, cols=pred)
 
 | true\pred | hate | non_hate | offensive | health_issue |
 | --- | --- | --- | --- | --- |
-| hate | 407 | 9 | 0 | 0 |
-| non_hate | 3 | 25 | 9 | 1 |
-| offensive | 0 | 2 | 1315 | 0 |
-| health_issue | 0 | 2 | 0 | 282 |
+| hate | 416 | 0 | 0 | 0 |
+| non_hate | 0 | 413 | 7 | 2 |
+| offensive | 0 | 0 | 1318 | 0 |
+| health_issue | 0 | 0 | 0 | 284 |
 
 ## Bhojpuri
 
@@ -71,18 +71,18 @@ Train/test split: 80/20 stratified, random_state=42
 
 | Label | Precision | Recall | F1 | Support |
 | --- | --- | --- | --- | --- |
-| hate | 0.992 | 1.000 | 0.996 | 486 |
-| non_hate | 1.000 | 0.897 | 0.945 | 58 |
-| offensive | 0.999 | 1.000 | 1.000 | 1178 |
-| health_issue | 0.997 | 1.000 | 0.998 | 304 |
-| accuracy | - | - | 0.997 | 2026 |
+| hate | 0.998 | 1.000 | 0.999 | 486 |
+| non_hate | 1.000 | 0.986 | 0.993 | 424 |
+| offensive | 0.997 | 1.000 | 0.999 | 1178 |
+| health_issue | 0.993 | 1.000 | 0.997 | 304 |
+| accuracy | - | - | 0.997 | 2392 |
 
 ### Confusion Matrix (rows=true, cols=pred)
 
 | true\pred | hate | non_hate | offensive | health_issue |
 | --- | --- | --- | --- | --- |
 | hate | 486 | 0 | 0 | 0 |
-| non_hate | 4 | 52 | 1 | 1 |
+| non_hate | 1 | 418 | 3 | 2 |
 | offensive | 0 | 0 | 1178 | 0 |
 | health_issue | 0 | 0 | 0 | 304 |
 
@@ -92,17 +92,17 @@ Train/test split: 80/20 stratified, random_state=42
 
 | Label | Precision | Recall | F1 | Support |
 | --- | --- | --- | --- | --- |
-| hate | 0.961 | 1.000 | 0.980 | 148 |
-| non_hate | 0.947 | 0.545 | 0.692 | 33 |
-| offensive | 0.996 | 0.999 | 0.998 | 2049 |
-| health_issue | 0.989 | 0.996 | 0.992 | 261 |
-| accuracy | - | - | 0.993 | 2491 |
+| hate | 0.980 | 1.000 | 0.990 | 148 |
+| non_hate | 1.000 | 0.968 | 0.984 | 501 |
+| offensive | 0.994 | 0.999 | 0.997 | 2049 |
+| health_issue | 0.989 | 1.000 | 0.994 | 261 |
+| accuracy | - | - | 0.994 | 2959 |
 
 ### Confusion Matrix (rows=true, cols=pred)
 
 | true\pred | hate | non_hate | offensive | health_issue |
 | --- | --- | --- | --- | --- |
 | hate | 148 | 0 | 0 | 0 |
-| non_hate | 4 | 18 | 8 | 3 |
+| non_hate | 1 | 485 | 12 | 3 |
 | offensive | 2 | 0 | 2047 | 0 |
-| health_issue | 0 | 1 | 0 | 260 |
+| health_issue | 0 | 0 | 0 | 261 |

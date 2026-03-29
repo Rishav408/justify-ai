@@ -1,12 +1,12 @@
 # 📊 Multilingual Hate Speech Dataset Analysis Report
 
-*Generated on: 2026-03-29 16:26:48*
+*Generated on: 2026-03-29 17:48:47*
 
 ---
 
 ## 🌍 Overall Summary
 
-**Total rows across all languages:** 69,154
+**Total rows across all languages:** 75,252
 
 ### Key Metrics per Language
 
@@ -14,9 +14,9 @@
 |----------|------|--------|------------|-------------|----------|-----------------|-----------|------------------|---------------|----------------|
 | English | 18,900 | 9.4 | 82.7 | 6.1 | 1.8 | 31.1 | 1.9 | 30.3 | 0.15 | 0.897 |
 | Hindi | 17,405 | 17.7 | 71.3 | 8.5 | 2.5 | 34.1 | 3.0 | 25.7 | 0.28 | 0.895 |
-| Bhojpuri | 10,126 | 24.0 | 2.8 | 58.1 | 15.0 | 33.8 | 9.8 | 28.6 | 1.22 | 0.894 |
-| Marathi | 10,272 | 20.2 | 1.8 | 64.1 | 13.8 | 33.8 | 9.2 | 31.0 | 1.81 | 0.894 |
-| Marwari | 12,451 | 5.9 | 1.3 | 82.2 | 10.5 | 24.7 | 9.2 | 29.5 | 1.61 | 0.895 |
+| Bhojpuri | 11,960 | 20.3 | 17.7 | 49.2 | 12.7 | 33.8 | 8.3 | 28.6 | 1.04 | 0.898 |
+| Marathi | 12,196 | 17.1 | 17.3 | 54.0 | 11.6 | 33.8 | 7.8 | 31.0 | 1.52 | 0.899 |
+| Marwari | 14,791 | 5.0 | 16.9 | 69.2 | 8.8 | 24.7 | 7.8 | 29.5 | 1.36 | 0.899 |
 
 ---
 
@@ -78,9 +78,7 @@
 
 | Tone | Count |
 |------|-------|
-| neutral | 5630 |
-| sadness | 5106 |
-| joy | 5048 |
+| neutral | 15784 |
 | aggressive | 1134 |
 | dismissive | 1050 |
 | fearful | 598 |
@@ -212,9 +210,7 @@ No missing values detected.
 
 | Tone | Count |
 |------|-------|
-| neutral | 4446 |
-| sadness | 4192 |
-| joy | 3992 |
+| neutral | 12630 |
 | dismissive | 1689 |
 | aggressive | 1588 |
 | fearful | 977 |
@@ -291,16 +287,16 @@ No missing values detected.
 
 ## 📌 Bhojpuri Dataset
 
-**Total rows:** 10,126
+**Total rows:** 11,960
 
 ### 🏷️ Label Distribution
 
 | Label | Count | Percentage |
 |-------|-------|------------|
-| hate | 2,431 | 24.01% |
-| non_hate | 287 | 2.83% |
-| offensive | 5,888 | 58.15% |
-| health_issue | 1,520 | 15.01% |
+| hate | 2,431 | 20.33% |
+| non_hate | 2,121 | 17.73% |
+| offensive | 5,888 | 49.23% |
+| health_issue | 1,520 | 12.71% |
 
 ### ⚠️ Severity (for hate/offensive rows)
 
@@ -309,7 +305,7 @@ No missing values detected.
 | mild | 2890 |
 | moderate | 2726 |
 | severe | 2703 |
-| none (non-hate/health) | 1807 |
+| none (non-hate/health) | 3641 |
 
 ### 🔥 Hate Speech Analysis
 
@@ -320,7 +316,7 @@ No missing values detected.
 
 ### 😏 Sarcasm Usage
 
-- **Sarcastic rows:** 993 (9.81%)
+- **Sarcastic rows:** 993 (8.30%)
 
 ### 🎯 Target Groups (hate/offensive only)
 
@@ -347,11 +343,9 @@ No missing values detected.
 |------|-------|
 | aggressive | 3456 |
 | dismissive | 3303 |
+| neutral | 2876 |
 | fearful | 1339 |
 | sarcastic | 986 |
-| neutral | 959 |
-| sadness | 45 |
-| joy | 38 |
 
 ### 😡 Emotion Distribution
 
@@ -360,61 +354,62 @@ No missing values detected.
 | disgust | 3482 |
 | fear | 2694 |
 | anger | 2569 |
-| sadness | 484 |
-| none | 378 |
+| sadness | 1094 |
+| none | 1013 |
+| joy | 794 |
 | pain | 314 |
-| joy | 205 |
 
 ### 🔞 Profanity Count
 
-- **Mean:** 1.22
+- **Mean:** 1.04
 - **Maximum:** 2
-- **Rows with zero profanity:** 23.52%
+- **Rows with zero profanity:** 35.25%
 
 ### 📱 Platform Distribution
 
 | Platform | Count |
 |----------|-------|
-| social_media | 2230 |
-| chat | 2189 |
-| general | 1977 |
-| news | 1934 |
+| social_media | 2694 |
+| chat | 2664 |
+| general | 2421 |
+| news | 2385 |
 | political_speech | 1796 |
 
 ### 🌐 Domain Distribution
 
 | Domain | Count |
 |--------|-------|
+| general | 3016 |
 | health | 2431 |
-| general | 2412 |
 | political | 1992 |
+| sports | 1633 |
+| education | 1548 |
 | religious | 1340 |
-| sports | 1007 |
-| education | 944 |
 
 ### 🗺️ Region Distribution
 
 | Region | Count |
 |--------|-------|
-| rural_india | 4138 |
-| urban_india | 3005 |
-| india | 2983 |
+| rural_india | 4581 |
+| urban_india | 3480 |
+| india | 3444 |
+| global | 455 |
 
 ### 🎯 Annotator Confidence
 
-- **Mean:** 0.894
+- **Mean:** 0.898
 - **Min:** 0.76
 - **Max:** 0.99
 
 ### ✍️ Annotator Type
 
-- **Human (A1..A20):** 7488 (73.95%)
-- **Synthetic:** 2638 (26.05%)
+- **Human (A1..A20):** 9019 (75.41%)
+- **Synthetic:** 2941 (24.59%)
 
 ### 📏 Sentence Length
 
-- **Average characters per sentence:** 48.5
-- **Average words per sentence:** 10.0
+- **Average characters per sentence:** 46.8
+- **Average words per sentence:** 9.6
 
 ### ✅ Data Quality
 
@@ -424,16 +419,16 @@ No missing values detected.
 
 ## 📌 Marathi Dataset
 
-**Total rows:** 10,272
+**Total rows:** 12,196
 
 ### 🏷️ Label Distribution
 
 | Label | Count | Percentage |
 |-------|-------|------------|
-| hate | 2,080 | 20.25% |
-| non_hate | 187 | 1.82% |
-| offensive | 6,585 | 64.11% |
-| health_issue | 1,420 | 13.82% |
+| hate | 2,080 | 17.05% |
+| non_hate | 2,111 | 17.31% |
+| offensive | 6,585 | 53.99% |
+| health_issue | 1,420 | 11.64% |
 
 ### ⚠️ Severity (for hate/offensive rows)
 
@@ -442,7 +437,7 @@ No missing values detected.
 | mild | 2920 |
 | moderate | 2913 |
 | severe | 2832 |
-| none (non-hate/health) | 1607 |
+| none (non-hate/health) | 3531 |
 
 ### 🔥 Hate Speech Analysis
 
@@ -453,7 +448,7 @@ No missing values detected.
 
 ### 😏 Sarcasm Usage
 
-- **Sarcastic rows:** 950 (9.25%)
+- **Sarcastic rows:** 950 (7.79%)
 
 ### 🎯 Target Groups (hate/offensive only)
 
@@ -480,11 +475,9 @@ No missing values detected.
 |------|-------|
 | aggressive | 3612 |
 | dismissive | 3527 |
+| neutral | 2842 |
 | fearful | 1267 |
 | sarcastic | 948 |
-| neutral | 832 |
-| sadness | 44 |
-| joy | 42 |
 
 ### 😡 Emotion Distribution
 
@@ -493,61 +486,62 @@ No missing values detected.
 | disgust | 3511 |
 | fear | 2897 |
 | anger | 2610 |
-| none | 421 |
-| sadness | 378 |
+| none | 1050 |
+| sadness | 1005 |
+| joy | 762 |
 | pain | 361 |
-| joy | 94 |
 
 ### 🔞 Profanity Count
 
-- **Mean:** 1.81
+- **Mean:** 1.52
 - **Maximum:** 3
-- **Rows with zero profanity:** 16.16%
+- **Rows with zero profanity:** 29.39%
 
 ### 📱 Platform Distribution
 
 | Platform | Count |
 |----------|-------|
-| social_media | 2120 |
+| social_media | 2589 |
+| news | 2553 |
+| general | 2524 |
+| chat | 2460 |
 | political_speech | 2070 |
-| news | 2055 |
-| general | 2031 |
-| chat | 1996 |
 
 ### 🌐 Domain Distribution
 
 | Domain | Count |
 |--------|-------|
+| general | 2650 |
 | health | 2504 |
-| general | 2013 |
+| sports | 1904 |
 | political | 1896 |
+| education | 1788 |
 | religious | 1454 |
-| sports | 1273 |
-| education | 1132 |
 
 ### 🗺️ Region Distribution
 
 | Region | Count |
 |--------|-------|
-| urban_india | 3489 |
-| india | 3396 |
-| rural_india | 3387 |
+| urban_india | 3962 |
+| india | 3895 |
+| rural_india | 3844 |
+| global | 495 |
 
 ### 🎯 Annotator Confidence
 
-- **Mean:** 0.894
+- **Mean:** 0.899
 - **Min:** 0.76
 - **Max:** 0.99
 
 ### ✍️ Annotator Type
 
-- **Human (A1..A20):** 8316 (80.96%)
-- **Synthetic:** 1956 (19.04%)
+- **Human (A1..A20):** 9909 (81.25%)
+- **Synthetic:** 2287 (18.75%)
 
 ### 📏 Sentence Length
 
-- **Average characters per sentence:** 49.3
-- **Average words per sentence:** 8.3
+- **Average characters per sentence:** 47.3
+- **Average words per sentence:** 8.0
 
 ### ✅ Data Quality
 
@@ -557,16 +551,16 @@ No missing values detected.
 
 ## 📌 Marwari Dataset
 
-**Total rows:** 12,451
+**Total rows:** 14,791
 
 ### 🏷️ Label Distribution
 
 | Label | Count | Percentage |
 |-------|-------|------------|
-| hate | 740 | 5.94% |
-| non_hate | 167 | 1.34% |
-| offensive | 10,240 | 82.24% |
-| health_issue | 1,304 | 10.47% |
+| hate | 740 | 5.00% |
+| non_hate | 2,507 | 16.95% |
+| offensive | 10,240 | 69.23% |
+| health_issue | 1,304 | 8.82% |
 
 ### ⚠️ Severity (for hate/offensive rows)
 
@@ -575,7 +569,7 @@ No missing values detected.
 | moderate | 3690 |
 | severe | 3651 |
 | mild | 3639 |
-| none (non-hate/health) | 1471 |
+| none (non-hate/health) | 3811 |
 
 ### 🔥 Hate Speech Analysis
 
@@ -586,7 +580,7 @@ No missing values detected.
 
 ### 😏 Sarcasm Usage
 
-- **Sarcastic rows:** 1149 (9.23%)
+- **Sarcastic rows:** 1149 (7.77%)
 
 ### 🎯 Target Groups (hate/offensive only)
 
@@ -613,11 +607,9 @@ No missing values detected.
 |------|-------|
 | dismissive | 4828 |
 | aggressive | 4808 |
+| neutral | 3159 |
 | sarcastic | 1148 |
 | fearful | 848 |
-| neutral | 738 |
-| joy | 44 |
-| sadness | 37 |
 
 ### 😡 Emotion Distribution
 
@@ -626,61 +618,62 @@ No missing values detected.
 | disgust | 4420 |
 | fear | 3602 |
 | anger | 3274 |
-| none | 393 |
-| sadness | 354 |
+| none | 1167 |
+| sadness | 1161 |
+| joy | 849 |
 | pain | 318 |
-| joy | 90 |
 
 ### 🔞 Profanity Count
 
-- **Mean:** 1.61
+- **Mean:** 1.36
 - **Maximum:** 2
-- **Rows with zero profanity:** 12.09%
+- **Rows with zero profanity:** 26.00%
 
 ### 📱 Platform Distribution
 
 | Platform | Count |
 |----------|-------|
-| news | 2534 |
+| news | 3096 |
+| general | 3076 |
+| chat | 3052 |
+| social_media | 3043 |
 | political_speech | 2524 |
-| general | 2474 |
-| chat | 2460 |
-| social_media | 2459 |
 
 ### 🌐 Domain Distribution
 
 | Domain | Count |
 |--------|-------|
 | health | 2985 |
+| general | 2793 |
+| sports | 2631 |
+| education | 2515 |
 | political | 2040 |
-| general | 2028 |
-| sports | 1840 |
 | religious | 1827 |
-| education | 1731 |
 
 ### 🗺️ Region Distribution
 
 | Region | Count |
 |--------|-------|
-| rural_india | 4204 |
-| urban_india | 4131 |
-| india | 4116 |
+| rural_india | 4789 |
+| india | 4708 |
+| urban_india | 4699 |
+| global | 595 |
 
 ### 🎯 Annotator Confidence
 
-- **Mean:** 0.895
+- **Mean:** 0.899
 - **Min:** 0.76
 - **Max:** 0.99
 
 ### ✍️ Annotator Type
 
-- **Human (A1..A20):** 9984 (80.19%)
-- **Synthetic:** 2467 (19.81%)
+- **Human (A1..A20):** 11918 (80.58%)
+- **Synthetic:** 2873 (19.42%)
 
 ### 📏 Sentence Length
 
-- **Average characters per sentence:** 44.6
-- **Average words per sentence:** 8.8
+- **Average characters per sentence:** 43.4
+- **Average words per sentence:** 8.6
 
 ### ✅ Data Quality
 

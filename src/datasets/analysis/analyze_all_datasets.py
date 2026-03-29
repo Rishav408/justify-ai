@@ -22,7 +22,13 @@ DATASETS = {
     "Marwari": "marwari.csv"
 }
 
-BASE_DIR = Path(__file__).resolve().parents[1]
+SCRIPT_DIR = Path(__file__).resolve().parent
+if SCRIPT_DIR.name == "analysis":
+    BASE_DIR = SCRIPT_DIR.parent
+elif SCRIPT_DIR.name == "datasets":
+    BASE_DIR = SCRIPT_DIR
+else:
+    BASE_DIR = SCRIPT_DIR
 
 EXPECTED_COLUMNS = [
     'text', 'label', 'severity', 'is_implicit', 'is_sarcasm',
@@ -297,9 +303,9 @@ def main():
         else:
             print(f"    -> File not found or error.")
 
-    output_file = Path(__file__).resolve().parent / "dataset_analysis_report.md"
+    output_file = BASE_DIR / "dataset_analysis_report.md"
     write_markdown_report(all_stats, str(output_file))
-    print(f"\n✅ Report saved to: {output_file}")
+    print(f"\nReport saved to: {output_file}")
     print("You can open it with any Markdown viewer (e.g., VS Code, Typora, or GitHub).")
 
 if __name__ == "__main__":
