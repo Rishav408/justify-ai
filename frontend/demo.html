@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,514 +9,826 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-    .demo-shell {
-        min-height: 100vh;
-        background:
-            radial-gradient(circle at 12% 18%, rgba(108, 99, 255, 0.14), transparent 26%),
-            radial-gradient(circle at 90% 0%, rgba(0, 194, 168, 0.16), transparent 34%),
-            var(--color-bg-primary);
-        padding-top: 94px;
-    }
-
-    .demo-container {
-        max-width: 1240px;
-        margin: 0 auto;
-        padding: 2rem 1.25rem 3.5rem;
-    }
-
-    .demo-hero {
-        display: grid;
-        gap: 0.85rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .demo-kicker {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        width: fit-content;
-        padding: 0.35rem 0.75rem;
-        border-radius: 999px;
-        border: 1px solid var(--color-border);
-        background: color-mix(in srgb, var(--color-bg-secondary) 88%, var(--color-secondary) 12%);
-        font-size: 0.78rem;
-        color: var(--color-text-secondary);
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-    }
-
-    .demo-hero h1 {
-        margin: 0;
-        font-size: clamp(1.65rem, 3.2vw, 2.55rem);
-        line-height: 1.15;
-        color: var(--color-text-primary);
-    }
-
-    .demo-hero p {
-        margin: 0;
-        max-width: 740px;
-        color: var(--color-text-secondary);
-    }
-
-    .demo-grid {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: 1.15fr 1fr;
-        margin-bottom: 1rem;
-    }
-
-    .demo-card {
-        border-radius: 1rem;
-        border: 1px solid color-mix(in srgb, var(--color-border) 82%, var(--color-secondary) 18%);
-        background: color-mix(in srgb, var(--color-bg-secondary) 96%, var(--color-primary) 4%);
-        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
-        padding: 1.15rem;
-    }
-
-    .card-title {
-        margin: 0 0 0.9rem;
-        font-size: 1rem;
-        font-weight: 700;
-        color: var(--color-text-primary);
-    }
-
-    .input-textarea {
-        width: 100%;
-        min-height: 230px;
-        border-radius: 0.9rem;
-        border: 1px solid var(--color-border);
-        background: var(--color-bg-primary);
-        color: var(--color-text-primary);
-        padding: 0.95rem 1rem;
-        font-size: 0.95rem;
-        line-height: 1.55;
-        resize: vertical;
-        transition: border-color 0.22s ease, box-shadow 0.22s ease;
-    }
-
-    .input-textarea:focus {
-        outline: none;
-        border-color: var(--color-secondary);
-        box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.17);
-    }
-
-    .control-row {
-        margin-top: 0.85rem;
-        display: flex;
-        gap: 0.65rem;
-        flex-wrap: wrap;
-    }
-
-    .language-select {
-        min-width: 170px;
-        border-radius: 0.7rem;
-        border: 1px solid var(--color-border);
-        background: var(--color-bg-primary);
-        color: var(--color-text-primary);
-        padding: 0.62rem 0.72rem;
-        font-size: 0.9rem;
-    }
-
-    .analyze-btn {
-        border: none;
-        border-radius: 0.7rem;
-        padding: 0.62rem 1.35rem;
-        font-weight: 700;
-        font-size: 0.92rem;
-        color: #ffffff;
-        background: linear-gradient(135deg, var(--color-secondary), #4f46e5);
-        cursor: pointer;
-        box-shadow: 0 12px 22px rgba(79, 70, 229, 0.28);
-        transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .analyze-btn:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 14px 28px rgba(79, 70, 229, 0.33);
-    }
-
-    .status-note {
-        margin: 0;
-        font-size: 0.84rem;
-        color: var(--color-text-tertiary);
-    }
-
-    .status-row {
-        margin-top: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-    }
-
-    .backend-pill {
-        border-radius: 999px;
-        padding: 0.32rem 0.7rem;
-        font-size: 0.72rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        border: 1px solid transparent;
-    }
-
-    .backend-pending {
-        background: rgba(148, 163, 184, 0.18);
-        color: #64748b;
-        border-color: rgba(148, 163, 184, 0.35);
-    }
-
-    .backend-online {
-        background: rgba(34, 197, 94, 0.16);
-        color: #15803d;
-        border-color: rgba(34, 197, 94, 0.4);
-    }
-
-    .backend-offline {
-        background: rgba(239, 68, 68, 0.14);
-        color: #b91c1c;
-        border-color: rgba(239, 68, 68, 0.35);
-    }
-
-    .result-card {
-        display: none;
-        gap: 0.85rem;
-    }
-
-    .result-card.active {
-        display: grid;
-        animation: riseIn 0.25s ease;
-    }
-
-    @keyframes riseIn {
-        from { opacity: 0; transform: translateY(8px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .row-flex {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-    }
-
-    .output-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-    }
-
-    .output-title {
-        display: grid;
-        gap: 0.2rem;
-    }
-
-    .output-title span {
-        font-size: 0.72rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--color-text-tertiary);
-    }
-
-    .output-title h3 {
-        margin: 0;
-        font-size: 1.15rem;
-        color: var(--color-text-primary);
-    }
-
-    .primary-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        border-radius: 999px;
-        border: 1px solid transparent;
-        padding: 0.42rem 0.95rem;
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-    }
-
-    .label-hate { background: rgba(239, 68, 68, 0.12); color: #b91c1c; border-color: rgba(239, 68, 68, 0.4); }
-    .label-offensive { background: rgba(249, 115, 22, 0.12); color: #c2410c; border-color: rgba(249, 115, 22, 0.4); }
-    .label-health_issue { background: rgba(59, 130, 246, 0.12); color: #1d4ed8; border-color: rgba(59, 130, 246, 0.42); }
-    .label-non_hate { background: rgba(34, 197, 94, 0.12); color: #15803d; border-color: rgba(34, 197, 94, 0.4); }
-
-    .metric-wrap {
-        min-width: 200px;
-        display: grid;
-        gap: 0.35rem;
-        font-size: 0.82rem;
-        color: var(--color-text-secondary);
-    }
-
-    .confidence-band {
-        font-size: 0.72rem;
-        color: var(--color-text-tertiary);
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-    }
-
-    .row-actions {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        flex-wrap: wrap;
-    }
-
-    .copy-btn {
-        border: 1px solid var(--color-border);
-        border-radius: 0.6rem;
-        padding: 0.35rem 0.75rem;
-        font-size: 0.72rem;
-        font-weight: 700;
-        background: var(--color-bg-primary);
-        color: var(--color-text-secondary);
-        cursor: pointer;
-        transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .copy-btn:hover {
-        border-color: var(--color-secondary);
-        transform: translateY(-1px);
-    }
-
-    .download-btn {
-        border: 1px solid var(--color-border);
-        border-radius: 0.6rem;
-        padding: 0.35rem 0.75rem;
-        font-size: 0.72rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, rgba(0, 194, 168, 0.16), rgba(79, 70, 229, 0.12));
-        color: var(--color-text-primary);
-        cursor: pointer;
-        transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .download-btn:hover {
-        border-color: var(--color-secondary);
-        transform: translateY(-1px);
-    }
-
-    .confidence-track {
-        width: 100%;
-        height: 11px;
-        border-radius: 999px;
-        background: var(--color-bg-tertiary);
-        overflow: hidden;
-    }
-
-    .confidence-fill {
-        height: 100%;
-        width: 0%;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
-        transition: width 0.35s ease;
-    }
-
-    .severity-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        border-radius: 999px;
-        padding: 0.34rem 0.78rem;
-        font-size: 0.74rem;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-
-    .sev-none { background: rgba(34, 197, 94, 0.12); color: #15803d; }
-    .sev-mild { background: rgba(250, 204, 21, 0.2); color: #a16207; }
-    .sev-moderate { background: rgba(249, 115, 22, 0.18); color: #c2410c; }
-    .sev-severe { background: rgba(239, 68, 68, 0.15); color: #b91c1c; }
-
-    .metadata-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 0.65rem;
-    }
-
-    .meta-card {
-        border: 1px solid var(--color-border);
-        background: var(--color-bg-primary);
-        border-radius: 0.72rem;
-        padding: 0.68rem 0.72rem;
-        display: grid;
-        gap: 0.26rem;
-    }
-
-    .meta-label {
-        margin: 0;
-        font-size: 0.66rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--color-text-tertiary);
-    }
-
-    .meta-value {
-        margin: 0;
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: var(--color-text-primary);
-    }
-
-    .context-tags {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-    }
-
-    .ctx-pill {
-        border-radius: 999px;
-        border: 1px solid var(--color-border);
-        background: var(--color-bg-primary);
-        padding: 0.35rem 0.8rem;
-        font-size: 0.78rem;
-        color: var(--color-text-secondary);
-    }
-
-    .history-panel {
-        border: 1px solid var(--color-border);
-        border-radius: 0.85rem;
-        background: var(--color-bg-primary);
-        padding: 0.75rem 0.85rem;
-        display: grid;
-        gap: 0.6rem;
-    }
-
-    .history-title {
-        margin: 0;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--color-text-tertiary);
-    }
-
-    .history-list {
-        display: grid;
-        gap: 0.5rem;
-    }
-
-    .history-item {
-        display: grid;
-        gap: 0.35rem;
-    }
-
-    .history-meta {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.5rem;
-        font-size: 0.78rem;
-        color: var(--color-text-secondary);
-    }
-
-    .history-bar {
-        width: 100%;
-        height: 8px;
-        border-radius: 999px;
-        background: var(--color-bg-tertiary);
-        overflow: hidden;
-    }
-
-    .history-fill {
-        height: 100%;
-        border-radius: 999px;
-        background: linear-gradient(90deg, rgba(0, 194, 168, 0.9), rgba(79, 70, 229, 0.85));
-        width: 0%;
-    }
-
-    .analysis-panel {
-        border: 1px solid var(--color-border);
-        background: var(--color-bg-primary);
-        border-radius: 0.85rem;
-        padding: 0.75rem 0.85rem;
-    }
-
-    .analysis-toggle {
-        border: 1px solid var(--color-border);
-        border-radius: 0.6rem;
-        padding: 0.4rem 0.7rem;
-        font-size: 0.78rem;
-        font-weight: 700;
-        background: var(--color-bg-secondary);
-        color: var(--color-text-secondary);
-        cursor: pointer;
-    }
-
-    .analysis-body {
-        display: none;
-        margin-top: 0.65rem;
-        gap: 0.75rem;
-    }
-
-    .analysis-body.active {
-        display: grid;
-    }
-
-    .analysis-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.65rem;
-    }
-
-    .analysis-block {
-        border: 1px solid var(--color-border);
-        border-radius: 0.7rem;
-        padding: 0.6rem;
-        background: var(--color-bg-secondary);
-    }
-
-    .analysis-block h4 {
-        margin: 0 0 0.4rem;
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--color-text-tertiary);
-    }
-
-    .analysis-block pre {
-        margin: 0;
-        font-size: 0.78rem;
-        color: var(--color-text-secondary);
-        white-space: pre-wrap;
-        word-break: break-word;
-    }
-
-    @media (max-width: 1024px) {
-        .demo-grid {
-            grid-template-columns: 1fr;
+        /* ── Typography override ── */
+        body {
+            font-family: "Space Grotesk", system-ui, sans-serif;
         }
 
+        h1,
+        h2,
+        h3,
+        .demo-kicker,
+        .card-title-accent {
+            font-family: "Bricolage Grotesque", sans-serif;
+        }
+
+        /* ── Shell & background ── */
+        .demo-shell {
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse at 10% 20%, rgba(108, 99, 255, 0.13), transparent 38%),
+                radial-gradient(ellipse at 88% 5%, rgba(0, 194, 168, 0.11), transparent 36%),
+                radial-gradient(ellipse at 50% 90%, rgba(79, 70, 229, 0.08), transparent 40%),
+                var(--color-bg-primary);
+            padding-top: 65px;
+        }
+
+        /* ── Page container ── */
+        .demo-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        /* ── Hero ── */
+        .demo-hero {
+            display: grid;
+            gap: 2px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .demo-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 0.38rem 1rem;
+            border-radius: 999px;
+            border: 1px solid color-mix(in srgb, var(--color-border) 70%, var(--color-secondary) 30%);
+            background: color-mix(in srgb, var(--color-bg-secondary) 85%, var(--color-secondary) 15%);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-secondary);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .demo-kicker::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--color-secondary);
+            box-shadow: 0 0 8px var(--color-secondary);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.7);
+            }
+        }
+
+        .demo-hero h1 {
+            margin: 0;
+            font-size: clamp(1.9rem, 3.8vw, 3rem);
+            line-height: 1.12;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-text-primary) 40%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .demo-hero p {
+            margin: 0 auto;
+            max-width: 680px;
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.65;
+        }
+
+        /* ── Grid layout ── */
+        .demo-grid {
+            display: grid;
+            gap: 1.25rem;
+            grid-template-columns: 1.1fr 1fr;
+            margin-bottom: 1.25rem;
+            align-items: start;
+        }
+
+        /* ── Glass Card ── */
+        .demo-card {
+            border-radius: 1.25rem;
+            border: 1px solid color-mix(in srgb, var(--color-border) 78%, var(--color-secondary) 22%);
+            background: color-mix(in srgb, var(--color-bg-secondary) 94%, var(--color-secondary) 6%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04), 0 24px 48px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            padding: 1.5rem;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .demo-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04), 0 28px 56px rgba(108, 99, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* ── Card Header ── */
+        .card-header-row {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 0.65rem;
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            font-family: "Bricolage Grotesque", sans-serif;
+        }
+
+        .card-title-sub {
+            margin: 0;
+            font-size: 0.72rem;
+            color: var(--color-text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* ── Textarea ── */
+        .input-textarea {
+            width: 100%;
+            min-height: 200px;
+            border-radius: 0.85rem;
+            border: 1px solid var(--color-border);
+            background: color-mix(in srgb, var(--color-bg-primary) 95%, var(--color-secondary) 5%);
+            color: var(--color-text-primary);
+            padding: 1rem 1.1rem;
+            font-size: 0.95rem;
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            line-height: 1.6;
+            resize: vertical;
+            transition: border-color 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .input-textarea::placeholder {
+            color: var(--color-text-tertiary);
+        }
+
+        .input-textarea:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15), 0 0 20px rgba(108, 99, 255, 0.06);
+        }
+
+        /* ── Control Row ── */
+        .control-row {
+            margin-top: 0.9rem;
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .language-select {
+            flex: 1;
+            min-width: 150px;
+            border-radius: 0.75rem;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            padding: 0.68rem 0.85rem;
+            font-size: 0.9rem;
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        .language-select:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+        }
+
+        .analyze-btn {
+            flex-shrink: 0;
+            border: none;
+            border-radius: 0.75rem;
+            padding: 0.68rem 1.5rem;
+            font-weight: 700;
+            font-size: 0.92rem;
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--color-secondary), #4f46e5);
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .analyze-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(79, 70, 229, 0.4);
+            filter: brightness(1.08);
+        }
+
+        .analyze-btn:active {
+            transform: translateY(0);
+        }
+
+        .analyze-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-spinner {
+            display: none;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        .analyze-btn.loading .btn-spinner {
+            display: block;
+        }
+
+        .analyze-btn.loading .btn-label-text {
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ── Status Row ── */
+        .status-row {
+            margin-top: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            padding: 0.6rem 0.85rem;
+            border-radius: 0.75rem;
+            background: color-mix(in srgb, var(--color-bg-primary) 90%, var(--color-secondary) 10%);
+            border: 1px solid color-mix(in srgb, var(--color-border) 85%, var(--color-secondary) 15%);
+        }
+
+        .status-note {
+            margin: 0;
+            font-size: 0.82rem;
+            color: var(--color-text-tertiary);
+        }
+
+        /* ── Backend pill ── */
+        .backend-pill {
+            border-radius: 999px;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .backend-pill::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .backend-pending {
+            background: rgba(148, 163, 184, 0.18);
+            color: #64748b;
+            border-color: rgba(148, 163, 184, 0.35);
+        }
+
+        .backend-online {
+            background: rgba(34, 197, 94, 0.16);
+            color: #15803d;
+            border-color: rgba(34, 197, 94, 0.4);
+        }
+
+        .backend-offline {
+            background: rgba(239, 68, 68, 0.14);
+            color: #b91c1c;
+            border-color: rgba(239, 68, 68, 0.35);
+        }
+
+        /* ── Result card ── */
+        .result-card {
+            display: none;
+            gap: 1rem;
+        }
+
+        .result-card.active {
+            display: grid;
+            animation: riseIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes riseIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ── Output header ── */
+        .row-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .output-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .output-title {
+            display: grid;
+            gap: 0.15rem;
+        }
+
+        .output-title span {
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-text-tertiary);
+        }
+
+        .output-title h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+        }
+
+        .primary-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            padding: 0.4rem 1rem;
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .label-hate {
+            background: rgba(239, 68, 68, 0.12);
+            color: #b91c1c;
+            border-color: rgba(239, 68, 68, 0.4);
+            box-shadow: 0 0 14px rgba(239, 68, 68, 0.1);
+        }
+
+        .label-offensive {
+            background: rgba(249, 115, 22, 0.12);
+            color: #c2410c;
+            border-color: rgba(249, 115, 22, 0.4);
+            box-shadow: 0 0 14px rgba(249, 115, 22, 0.1);
+        }
+
+        .label-health_issue {
+            background: rgba(59, 130, 246, 0.12);
+            color: #1d4ed8;
+            border-color: rgba(59, 130, 246, 0.42);
+            box-shadow: 0 0 14px rgba(59, 130, 246, 0.1);
+        }
+
+        .label-non_hate {
+            background: rgba(34, 197, 94, 0.12);
+            color: #15803d;
+            border-color: rgba(34, 197, 94, 0.4);
+            box-shadow: 0 0 14px rgba(34, 197, 94, 0.1);
+        }
+
+        /* ── Actions ── */
+        .row-actions {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .copy-btn,
+        .download-btn {
+            border-radius: 0.6rem;
+            padding: 0.38rem 0.8rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            cursor: pointer;
+            transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .copy-btn {
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-primary);
+            color: var(--color-text-secondary);
+        }
+
+        .copy-btn:hover {
+            border-color: var(--color-secondary);
+            transform: translateY(-1px);
+        }
+
+        .download-btn {
+            border: 1px solid color-mix(in srgb, var(--color-border) 60%, var(--color-accent) 40%);
+            background: linear-gradient(135deg, rgba(0, 194, 168, 0.12), rgba(79, 70, 229, 0.08));
+            color: var(--color-text-primary);
+        }
+
+        .download-btn:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-1px);
+        }
+
+        /* ── Confidence ── */
+        .confidence-band {
+            font-size: 0.7rem;
+            color: var(--color-text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .metric-wrap {
+            min-width: 200px;
+            display: grid;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            color: var(--color-text-secondary);
+        }
+
+        .confidence-track {
+            width: 100%;
+            height: 10px;
+            border-radius: 999px;
+            background: var(--color-bg-tertiary);
+            overflow: hidden;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+            transition: width 0.55s cubic-bezier(0.34, 1.2, 0.64, 1);
+            box-shadow: 0 0 8px rgba(108, 99, 255, 0.4);
+        }
+
+        /* ── Severity ── */
+        .severity-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            border-radius: 999px;
+            padding: 0.34rem 0.82rem;
+            font-size: 0.73rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .sev-none {
+            background: rgba(34, 197, 94, 0.12);
+            color: #15803d;
+        }
+
+        .sev-mild {
+            background: rgba(250, 204, 21, 0.2);
+            color: #a16207;
+        }
+
+        .sev-moderate {
+            background: rgba(249, 115, 22, 0.18);
+            color: #c2410c;
+        }
+
+        .sev-severe {
+            background: rgba(239, 68, 68, 0.15);
+            color: #b91c1c;
+        }
+
+        /* ── Context pills ── */
+        .context-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .ctx-pill {
+            border-radius: 999px;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-primary);
+            padding: 0.34rem 0.82rem;
+            font-size: 0.76rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* ── Metadata Grid ── */
         .metadata-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.65rem;
+        }
+
+        .meta-card {
+            border: 1px solid var(--color-border);
+            background: color-mix(in srgb, var(--color-bg-primary) 92%, var(--color-secondary) 8%);
+            border-radius: 0.8rem;
+            padding: 0.75rem 0.8rem;
+            display: grid;
+            gap: 0.28rem;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .meta-card:hover {
+            border-color: color-mix(in srgb, var(--color-border) 50%, var(--color-secondary) 50%);
+            transform: translateY(-1px);
+        }
+
+        .meta-label {
+            margin: 0;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: var(--color-text-tertiary);
+        }
+
+        .meta-value {
+            margin: 0;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+        }
+
+        /* ── Section divider label ── */
+        .section-eyebrow {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-tertiary);
+            margin: 0 0 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-eyebrow::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--color-border);
+        }
+
+        /* ── History panel ── */
+        .history-panel {
+            border: 1px solid var(--color-border);
+            border-radius: 0.9rem;
+            background: color-mix(in srgb, var(--color-bg-primary) 94%, var(--color-secondary) 6%);
+            padding: 0.85rem 1rem;
+            display: grid;
+            gap: 0.65rem;
+        }
+
+        .history-title {
+            margin: 0;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--color-text-tertiary);
+        }
+
+        .history-list {
+            display: grid;
+            gap: 0.55rem;
+        }
+
+        .history-item {
+            display: grid;
+            gap: 0.3rem;
+        }
+
+        .history-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            font-size: 0.76rem;
+            color: var(--color-text-secondary);
+        }
+
+        .history-bar {
+            width: 100%;
+            height: 7px;
+            border-radius: 999px;
+            background: var(--color-bg-tertiary);
+            overflow: hidden;
+        }
+
+        .history-fill {
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(0, 194, 168, 0.85), rgba(79, 70, 229, 0.8));
+            width: 0%;
+            transition: width 0.45s ease;
+        }
+
+        /* ── Analysis drawer ── */
+        .analysis-panel {
+            border: 1px solid var(--color-border);
+            background: color-mix(in srgb, var(--color-bg-primary) 96%, var(--color-secondary) 4%);
+            border-radius: 0.9rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .analysis-panel:has(.analysis-body.active) {
+            border-color: color-mix(in srgb, var(--color-border) 55%, var(--color-secondary) 45%);
+        }
+
+        .analysis-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.65rem;
+            border: none;
+            border-radius: 0;
+            padding: 0.78rem 1rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            background: transparent;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+            text-align: left;
+        }
+
+        .analysis-toggle:hover {
+            background: color-mix(in srgb, var(--color-bg-secondary) 80%, var(--color-secondary) 20%);
+            color: var(--color-text-primary);
+        }
+
+        .analysis-toggle-chevron {
+            transition: transform 0.25s ease;
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+
+        .analysis-body.active~* .analysis-toggle-chevron,
+        .analysis-toggle[aria-expanded="true"] .analysis-toggle-chevron {
+            transform: rotate(180deg);
+        }
+
+        .analysis-body {
+            display: none;
+            padding: 0 1rem 1rem;
+            gap: 0.75rem;
+            animation: fadeSlide 0.22s ease;
+        }
+
+        .analysis-body.active {
+            display: grid;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .analysis-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    @media (max-width: 560px) {
-        .metadata-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.65rem;
         }
 
-        .demo-container {
-            padding: 1.25rem 0.9rem 2.4rem;
+        .analysis-block {
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            padding: 0.75rem;
+            background: var(--color-bg-secondary);
+            transition: border-color 0.2s ease;
         }
-    }
+
+        .analysis-block:hover {
+            border-color: color-mix(in srgb, var(--color-border) 55%, var(--color-secondary) 45%);
+        }
+
+        .analysis-block h4 {
+            margin: 0 0 0.5rem;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-tertiary);
+            font-family: "Space Grotesk", system-ui, sans-serif;
+        }
+
+        .analysis-block pre {
+            margin: 0;
+            font-size: 0.76rem;
+            color: var(--color-text-secondary);
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 1.5;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metadata-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .metadata-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-container {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .demo-hero {
+                text-align: left;
+            }
+
+            .demo-kicker {
+                margin: 0;
+            }
+        }
     </style>
 </head>
+
 <body>
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
@@ -531,14 +844,32 @@
             </ul>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
                 </button>
                 <a href="demo.html" class="btn btn-primary">Try Demo</a>
-                <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://github.com" class="btn btn-primary" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
             </div>
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+                <span class="hamburger-line"></span><span class="hamburger-line"></span><span
+                    class="hamburger-line"></span>
             </button>
         </div>
     </nav>
@@ -548,14 +879,29 @@
             <section class="demo-hero">
                 <span class="demo-kicker">Interactive Project Demo</span>
                 <h1>Analyze text with schema-aware explainability</h1>
-                <p>Use the multilingual input below to see confidence, severity, metadata, and full analysis in one flow.</p>
+                <p>Paste multilingual text below and see confidence scores, severity ratings, metadata, and full NLP
+                    analysis — all in one flow.</p>
             </section>
 
             <section class="demo-grid">
                 <article class="demo-card">
-                    <h2 class="card-title">Input Area</h2>
+                    <div class="card-header-row">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="card-title-sub">Input</p>
+                            <h2 class="card-title">Text Analysis Console</h2>
+                        </div>
+                    </div>
                     <label class="sr-only" for="demo-text">Input text</label>
-                    <textarea id="demo-text" class="input-textarea" placeholder="Paste sentence(s) in English, Hindi, Bhojpuri, Marathi, or Marwari."></textarea>
+                    <textarea id="demo-text" class="input-textarea"
+                        placeholder="Paste sentence(s) in English, Hindi, Bhojpuri, Marathi, or Marwari."></textarea>
                     <div class="control-row">
                         <select id="lang-select" class="language-select" aria-label="Language selector">
                             <option value="auto">Auto-detect</option>
@@ -568,13 +914,26 @@
                         <button id="analyze-btn" class="analyze-btn" type="button">Analyze</button>
                     </div>
                     <div class="status-row">
-                        <p class="status-note" id="status-note">Run analysis to reveal label, confidence, metadata, and full analysis.</p>
+                        <p class="status-note" id="status-note">Run analysis to reveal label, confidence, metadata, and
+                            full analysis.</p>
                         <span id="backend-pill" class="backend-pill backend-pending">Backend: checking</span>
                     </div>
                 </article>
 
                 <article class="demo-card">
-                    <h2 class="card-title">Output</h2>
+                    <div class="card-header-row">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #00C2A8, #4f46e5);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="card-title-sub">Output</p>
+                            <h2 class="card-title">Inference Result</h2>
+                        </div>
+                    </div>
                     <div id="result-card" class="result-card" aria-live="polite">
                         <div class="output-header">
                             <div class="output-title">
@@ -594,12 +953,15 @@
                             </div>
                             <div class="metric-wrap">
                                 <span>Confidence: <strong id="confidence-value">0.00</strong></span>
-                                <div class="confidence-track"><div id="confidence-fill" class="confidence-fill"></div></div>
+                                <div class="confidence-track">
+                                    <div id="confidence-fill" class="confidence-fill"></div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="row-flex">
-                            <div>Severity: <span id="severity-pill" class="severity-pill sev-moderate">moderate</span></div>
+                            <div>Severity: <span id="severity-pill" class="severity-pill sev-moderate">moderate</span>
+                            </div>
                             <div class="context-tags">
                                 <span class="ctx-pill" id="platform-pill">platform: social_media</span>
                                 <span class="ctx-pill" id="region-pill">region: urban_india</span>
@@ -607,18 +969,49 @@
                         </div>
 
                         <div class="metadata-grid">
-                            <div class="meta-card"><p class="meta-label">target_group</p><p class="meta-value" id="meta-target-group">religion</p></div>
-                            <div class="meta-card"><p class="meta-label">target_type</p><p class="meta-value" id="meta-target-type">community</p></div>
-                            <div class="meta-card"><p class="meta-label">tone</p><p class="meta-value" id="meta-tone">aggressive</p></div>
-                            <div class="meta-card"><p class="meta-label">emotion</p><p class="meta-value" id="meta-emotion">anger</p></div>
-                            <div class="meta-card"><p class="meta-label">directness</p><p class="meta-value" id="meta-directness">direct</p></div>
-                            <div class="meta-card"><p class="meta-label">profanity_count</p><p class="meta-value" id="meta-profanity">0</p></div>
-                            <div class="meta-card"><p class="meta-label">is_sarcasm</p><p class="meta-value" id="meta-sarcasm">no</p></div>
-                            <div class="meta-card"><p class="meta-label">is_implicit</p><p class="meta-value" id="meta-implicit">no</p></div>
+                            <div class="meta-card">
+                                <p class="meta-label">target_group</p>
+                                <p class="meta-value" id="meta-target-group">religion</p>
+                            </div>
+                            <div class="meta-card">
+                                <p class="meta-label">target_type</p>
+                                <p class="meta-value" id="meta-target-type">community</p>
+                            </div>
+                            <div class="meta-card">
+                                <p class="meta-label">tone</p>
+                                <p class="meta-value" id="meta-tone">aggressive</p>
+                            </div>
+                            <div class="meta-card">
+                                <p class="meta-label">emotion</p>
+                                <p class="meta-value" id="meta-emotion">anger</p>
+                            </div>
+                            <div class="meta-card">
+                                <p class="meta-label">directness</p>
+                                <p class="meta-value" id="meta-directness">direct</p>
+                            </div>
+                            <div class="meta-card">
+                                <p class="meta-label">profanity_count</p>
+                                <p class="meta-value" id="meta-profanity">0</p>
+                            </div>
+                            <div class="meta-card">
+                                <p class="meta-label">is_sarcasm</p>
+                                <p class="meta-value" id="meta-sarcasm">no</p>
+                            </div>
+                            <div class="meta-card">
+                                <p class="meta-label">is_implicit</p>
+                                <p class="meta-value" id="meta-implicit">no</p>
+                            </div>
                         </div>
 
                         <div class="analysis-panel">
-                            <button id="analysis-toggle" class="analysis-toggle" type="button">Show Full Analysis</button>
+                            <button id="analysis-toggle" class="analysis-toggle" type="button" aria-expanded="false">
+                                <span>Show Full NLP Analysis</span>
+                                <svg class="analysis-toggle-chevron" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
                             <div id="analysis-body" class="analysis-body">
                                 <div class="analysis-grid">
                                     <div class="analysis-block">
@@ -665,7 +1058,8 @@
                 <div class="footer-column footer-branding">
                     <h3 class="footer-logo">Justify.AI</h3>
                     <p class="footer-tagline">Explainable NLP for Hate Speech Analysis</p>
-                    <p class="footer-description">Advanced multilingual hate speech detection with transparent, explainable AI insights across lexical, causal, and bias dimensions.</p>
+                    <p class="footer-description">Advanced multilingual hate speech detection with transparent,
+                        explainable AI insights across lexical, causal, and bias dimensions.</p>
                 </div>
                 <div class="footer-column">
                     <h4 class="footer-column-title">Platform</h4>
@@ -680,7 +1074,8 @@
                     <h4 class="footer-column-title">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="about.html" class="footer-link">About</a></li>
-                        <li><a href="https://github.com" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://github.com" class="footer-link" target="_blank"
+                                rel="noopener noreferrer">GitHub</a></li>
                         <li><a href="docs.html#api" class="footer-link">API Reference</a></li>
                         <li><a href="research.html#datasets" class="footer-link">Datasets</a></li>
                     </ul>
@@ -688,8 +1083,10 @@
                 <div class="footer-column">
                     <h4 class="footer-column-title">Contact</h4>
                     <ul class="footer-links">
-                        <li><span class="footer-contact-label">Email:</span> <a href="mailto:contact@justify-ai.com" class="footer-link">contact@justify-ai.com</a></li>
-                        <li><span class="footer-contact-label">Institution:</span> <span class="footer-contact-text">Research University</span></li>
+                        <li><span class="footer-contact-label">Email:</span> <a href="mailto:contact@justify-ai.com"
+                                class="footer-link">contact@justify-ai.com</a></li>
+                        <li><span class="footer-contact-label">Institution:</span> <span
+                                class="footer-contact-text">Research University</span></li>
                     </ul>
                 </div>
             </div>
@@ -707,375 +1104,378 @@
     <script src="js/app.js" defer></script>
 
     <script>
-    const analyzeBtn = document.getElementById('analyze-btn');
-    const demoText = document.getElementById('demo-text');
-    const langSelect = document.getElementById('lang-select');
-    const backendPill = document.getElementById('backend-pill');
-    const copyBtn = document.getElementById('copy-json');
-    const downloadBtn = document.getElementById('download-json');
-    const analysisToggle = document.getElementById('analysis-toggle');
-    const analysisBody = document.getElementById('analysis-body');
-    const historyList = document.getElementById('history-list');
-    const outputHeadline = document.getElementById('output-headline');
-    const confidenceHistory = [];
+        const analyzeBtn = document.getElementById('analyze-btn');
+        const demoText = document.getElementById('demo-text');
+        const langSelect = document.getElementById('lang-select');
+        const backendPill = document.getElementById('backend-pill');
+        const copyBtn = document.getElementById('copy-json');
+        const downloadBtn = document.getElementById('download-json');
+        const analysisToggle = document.getElementById('analysis-toggle');
+        const analysisBody = document.getElementById('analysis-body');
+        const historyList = document.getElementById('history-list');
+        const outputHeadline = document.getElementById('output-headline');
+        const confidenceHistory = [];
 
-    function countMatches(text, patterns) {
-        let count = 0;
-        patterns.forEach((p) => {
-            const re = new RegExp(p, 'gi');
-            const match = text.match(re);
-            if (match) count += match.length;
-        });
-        return count;
-    }
-
-    function normalizeLabel(value) {
-        const raw = String(value || '').toLowerCase().trim();
-        if (raw === 'hate') return 'hate';
-        if (raw === 'offensive') return 'offensive';
-        if (raw === 'health_issue') return 'health_issue';
-        if (raw === 'non_hate' || raw === 'non-hate' || raw === 'normal' || raw === 'not_hate') return 'non_hate';
-        return 'non_hate';
-    }
-
-    function mapUiLangToApi(value) {
-        if (value === 'en') return 'english';
-        if (value === 'hi') return 'hindi';
-        if (value === 'bho') return 'bhojpuri';
-        if (value === 'mr') return 'marathi';
-        if (value === 'mwr') return 'marwari';
-        return null;
-    }
-
-    function apiEndpoint() {
-        if (window.location.protocol === 'file:') return 'http://127.0.0.1:8000/api/analyze';
-        return '/api/analyze';
-    }
-
-    function apiHealthEndpoint() {
-        if (window.location.protocol === 'file:') return 'http://127.0.0.1:8000/api/';
-        return '/api/';
-    }
-
-    function setBackendStatus(state, detail) {
-        if (!backendPill) return;
-        backendPill.classList.remove('backend-pending', 'backend-online', 'backend-offline');
-        if (state === 'online') {
-            backendPill.classList.add('backend-online');
-            backendPill.textContent = 'Backend: online';
-        } else if (state === 'offline') {
-            backendPill.classList.add('backend-offline');
-            backendPill.textContent = detail ? `Backend: ${detail}` : 'Backend: offline';
-        } else {
-            backendPill.classList.add('backend-pending');
-            backendPill.textContent = 'Backend: checking';
+        function countMatches(text, patterns) {
+            let count = 0;
+            patterns.forEach((p) => {
+                const re = new RegExp(p, 'gi');
+                const match = text.match(re);
+                if (match) count += match.length;
+            });
+            return count;
         }
-    }
 
-    async function checkBackend() {
-        setBackendStatus('pending');
-        try {
-            const response = await fetch(apiHealthEndpoint(), { cache: 'no-store' });
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        function normalizeLabel(value) {
+            const raw = String(value || '').toLowerCase().trim();
+            if (raw === 'hate') return 'hate';
+            if (raw === 'offensive') return 'offensive';
+            if (raw === 'health_issue') return 'health_issue';
+            if (raw === 'non_hate' || raw === 'non-hate' || raw === 'normal' || raw === 'not_hate') return 'non_hate';
+            return 'non_hate';
+        }
+
+        function mapUiLangToApi(value) {
+            if (value === 'en') return 'english';
+            if (value === 'hi') return 'hindi';
+            if (value === 'bho') return 'bhojpuri';
+            if (value === 'mr') return 'marathi';
+            if (value === 'mwr') return 'marwari';
+            return null;
+        }
+
+        function apiEndpoint() {
+            if (window.location.protocol === 'file:') return 'http://127.0.0.1:8000/api/analyze';
+            return '/api/analyze';
+        }
+
+        function apiHealthEndpoint() {
+            if (window.location.protocol === 'file:') return 'http://127.0.0.1:8000/api/';
+            return '/api/';
+        }
+
+        function setBackendStatus(state, detail) {
+            if (!backendPill) return;
+            backendPill.classList.remove('backend-pending', 'backend-online', 'backend-offline');
+            if (state === 'online') {
+                backendPill.classList.add('backend-online');
+                backendPill.textContent = 'Backend: online';
+            } else if (state === 'offline') {
+                backendPill.classList.add('backend-offline');
+                backendPill.textContent = detail ? `Backend: ${detail}` : 'Backend: offline';
+            } else {
+                backendPill.classList.add('backend-pending');
+                backendPill.textContent = 'Backend: checking';
+            }
+        }
+
+        async function checkBackend() {
+            setBackendStatus('pending');
+            try {
+                const response = await fetch(apiHealthEndpoint(), { cache: 'no-store' });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                if (data && data.status === 'ok') {
+                    setBackendStatus('online');
+                    return;
+                }
+                setBackendStatus('offline');
+            } catch (error) {
+                setBackendStatus('offline', 'offline');
+            }
+        }
+
+        function deriveMetadata(text, label, language, backendAnalysis) {
+            const hatePatterns = ['kill', 'die', 'remove', 'throw out', 'traitor', '\\u092e\\u093e\\u0930', '\\u0928\\u093f\\u0915\\u093e\\u0932', '\\u092d\\u0917\\u093e', '\\u0915\\u0941\\u091a\\u0932'];
+            const offensivePatterns = ['idiot', 'stupid', 'moron', 'fool', '\\u092c\\u0947\\u0935\\u0915\\u0942\\u092b', '\\u0917\\u0927\\u093e', '\\u0928\\u093f\\u0915\\u092e\\u094d\\u092e\\u093e'];
+            const strongWords = ['kill', 'die', 'destroy', '\\u092e\\u093e\\u0930', '\\u0915\\u0941\\u091a\\u0932', '\\u0916\\u0924\\u094d\\u092e'];
+            const profaneWords = ['idiot', 'stupid', 'moron', 'bastard', '\\u092c\\u0947\\u0935\\u0915\\u0942\\u092b', '\\u0939\\u0930\\u093e\\u092e\\u0940', '\\u0917\\u0927\\u093e'];
+
+            const hateHits = countMatches(text, hatePatterns);
+            const offensiveHits = countMatches(text, offensivePatterns);
+            const strongHits = countMatches(text, strongWords);
+            const profanityCount = countMatches(text, profaneWords);
+
+            let severity = 'none';
+            if (label === 'hate' || label === 'offensive') {
+                if (strongHits > 0 || hateHits > 2) severity = 'severe';
+                else if (hateHits > 0 || offensiveHits > 1) severity = 'moderate';
+                else severity = 'mild';
+            }
+
+            const groupMap = [
+                { key: 'gender', patterns: ['women', 'female', '\\u0932\\u0921\\u093c\\u0915\\u0940', '\\u0914\\u0930\\u0924'] },
+                { key: 'religion', patterns: ['muslim', 'hindu', 'religion', '\\u092e\\u091c\\u0939\\u092c', '\\u0927\\u0930\\u094d\\u092e'] },
+                { key: 'caste', patterns: ['caste', '\\u0926\\u0932\\u093f\\u0924', '\\u091c\\u093e\\u0924'] },
+                { key: 'nationality', patterns: ['immigrant', 'foreigner', '\\u0935\\u093f\\u0926\\u0947\\u0936\\u0940', '\\u092a\\u0930\\u0926\\u0947\\u0938\\u0940'] },
+                { key: 'political', patterns: ['party', 'left', 'right', '\\u0938\\u0930\\u0915\\u093e\\u0930', '\\u092a\\u093e\\u0930\\u094d\\u091f\\u0940'] }
+            ];
+
+            let targetGroup = 'none';
+            groupMap.forEach((item) => {
+                if (targetGroup === 'none' && countMatches(text, item.patterns) > 0) targetGroup = item.key;
+            });
+
+            const entityCount = Array.isArray(backendAnalysis?.named_entities) ? backendAnalysis.named_entities.length : 0;
+            if (label !== 'non_hate' && targetGroup === 'none' && entityCount > 0) targetGroup = 'individual';
+            if (label !== 'non_hate' && targetGroup === 'none') {
+                const hasYouRef = countMatches(text, ['you', 'tu', 'tum', '\\u0924\\u0942', '\\u0924\\u0941\\u092e']) > 0;
+                targetGroup = hasYouRef ? 'individual' : 'community';
+            }
+
+            const targetType = targetGroup === 'individual' ? 'individual' : targetGroup === 'none' ? 'none' : 'community';
+            const sarcasm = countMatches(text, ['yeah right', 'so great', '\\u0935\\u093e\\u0939 \\u0915\\u094d\\u092f\\u093e', '\\u0939\\u093e\\u0902 \\u0939\\u093e\\u0902']) > 0;
+            const implicit = countMatches(text, ['those people', 'you know them', '\\u0935\\u094b \\u0932\\u094b\\u0917', '\\u090f\\u0948\\u0938\\u0947 \\u0932\\u094b\\u0917']) > 0;
+            const directness = label === 'non_hate' ? 'none' : implicit ? 'indirect' : 'direct';
+
+            let tone = 'neutral';
+            if (label === 'hate') tone = sarcasm ? 'sarcastic' : 'aggressive';
+            else if (label === 'offensive') tone = 'dismissive';
+
+            let emotion = 'none';
+            if (label === 'hate') emotion = 'anger';
+            else if (label === 'offensive') emotion = 'disgust';
+            else if (label === 'health_issue') emotion = 'fear';
+
+            const platform = countMatches(text, ['tweet', 'post', '@', '#']) > 0 ? 'social_media' : 'general';
+            const region = language === 'bhojpuri' ? 'rural_india' : language === 'hindi' ? 'india' : 'global';
+            const confidenceBase = label === 'hate' ? 0.84 : label === 'offensive' ? 0.80 : label === 'health_issue' ? 0.86 : 0.90;
+            const tokenBoost = Math.min(0.09, ((backendAnalysis?.tokens || []).length || 0) * 0.003);
+            const patternBoost = Math.min(0.07, (hateHits + offensiveHits) * 0.02);
+            const confidence = Math.min(0.99, confidenceBase + tokenBoost + patternBoost);
+
+            return {
+                severity,
+                targetGroup,
+                targetType,
+                tone,
+                emotion,
+                directness,
+                profanityCount,
+                sarcasm,
+                implicit,
+                platform,
+                region,
+                confidence
+            };
+        }
+
+        const primaryLabel = document.getElementById('primary-label');
+        const confidenceValue = document.getElementById('confidence-value');
+        const confidenceBand = document.getElementById('confidence-band');
+        const confidenceFill = document.getElementById('confidence-fill');
+        const severityPill = document.getElementById('severity-pill');
+        const resultCard = document.getElementById('result-card');
+        const statusNote = document.getElementById('status-note');
+
+        const ids = {
+            targetGroup: document.getElementById('meta-target-group'),
+            targetType: document.getElementById('meta-target-type'),
+            tone: document.getElementById('meta-tone'),
+            emotion: document.getElementById('meta-emotion'),
+            directness: document.getElementById('meta-directness'),
+            profanity: document.getElementById('meta-profanity'),
+            sarcasm: document.getElementById('meta-sarcasm'),
+            implicit: document.getElementById('meta-implicit'),
+            platform: document.getElementById('platform-pill'),
+            region: document.getElementById('region-pill'),
+            analysisTokens: document.getElementById('analysis-tokens'),
+            analysisStemmed: document.getElementById('analysis-stemmed'),
+            analysisLemmatized: document.getElementById('analysis-lemmatized'),
+            analysisPos: document.getElementById('analysis-pos'),
+            analysisNer: document.getElementById('analysis-ner'),
+            analysisRaw: document.getElementById('analysis-raw')
+        };
+
+        function renderHistory() {
+            if (!historyList) return;
+            historyList.innerHTML = '';
+            confidenceHistory.forEach((entry) => {
+                const item = document.createElement('div');
+                item.className = 'history-item';
+
+                const meta = document.createElement('div');
+                meta.className = 'history-meta';
+                meta.textContent = `${entry.time} · ${entry.label.toUpperCase()} · ${entry.band}`;
+
+                const bar = document.createElement('div');
+                bar.className = 'history-bar';
+                const fill = document.createElement('div');
+                fill.className = 'history-fill';
+                fill.style.width = `${Math.round(entry.confidence * 100)}%`;
+                bar.appendChild(fill);
+
+                item.appendChild(meta);
+                item.appendChild(bar);
+                historyList.appendChild(item);
+            });
+        }
+
+        function applyResult(res) {
+            if (outputHeadline) {
+                outputHeadline.textContent = `${res.label.toUpperCase()} · ${res.language.toUpperCase()}`;
+            }
+            primaryLabel.textContent = res.label;
+            primaryLabel.className = `primary-label label-${res.label}`;
+
+            let confidenceValueUsed = res.confidenceCalibrated ?? res.confidence;
+            if (!Number.isFinite(confidenceValueUsed)) {
+                confidenceValueUsed = 0;
+                confidenceValue.textContent = '--';
+            } else {
+                confidenceValue.textContent = confidenceValueUsed.toFixed(2);
+            }
+            const confidencePct = Math.round(confidenceValueUsed * 100);
+            confidenceFill.style.width = `${confidencePct}%`;
+            confidenceBand.textContent = res.confidenceBand ? `band: ${res.confidenceBand}` : 'band: unknown';
+
+            severityPill.textContent = res.severity;
+            severityPill.className = `severity-pill sev-${res.severity}`;
+
+            ids.targetGroup.textContent = res.targetGroup;
+            ids.targetType.textContent = res.targetType;
+            ids.tone.textContent = res.tone;
+            ids.emotion.textContent = res.emotion;
+            ids.directness.textContent = res.directness;
+            ids.profanity.textContent = res.profanityCount > 0 ? `${res.profanityCount} warning` : '0';
+            ids.sarcasm.textContent = res.sarcasm ? 'yes' : 'no';
+            ids.implicit.textContent = res.implicit ? 'yes' : 'no';
+            ids.platform.textContent = `platform: ${res.platform}`;
+            ids.region.textContent = `region: ${res.region}`;
+
+            resultCard.classList.add('active');
+            statusNote.textContent = `Analysis complete via backend (${res.language}).`;
+
+            if (ids.analysisTokens) ids.analysisTokens.textContent = JSON.stringify(res.analysis?.tokens || [], null, 2);
+            if (ids.analysisStemmed) ids.analysisStemmed.textContent = JSON.stringify(res.analysis?.stemmed || [], null, 2);
+            if (ids.analysisLemmatized) ids.analysisLemmatized.textContent = JSON.stringify(res.analysis?.lemmatized || [], null, 2);
+            if (ids.analysisPos) ids.analysisPos.textContent = JSON.stringify(res.analysis?.pos_tags || [], null, 2);
+            if (ids.analysisNer) ids.analysisNer.textContent = JSON.stringify(res.analysis?.named_entities || [], null, 2);
+            if (ids.analysisRaw) ids.analysisRaw.textContent = JSON.stringify(res.rawResponse || {}, null, 2);
+
+            const stamp = new Date();
+            const entry = {
+                label: res.label,
+                band: res.confidenceBand || 'unknown',
+                confidence: confidenceValueUsed,
+                time: stamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            };
+            confidenceHistory.unshift(entry);
+            if (confidenceHistory.length > 6) confidenceHistory.pop();
+            renderHistory();
+        }
+
+        async function analyzeWithBackend(text, langUi) {
+            const payload = { text };
+            const mappedLang = mapUiLangToApi(langUi);
+            if (mappedLang) payload.language = mappedLang;
+
+            const response = await fetch(apiEndpoint(), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                let detail = `HTTP ${response.status}`;
+                try {
+                    const data = await response.json();
+                    detail = data.detail || detail;
+                } catch (error) {
+                    void error;
+                }
+                throw new Error(detail);
+            }
+
             const data = await response.json();
-            if (data && data.status === 'ok') {
-                setBackendStatus('online');
+            const label = normalizeLabel(data.hate_speech_label);
+            const language = String(data.language || mappedLang || 'english').toLowerCase();
+            const derived = deriveMetadata(text, label, language, data.analysis || {});
+            const backendMeta = data.metadata || {};
+            const confidence = typeof data.confidence === 'number' ? data.confidence : derived.confidence;
+            const confidenceCalibrated = typeof data.confidence_calibrated === 'number' ? data.confidence_calibrated : null;
+            const confidenceBandValue = data.confidence_band || 'unknown';
+            const merged = { ...derived, ...backendMeta };
+            return {
+                label,
+                language,
+                confidence,
+                confidenceCalibrated,
+                confidenceBand: confidenceBandValue,
+                confidenceProfile: data.confidence_profile || null,
+                analysis: data.analysis || {},
+                rawResponse: data,
+                ...merged
+            };
+        }
+
+        analyzeBtn.addEventListener('click', async () => {
+            const text = demoText.value.trim();
+            if (!text) {
+                statusNote.textContent = 'Please enter some text before running analysis.';
                 return;
             }
-            setBackendStatus('offline');
-        } catch (error) {
-            setBackendStatus('offline', 'offline');
-        }
-    }
 
-    function deriveMetadata(text, label, language, backendAnalysis) {
-        const hatePatterns = ['kill', 'die', 'remove', 'throw out', 'traitor', '\\u092e\\u093e\\u0930', '\\u0928\\u093f\\u0915\\u093e\\u0932', '\\u092d\\u0917\\u093e', '\\u0915\\u0941\\u091a\\u0932'];
-        const offensivePatterns = ['idiot', 'stupid', 'moron', 'fool', '\\u092c\\u0947\\u0935\\u0915\\u0942\\u092b', '\\u0917\\u0927\\u093e', '\\u0928\\u093f\\u0915\\u092e\\u094d\\u092e\\u093e'];
-        const strongWords = ['kill', 'die', 'destroy', '\\u092e\\u093e\\u0930', '\\u0915\\u0941\\u091a\\u0932', '\\u0916\\u0924\\u094d\\u092e'];
-        const profaneWords = ['idiot', 'stupid', 'moron', 'bastard', '\\u092c\\u0947\\u0935\\u0915\\u0942\\u092b', '\\u0939\\u0930\\u093e\\u092e\\u0940', '\\u0917\\u0927\\u093e'];
+            analyzeBtn.disabled = true;
+            analyzeBtn.textContent = 'Analyzing...';
+            statusNote.textContent = 'Connecting to backend model...';
 
-        const hateHits = countMatches(text, hatePatterns);
-        const offensiveHits = countMatches(text, offensivePatterns);
-        const strongHits = countMatches(text, strongWords);
-        const profanityCount = countMatches(text, profaneWords);
-
-        let severity = 'none';
-        if (label === 'hate' || label === 'offensive') {
-            if (strongHits > 0 || hateHits > 2) severity = 'severe';
-            else if (hateHits > 0 || offensiveHits > 1) severity = 'moderate';
-            else severity = 'mild';
-        }
-
-        const groupMap = [
-            { key: 'gender', patterns: ['women', 'female', '\\u0932\\u0921\\u093c\\u0915\\u0940', '\\u0914\\u0930\\u0924'] },
-            { key: 'religion', patterns: ['muslim', 'hindu', 'religion', '\\u092e\\u091c\\u0939\\u092c', '\\u0927\\u0930\\u094d\\u092e'] },
-            { key: 'caste', patterns: ['caste', '\\u0926\\u0932\\u093f\\u0924', '\\u091c\\u093e\\u0924'] },
-            { key: 'nationality', patterns: ['immigrant', 'foreigner', '\\u0935\\u093f\\u0926\\u0947\\u0936\\u0940', '\\u092a\\u0930\\u0926\\u0947\\u0938\\u0940'] },
-            { key: 'political', patterns: ['party', 'left', 'right', '\\u0938\\u0930\\u0915\\u093e\\u0930', '\\u092a\\u093e\\u0930\\u094d\\u091f\\u0940'] }
-        ];
-
-        let targetGroup = 'none';
-        groupMap.forEach((item) => {
-            if (targetGroup === 'none' && countMatches(text, item.patterns) > 0) targetGroup = item.key;
+            try {
+                const result = await analyzeWithBackend(text, langSelect.value);
+                applyResult(result);
+                setBackendStatus('online');
+            } catch (error) {
+                resultCard.classList.remove('active');
+                statusNote.textContent = `Backend analysis failed: ${error.message}`;
+                setBackendStatus('offline', 'offline');
+            } finally {
+                analyzeBtn.disabled = false;
+                analyzeBtn.textContent = 'Analyze';
+            }
         });
 
-        const entityCount = Array.isArray(backendAnalysis?.named_entities) ? backendAnalysis.named_entities.length : 0;
-        if (label !== 'non_hate' && targetGroup === 'none' && entityCount > 0) targetGroup = 'individual';
-        if (label !== 'non_hate' && targetGroup === 'none') {
-            const hasYouRef = countMatches(text, ['you', 'tu', 'tum', '\\u0924\\u0942', '\\u0924\\u0941\\u092e']) > 0;
-            targetGroup = hasYouRef ? 'individual' : 'community';
+        if (analysisToggle && analysisBody) {
+            analysisToggle.addEventListener('click', () => {
+                const isOpen = analysisBody.classList.toggle('active');
+                analysisToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                const textSpan = analysisToggle.querySelector('span');
+                if (textSpan) textSpan.textContent = isOpen ? 'Hide Full NLP Analysis' : 'Show Full NLP Analysis';
+            });
         }
 
-        const targetType = targetGroup === 'individual' ? 'individual' : targetGroup === 'none' ? 'none' : 'community';
-        const sarcasm = countMatches(text, ['yeah right', 'so great', '\\u0935\\u093e\\u0939 \\u0915\\u094d\\u092f\\u093e', '\\u0939\\u093e\\u0902 \\u0939\\u093e\\u0902']) > 0;
-        const implicit = countMatches(text, ['those people', 'you know them', '\\u0935\\u094b \\u0932\\u094b\\u0917', '\\u090f\\u0948\\u0938\\u0947 \\u0932\\u094b\\u0917']) > 0;
-        const directness = label === 'non_hate' ? 'none' : implicit ? 'indirect' : 'direct';
-
-        let tone = 'neutral';
-        if (label === 'hate') tone = sarcasm ? 'sarcastic' : 'aggressive';
-        else if (label === 'offensive') tone = 'dismissive';
-
-        let emotion = 'none';
-        if (label === 'hate') emotion = 'anger';
-        else if (label === 'offensive') emotion = 'disgust';
-        else if (label === 'health_issue') emotion = 'fear';
-
-        const platform = countMatches(text, ['tweet', 'post', '@', '#']) > 0 ? 'social_media' : 'general';
-        const region = language === 'bhojpuri' ? 'rural_india' : language === 'hindi' ? 'india' : 'global';
-        const confidenceBase = label === 'hate' ? 0.84 : label === 'offensive' ? 0.80 : label === 'health_issue' ? 0.86 : 0.90;
-        const tokenBoost = Math.min(0.09, ((backendAnalysis?.tokens || []).length || 0) * 0.003);
-        const patternBoost = Math.min(0.07, (hateHits + offensiveHits) * 0.02);
-        const confidence = Math.min(0.99, confidenceBase + tokenBoost + patternBoost);
-
-        return {
-            severity,
-            targetGroup,
-            targetType,
-            tone,
-            emotion,
-            directness,
-            profanityCount,
-            sarcasm,
-            implicit,
-            platform,
-            region,
-            confidence
-        };
-    }
-
-    const primaryLabel = document.getElementById('primary-label');
-    const confidenceValue = document.getElementById('confidence-value');
-    const confidenceBand = document.getElementById('confidence-band');
-    const confidenceFill = document.getElementById('confidence-fill');
-    const severityPill = document.getElementById('severity-pill');
-    const resultCard = document.getElementById('result-card');
-    const statusNote = document.getElementById('status-note');
-
-    const ids = {
-        targetGroup: document.getElementById('meta-target-group'),
-        targetType: document.getElementById('meta-target-type'),
-        tone: document.getElementById('meta-tone'),
-        emotion: document.getElementById('meta-emotion'),
-        directness: document.getElementById('meta-directness'),
-        profanity: document.getElementById('meta-profanity'),
-        sarcasm: document.getElementById('meta-sarcasm'),
-        implicit: document.getElementById('meta-implicit'),
-        platform: document.getElementById('platform-pill'),
-        region: document.getElementById('region-pill'),
-        analysisTokens: document.getElementById('analysis-tokens'),
-        analysisStemmed: document.getElementById('analysis-stemmed'),
-        analysisLemmatized: document.getElementById('analysis-lemmatized'),
-        analysisPos: document.getElementById('analysis-pos'),
-        analysisNer: document.getElementById('analysis-ner'),
-        analysisRaw: document.getElementById('analysis-raw')
-    };
-
-    function renderHistory() {
-        if (!historyList) return;
-        historyList.innerHTML = '';
-        confidenceHistory.forEach((entry) => {
-            const item = document.createElement('div');
-            item.className = 'history-item';
-
-            const meta = document.createElement('div');
-            meta.className = 'history-meta';
-            meta.textContent = `${entry.time} · ${entry.label.toUpperCase()} · ${entry.band}`;
-
-            const bar = document.createElement('div');
-            bar.className = 'history-bar';
-            const fill = document.createElement('div');
-            fill.className = 'history-fill';
-            fill.style.width = `${Math.round(entry.confidence * 100)}%`;
-            bar.appendChild(fill);
-
-            item.appendChild(meta);
-            item.appendChild(bar);
-            historyList.appendChild(item);
-        });
-    }
-
-    function applyResult(res) {
-        if (outputHeadline) {
-            outputHeadline.textContent = `${res.label.toUpperCase()} · ${res.language.toUpperCase()}`;
+        if (copyBtn) {
+            copyBtn.addEventListener('click', async () => {
+                const raw = ids.analysisRaw?.textContent || '';
+                try {
+                    await navigator.clipboard.writeText(raw);
+                    copyBtn.textContent = 'Copied';
+                    setTimeout(() => { copyBtn.textContent = 'Copy JSON'; }, 1200);
+                } catch (error) {
+                    copyBtn.textContent = 'Copy failed';
+                    setTimeout(() => { copyBtn.textContent = 'Copy JSON'; }, 1400);
+                }
+            });
         }
-        primaryLabel.textContent = res.label;
-        primaryLabel.className = `primary-label label-${res.label}`;
 
-        let confidenceValueUsed = res.confidenceCalibrated ?? res.confidence;
-        if (!Number.isFinite(confidenceValueUsed)) {
-            confidenceValueUsed = 0;
-            confidenceValue.textContent = '--';
-        } else {
-            confidenceValue.textContent = confidenceValueUsed.toFixed(2);
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', () => {
+                const raw = ids.analysisRaw?.textContent || '{}';
+                const blob = new Blob([raw], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                const ts = new Date().toISOString().replace(/[:.]/g, '-');
+                a.href = url;
+                a.download = `justify-ai-analysis-${ts}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
         }
-        const confidencePct = Math.round(confidenceValueUsed * 100);
-        confidenceFill.style.width = `${confidencePct}%`;
-        confidenceBand.textContent = res.confidenceBand ? `band: ${res.confidenceBand}` : 'band: unknown';
 
-        severityPill.textContent = res.severity;
-        severityPill.className = `severity-pill sev-${res.severity}`;
-
-        ids.targetGroup.textContent = res.targetGroup;
-        ids.targetType.textContent = res.targetType;
-        ids.tone.textContent = res.tone;
-        ids.emotion.textContent = res.emotion;
-        ids.directness.textContent = res.directness;
-        ids.profanity.textContent = res.profanityCount > 0 ? `${res.profanityCount} warning` : '0';
-        ids.sarcasm.textContent = res.sarcasm ? 'yes' : 'no';
-        ids.implicit.textContent = res.implicit ? 'yes' : 'no';
-        ids.platform.textContent = `platform: ${res.platform}`;
-        ids.region.textContent = `region: ${res.region}`;
-
-        resultCard.classList.add('active');
-        statusNote.textContent = `Analysis complete via backend (${res.language}).`;
-
-        if (ids.analysisTokens) ids.analysisTokens.textContent = JSON.stringify(res.analysis?.tokens || [], null, 2);
-        if (ids.analysisStemmed) ids.analysisStemmed.textContent = JSON.stringify(res.analysis?.stemmed || [], null, 2);
-        if (ids.analysisLemmatized) ids.analysisLemmatized.textContent = JSON.stringify(res.analysis?.lemmatized || [], null, 2);
-        if (ids.analysisPos) ids.analysisPos.textContent = JSON.stringify(res.analysis?.pos_tags || [], null, 2);
-        if (ids.analysisNer) ids.analysisNer.textContent = JSON.stringify(res.analysis?.named_entities || [], null, 2);
-        if (ids.analysisRaw) ids.analysisRaw.textContent = JSON.stringify(res.rawResponse || {}, null, 2);
-
-        const stamp = new Date();
-        const entry = {
-            label: res.label,
-            band: res.confidenceBand || 'unknown',
-            confidence: confidenceValueUsed,
-            time: stamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-        };
-        confidenceHistory.unshift(entry);
-        if (confidenceHistory.length > 6) confidenceHistory.pop();
         renderHistory();
-    }
-
-    async function analyzeWithBackend(text, langUi) {
-        const payload = { text };
-        const mappedLang = mapUiLangToApi(langUi);
-        if (mappedLang) payload.language = mappedLang;
-
-        const response = await fetch(apiEndpoint(), {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-
-        if (!response.ok) {
-            let detail = `HTTP ${response.status}`;
-            try {
-                const data = await response.json();
-                detail = data.detail || detail;
-            } catch (error) {
-                void error;
-            }
-            throw new Error(detail);
-        }
-
-        const data = await response.json();
-        const label = normalizeLabel(data.hate_speech_label);
-        const language = String(data.language || mappedLang || 'english').toLowerCase();
-        const derived = deriveMetadata(text, label, language, data.analysis || {});
-        const backendMeta = data.metadata || {};
-        const confidence = typeof data.confidence === 'number' ? data.confidence : derived.confidence;
-        const confidenceCalibrated = typeof data.confidence_calibrated === 'number' ? data.confidence_calibrated : null;
-        const confidenceBandValue = data.confidence_band || 'unknown';
-        const merged = { ...derived, ...backendMeta };
-        return {
-            label,
-            language,
-            confidence,
-            confidenceCalibrated,
-            confidenceBand: confidenceBandValue,
-            confidenceProfile: data.confidence_profile || null,
-            analysis: data.analysis || {},
-            rawResponse: data,
-            ...merged
-        };
-    }
-
-    analyzeBtn.addEventListener('click', async () => {
-        const text = demoText.value.trim();
-        if (!text) {
-            statusNote.textContent = 'Please enter some text before running analysis.';
-            return;
-        }
-
-        analyzeBtn.disabled = true;
-        analyzeBtn.textContent = 'Analyzing...';
-        statusNote.textContent = 'Connecting to backend model...';
-
-        try {
-            const result = await analyzeWithBackend(text, langSelect.value);
-            applyResult(result);
-            setBackendStatus('online');
-        } catch (error) {
-            resultCard.classList.remove('active');
-            statusNote.textContent = `Backend analysis failed: ${error.message}`;
-            setBackendStatus('offline', 'offline');
-        } finally {
-            analyzeBtn.disabled = false;
-            analyzeBtn.textContent = 'Analyze';
-        }
-    });
-
-    if (analysisToggle && analysisBody) {
-        analysisToggle.addEventListener('click', () => {
-            const isOpen = analysisBody.classList.toggle('active');
-            analysisToggle.textContent = isOpen ? 'Hide Full Analysis' : 'Show Full Analysis';
-        });
-    }
-
-    if (copyBtn) {
-        copyBtn.addEventListener('click', async () => {
-            const raw = ids.analysisRaw?.textContent || '';
-            try {
-                await navigator.clipboard.writeText(raw);
-                copyBtn.textContent = 'Copied';
-                setTimeout(() => { copyBtn.textContent = 'Copy JSON'; }, 1200);
-            } catch (error) {
-                copyBtn.textContent = 'Copy failed';
-                setTimeout(() => { copyBtn.textContent = 'Copy JSON'; }, 1400);
-            }
-        });
-    }
-
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', () => {
-            const raw = ids.analysisRaw?.textContent || '{}';
-            const blob = new Blob([raw], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            const ts = new Date().toISOString().replace(/[:.]/g, '-');
-            a.href = url;
-            a.download = `justify-ai-analysis-${ts}.json`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        });
-    }
-
-    renderHistory();
-    checkBackend();
+        checkBackend();
     </script>
 </body>
+
 </html>
