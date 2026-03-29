@@ -3,36 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Justify.AI - Project Background and Team">
+    <meta name="description" content="About Justify.AI - Mission, Architecture, and Impact">
     <title>About - Justify.AI</title>
-    
-    <!-- Google Fonts: Inter for premium typography -->
+
+    <!-- Expressive Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- TailwindCSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        :root {
+            --ink: #0b1220;
+            --paper: #f5f7fb;
+            --glow: rgba(78, 196, 255, 0.4);
+            --accent: #00e5a8;
+            --accent-2: #5c7bff;
+            --accent-3: #ff8ccf;
+            --grid: rgba(12, 20, 36, 0.07);
+            --panel: rgba(255, 255, 255, 0.7);
+            --panel-strong: rgba(255, 255, 255, 0.88);
+            --shadow: 0 30px 80px rgba(8, 17, 32, 0.2);
+        }
+
+        [data-theme="dark"] {
+            --ink: #e5ecff;
+            --paper: #0b0f18;
+            --glow: rgba(64, 179, 255, 0.55);
+            --accent: #36f3bd;
+            --accent-2: #7ea0ff;
+            --accent-3: #ff9bdd;
+            --grid: rgba(255, 255, 255, 0.07);
+            --panel: rgba(10, 18, 32, 0.78);
+            --panel-strong: rgba(12, 20, 34, 0.9);
+            --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        }
+
+        body {
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            background: radial-gradient(circle at 10% 0%, rgba(92, 123, 255, 0.15), transparent 45%),
+                        radial-gradient(circle at 90% 20%, rgba(0, 229, 168, 0.15), transparent 40%),
+                        var(--paper);
+            color: var(--ink);
+        }
+
+        .about-hero {
+            padding: 6.8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(90deg, transparent 0 30px, var(--grid) 30px 31px),
+                        repeating-linear-gradient(0deg, transparent 0 30px, var(--grid) 30px 31px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .about-hero .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            background: rgba(92, 123, 255, 0.12);
+            color: var(--accent-2);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .hero-title {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: clamp(2.5rem, 4vw, 4.8rem);
+            margin: 1.4rem 0 1rem;
+            line-height: 1.05;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            max-width: 740px;
+            opacity: 0.82;
+            line-height: 1.7;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2.2rem;
+        }
+
+        .stat-card {
+            background: var(--panel);
+            border-radius: 16px;
+            padding: 1.4rem;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .stat-card p {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 0.4rem;
+        }
+
+        .section {
+            padding: 4.2rem 0;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            margin-bottom: 1.1rem;
+        }
+
+        .section-subtitle {
+            max-width: 760px;
+            opacity: 0.78;
+            line-height: 1.7;
+        }
+
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .glass-panel {
+            background: var(--panel-strong);
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-panel::after {
+            content: "";
+            position: absolute;
+            inset: -40% 40% auto auto;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(92, 123, 255, 0.35), transparent 70%);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(0, 229, 168, 0.15);
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            background: var(--panel);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .timeline-step {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(92, 123, 255, 0.7), rgba(0, 229, 168, 0.7));
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .impact-card {
+            background: var(--panel-strong);
+            border-radius: 16px;
+            padding: 1.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-band {
+            margin-top: 2.5rem;
+            padding: 1.6rem;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(92, 123, 255, 0.18), rgba(0, 229, 168, 0.12));
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .data-sources {
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 18px;
+            padding: 1.5rem;
+            border: 1px dashed rgba(92, 123, 255, 0.4);
+        }
+
+        [data-theme="dark"] .data-sources {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        @media (max-width: 720px) {
+            .timeline-item { grid-template-columns: 1fr; }
+            .timeline-step { width: 52px; height: 52px; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip to main content (accessibility) -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-    <!-- Navigation Bar -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <!-- Logo -->
             <a href="index.html" class="nav-logo">
                 <span class="logo-text">Justify.AI</span>
             </a>
-
-            <!-- Navigation Links -->
             <ul class="nav-links" id="nav-links" role="menubar" aria-label="Site navigation">
                 <li><a href="index.html" class="nav-link">Platform</a></li>
                 <li><a href="demo.html" class="nav-link">Demo</a></li>
@@ -40,10 +286,7 @@
                 <li><a href="docs.html" class="nav-link">Docs</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
-
-            <!-- Action Buttons -->
             <div class="nav-actions">
-                <!-- Theme Toggle Button -->
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -60,16 +303,9 @@
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-
-                <!-- Try Demo Button -->
                 <a href="demo.html" class="btn btn-primary">Try Demo</a>
-
-                <!-- GitHub Button -->
                 <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
-
             </div>
-
-            <!-- Mobile Menu Toggle -->
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -79,159 +315,154 @@
     </nav>
 
     <main id="main-content" tabindex="-1">
-        <!-- About Hero Section -->
-        <section class="about-hero-section">
-            <div class="about-hero-container">
-                <h1 class="about-hero-title">About Justify.AI</h1>
-                <p class="about-hero-subtitle">Advancing explainable AI for multilingual hate speech detection</p>
-            </div>
-        </section>
-
-        <!-- Project Purpose Section -->
-        <section class="about-section">
-            <div class="about-container">
-                <div class="about-content" data-aos="fade-up" data-aos-duration="800">
-                    <h2 class="about-section-title">Project Purpose</h2>
-                    <p class="about-text">
-                        Justify.AI is an advanced research project focused on developing explainable AI systems 
-                        for detecting and analyzing hate speech in multilingual contexts, with a particular emphasis 
-                        on Indian regional languages. The platform combines state-of-the-art natural language processing 
-                        techniques with explainability frameworks to provide transparent, interpretable insights into 
-                        hate speech patterns.
-                    </p>
-                    <p class="about-text">
-                        Our mission is to create tools that not only identify harmful content but also explain the 
-                        reasoning behind classifications, enabling researchers, policymakers, and content moderators 
-                        to make informed decisions. By supporting multiple Indian languages including Hindi, Bhojpuri, 
-                        Marathi, and Marwari, we address the critical need for culturally-aware hate speech detection 
-                        in diverse linguistic communities.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Research Background Section -->
-        <section class="about-section about-section-alt">
-            <div class="about-container">
-                <div class="about-content" data-aos="fade-up" data-aos-duration="800">
-                    <h2 class="about-section-title">Research Background</h2>
-                    <p class="about-text">
-                        This project emerged from the growing need to address online hate speech in multilingual 
-                        environments, particularly in the Indian context where multiple languages and dialects coexist. 
-                        Traditional hate speech detection systems often lack transparency and struggle with low-resource 
-                        languages, making them inadequate for real-world deployment.
-                    </p>
-                    <p class="about-text">
-                        Justify.AI builds upon recent advances in explainable AI, causal inference, and multilingual 
-                        NLP to create a comprehensive analysis framework. The system employs three complementary 
-                        approaches:
-                    </p>
-                    <ul class="about-list">
-                        <li><strong>Lexicon-based Analysis:</strong> Automated discovery and scoring of hate speech terms with contextual understanding</li>
-                        <li><strong>Causal Narrative Extraction:</strong> Identification of cause-and-effect relationships within harmful discourse</li>
-                        <li><strong>Bias Auditing:</strong> Multi-dimensional measurement of bias across religion, gender, and ethnicity</li>
-                    </ul>
-                    <p class="about-text">
-                        Our research contributes to the broader field of responsible AI by demonstrating how 
-                        explainability can be integrated into hate speech detection systems without sacrificing 
-                        performance.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team Section -->
-        <section class="about-section">
-            <div class="about-container">
-                <h2 class="about-section-title" data-aos="fade-up" data-aos-duration="800">Authors</h2>
-                <div class="team-grid">
-                    <!-- Team Member Card 1 -->
-                    <div class="team-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                        <div class="team-avatar">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                        </div>
-                        <h3 class="team-name">Research Team</h3>
-                        <p class="team-role">Project Authors</p>
-                        <p class="team-description">
-                            Graduate researchers specializing in NLP, explainable AI, and computational linguistics
-                        </p>
+        <section class="about-hero">
+            <div class="hero-inner" data-aos="fade-up">
+                <span class="hero-tag">About Justify.AI</span>
+                <h1 class="hero-title">Explainable multilingual hate analysis for the real world.</h1>
+                <p class="hero-subtitle">Justify.AI is built for transparency-first moderation workflows. We combine classical NLP, interpretable modeling, and rigorous data validation to surface why a piece of text is classified as hate, offensive, or safe.</p>
+                <div class="hero-grid">
+                    <div class="stat-card">
+                        <h3>Languages</h3>
+                        <p>5</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Data Rows</h3>
+                        <p>75,252</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pipeline Stages</h3>
+                        <p>7</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Core Model</h3>
+                        <p>Naive Bayes</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- University Section -->
-        <section class="about-section about-section-alt">
-            <div class="about-container">
-                <div class="about-content" data-aos="fade-up" data-aos-duration="800">
-                    <h2 class="about-section-title">University</h2>
-                    <p class="about-text">
-                        This research is conducted at a leading academic institution with strong programs in 
-                        artificial intelligence, natural language processing, and computational social science. 
-                        The university provides state-of-the-art research facilities and computational resources 
-                        necessary for developing and evaluating large-scale NLP systems.
-                    </p>
-                    <p class="about-text">
-                        The institution's commitment to responsible AI research and its focus on addressing 
-                        real-world societal challenges make it an ideal environment for this project.
-                    </p>
+        <section class="section">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Mission & Principles</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We focus on explainability over opacity. Every decision must be traceable to lexical evidence, causal structure, and bias indicators.</p>
+                <div class="glass-grid" data-aos="fade-up" data-aos-delay="150">
+                    <div class="glass-panel">
+                        <span class="pill">Explainable</span>
+                        <h3>Transparent Signals</h3>
+                        <p>We expose lexicon hits, causal relations, and bias metrics with every classification.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Multilingual</span>
+                        <h3>Regional Coverage</h3>
+                        <p>English, Hindi, Marathi, Bhojpuri, and Marwari are first-class languages, not afterthoughts.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Syllabus Ready</span>
+                        <h3>CCNLP Alignment</h3>
+                        <p>Built around classical NLP concepts: tokenization, stemming, BoW, and Naive Bayes.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Supervisor Section -->
-        <section class="about-section">
-            <div class="about-container">
-                <div class="about-content" data-aos="fade-up" data-aos-duration="800">
-                    <h2 class="about-section-title">Supervisor</h2>
-                    <p class="about-text">
-                        This project is supervised by faculty members with expertise in natural language processing, 
-                        machine learning, and computational linguistics. The supervisory team provides guidance on 
-                        research methodology, technical implementation, and ethical considerations in AI development.
-                    </p>
+        <section class="section">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">How We Built It</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">A milestone-driven build that moved from schema design to live explainability dashboards.</p>
+                <div class="timeline" data-aos="fade-up" data-aos-delay="150">
+                    <div class="timeline-item">
+                        <div class="timeline-step">01</div>
+                        <div>
+                            <h3>Foundation</h3>
+                            <p>Unified schema + five-language coverage locked in the backend contract.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-step">02</div>
+                        <div>
+                            <h3>Lexicon + Causality</h3>
+                            <p>Term matching with severity, causal extraction for narratives.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-step">03</div>
+                        <div>
+                            <h3>Bias & Risk</h3>
+                            <p>Bias auditing across demographic dimensions with composite risk scoring.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-step">04</div>
+                        <div>
+                            <h3>Dashboard Wiring</h3>
+                            <p>Frontend analysis view wired to real backend outputs.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- GitHub Repository Section -->
-        <section class="about-section about-section-cta">
-            <div class="about-container">
-                <div class="about-cta-content" data-aos="fade-up" data-aos-duration="800">
-                    <h2 class="about-cta-title">Open Source</h2>
-                    <p class="about-cta-text">
-                        Justify.AI is an open-source project. Explore the code, contribute to development, 
-                        or use it in your own research.
-                    </p>
-                    <a href="https://github.com" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem;">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        View on GitHub
-                    </a>
+        <section class="section">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">What We Deliver</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">The platform is designed for moderation teams, researchers, and students who need a full audit trail for NLP decisions.</p>
+                <div class="impact-grid" data-aos="fade-up" data-aos-delay="150">
+                    <div class="impact-card">
+                        <h3>Audit-Ready Output</h3>
+                        <p>Confidence, severity, bias metrics, and causal evidence per request.</p>
+                    </div>
+                    <div class="impact-card">
+                        <h3>Operational Clarity</h3>
+                        <p>Validation rules, model artifacts, and frozen datasets for reproducible results.</p>
+                    </div>
+                    <div class="impact-card">
+                        <h3>Local-first Workflow</h3>
+                        <p>Runs locally with FastAPI, Python, and classic NLP tooling.</p>
+                    </div>
+                </div>
+                <div class="cta-band" data-aos="fade-up" data-aos-delay="200">
+                    <strong>Next step:</strong> use the Demo to experience the explainability stack end-to-end.
+                    <a href="demo.html" class="btn btn-primary">Open Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Core Technologies</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We chose tools that are accessible, interpretable, and aligned with academic NLP foundations.</p>
+                <div class="pill-list" data-aos="fade-up" data-aos-delay="150">
+                    <span class="pill">NLTK</span>
+                    <span class="pill">scikit-learn</span>
+                    <span class="pill">FastAPI</span>
+                    <span class="pill">Naive Bayes</span>
+                    <span class="pill">BoW + N-grams</span>
+                    <span class="pill">Rule-based Causality</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Data & Model Snapshot</h2>
+                <div class="data-sources" data-aos="fade-up" data-aos-delay="100">
+                    <p><strong>Total Rows:</strong> 75,252</p>
+                    <p><strong>Languages:</strong> English, Hindi, Marathi, Bhojpuri, Marwari</p>
+                    <p><strong>Frozen Artifacts:</strong> documents/freeze_manifest.md</p>
+                    <p><strong>Metrics:</strong> documents/model_metrics_report.md</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <!-- Footer Grid -->
             <div class="footer-grid">
-                <!-- Branding Column -->
                 <div class="footer-column footer-branding">
                     <h3 class="footer-logo">Justify.AI</h3>
                     <p class="footer-tagline">Explainable NLP for Hate Speech Analysis</p>
-                    <p class="footer-description">
-                        Advanced multilingual hate speech detection with transparent, 
-                        explainable AI insights across lexical, causal, and bias dimensions.
-                    </p>
+                    <p class="footer-description">Advanced multilingual hate speech detection with transparent, explainable AI insights across lexical, causal, and bias dimensions.</p>
                 </div>
-
-                <!-- Platform Links Column -->
                 <div class="footer-column">
                     <h4 class="footer-column-title">Platform</h4>
                     <ul class="footer-links">
@@ -241,8 +472,6 @@
                         <li><a href="docs.html" class="footer-link">Documentation</a></li>
                     </ul>
                 </div>
-
-                <!-- Resources Links Column -->
                 <div class="footer-column">
                     <h4 class="footer-column-title">Resources</h4>
                     <ul class="footer-links">
@@ -252,8 +481,6 @@
                         <li><a href="research.html#datasets" class="footer-link">Datasets</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Info Column -->
                 <div class="footer-column">
                     <h4 class="footer-column-title">Contact</h4>
                     <ul class="footer-links">
@@ -268,12 +495,8 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2026 Justify.AI. All rights reserved.
-                </p>
+                <p class="footer-copyright">&copy; 2026 Justify.AI. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="#" class="footer-bottom-link">Privacy Policy</a>
                     <a href="#" class="footer-bottom-link">Terms of Service</a>
@@ -282,11 +505,15 @@
         </div>
     </footer>
 
-    <!-- AOS Library (deferred for performance) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    
-    <!-- Custom Scripts (deferred for performance) -->
     <script src="js/theme.js" defer></script>
     <script src="js/app.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.AOS) {
+                AOS.init({ once: true, duration: 900, easing: 'ease-out' });
+            }
+        });
+    </script>
 </body>
 </html>

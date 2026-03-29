@@ -555,12 +555,14 @@
                 <article class="demo-card">
                     <h2 class="card-title">Input Area</h2>
                     <label class="sr-only" for="demo-text">Input text</label>
-                    <textarea id="demo-text" class="input-textarea" placeholder="Paste sentence(s) in English, Hindi, or Bhojpuri."></textarea>
+                    <textarea id="demo-text" class="input-textarea" placeholder="Paste sentence(s) in English, Hindi, Bhojpuri, Marathi, or Marwari."></textarea>
                     <div class="control-row">
                         <select id="lang-select" class="language-select" aria-label="Language selector">
                             <option value="auto">Auto-detect</option>
                             <option value="hi">Hindi</option>
                             <option value="bho">Bhojpuri</option>
+                            <option value="mr">Marathi</option>
+                            <option value="mwr">Marwari</option>
                             <option value="en">English</option>
                         </select>
                         <button id="analyze-btn" class="analyze-btn" type="button">Analyze</button>
@@ -740,6 +742,8 @@
         if (value === 'en') return 'english';
         if (value === 'hi') return 'hindi';
         if (value === 'bho') return 'bhojpuri';
+        if (value === 'mr') return 'marathi';
+        if (value === 'mwr') return 'marwari';
         return null;
     }
 

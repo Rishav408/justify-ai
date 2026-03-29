@@ -1,44 +1,285 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Justify.AI Documentation - API and Usage Guide">
+    <meta name="description" content="Justify.AI Developer Docs - API, Workflow, and Operations">
     <title>Documentation - Justify.AI</title>
 
-    <!-- Google Fonts: Inter for premium typography -->
+    <!-- Expressive Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- TailwindCSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Prism.js for Syntax Highlighting -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
-</head>
 
+    <style>
+        :root {
+            --ink: #0b1220;
+            --paper: #f5f7fb;
+            --glow: rgba(78, 196, 255, 0.4);
+            --accent: #00e5a8;
+            --accent-2: #5c7bff;
+            --accent-3: #ff8ccf;
+            --grid: rgba(12, 20, 36, 0.07);
+            --panel: rgba(255, 255, 255, 0.7);
+            --panel-strong: rgba(255, 255, 255, 0.88);
+            --shadow: 0 30px 80px rgba(8, 17, 32, 0.2);
+        }
+
+        [data-theme="dark"] {
+            --ink: #e5ecff;
+            --paper: #0b0f18;
+            --glow: rgba(64, 179, 255, 0.55);
+            --accent: #36f3bd;
+            --accent-2: #7ea0ff;
+            --accent-3: #ff9bdd;
+            --grid: rgba(255, 255, 255, 0.07);
+            --panel: rgba(10, 18, 32, 0.78);
+            --panel-strong: rgba(12, 20, 34, 0.9);
+            --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        }
+
+        body {
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            background: radial-gradient(circle at 10% 0%, rgba(92, 123, 255, 0.15), transparent 45%),
+                        radial-gradient(circle at 90% 20%, rgba(0, 229, 168, 0.15), transparent 40%),
+                        var(--paper);
+            color: var(--ink);
+        }
+
+        .docs-hero {
+            padding: 6.5rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .docs-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(90deg, transparent 0 30px, var(--grid) 30px 31px),
+                        repeating-linear-gradient(0deg, transparent 0 30px, var(--grid) 30px 31px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .docs-hero .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            background: rgba(92, 123, 255, 0.12);
+            color: var(--accent-2);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .hero-title {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: clamp(2.4rem, 4vw, 4.5rem);
+            margin: 1.4rem 0 1rem;
+            line-height: 1.05;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            max-width: 720px;
+            opacity: 0.82;
+            line-height: 1.7;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            background: var(--panel);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .section {
+            padding: 4.2rem 0;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            margin-bottom: 1.1rem;
+        }
+
+        .section-subtitle {
+            max-width: 760px;
+            opacity: 0.78;
+            line-height: 1.7;
+        }
+
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .glass-panel {
+            background: var(--panel-strong);
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-panel::after {
+            content: "";
+            position: absolute;
+            inset: -40% 40% auto auto;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(92, 123, 255, 0.35), transparent 70%);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(0, 229, 168, 0.15);
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .code-card {
+            background: rgba(10, 18, 32, 0.92);
+            color: #e6f0ff;
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            margin-top: 1rem;
+            box-shadow: var(--shadow);
+            overflow-x: auto;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+        }
+
+        .code-card code {
+            white-space: pre;
+        }
+
+        .api-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.8rem;
+        }
+
+        .api-card {
+            background: var(--panel);
+            border-radius: 16px;
+            padding: 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .api-card h4 {
+            margin-bottom: 0.4rem;
+        }
+
+        .callout {
+            border-left: 3px solid var(--accent-2);
+            background: rgba(92, 123, 255, 0.08);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            margin-top: 1.2rem;
+        }
+
+        .metric-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .metric-tile {
+            background: var(--panel-strong);
+            border-radius: 16px;
+            padding: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .data-sources {
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 18px;
+            padding: 1.5rem;
+            border: 1px dashed rgba(92, 123, 255, 0.4);
+        }
+
+        [data-theme="dark"] .data-sources {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        @media (max-width: 720px) {
+            .hero-badges { justify-content: flex-start; }
+        }
+    </style>
+</head>
 <body>
-    <!-- Skip to main content (accessibility) -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-    <!-- Navigation Bar -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <!-- Logo -->
             <a href="index.html" class="nav-logo">
                 <span class="logo-text">Justify.AI</span>
             </a>
-
-            <!-- Navigation Links -->
             <ul class="nav-links" id="nav-links" role="menubar" aria-label="Site navigation">
                 <li><a href="index.html" class="nav-link">Platform</a></li>
                 <li><a href="demo.html" class="nav-link">Demo</a></li>
@@ -46,14 +287,9 @@
                 <li><a href="docs.html" class="nav-link">Docs</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
-
-            <!-- Action Buttons -->
             <div class="nav-actions">
-                <!-- Theme Toggle Button -->
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -64,23 +300,13 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-
-                <!-- Try Demo Button -->
                 <a href="demo.html" class="btn btn-primary">Try Demo</a>
-
-                <!-- GitHub Button -->
-                <a href="https://github.com" class="btn btn-primary" target="_blank"
-                    rel="noopener noreferrer">GitHub</a>
-
+                <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
-
-            <!-- Mobile Menu Toggle -->
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -90,513 +316,277 @@
     </nav>
 
     <main id="main-content" tabindex="-1">
-        <!-- Documentation Header -->
-        <section class="research-header">
-            <div class="research-header-container">
-                <h1 class="research-title">Documentation</h1>
-                <p class="research-subtitle">API Reference and Usage Guide for Justify.AI</p>
+        <section class="docs-hero">
+            <div class="hero-inner" data-aos="fade-up">
+                <span class="hero-tag">Developer Operations Manual</span>
+                <h1 class="hero-title">Run, validate, and ship the Justify.AI backend with confidence.</h1>
+                <p class="hero-subtitle">This documentation is the technical operating guide for the Justify.AI backend. It covers API behavior, dataset rules, training flow, model artifacts, testing, and troubleshooting.</p>
+                <div class="hero-badges">
+                    <span class="badge">API Ready</span>
+                    <span class="badge">5 Languages</span>
+                    <span class="badge">Naive Bayes</span>
+                    <span class="badge">Explainable Outputs</span>
+                </div>
             </div>
         </section>
 
-        <!-- API Usage Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">API Usage</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        The Justify.AI API provides programmatic access to hate speech analysis capabilities.
-                        All API requests should be made to the base URL with appropriate authentication headers.
-                    </p>
-
-                    <h3 class="subsection-title">Base URL</h3>
-                    <pre><code class="language-bash">https://api.justify-ai.com/v1</code></pre>
-
-                    <h3 class="subsection-title">Authentication</h3>
-                    <p>
-                        All API requests require an API key passed in the Authorization header:
-                    </p>
-                    <pre><code class="language-bash">Authorization: Bearer YOUR_API_KEY</code></pre>
-
-                    <h3 class="subsection-title">Analyze Text Endpoint</h3>
-                    <p>
-                        Analyze text for hate speech patterns, causal relationships, and bias dimensions.
-                    </p>
-
-                    <div class="api-endpoint">
-                        <span class="http-method">POST</span>
-                        <span class="endpoint-path">/analyze</span>
+        <section class="section" id="quickstart">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Quick Start</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Minimal commands to run backend + demo locally. Designed for developers who need the system running fast.</p>
+                <div class="glass-grid" data-aos="fade-up" data-aos-delay="150">
+                    <div class="glass-panel">
+                        <span class="pill">Install</span>
+                        <div class="code-card"><code>python -m pip install -r requirements.txt</code></div>
                     </div>
-
-                    <h4 class="code-section-title">Request Example</h4>
-                    <pre><code class="language-javascript">fetch('https://api.justify-ai.com/v1/analyze', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer YOUR_API_KEY'
-  },
-  body: JSON.stringify({
-    text: "Your text to analyze here",
-    language: "en",
-    options: {
-      includeLexicon: true,
-      includeCausal: true,
-      includeBias: true
-    }
-  })
-})
-.then(response => response.json())
-.then(data => console.log(data));</code></pre>
-
-                    <h4 class="code-section-title">Response Example</h4>
-                    <pre><code class="language-json">{
-  "status": "success",
-  "data": {
-    "riskScore": 78,
-    "riskLevel": "high",
-    "hateWords": [...],
-    "causalGraph": {...},
-    "biasMetrics": {...}
-  },
-  "metadata": {
-    "language": "en",
-    "processingTime": 1.23,
-    "timestamp": "2026-03-13T10:30:00Z"
-  }
-}</code></pre>
-
-                    <h3 class="subsection-title">Get Supported Languages</h3>
-                    <p>
-                        Retrieve a list of supported languages for analysis.
-                    </p>
-
-                    <div class="api-endpoint">
-                        <span class="http-method http-get">GET</span>
-                        <span class="endpoint-path">/languages</span>
+                    <div class="glass-panel">
+                        <span class="pill">Backend</span>
+                        <div class="code-card"><code>python -m uvicorn src.api.app:app --reload</code></div>
                     </div>
-
-                    <h4 class="code-section-title">Request Example</h4>
-                    <pre><code class="language-javascript">fetch('https://api.justify-ai.com/v1/languages', {
-  headers: {
-    'Authorization': 'Bearer YOUR_API_KEY'
-  }
-})
-.then(response => response.json())
-.then(data => console.log(data));</code></pre>
-
-                    <h4 class="code-section-title">Response Example</h4>
-                    <pre><code class="language-json">{
-  "status": "success",
-  "data": {
-    "languages": [
-      { "code": "en", "name": "English", "native": "English" },
-      { "code": "hi", "name": "Hindi", "native": "हिन्दी" },
-      { "code": "bho", "name": "Bhojpuri", "native": "भोजपुरी" },
-      { "code": "mr", "name": "Marathi", "native": "मराठी" },
-      { "code": "mwr", "name": "Marwari", "native": "मारवाड़ी" }
-    ]
-  }
-}</code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- Data Format Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Data Format</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        Understanding the data structures returned by the API is essential for integrating
-                        Justify.AI into your applications.
-                    </p>
-
-                    <h3 class="subsection-title">Analysis Result Object</h3>
-                    <p>
-                        The main analysis result contains comprehensive information about detected hate speech.
-                    </p>
-                    <pre><code class="language-typescript">interface AnalysisResult {
-  riskScore: number;           // 0-100 composite risk score
-  riskLevel: string;           // "low" | "medium" | "high"
-  hateWords: HateWord[];       // Array of detected hate words
-  causalGraph: CausalGraph;    // Causal relationship structure
-  biasMetrics: BiasMetrics;    // Multi-dimensional bias scores
-  breakdown: {
-    lexicalSeverity: number;   // 0-100
-    causalNarrative: number;   // 0-100
-    biasIndicator: number;     // 0-100
-  };
-}</code></pre>
-
-                    <h3 class="subsection-title">Hate Word Object</h3>
-                    <p>
-                        Each detected hate word includes severity and contextual information.
-                    </p>
-                    <pre><code class="language-typescript">interface HateWord {
-  word: string;                // The detected word
-  severity: string;            // "low" | "medium" | "high" | "extreme"
-  severityScore: number;       // 0-100 numerical severity
-  context: string;             // Surrounding text context
-  position: {
-    start: number;             // Character start position
-    end: number;               // Character end position
-  };
-  category: string;            // Hate category (e.g., "religious", "ethnic")
-}</code></pre>
-
-                    <h3 class="subsection-title">Causal Graph Object</h3>
-                    <p>
-                        The causal graph represents cause-and-effect relationships in the text.
-                    </p>
-                    <pre><code class="language-typescript">interface CausalGraph {
-  nodes: CausalNode[];         // Array of causal nodes
-  edges: CausalEdge[];         // Array of causal relationships
-}
-
-interface CausalNode {
-  id: string;                  // Unique node identifier
-  text: string;                // Node text content
-  type: string;                // "cause" | "effect" | "entity"
-  importance: number;          // 0-1 importance score
-}
-
-interface CausalEdge {
-  source: string;              // Source node ID
-  target: string;              // Target node ID
-  relationship: string;        // Relationship type
-  confidence: number;          // 0-1 confidence score
-}</code></pre>
-
-                    <h3 class="subsection-title">Bias Metrics Object</h3>
-                    <p>
-                        Bias metrics quantify bias across multiple dimensions.
-                    </p>
-                    <pre><code class="language-typescript">interface BiasMetrics {
-  religion: number;            // 0-100 religious bias score
-  gender: number;              // 0-100 gender bias score
-  ethnicity: number;           // 0-100 ethnic bias score
-  overall: number;             // 0-100 composite bias score
-  details: {
-    [dimension: string]: {
-      score: number;
-      terms: string[];         // Contributing terms
-      confidence: number;      // 0-1 confidence
-    };
-  };
-}</code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- Lexicon Builder Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Lexicon Builder</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        The Lexicon Builder component automatically discovers and maintains hate speech lexicons
-                        across multiple languages using word embeddings and semantic similarity.
-                    </p>
-
-                    <h3 class="subsection-title">How It Works</h3>
-                    <ol>
-                        <li><strong>Seed Terms:</strong> Start with a curated set of known hate speech terms</li>
-                        <li><strong>Embedding Space:</strong> Map terms to high-dimensional vector space using
-                            language-specific embeddings</li>
-                        <li><strong>Similarity Expansion:</strong> Find semantically similar terms using cosine
-                            similarity</li>
-                        <li><strong>Context Validation:</strong> Validate candidates using contextual usage patterns
-                        </li>
-                        <li><strong>Severity Scoring:</strong> Assign severity scores based on usage frequency and
-                            context</li>
-                    </ol>
-
-                    <h3 class="subsection-title">Using the Lexicon Builder</h3>
-                    <p>
-                        You can use the lexicon builder programmatically to expand your own hate speech lexicons.
-                    </p>
-                    <pre><code class="language-python">from src.lexicon import LexiconBuilder
-
-# Initialize builder with language
-builder = LexiconBuilder(language='en')
-
-# Load seed terms
-seed_terms = ['hate', 'violence', 'discriminate']
-builder.load_seeds(seed_terms)
-
-# Expand lexicon
-expanded_lexicon = builder.expand(
-    similarity_threshold=0.7,
-    max_terms=1000,
-    validate_context=True
-)
-
-# Get terms with severity scores
-for term in expanded_lexicon:
-    print(f"{term.word}: {term.severity_score}")</code></pre>
-
-                    <h3 class="subsection-title">Configuration Options</h3>
-                    <pre><code class="language-python"># Configure lexicon builder
-config = {
-    'embedding_model': 'fasttext',  # or 'word2vec', 'bert'
-    'similarity_threshold': 0.7,     # 0-1, higher = stricter
-    'context_window': 5,             # words before/after
-    'min_frequency': 10,             # minimum corpus frequency
-    'severity_method': 'contextual'  # or 'frequency', 'hybrid'
-}
-
-builder = LexiconBuilder(language='hi', config=config)</code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- Causal Extractor Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Causal Extractor</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        The Causal Extractor identifies cause-and-effect relationships within hate narratives
-                        using dependency parsing and semantic role labeling.
-                    </p>
-
-                    <h3 class="subsection-title">Extraction Process</h3>
-                    <ol>
-                        <li><strong>Dependency Parsing:</strong> Parse text to identify grammatical relationships</li>
-                        <li><strong>Causal Pattern Matching:</strong> Identify causal connectives and patterns</li>
-                        <li><strong>Entity Recognition:</strong> Extract entities involved in causal relationships</li>
-                        <li><strong>Relationship Extraction:</strong> Build cause-effect pairs with confidence scores
-                        </li>
-                        <li><strong>Graph Construction:</strong> Create directed graph of causal relationships</li>
-                    </ol>
-
-                    <h3 class="subsection-title">Using the Causal Extractor</h3>
-                    <pre><code class="language-python">from src.causality import CausalExtractor
-
-# Initialize extractor
-extractor = CausalExtractor(language='en')
-
-# Extract causal relationships
-text = "Religious hatred leads to violence and discrimination"
-causal_graph = extractor.extract(text)
-
-# Access nodes and edges
-for node in causal_graph.nodes:
-    print(f"Node: {node.text} (type: {node.type})")
-
-for edge in causal_graph.edges:
-    print(f"{edge.source} -> {edge.target} ({edge.relationship})")</code></pre>
-
-                    <h3 class="subsection-title">Causal Patterns</h3>
-                    <p>
-                        The extractor recognizes various causal patterns including:
-                    </p>
-                    <ul>
-                        <li><strong>Explicit Connectives:</strong> "because", "therefore", "leads to", "causes"</li>
-                        <li><strong>Implicit Causality:</strong> Verb-based causation (e.g., "triggers", "results in")
-                        </li>
-                        <li><strong>Conditional Causality:</strong> "if...then" structures</li>
-                        <li><strong>Temporal Causality:</strong> Sequential events implying causation</li>
-                    </ul>
-
-                    <h3 class="subsection-title">Visualization</h3>
-                    <pre><code class="language-python"># Export graph for visualization
-graph_data = causal_graph.to_dict()
-
-# Use with vis.js or D3.js
-import json
-with open('causal_graph.json', 'w') as f:
-    json.dump(graph_data, f, indent=2)</code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bias Auditor Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Bias Auditor</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        The Bias Auditor quantifies bias across multiple dimensions including religion, gender,
-                        and ethnicity using specialized bias lexicons and contextual embeddings.
-                    </p>
-
-                    <h3 class="subsection-title">Bias Dimensions</h3>
-                    <p>
-                        The system measures bias across three primary dimensions:
-                    </p>
-                    <ul>
-                        <li><strong>Religious Bias:</strong> Prejudice based on religious identity or beliefs</li>
-                        <li><strong>Gender Bias:</strong> Discrimination based on gender or sexual orientation</li>
-                        <li><strong>Ethnic Bias:</strong> Prejudice based on ethnicity, race, or national origin</li>
-                    </ul>
-
-                    <h3 class="subsection-title">Using the Bias Auditor</h3>
-                    <pre><code class="language-python">from src.bias import BiasAuditor
-
-# Initialize auditor
-auditor = BiasAuditor(language='en')
-
-# Analyze text for bias
-text = "Your text to analyze for bias"
-bias_metrics = auditor.analyze(text)
-
-# Access bias scores
-print(f"Religion Bias: {bias_metrics.religion}")
-print(f"Gender Bias: {bias_metrics.gender}")
-print(f"Ethnicity Bias: {bias_metrics.ethnicity}")
-print(f"Overall Bias: {bias_metrics.overall}")
-
-# Get detailed breakdown
-for dimension, details in bias_metrics.details.items():
-    print(f"\n{dimension}:")
-    print(f"  Score: {details['score']}")
-    print(f"  Terms: {', '.join(details['terms'])}")
-    print(f"  Confidence: {details['confidence']}")</code></pre>
-
-                    <h3 class="subsection-title">Scoring Methodology</h3>
-                    <p>
-                        Bias scores are calculated using a multi-step process:
-                    </p>
-                    <ol>
-                        <li><strong>Lexicon Matching:</strong> Identify bias-indicating terms from specialized lexicons
-                        </li>
-                        <li><strong>Contextual Analysis:</strong> Analyze surrounding context using embeddings</li>
-                        <li><strong>Intensity Scoring:</strong> Calculate intensity based on term frequency and context
-                        </li>
-                        <li><strong>Dimension Aggregation:</strong> Combine scores across bias dimensions</li>
-                        <li><strong>Normalization:</strong> Scale scores to 0-100 range</li>
-                    </ol>
-
-                    <h3 class="subsection-title">Custom Bias Lexicons</h3>
-                    <pre><code class="language-python"># Load custom bias lexicon
-custom_lexicon = {
-    'religion': ['term1', 'term2', ...],
-    'gender': ['term1', 'term2', ...],
-    'ethnicity': ['term1', 'term2', ...]
-}
-
-auditor = BiasAuditor(language='en')
-auditor.load_custom_lexicon(custom_lexicon)
-
-# Analyze with custom lexicon
-bias_metrics = auditor.analyze(text)</code></pre>
-
-                    <h3 class="subsection-title">Interpretation Guidelines</h3>
-                    <div class="interpretation-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Score Range</th>
-                                    <th>Level</th>
-                                    <th>Interpretation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>0-25</td>
-                                    <td>Low</td>
-                                    <td>Minimal or no detectable bias</td>
-                                </tr>
-                                <tr>
-                                    <td>26-50</td>
-                                    <td>Moderate</td>
-                                    <td>Some bias indicators present</td>
-                                </tr>
-                                <tr>
-                                    <td>51-75</td>
-                                    <td>High</td>
-                                    <td>Significant bias detected</td>
-                                </tr>
-                                <tr>
-                                    <td>76-100</td>
-                                    <td>Extreme</td>
-                                    <td>Severe bias with strong indicators</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="glass-panel">
+                        <span class="pill">Demo UI</span>
+                        <div class="code-card"><code>Open frontend/demo.html</code></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Rate Limits Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Rate Limits & Best Practices</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="subsection-title">Rate Limits</h3>
-                    <p>
-                        API requests are subject to the following rate limits:
-                    </p>
-                    <ul>
-                        <li><strong>Free Tier:</strong> 100 requests per day, 10 requests per minute</li>
-                        <li><strong>Basic Tier:</strong> 1,000 requests per day, 50 requests per minute</li>
-                        <li><strong>Pro Tier:</strong> 10,000 requests per day, 200 requests per minute</li>
-                        <li><strong>Enterprise:</strong> Custom limits based on agreement</li>
-                    </ul>
+        <section class="section" id="api">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Core API</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">The backend exposes a single analysis endpoint. Requests accept raw text and an optional language hint.</p>
 
-                    <h3 class="subsection-title">Best Practices</h3>
-                    <ul>
-                        <li><strong>Batch Processing:</strong> Combine multiple texts when possible to reduce API calls
-                        </li>
-                        <li><strong>Caching:</strong> Cache results for identical text inputs to avoid redundant
-                            analysis</li>
-                        <li><strong>Error Handling:</strong> Implement exponential backoff for rate limit errors</li>
-                        <li><strong>Language Detection:</strong> Pre-detect language to optimize processing</li>
-                        <li><strong>Text Preprocessing:</strong> Clean and normalize text before sending to API</li>
-                    </ul>
+                <div class="api-grid" data-aos="fade-up" data-aos-delay="150">
+                    <div class="api-card">
+                        <h4>Endpoint</h4>
+                        <p><strong>POST</strong> /api/analyze</p>
+                        <p>Base URL: http://127.0.0.1:8000</p>
+                    </div>
+                    <div class="api-card">
+                        <h4>Language Values</h4>
+                        <p>english, hindi, marathi, bhojpuri, marwari</p>
+                        <p>Use auto-detect by omitting language.</p>
+                    </div>
+                    <div class="api-card">
+                        <h4>Payload Fields</h4>
+                        <p>text (required), language (optional)</p>
+                    </div>
+                </div>
 
-                    <h3 class="subsection-title">Error Handling Example</h3>
-                    <pre><code class="language-javascript">async function analyzeWithRetry(text, maxRetries = 3) {
-  for (let i = 0; i < maxRetries; i++) {
-    try {
-      const response = await fetch('https://api.justify-ai.com/v1/analyze', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer YOUR_API_KEY'
-        },
-        body: JSON.stringify({ text, language: 'en' })
-      });
+                <div class="two-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-panel">
+                        <span class="pill">Request</span>
+                        <div class="code-card"><code>{
+  "text": "Sample text to analyze",
+  "language": "english"
+}</code></div>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Response</span>
+                        <div class="code-card"><code>{
+  "language": "english",
+  "hate_speech_label": "non_hate",
+  "confidence": 0.99,
+  "lexicon_hits": ["..."],
+  "causality_relations": ["..."],
+  "bias_metrics": {"overall": 12, "religion": 0},
+  "risk": {"score": 8, "level": "low"}
+}</code></div>
+                    </div>
+                </div>
 
-      if (response.status === 429) {
-        // Rate limit hit, wait and retry
-        const retryAfter = response.headers.get('Retry-After') || Math.pow(2, i);
-        await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
-        continue;
-      }
+                <div class="callout" data-aos="fade-up" data-aos-delay="250">
+                    <strong>Why the response matters:</strong> Use `risk.score` + `bias_metrics` for dashboards, and `lexicon_hits` + `causality_relations` for explainability views.
+                </div>
+            </div>
+        </section>
 
-      if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
-      }
+        <section class="section" id="outputs">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Explainability Outputs</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Every prediction is bundled with interpretable artifacts so analysts can justify the label.</p>
+                <div class="glass-grid" data-aos="fade-up" data-aos-delay="150">
+                    <div class="glass-panel">
+                        <h3>Lexicon Hits</h3>
+                        <p>Term, severity, count, and span positions for language-specific lexicons.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <h3>Causality</h3>
+                        <p>Cause ? effect pairs with relation confidence and sentence context.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <h3>Bias Metrics</h3>
+                        <p>Demographic co-occurrence scoring with per-dimension details.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <h3>Risk Score</h3>
+                        <p>Composite 0�100 score with breakdown (lexical, causal, bias).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      return await response.json();
-    } catch (error) {
-      if (i === maxRetries - 1) throw error;
-    }
-  }
-}</code></pre>
+        <section class="section" id="datasets">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Dataset Workflow</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">All datasets live under <code>src/datasets</code> and follow a 17-field schema. Validation is enforced before any training run.</p>
+                <div class="two-col" data-aos="fade-up" data-aos-delay="150">
+                    <div class="glass-panel">
+                        <span class="pill">Schema</span>
+                        <p>Fields: text, label, severity, is_implicit, is_sarcasm, target_group, target_type, directness, call_to_action, tone, emotion, profanity_count, platform, domain, region, confidence, annotator_id.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Validate</span>
+                        <div class="code-card"><code>python scripts/validate_dataset.py</code></div>
+                    </div>
+                </div>
+                <div class="callout" data-aos="fade-up" data-aos-delay="200">
+                    Validation enforces allowed labels, tone values, boolean fields, and confidence bounds (0.70�1.00).
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="training">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Model Training & Artifacts</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Each language has its own Naive Bayes model and vectorizer saved in <code>src/models/saved_models</code>.</p>
+                <div class="glass-grid" data-aos="fade-up" data-aos-delay="150">
+                    <div class="glass-panel">
+                        <span class="pill">Train All</span>
+                        <div class="code-card"><code>python src/models/naive_bayes_model.py</code></div>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Artifacts</span>
+                        <p>{lang}_nb_model.pkl</p>
+                        <p>{lang}_vectorizer.pkl</p>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Split</span>
+                        <p>80/20 stratified split, random_state=42</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="metrics">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Latest Model Metrics</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Derived from <code>documents/model_metrics_report.md</code>.</p>
+                <div class="metric-wall" data-aos="fade-up" data-aos-delay="150">
+                    <div class="metric-tile">
+                        <h4>English</h4>
+                        <div class="metric-grid">
+                            <span>Accuracy</span><strong>0.988</strong>
+                            <span>Hate F1</span><strong>0.985</strong>
+                            <span>Offensive F1</span><strong>0.961</strong>
+                            <span>Health F1</span><strong>0.806</strong>
+                        </div>
+                    </div>
+                    <div class="metric-tile">
+                        <h4>Hindi</h4>
+                        <div class="metric-grid">
+                            <span>Accuracy</span><strong>0.988</strong>
+                            <span>Hate F1</span><strong>0.982</strong>
+                            <span>Offensive F1</span><strong>0.995</strong>
+                            <span>Health F1</span><strong>0.888</strong>
+                        </div>
+                    </div>
+                    <div class="metric-tile">
+                        <h4>Marathi</h4>
+                        <div class="metric-grid">
+                            <span>Accuracy</span><strong>0.996</strong>
+                            <span>Hate F1</span><strong>1.000</strong>
+                            <span>Offensive F1</span><strong>0.997</strong>
+                            <span>Health F1</span><strong>0.996</strong>
+                        </div>
+                    </div>
+                    <div class="metric-tile">
+                        <h4>Bhojpuri</h4>
+                        <div class="metric-grid">
+                            <span>Accuracy</span><strong>0.997</strong>
+                            <span>Hate F1</span><strong>0.999</strong>
+                            <span>Offensive F1</span><strong>0.999</strong>
+                            <span>Health F1</span><strong>0.997</strong>
+                        </div>
+                    </div>
+                    <div class="metric-tile">
+                        <h4>Marwari</h4>
+                        <div class="metric-grid">
+                            <span>Accuracy</span><strong>0.994</strong>
+                            <span>Hate F1</span><strong>0.990</strong>
+                            <span>Offensive F1</span><strong>0.997</strong>
+                            <span>Health F1</span><strong>0.994</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="tests">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Testing & QA</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Run the test suite after dataset or model updates.</p>
+                <div class="glass-grid" data-aos="fade-up" data-aos-delay="150">
+                    <div class="glass-panel">
+                        <span class="pill">PyTest</span>
+                        <div class="code-card"><code>python -m pytest</code></div>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Quick Health</span>
+                        <div class="code-card"><code>curl -X POST http://127.0.0.1:8000/api/analyze -H "Content-Type: application/json" -d '{"text":"test","language":"english"}'</code></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="troubleshooting">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Troubleshooting</h2>
+                <div class="glass-grid" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-panel">
+                        <h3>NLTK Download Warnings</h3>
+                        <p>Warnings appear offline but do not break the pipeline. Safe to ignore in air-gapped setups.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <h3>Model Not Found</h3>
+                        <p>Run <code>python src/models/naive_bayes_model.py</code> to regenerate model files.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <h3>Dataset Validation Failed</h3>
+                        <p>Run validation and ensure schema + tone values comply with <code>src/datasets/schema.md</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="map">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Project Map</h2>
+                <div class="two-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-panel">
+                        <span class="pill">Backend</span>
+                        <p><code>src/api</code>, <code>src/models</code>, <code>src/lexicon</code>, <code>src/causality</code>, <code>src/bias</code>, <code>src/scoring</code></p>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Datasets</span>
+                        <p><code>src/datasets</code> + <code>src/datasets/schema.md</code> + <code>src/datasets/analysis/dataset_analysis_report.md</code></p>
+                    </div>
+                </div>
+                <div class="data-sources" data-aos="fade-up" data-aos-delay="150">
+                    <p><strong>Data Sources:</strong> documents/checklogs/progress-3.md, documents/model_metrics_report.md, documents/freeze_manifest.md, src/datasets/schema.md</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <!-- Footer Grid -->
             <div class="footer-grid">
-                <!-- Branding Column -->
                 <div class="footer-column footer-branding">
                     <h3 class="footer-logo">Justify.AI</h3>
                     <p class="footer-tagline">Explainable NLP for Hate Speech Analysis</p>
-                    <p class="footer-description">
-                        Advanced multilingual hate speech detection with transparent,
-                        explainable AI insights across lexical, causal, and bias dimensions.
-                    </p>
+                    <p class="footer-description">Advanced multilingual hate speech detection with transparent, explainable AI insights across lexical, causal, and bias dimensions.</p>
                 </div>
-
-                <!-- Platform Links Column -->
                 <div class="footer-column">
                     <h4 class="footer-column-title">Platform</h4>
                     <ul class="footer-links">
@@ -606,20 +596,15 @@ bias_metrics = auditor.analyze(text)</code></pre>
                         <li><a href="docs.html" class="footer-link">Documentation</a></li>
                     </ul>
                 </div>
-
-                <!-- Resources Links Column -->
                 <div class="footer-column">
                     <h4 class="footer-column-title">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="about.html" class="footer-link">About</a></li>
-                        <li><a href="https://github.com" class="footer-link" target="_blank"
-                                rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://github.com" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                         <li><a href="docs.html#api" class="footer-link">API Reference</a></li>
                         <li><a href="research.html#datasets" class="footer-link">Datasets</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Info Column -->
                 <div class="footer-column">
                     <h4 class="footer-column-title">Contact</h4>
                     <ul class="footer-links">
@@ -634,12 +619,8 @@ bias_metrics = auditor.analyze(text)</code></pre>
                     </ul>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2026 Justify.AI. All rights reserved.
-                </p>
+                <p class="footer-copyright">&copy; 2026 Justify.AI. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="#" class="footer-bottom-link">Privacy Policy</a>
                     <a href="#" class="footer-bottom-link">Terms of Service</a>
@@ -648,20 +629,15 @@ bias_metrics = auditor.analyze(text)</code></pre>
         </div>
     </footer>
 
-    <!-- AOS Library (deferred for performance) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-
-    <!-- Prism.js for Syntax Highlighting -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" defer></script>
-
-    <!-- Custom Scripts (deferred for performance) -->
     <script src="js/theme.js" defer></script>
     <script src="js/app.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.AOS) {
+                AOS.init({ once: true, duration: 900, easing: 'ease-out' });
+            }
+        });
+    </script>
 </body>
-
 </html>

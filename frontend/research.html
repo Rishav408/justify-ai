@@ -3,39 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research behind Justify.AI - Methodology and Pipeline">
+    <meta name="description" content="Research behind Justify.AI - Datasets, Validation, Training, and Pipeline">
     <title>Research - Justify.AI</title>
-    
-    <!-- Google Fonts: Inter for premium typography -->
+
+    <!-- Expressive Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- TailwindCSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Mermaid for Diagrams -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        :root {
+            --ink: #0b1220;
+            --paper: #f5f7fb;
+            --glow: rgba(78, 196, 255, 0.4);
+            --accent: #00e5a8;
+            --accent-2: #5c7bff;
+            --accent-3: #ff8ccf;
+            --grid: rgba(12, 20, 36, 0.07);
+            --panel: rgba(255, 255, 255, 0.7);
+            --panel-strong: rgba(255, 255, 255, 0.88);
+            --shadow: 0 30px 80px rgba(8, 17, 32, 0.2);
+        }
+
+        [data-theme="dark"] {
+            --ink: #e5ecff;
+            --paper: #0b0f18;
+            --glow: rgba(64, 179, 255, 0.55);
+            --accent: #36f3bd;
+            --accent-2: #7ea0ff;
+            --accent-3: #ff9bdd;
+            --grid: rgba(255, 255, 255, 0.07);
+            --panel: rgba(10, 18, 32, 0.78);
+            --panel-strong: rgba(12, 20, 34, 0.9);
+            --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        }
+
+        body {
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            background: radial-gradient(circle at 10% 0%, rgba(92, 123, 255, 0.15), transparent 45%),
+                        radial-gradient(circle at 90% 20%, rgba(0, 229, 168, 0.15), transparent 40%),
+                        var(--paper);
+            color: var(--ink);
+        }
+
+        .research-hero {
+            padding: 7rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(90deg, transparent 0 30px, var(--grid) 30px 31px),
+                        repeating-linear-gradient(0deg, transparent 0 30px, var(--grid) 30px 31px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .research-hero .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            background: rgba(92, 123, 255, 0.12);
+            color: var(--accent-2);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .hero-title {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: clamp(2.6rem, 4vw, 4.8rem);
+            margin: 1.4rem 0 1rem;
+            line-height: 1.05;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            max-width: 720px;
+            opacity: 0.82;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--panel);
+            border-radius: 16px;
+            padding: 1.4rem;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .stat-card p {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 0.4rem;
+        }
+
+        .section {
+            padding: 4.5rem 0;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            margin-bottom: 1.2rem;
+        }
+
+        .section-subtitle {
+            max-width: 720px;
+            opacity: 0.78;
+            line-height: 1.7;
+        }
+
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .glass-panel {
+            background: var(--panel-strong);
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-panel::after {
+            content: "";
+            position: absolute;
+            inset: -40% 40% auto auto;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(92, 123, 255, 0.35), transparent 70%);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(0, 229, 168, 0.15);
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .dataset-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.2rem;
+        }
+
+        .tower {
+            height: 280px;
+            perspective: 800px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .tower-core {
+            width: 150px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(12deg) rotateZ(-1deg);
+        }
+
+        .tower-layer {
+            width: 100%;
+            border-radius: 14px;
+            margin-bottom: 8px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+            transform: translateZ(18px);
+        }
+
+        .tower-label {
+            text-align: center;
+            margin-top: 0.8rem;
+            font-weight: 600;
+        }
+
+        .schema-prism {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        .schema-chip {
+            background: rgba(92, 123, 255, 0.1);
+            border: 1px solid rgba(92, 123, 255, 0.3);
+            padding: 0.6rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+        }
+
+        .validation-orbit {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .orbit-card {
+            background: var(--panel);
+            border-radius: 16px;
+            padding: 1.2rem;
+            border: 1px solid rgba(0, 229, 168, 0.25);
+        }
+
+        .training-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .training-step {
+            background: linear-gradient(135deg, rgba(92, 123, 255, 0.18), rgba(0, 229, 168, 0.12));
+            border-radius: 18px;
+            padding: 1.4rem;
+            box-shadow: var(--shadow);
+        }
+
+        .pipeline-flow {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .pipeline-node {
+            background: var(--panel-strong);
+            border-radius: 14px;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+
+        .pipeline-node::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            background: var(--accent-2);
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .metrics-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .metric-tile {
+            background: var(--panel-strong);
+            border-radius: 16px;
+            padding: 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .metric-tile h4 {
+            margin-bottom: 0.6rem;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .data-sources {
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 18px;
+            padding: 1.5rem;
+            border: 1px dashed rgba(92, 123, 255, 0.4);
+        }
+
+        [data-theme="dark"] .data-sources {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        @media (max-width: 720px) {
+            .tower-core { width: 120px; }
+            .hero-stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip to main content (accessibility) -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-    <!-- Navigation Bar -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <!-- Logo -->
             <a href="index.html" class="nav-logo">
                 <span class="logo-text">Justify.AI</span>
             </a>
-
-            <!-- Navigation Links -->
             <ul class="nav-links" id="nav-links" role="menubar" aria-label="Site navigation">
                 <li><a href="index.html" class="nav-link">Platform</a></li>
                 <li><a href="demo.html" class="nav-link">Demo</a></li>
@@ -43,10 +358,7 @@
                 <li><a href="docs.html" class="nav-link">Docs</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
-
-            <!-- Action Buttons -->
             <div class="nav-actions">
-                <!-- Theme Toggle Button -->
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -63,16 +375,9 @@
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-
-                <!-- Try Demo Button -->
                 <a href="demo.html" class="btn btn-primary">Try Demo</a>
-
-                <!-- GitHub Button -->
                 <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
-
             </div>
-
-            <!-- Mobile Menu Toggle -->
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -82,263 +387,281 @@
     </nav>
 
     <main id="main-content" tabindex="-1">
-        <!-- Research Header -->
-        <section class="research-header" aria-label="Research overview">
-            <div class="research-header-container">
-                <h1 class="research-title">Research</h1>
-                <p class="research-subtitle">Methodology and Pipeline Architecture for Explainable Multilingual Hate Speech Analysis</p>
-            </div>
-        </section>
-
-        <!-- Problem Statement Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Problem Statement</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        Hate speech on social media platforms has become a critical challenge, particularly in multilingual 
-                        contexts where regional languages are prevalent. Traditional hate speech detection systems often lack 
-                        explainability and fail to capture the nuanced nature of hate narratives across different languages 
-                        and cultural contexts.
-                    </p>
-                    <p>
-                        Justify.AI addresses three key challenges:
-                    </p>
-                    <ul>
-                        <li><strong>Multilingual Detection:</strong> Supporting Indian regional languages including Hindi, Bhojpuri, Marathi, and Marwari alongside English</li>
-                        <li><strong>Explainability:</strong> Providing transparent insights into why content is classified as hate speech through lexical, causal, and bias analysis</li>
-                        <li><strong>Comprehensive Analysis:</strong> Going beyond binary classification to understand the structure and dimensions of hate narratives</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Methodology Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Methodology</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        Our approach combines multiple NLP techniques to provide comprehensive hate speech analysis:
-                    </p>
-                    
-                    <h3 class="subsection-title">1. Lexicon-Based Detection</h3>
-                    <p>
-                        We employ automated lexicon discovery to identify hate speech terms across multiple languages. 
-                        The system uses word embeddings and semantic similarity to build comprehensive lexicons with 
-                        severity scoring based on contextual usage patterns.
-                    </p>
-
-                    <h3 class="subsection-title">2. Causal Narrative Extraction</h3>
-                    <p>
-                        Using dependency parsing and semantic role labeling, we extract cause-and-effect relationships 
-                        within hate narratives. This reveals how different elements of hate speech connect and reinforce 
-                        each other, providing insights into the structure of harmful discourse.
-                    </p>
-
-                    <h3 class="subsection-title">3. Bias Quantification</h3>
-                    <p>
-                        We measure bias across multiple dimensions including religion, gender, and ethnicity using 
-                        specialized bias lexicons and contextual embeddings. Each dimension is scored independently 
-                        to provide a comprehensive bias profile.
-                    </p>
-
-                    <h3 class="subsection-title">4. Risk Scoring</h3>
-                    <p>
-                        A composite risk score (0-100) is calculated by combining lexical severity, causal narrative 
-                        complexity, and bias intensity. This provides a single metric for assessing the overall 
-                        harmfulness of content while maintaining transparency through component breakdowns.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pipeline Architecture Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Pipeline Architecture</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        The Justify.AI pipeline processes text through multiple stages to generate comprehensive analysis:
-                    </p>
-                    
-                    <!-- Mermaid Diagram Container -->
-                    <div class="diagram-container" id="pipeline-diagram">
-                        <div class="mermaid">
-graph TD
-    A[Input Text] --> B[Language Detection]
-    B --> C[Tokenization & Normalization]
-    C --> D[Lexicon Matching]
-    C --> E[Dependency Parsing]
-    C --> F[Contextual Embeddings]
-    
-    D --> G[Hate Word Extraction]
-    G --> H[Severity Scoring]
-    
-    E --> I[Causal Relationship Extraction]
-    I --> J[Causal Graph Construction]
-    
-    F --> K[Bias Dimension Analysis]
-    K --> L[Religion Bias Score]
-    K --> M[Gender Bias Score]
-    K --> N[Ethnicity Bias Score]
-    
-    H --> O[Risk Score Calculation]
-    J --> O
-    L --> O
-    M --> O
-    N --> O
-    
-    O --> P[Final Analysis Results]
-    
-    style A fill:#6C63FF,stroke:#1A2A44,stroke-width:2px,color:#fff
-    style P fill:#00C2A8,stroke:#1A2A44,stroke-width:2px,color:#fff
-    style O fill:#1A2A44,stroke:#6C63FF,stroke-width:2px,color:#fff
-    style D fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px
-    style E fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px
-    style F fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px
-                        </div>
+        <section class="research-hero">
+            <div class="hero-inner" data-aos="fade-up">
+                <span class="hero-tag">Backend Research Dossier</span>
+                <h1 class="hero-title">From raw multilingual datasets to explainable risk scoring.</h1>
+                <p class="hero-subtitle">This page documents everything we built on the backend: dataset collection, schema validation, Naive Bayes training, five-language scaling, and the full explainable pipeline that powers Justify.AI.</p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <h3>Total Rows</h3>
+                        <p>75,252</p>
                     </div>
-
-                    <div class="pipeline-description">
-                        <h3 class="subsection-title">Pipeline Stages</h3>
-                        <ol>
-                            <li><strong>Text Preprocessing:</strong> Language detection, tokenization, and normalization</li>
-                            <li><strong>Lexicon Matching:</strong> Identification of hate speech terms with severity scoring</li>
-                            <li><strong>Causal Extraction:</strong> Dependency parsing and relationship extraction</li>
-                            <li><strong>Bias Analysis:</strong> Multi-dimensional bias quantification</li>
-                            <li><strong>Risk Scoring:</strong> Composite score calculation and result aggregation</li>
-                        </ol>
+                    <div class="stat-card">
+                        <h3>Languages</h3>
+                        <p>5</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pipeline Phases</h3>
+                        <p>7</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Model Family</h3>
+                        <p>Naive Bayes</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Datasets Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Datasets</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        Our system is trained and evaluated on multiple datasets covering different languages and contexts:
-                    </p>
+        <section class="section" aria-label="Dataset creation">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Dataset Creation & Coverage</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Each language dataset was curated to capture hate, offensive content, health-related discourse, and non-hate baselines. The stacks below represent actual counts and label balance from our current freeze.</p>
 
-                    <div class="dataset-grid">
-                        <div class="dataset-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100">
-                            <h3 class="dataset-name">English Hate Speech Dataset</h3>
-                            <p class="dataset-description">
-                                Curated collection of labeled hate speech examples from social media platforms, 
-                                covering multiple bias dimensions including race, religion, and gender.
-                            </p>
-                            <p class="dataset-stats"><strong>Size:</strong> ~50,000 samples</p>
+                <div class="dataset-stack" data-aos="fade-up" data-aos-delay="150">
+                    <div>
+                        <div class="tower">
+                            <div class="tower-core">
+                                <div class="tower-layer" style="height: 120px; background: #5c7bff;"></div>
+                                <div class="tower-layer" style="height: 28px; background: #00e5a8;"></div>
+                                <div class="tower-layer" style="height: 10px; background: #ff8ccf;"></div>
+                                <div class="tower-layer" style="height: 6px; background: #ffa63d;"></div>
+                            </div>
                         </div>
-
-                        <div class="dataset-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="100">
-                            <h3 class="dataset-name">Hindi-English Code-Mixed Dataset</h3>
-                            <p class="dataset-description">
-                                Code-mixed content from Twitter and Facebook, representing real-world multilingual 
-                                communication patterns common in Indian social media.
-                            </p>
-                            <p class="dataset-stats"><strong>Size:</strong> ~30,000 samples</p>
+                        <div class="tower-label">English · 18,900</div>
+                    </div>
+                    <div>
+                        <div class="tower">
+                            <div class="tower-core">
+                                <div class="tower-layer" style="height: 112px; background: #5c7bff;"></div>
+                                <div class="tower-layer" style="height: 28px; background: #00e5a8;"></div>
+                                <div class="tower-layer" style="height: 12px; background: #ff8ccf;"></div>
+                                <div class="tower-layer" style="height: 6px; background: #ffa63d;"></div>
+                            </div>
                         </div>
+                        <div class="tower-label">Hindi · 17,405</div>
+                    </div>
+                    <div>
+                        <div class="tower">
+                            <div class="tower-core">
+                                <div class="tower-layer" style="height: 72px; background: #5c7bff;"></div>
+                                <div class="tower-layer" style="height: 28px; background: #00e5a8;"></div>
+                                <div class="tower-layer" style="height: 24px; background: #ff8ccf;"></div>
+                                <div class="tower-layer" style="height: 16px; background: #ffa63d;"></div>
+                            </div>
+                        </div>
+                        <div class="tower-label">Bhojpuri · 11,960</div>
+                    </div>
+                    <div>
+                        <div class="tower">
+                            <div class="tower-core">
+                                <div class="tower-layer" style="height: 74px; background: #5c7bff;"></div>
+                                <div class="tower-layer" style="height: 30px; background: #00e5a8;"></div>
+                                <div class="tower-layer" style="height: 24px; background: #ff8ccf;"></div>
+                                <div class="tower-layer" style="height: 16px; background: #ffa63d;"></div>
+                            </div>
+                        </div>
+                        <div class="tower-label">Marathi · 12,196</div>
+                    </div>
+                    <div>
+                        <div class="tower">
+                            <div class="tower-core">
+                                <div class="tower-layer" style="height: 90px; background: #5c7bff;"></div>
+                                <div class="tower-layer" style="height: 28px; background: #00e5a8;"></div>
+                                <div class="tower-layer" style="height: 18px; background: #ff8ccf;"></div>
+                                <div class="tower-layer" style="height: 12px; background: #ffa63d;"></div>
+                            </div>
+                        </div>
+                        <div class="tower-label">Marwari · 14,791</div>
+                    </div>
+                </div>
 
-                        <div class="dataset-card" data-aos="fade-up" data-aos-duration="800" data-aos-offset="100" data-aos-delay="200">
-                            <h3 class="dataset-name">Regional Language Corpus</h3>
-                            <p class="dataset-description">
-                                Annotated datasets for Bhojpuri, Marathi, and Marwari, enabling analysis of 
-                                hate speech in low-resource Indian regional languages.
-                            </p>
-                            <p class="dataset-stats"><strong>Size:</strong> ~20,000 samples across languages</p>
+                <div class="glass-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-panel">
+                        <span class="pill">Overall</span>
+                        <h3>Total Rows</h3>
+                        <p>75,252 rows across five languages with balanced label targets and domain coverage.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Label Mix</span>
+                        <h3>Hate + Offensive</h3>
+                        <p>Bias-rich samples anchored by offensive and hate categories to pressure-test explainability.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Domains</span>
+                        <h3>Realistic Context</h3>
+                        <p>Coverage across chat, social media, news, political speech, and general discourse.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-label="Dataset validation">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Schema & Validation Discipline</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We enforce a 17-field schema with strict validation checks so that every row is consistent, explainable, and auditable. This schema drives downstream lexicon, bias, and risk modules.</p>
+
+                <div class="schema-prism" data-aos="fade-up" data-aos-delay="150">
+                    <span class="schema-chip">text</span>
+                    <span class="schema-chip">label</span>
+                    <span class="schema-chip">severity</span>
+                    <span class="schema-chip">is_implicit</span>
+                    <span class="schema-chip">is_sarcasm</span>
+                    <span class="schema-chip">target_group</span>
+                    <span class="schema-chip">target_type</span>
+                    <span class="schema-chip">directness</span>
+                    <span class="schema-chip">call_to_action</span>
+                    <span class="schema-chip">tone</span>
+                    <span class="schema-chip">emotion</span>
+                    <span class="schema-chip">profanity_count</span>
+                    <span class="schema-chip">platform</span>
+                    <span class="schema-chip">domain</span>
+                    <span class="schema-chip">region</span>
+                    <span class="schema-chip">confidence</span>
+                    <span class="schema-chip">annotator_id</span>
+                </div>
+
+                <div class="validation-orbit" data-aos="fade-up" data-aos-delay="200">
+                    <div class="orbit-card">
+                        <h3>Allowed Labels</h3>
+                        <p>hate, non_hate, offensive, health_issue</p>
+                    </div>
+                    <div class="orbit-card">
+                        <h3>Confidence Bounds</h3>
+                        <p>Strictly within 0.70 to 1.00 to keep annotation reliability high.</p>
+                    </div>
+                    <div class="orbit-card">
+                        <h3>Boolean Integrity</h3>
+                        <p>is_implicit, is_sarcasm, call_to_action validated as true/false only.</p>
+                    </div>
+                    <div class="orbit-card">
+                        <h3>Tone + Emotion</h3>
+                        <p>Tone in {neutral, aggressive, dismissive, sarcastic, fearful} with separate emotion tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-label="Model training">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Training Chamber: Classical NLP Stack</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We use classical NLP with interpretable Naive Bayes classifiers per language. The pipeline keeps the model explainable while scaling to five languages.</p>
+
+                <div class="training-steps" data-aos="fade-up" data-aos-delay="150">
+                    <div class="training-step">
+                        <h3>Preprocessing</h3>
+                        <p>Language-specific tokenization, stemming/lemmatization, stopword filtering.</p>
+                    </div>
+                    <div class="training-step">
+                        <h3>Feature Extraction</h3>
+                        <p>BoW + N-grams with CountVectorizer (max_features = 5000).</p>
+                    </div>
+                    <div class="training-step">
+                        <h3>Naive Bayes</h3>
+                        <p>MultinomialNB for explainable classification and fast iteration.</p>
+                    </div>
+                    <div class="training-step">
+                        <h3>Evaluation</h3>
+                        <p>80/20 stratified split with precision, recall, F1, accuracy per language.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-label="Model scaling">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Scaling Across Five Models</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We train five independent models and vectorizers, one per language, to preserve linguistic nuance and allow per-language calibration.</p>
+
+                <div class="metrics-wall" data-aos="fade-up" data-aos-delay="150">
+                    <div class="metric-tile">
+                        <h4>English</h4>
+                        <div class="metric-grid">
+                            <span>Accuracy</span><strong>0.988</strong>
+                            <span>F1 (avg)</span><strong>0.94</strong>
+                            <span>Precision</span><strong>0.986</strong>
+                            <span>Recall</span><strong>0.983</strong>
+                        </div>
+                    </div>
+                    <div class="metric-tile">
+                        <h4>Hindi</h4>
+                        <div class="metric-grid">
+                            <span>Accuracy</span><strong>0.988</strong>
+                            <span>F1 (avg)</span><strong>0.96</strong>
+                            <span>Precision</span><strong>0.970</strong>
+                            <span>Recall</span><strong>0.995</strong>
+                        </div>
+                    </div>
+                    <div class="metric-tile">
+                        <h4>Marathi</h4>
+                        <div class="metric-grid">
+                            <span>Accuracy</span><strong>0.996</strong>
+                            <span>F1 (avg)</span><strong>0.99</strong>
+                            <span>Precision</span><strong>1.000</strong>
+                            <span>Recall</span><strong>1.000</strong>
+                        </div>
+                    </div>
+                    <div class="metric-tile">
+                        <h4>Bhojpuri</h4>
+                        <div class="metric-grid">
+                            <span>Accuracy</span><strong>0.997</strong>
+                            <span>F1 (avg)</span><strong>0.99</strong>
+                            <span>Precision</span><strong>0.998</strong>
+                            <span>Recall</span><strong>1.000</strong>
+                        </div>
+                    </div>
+                    <div class="metric-tile">
+                        <h4>Marwari</h4>
+                        <div class="metric-grid">
+                            <span>Accuracy</span><strong>0.994</strong>
+                            <span>F1 (avg)</span><strong>0.99</strong>
+                            <span>Precision</span><strong>0.980</strong>
+                            <span>Recall</span><strong>1.000</strong>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Evaluation Metrics Section -->
-        <section class="research-section">
-            <div class="research-container">
-                <h2 class="section-title" data-aos="fade-up">Evaluation Metrics</h2>
-                <div class="section-content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        We evaluate system performance using multiple metrics to ensure comprehensive assessment:
-                    </p>
+        <section class="section" aria-label="Pipeline">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Explainable Pipeline Conveyor</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Seven backend phases drive the analysis, from language detection to risk scoring and dashboard delivery.</p>
 
-                    <h3 class="subsection-title">Classification Metrics</h3>
-                    <ul>
-                        <li><strong>Precision:</strong> Proportion of correctly identified hate speech among all flagged content</li>
-                        <li><strong>Recall:</strong> Proportion of actual hate speech correctly identified by the system</li>
-                        <li><strong>F1-Score:</strong> Harmonic mean of precision and recall, providing balanced performance measure</li>
-                        <li><strong>Accuracy:</strong> Overall correctness across all classifications</li>
-                    </ul>
+                <div class="pipeline-flow" data-aos="fade-up" data-aos-delay="150">
+                    <div class="pipeline-node"><strong>Phase 1:</strong> Unified analysis schema + 5 language coverage.</div>
+                    <div class="pipeline-node"><strong>Phase 2:</strong> Lexicon matching with severity + spans.</div>
+                    <div class="pipeline-node"><strong>Phase 3:</strong> Causality extraction for cause ? effect narratives.</div>
+                    <div class="pipeline-node"><strong>Phase 4:</strong> Bias auditing with demographic co-occurrence.</div>
+                    <div class="pipeline-node"><strong>Phase 5:</strong> Risk scoring (0–100) with breakdowns.</div>
+                    <div class="pipeline-node"><strong>Phase 6:</strong> Frontend wiring + live analysis output.</div>
+                    <div class="pipeline-node"><strong>Phase 7:</strong> QA + validation tests.</div>
+                </div>
+            </div>
+        </section>
 
-                    <h3 class="subsection-title">Explainability Metrics</h3>
-                    <ul>
-                        <li><strong>Lexicon Coverage:</strong> Percentage of hate speech instances explained by lexicon matches</li>
-                        <li><strong>Causal Graph Coherence:</strong> Semantic consistency of extracted causal relationships</li>
-                        <li><strong>Bias Attribution Accuracy:</strong> Correctness of bias dimension assignments</li>
-                    </ul>
-
-                    <h3 class="subsection-title">Performance Benchmarks</h3>
-                    <div class="metrics-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Language</th>
-                                    <th>Precision</th>
-                                    <th>Recall</th>
-                                    <th>F1-Score</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>English</td>
-                                    <td>0.89</td>
-                                    <td>0.86</td>
-                                    <td>0.87</td>
-                                </tr>
-                                <tr>
-                                    <td>Hindi</td>
-                                    <td>0.85</td>
-                                    <td>0.82</td>
-                                    <td>0.83</td>
-                                </tr>
-                                <tr>
-                                    <td>Code-Mixed</td>
-                                    <td>0.81</td>
-                                    <td>0.79</td>
-                                    <td>0.80</td>
-                                </tr>
-                                <tr>
-                                    <td>Regional Languages</td>
-                                    <td>0.78</td>
-                                    <td>0.75</td>
-                                    <td>0.76</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <section class="section" aria-label="Data sources">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Data Sources</h2>
+                <div class="data-sources" data-aos="fade-up" data-aos-delay="100">
+                    <p><strong>Dataset Analysis:</strong> src/datasets/analysis/dataset_analysis_report.md</p>
+                    <p><strong>Metrics:</strong> documents/model_metrics_report.md</p>
+                    <p><strong>Freeze Snapshot:</strong> documents/freeze_manifest.md</p>
+                    <p><strong>Schema:</strong> src/datasets/schema.md</p>
+                    <p><strong>Pipeline Milestones:</strong> documents/checklogs/progress-3.md</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <!-- Footer Grid -->
             <div class="footer-grid">
-                <!-- Branding Column -->
                 <div class="footer-column footer-branding">
                     <h3 class="footer-logo">Justify.AI</h3>
                     <p class="footer-tagline">Explainable NLP for Hate Speech Analysis</p>
-                    <p class="footer-description">
-                        Advanced multilingual hate speech detection with transparent, 
-                        explainable AI insights across lexical, causal, and bias dimensions.
-                    </p>
+                    <p class="footer-description">Advanced multilingual hate speech detection with transparent, explainable AI insights across lexical, causal, and bias dimensions.</p>
                 </div>
-
-                <!-- Platform Links Column -->
                 <div class="footer-column">
                     <h4 class="footer-column-title">Platform</h4>
                     <ul class="footer-links">
@@ -348,8 +671,6 @@ graph TD
                         <li><a href="docs.html" class="footer-link">Documentation</a></li>
                     </ul>
                 </div>
-
-                <!-- Resources Links Column -->
                 <div class="footer-column">
                     <h4 class="footer-column-title">Resources</h4>
                     <ul class="footer-links">
@@ -359,8 +680,6 @@ graph TD
                         <li><a href="research.html#datasets" class="footer-link">Datasets</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Info Column -->
                 <div class="footer-column">
                     <h4 class="footer-column-title">Contact</h4>
                     <ul class="footer-links">
@@ -375,12 +694,8 @@ graph TD
                     </ul>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2026 Justify.AI. All rights reserved.
-                </p>
+                <p class="footer-copyright">&copy; 2026 Justify.AI. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="#" class="footer-bottom-link">Privacy Policy</a>
                     <a href="#" class="footer-bottom-link">Terms of Service</a>
@@ -389,101 +704,15 @@ graph TD
         </div>
     </footer>
 
-    <!-- AOS Library (deferred for performance) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    
-    <!-- Initialize Mermaid -->
-    <script>
-        // Store the original mermaid diagram source
-        const MERMAID_SOURCE = `graph TD
-    A[Input Text] --> B[Language Detection]
-    B --> C[Tokenization & Normalization]
-    C --> D[Lexicon Matching]
-    C --> E[Dependency Parsing]
-    C --> F[Contextual Embeddings]
-    
-    D --> G[Hate Word Extraction]
-    G --> H[Severity Scoring]
-    
-    E --> I[Causal Relationship Extraction]
-    I --> J[Causal Graph Construction]
-    
-    F --> K[Bias Dimension Analysis]
-    K --> L[Religion Bias Score]
-    K --> M[Gender Bias Score]
-    K --> N[Ethnicity Bias Score]
-    
-    H --> O[Risk Score Calculation]
-    J --> O
-    L --> O
-    M --> O
-    N --> O
-    
-    O --> P[Final Analysis Results]
-    
-    style A fill:#6C63FF,stroke:#1A2A44,stroke-width:2px,color:#fff
-    style P fill:#00C2A8,stroke:#1A2A44,stroke-width:2px,color:#fff
-    style O fill:#1A2A44,stroke:#6C63FF,stroke-width:2px,color:#fff
-    style D fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px
-    style E fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px
-    style F fill:#E5E7EB,stroke:#6C63FF,stroke-width:2px`;
-
-        // Build mermaid config for a given theme
-        const getMermaidConfig = (isDark) => ({
-            startOnLoad: false,
-            theme: isDark ? 'dark' : 'default',
-            themeVariables: {
-                primaryColor: '#6C63FF',
-                primaryTextColor: '#fff',
-                primaryBorderColor: '#1A2A44',
-                lineColor: '#6C63FF',
-                secondaryColor: '#00C2A8',
-                tertiaryColor: '#E5E7EB',
-                background: isDark ? '#0F172A' : '#F7F9FC',
-                mainBkg: '#6C63FF',
-                secondBkg: '#00C2A8',
-                tertiaryBkg: '#E5E7EB'
-            },
-            flowchart: { curve: 'basis', padding: 20 }
-        });
-
-        // Render (or re-render) the diagram without reloading the page
-        const renderDiagram = async () => {
-            const container = document.getElementById('pipeline-diagram');
-            if (!container) return;
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            mermaid.initialize(getMermaidConfig(isDark));
-            // Clear old SVG
-            container.innerHTML = '';
-            try {
-                const id = 'mermaid-pipeline-' + Date.now();
-                const { svg } = await mermaid.render(id, MERMAID_SOURCE);
-                container.innerHTML = svg;
-            } catch (e) {
-                console.warn('Mermaid render error:', e);
-            }
-        };
-
-        // Initial render after DOM is ready
-        document.addEventListener('DOMContentLoaded', renderDiagram);
-
-        // Re-render when theme attribute changes (no page reload)
-        const observer = new MutationObserver((mutations) => {
-            for (const mutation of mutations) {
-                if (mutation.attributeName === 'data-theme') {
-                    renderDiagram();
-                    break;
-                }
-            }
-        });
-        observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['data-theme']
-        });
-    </script>
-    
-    <!-- Custom Scripts (deferred for performance) -->
     <script src="js/theme.js" defer></script>
     <script src="js/app.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.AOS) {
+                AOS.init({ once: true, duration: 900, easing: 'ease-out' });
+            }
+        });
+    </script>
 </body>
 </html>
