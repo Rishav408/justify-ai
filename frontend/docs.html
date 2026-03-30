@@ -133,15 +133,76 @@
         }
 
         .mermaid {
-            background: white;
+            background: #ffffff;
             padding: 2rem;
             border-radius: 16px;
             display: flex;
             justify-content: center;
+            transition: background 0.3s ease;
+            overflow: visible; /* Ensure content isn't clipped */
+            min-height: 200px; /* Give it some base height */
         }
 
         [data-theme="dark"] .mermaid {
-            background: #1e293b;
+            background: #1A1916;
+        }
+
+        /* Download Button Styles */
+        .diagram-actions {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+
+        .diagram-card:hover .diagram-actions {
+            opacity: 1;
+        }
+
+        .btn-download {
+            background: var(--color-bg-tertiary);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-download:hover {
+            background: var(--color-secondary);
+            color: white;
+            border-color: var(--color-secondary);
+        }
+
+        /* Forced Mermaid Dark Mode Text Visibility */
+        [data-theme="dark"] .mermaid svg text,
+        [data-theme="dark"] .mermaid svg .messageText,
+        [data-theme="dark"] .mermaid svg .actor-label,
+        [data-theme="dark"] .mermaid svg .signalText,
+        [data-theme="dark"] .mermaid svg .noteText,
+        [data-theme="dark"] .mermaid svg .loopText {
+            fill: #F5F2EC !important; /* Force soft warm white */
+            color: #F5F2EC !important;
+        }
+
+        [data-theme="dark"] .mermaid svg .actor {
+            fill: #24221E !important; /* Tertiary background */
+            stroke: #6C63FF !important; /* Primary border */
+        }
+
+        [data-theme="dark"] .mermaid svg .messageLine0,
+        [data-theme="dark"] .mermaid svg .messageLine1,
+        [data-theme="dark"] .mermaid svg line,
+        [data-theme="dark"] .mermaid svg path {
+            stroke: #9B9488 !important; /* Muted warm gray for lines */
         }
 
         /* Utility Classes */
@@ -241,6 +302,12 @@
             <section id="pipeline-flow" class="diagram-section" data-aos="fade-up">
                 <h2 class="diagram-title">Full Pipeline Flow</h2>
                 <div class="diagram-card">
+                    <div class="diagram-actions">
+                        <button class="btn-download" onclick="downloadDiagram(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Save
+                        </button>
+                    </div>
                     <p class="diagram-desc">The end-to-end journey of a text input through our 8-phase explainable analysis pipeline.</p>
                     <div class="mermaid">
 graph LR
@@ -261,29 +328,35 @@ graph LR
             <section id="api-lifecycle" class="diagram-section" data-aos="fade-up">
                 <h2 class="diagram-title">API Request Lifecycle</h2>
                 <div class="diagram-card">
+                    <div class="diagram-actions">
+                        <button class="btn-download" onclick="downloadDiagram(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Save
+                        </button>
+                    </div>
                     <p class="diagram-desc">Tracing the execution path of a POST request through the backend modules.</p>
                     <div class="mermaid">
 sequenceDiagram
-    participant User
-    participant Frontend
-    participant API (routes.py)
-    participant Pipeline
-    participant LLM (Ollama)
+    participant U as User
+    participant F as Frontend
+    participant A as API (routes.py)
+    participant P as Pipeline
+    participant L as LLM (Ollama)
 
-    User->>Frontend: Submit Text
-    Frontend->>API (routes.py): POST /api/analyze
-    API (routes.py)->>Pipeline: Process Text
-    activate Pipeline
-    Pipeline->>Pipeline: Lexicon matching
-    Pipeline->>Pipeline: Causality analysis
-    Pipeline->>Pipeline: Bias audit
-    Pipeline->>Pipeline: Risk scoring
-    Pipeline->>LLM (Ollama): Verify output
-    LLM (Ollama)-->>Pipeline: AI Verification JSON
-    deactivate Pipeline
-    Pipeline-->>API (routes.py): Complete Analysis JSON
-    API (routes.py)-->>Frontend: JSON Response
-    Frontend-->>User: Display Results
+    U->>F: Submit Text
+    F->>A: POST /api/analyze
+    A->>P: Process Text
+    activate P
+    P->>P: Lexicon matching
+    P->>P: Causality analysis
+    P->>P: Bias audit
+    P->>P: Risk scoring
+    P->>L: Verify output
+    L-->>P: AI Verification JSON
+    deactivate P
+    P-->>A: Complete Analysis JSON
+    A-->>F: JSON Response
+    F-->>U: Display Results
                     </div>
                 </div>
             </section>
@@ -292,6 +365,12 @@ sequenceDiagram
             <section id="directory-structure" class="diagram-section" data-aos="fade-up">
                 <h2 class="diagram-title">Project Directory Structure</h2>
                 <div class="diagram-card">
+                    <div class="diagram-actions">
+                        <button class="btn-download" onclick="downloadDiagram(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Save
+                        </button>
+                    </div>
                     <p class="diagram-desc">Organizational map of the core source modules and their responsibilities.</p>
                     <div class="mermaid">
 graph TD
@@ -316,6 +395,12 @@ graph TD
             <section id="preprocessing" class="diagram-section" data-aos="fade-up">
                 <h2 class="diagram-title">Multilingual Preprocessing</h2>
                 <div class="diagram-card">
+                    <div class="diagram-actions">
+                        <button class="btn-download" onclick="downloadDiagram(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Save
+                        </button>
+                    </div>
                     <p class="diagram-desc">How Justify.AI handles different languages through specialized preprocessing branches.</p>
                     <div class="mermaid">
 graph TD
@@ -339,6 +424,12 @@ graph TD
             <section id="model-arch" class="diagram-section" data-aos="fade-up">
                 <h2 class="diagram-title">Model Architecture</h2>
                 <div class="diagram-card">
+                    <div class="diagram-actions">
+                        <button class="btn-download" onclick="downloadDiagram(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Save
+                        </button>
+                    </div>
                     <p class="diagram-desc">The training and inference flow for our multilingual Naive Bayes classifiers.</p>
                     <div class="mermaid">
 graph TD
@@ -356,20 +447,24 @@ graph TD
 
             <!-- Diagram 5 -->
             <section id="risk-composition" class="diagram-section" data-aos="fade-up">
-                <h2 class="diagram-title">Risk Score Composition</h2>
+                <h2 class="diagram-title">Risk Score Breakdown</h2>
                 <div class="diagram-card">
+                    <div class="diagram-actions">
+                        <button class="btn-download" onclick="downloadDiagram(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Save
+                        </button>
+                    </div>
                     <p class="diagram-desc">Weighted calculation model for determining the final 0-100 risk score.</p>
                     <div class="mermaid">
 graph TD
-    L[Lexical Score (0.45)] --> Total[Combined Risk Score (0-100)]
-    C[Causal Score (0.30)] --> Total
-    B[Bias Score (0.25)] --> Total
+    Lexical[Lexical Analysis] --> LScore[Lexical Score 0.45]
+    Causal[Causal Analysis] --> CScore[Causal Score 0.30]
+    Bias[Bias Audit] --> BScore[Bias Score 0.25]
     
-    subgraph Weights
-    L
-    C
-    B
-    end
+    LScore --> Total[Final Risk Score 0-100]
+    CScore --> Total
+    BScore --> Total
                     </div>
                 </div>
             </section>
@@ -378,13 +473,20 @@ graph TD
             <section id="ai-verification" class="diagram-section" data-aos="fade-up">
                 <h2 class="diagram-title">AI Verification Layer</h2>
                 <div class="diagram-card">
+                    <div class="diagram-actions">
+                        <button class="btn-download" onclick="downloadDiagram(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Save
+                        </button>
+                    </div>
                     <p class="diagram-desc">The secondary validation layer using local LLMs (via Ollama) to audit rule-based decisions.</p>
                     <div class="mermaid">
-graph TD
-    Pipe[Rule-based Pipeline Output] --> Verifier[LLMVerifier]
-    Verifier --> Ollama[Ollama (Local)]
-    Ollama --> JSON[Structured JSON Review]
-    JSON --> Badge[Frontend Badge: Agree/Disagree]
+graph LR
+    Input[Rule Engine Output] --> Verifier[LLM Verifier]
+    Verifier --> Ollama[Ollama Local LLM]
+    Ollama --> Result{Validation Result}
+    Result -->|Agree| Dashboard[Update Dashboard]
+    Result -->|Disagree| Flag[Flag for Review]
                     </div>
                 </div>
             </section>
@@ -446,15 +548,125 @@ graph TD
     <script src="js/app.js" defer></script>
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ 
-            startOnLoad: true, 
-            theme: 'neutral',
-            securityLevel: 'loose',
-            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+        
+        function initMermaid() {
+            const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+            
+            mermaid.initialize({ 
+                startOnLoad: true, 
+                theme: isDarkMode ? 'dark' : 'neutral',
+                securityLevel: 'loose',
+                fontFamily: 'Space Grotesk',
+                themeVariables: {
+                    primaryColor: '#6C63FF',
+                    primaryTextColor: isDarkMode ? '#F5F2EC' : '#1C1B18',
+                    primaryBorderColor: '#6C63FF',
+                    lineColor: isDarkMode ? '#9B9488' : '#5A5852',
+                    secondaryColor: '#00C2A8',
+                    tertiaryColor: isDarkMode ? '#24221E' : '#FAF8F5',
+                    
+                    // Sequence Diagram Specifics
+                    actorBkg: isDarkMode ? '#24221E' : '#FAF8F5',
+                    actorBorder: '#6C63FF',
+                    actorTextColor: isDarkMode ? '#F5F2EC' : '#1C1B18',
+                    actorLineColor: isDarkMode ? '#9B9488' : '#5A5852',
+                    
+                    signalColor: isDarkMode ? '#C9C3B8' : '#1C1B18',
+                    signalTextColor: isDarkMode ? '#F5F2EC' : '#1C1B18',
+                    
+                    labelTextColor: isDarkMode ? '#F5F2EC' : '#1C1B18',
+                    loopTextColor: isDarkMode ? '#F5F2EC' : '#1C1B18',
+                    noteBkgColor: '#6C63FF',
+                    noteTextColor: '#ffffff'
+                },
+                flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+                sequence: {
+                    useMaxWidth: true,
+                    actorMargin: 50,
+                    showSequenceNumbers: false,
+                    messageMargin: 45,
+                    boxMargin: 10,
+                    mirrorActors: false,
+                    bottomMarginAdjustment: 2
+                }
+            });
+        }
+
+        // Initialize on load
+        initMermaid();
+
+        // Handle theme change without full page reload to stop flickering
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                    const themeBefore = mutation.oldValue;
+                    const themeAfter = document.documentElement.getAttribute('data-theme');
+                    
+                    if (themeBefore && themeBefore !== themeAfter) {
+                        // Use sessionStorage to prevent reload loops
+                        const lastReload = sessionStorage.getItem('mermaid-reload');
+                        const now = Date.now();
+                        if (!lastReload || (now - parseInt(lastReload) > 2000)) {
+                            sessionStorage.setItem('mermaid-reload', now);
+                            location.reload();
+                        }
+                    }
+                }
+            });
+        });
+        
+        observer.observe(document.documentElement, { 
+            attributes: true, 
+            attributeOldValue: true,
+            attributeFilter: ['data-theme'] 
         });
     </script>
     <script>
         AOS.init({ duration: 800 });
+
+        function downloadDiagram(button) {
+            const card = button.closest('.diagram-card');
+            const mermaidDiv = card.querySelector('.mermaid');
+            const svg = mermaidDiv.querySelector('svg');
+            if (!svg) return;
+
+            // Get SVG dimensions
+            const bbox = svg.getBBox();
+            const width = svg.viewBox.baseVal.width || svg.width.baseVal.value || bbox.width;
+            const height = svg.viewBox.baseVal.height || svg.height.baseVal.value || bbox.height;
+
+            const svgData = new XMLSerializer().serializeToString(svg);
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                // Use a multiplier for high resolution
+                const scale = 2;
+                canvas.width = width * scale;
+                canvas.height = height * scale;
+                
+                // Fill background based on theme
+                ctx.fillStyle = document.documentElement.getAttribute('data-theme') === 'dark' ? '#1A1916' : '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw image
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                
+                const pngUrl = canvas.toDataURL('image/png');
+                const downloadLink = document.createElement('a');
+                downloadLink.href = pngUrl;
+                downloadLink.download = `justify-ai-diagram-${Date.now()}.png`;
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+            };
+
+            // Convert SVG string to Data URL
+            const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+            const url = URL.createObjectURL(svgBlob);
+            img.src = url;
+        }
         
         // Active link tracking
         const observerOptions = {
@@ -463,7 +675,7 @@ graph TD
             threshold: 0.5
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     document.querySelectorAll('.sidebar-link').forEach(link => {
@@ -473,7 +685,7 @@ graph TD
             });
         }, observerOptions);
 
-        document.querySelectorAll('section[id]').forEach(section => observer.observe(section));
+        document.querySelectorAll('section[id]').forEach(section => scrollObserver.observe(section));
     </script>
 </body>
 </html>

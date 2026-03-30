@@ -1,6 +1,11 @@
 /* Justify.AI Custom Styles */
 
 /* CSS Variables for Theme System */
+:root {
+    --font-body: "Space Grotesk", system-ui, sans-serif;
+    --font-title: "Bricolage Grotesque", sans-serif;
+}
+
 :root[data-theme="light"] {
     /* Primary Colors */
     --color-primary: #1A2A44;
@@ -26,6 +31,13 @@
     --grid: rgba(60, 55, 45, 0.05);
     --shadow: 0 20px 50px rgba(60, 55, 45, 0.1);
     --glow: rgba(108, 99, 255, 0.2);
+
+    /* Aliases for Backward Compatibility */
+    --ink: var(--color-text-primary);
+    --paper: var(--color-bg-primary);
+    --accent: var(--color-accent);
+    --accent-2: var(--color-secondary);
+    --accent-3: #ff8ccf;
 }
 
 :root[data-theme="dark"] {
@@ -35,24 +47,31 @@
     --color-accent: #1A2A44;
     
     /* Background Colors */
-    --color-bg-primary: #0F172A;
-    --color-bg-secondary: #1E293B;
-    --color-bg-tertiary: #334155;
+    --color-bg-primary:    #12110F;   /* deep espresso black */ 
+    --color-bg-secondary:  #1A1916;   /* elevated surface (cards) */ 
+    --color-bg-tertiary:   #24221E;   /* inputs / hover surfaces */ 
     
     /* Text Colors */
-    --color-text-primary: #F7F9FC;
-    --color-text-secondary: #CBD5E1;
-    --color-text-tertiary: #94A3B8;
+    --color-text-primary:  #F5F2EC;   /* soft warm white */ 
+    --color-text-secondary:#C9C3B8;   /* warm light gray */ 
+    --color-text-tertiary: #9B9488;   /* muted warm gray */ 
     
     /* Border Colors */
-    --color-border: #334155;
+    --color-border:        rgba(200,185,160,0.14); /* warm subtle border */ 
 
     /* UI Component Variables */
-    --panel: rgba(30, 41, 59, 0.7);
-    --panel-strong: rgba(30, 41, 59, 0.9);
-    --grid: rgba(255, 255, 255, 0.05);
-    --shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    --panel: rgba(26, 25, 22, 0.7);
+    --panel-strong: rgba(26, 25, 22, 0.9);
+    --grid: rgba(200, 185, 160, 0.05);
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     --glow: rgba(0, 194, 168, 0.2);
+
+    /* Aliases for Backward Compatibility */
+    --ink: var(--color-text-primary);
+    --paper: var(--color-bg-primary);
+    --accent: var(--color-secondary);
+    --accent-2: var(--color-secondary);
+    --accent-3: #ff9bdd;
 }
 
 /* Base Styles */
@@ -99,7 +118,7 @@ body {
 }
 
 [data-theme="dark"] .navbar {
-    background-color: rgba(15, 23, 42, 0.85);
+    background-color: rgba(18, 17, 15, 0.85);
 }
 
 .nav-container {
@@ -283,9 +302,9 @@ body {
     border-radius: 2px;
 }
 
-/* Add padding to body to account for fixed navbar */
+/* Add padding to body to account for fixed navbar if needed, but pages handle their own hero padding */
 body {
-    padding-top: 80px;
+    /* Removed redundant padding-top as pages handle it */
 }
 
 
@@ -3970,4 +3989,158 @@ body,
     .footer-bottom-links {
         display: none;
     }
+}
+
+:root[data-theme="light"] {
+    --premium-surface: rgba(250, 248, 245, 0.78);
+    --premium-surface-strong: rgba(250, 248, 245, 0.92);
+    --premium-stroke: rgba(84, 75, 63, 0.14);
+    --premium-shadow: 0 20px 44px rgba(32, 26, 20, 0.1);
+    --premium-shadow-strong: 0 26px 60px rgba(32, 26, 20, 0.16);
+    --premium-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.2));
+    --premium-glow: radial-gradient(circle at 20% 20%, rgba(108, 99, 255, 0.2), transparent 58%);
+}
+
+:root[data-theme="dark"] {
+    --premium-surface: rgba(26, 25, 22, 0.82);
+    --premium-surface-strong: rgba(26, 25, 22, 0.95);
+    --premium-stroke: rgba(214, 196, 165, 0.16);
+    --premium-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+    --premium-shadow-strong: 0 30px 70px rgba(0, 0, 0, 0.62);
+    --premium-glass: linear-gradient(145deg, rgba(80, 74, 63, 0.12), rgba(20, 18, 16, 0.45));
+    --premium-glow: radial-gradient(circle at 15% 10%, rgba(0, 194, 168, 0.2), transparent 58%);
+}
+
+html, body {
+    background-image: var(--premium-glow);
+    background-attachment: fixed;
+}
+
+.navbar {
+    background: color-mix(in srgb, var(--color-bg-primary) 86%, white 14%);
+    border-bottom: 1px solid var(--premium-stroke);
+    box-shadow: 0 10px 30px rgba(14, 12, 10, 0.08);
+}
+
+[data-theme="dark"] .navbar {
+    background: color-mix(in srgb, var(--color-bg-primary) 90%, black 10%);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+.nav-link {
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-secondary), color-mix(in srgb, var(--color-secondary) 40%, var(--color-accent) 60%));
+    box-shadow: 0 12px 24px rgba(108, 99, 255, 0.24);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 16px 30px rgba(108, 99, 255, 0.32);
+}
+
+.btn-secondary,
+.theme-toggle {
+    background: var(--premium-glass);
+    border: 1px solid var(--premium-stroke);
+}
+
+.feature-card,
+.language-card,
+.result-panel,
+.input-panel,
+.results-dashboard,
+.demo-card,
+.glass-panel,
+.mission-card,
+.schema-card,
+.stat-card,
+.pipeline-card,
+.metric-tile,
+.diagram-card,
+.ds-browser,
+.team-card,
+.data-viz-item,
+.roadmap-item {
+    background: var(--premium-surface) !important;
+    backdrop-filter: blur(16px) saturate(130%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+    border: 1px solid var(--premium-stroke) !important;
+    box-shadow: var(--premium-shadow);
+}
+
+.feature-card:hover,
+.language-card:hover,
+.demo-card:hover,
+.glass-panel:hover,
+.mission-card:hover,
+.schema-card:hover,
+.stat-card:hover,
+.pipeline-card:hover,
+.metric-tile:hover,
+.diagram-card:hover,
+.team-card:hover,
+.roadmap-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--premium-shadow-strong);
+}
+
+.demo-card::before,
+.feature-card::before,
+.glass-panel::before,
+.diagram-card::before,
+.mission-card::before,
+.schema-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.18), transparent 45%);
+}
+
+.demo-card,
+.feature-card,
+.glass-panel,
+.diagram-card,
+.mission-card,
+.schema-card,
+.roadmap-item,
+.team-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer {
+    background: linear-gradient(165deg, color-mix(in srgb, var(--color-primary) 76%, #0a0d14 24%), color-mix(in srgb, var(--color-secondary) 18%, #0a0d14 82%));
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .footer {
+    background: linear-gradient(165deg, #11100d, #191712 55%, #13120f);
+}
+
+input,
+textarea,
+select,
+.form-control,
+.demo-textarea,
+.demo-input,
+.search-input {
+    background: var(--premium-surface-strong) !important;
+    border: 1px solid var(--premium-stroke) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus,
+.demo-textarea:focus,
+.demo-input:focus,
+.search-input:focus {
+    border-color: color-mix(in srgb, var(--color-secondary) 55%, var(--premium-stroke) 45%) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-secondary) 22%, transparent 78%);
 }
