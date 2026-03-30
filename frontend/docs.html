@@ -6,15 +6,10 @@
     <meta name="description" content="Justify.AI Developer Docs - API, Workflow, and Operations">
     <title>Documentation - Justify.AI</title>
 
-    <!-- Expressive Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
 
     <style>
@@ -53,22 +48,14 @@
         }
 
         .docs-hero {
-            padding: 6.5rem 0 4rem;
+            padding: 8rem 0 4rem;
             position: relative;
             overflow: hidden;
-        }
-
-        .docs-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
             background: repeating-linear-gradient(90deg, transparent 0 30px, var(--grid) 30px 31px),
                         repeating-linear-gradient(0deg, transparent 0 30px, var(--grid) 30px 31px);
-            opacity: 0.4;
-            pointer-events: none;
         }
 
-        .docs-hero .hero-inner {
+        .hero-inner {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 2rem;
@@ -97,184 +84,20 @@
             line-height: 1.05;
         }
 
-        .hero-subtitle {
-            font-size: 1.1rem;
-            max-width: 720px;
-            opacity: 0.82;
-            line-height: 1.7;
-        }
+        .section { padding: 4.2rem 0; }
+        .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { font-family: "Bricolage Grotesque", sans-serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
 
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 2rem;
-        }
+        .glass-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .glass-panel { background: var(--panel-strong); border-radius: 18px; padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid rgba(255, 255, 255, 0.25); }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.9rem;
-            border-radius: 999px;
-            background: var(--panel);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
+        .code-card { background: #0b1220; color: #00e5a8; border-radius: 12px; padding: 1rem; margin-top: 1rem; font-family: monospace; }
+        .code-card code { white-space: pre-wrap; }
 
-        .section {
-            padding: 4.2rem 0;
-        }
-
-        .section-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            font-family: "Bricolage Grotesque", sans-serif;
-            font-size: clamp(1.8rem, 3vw, 2.6rem);
-            margin-bottom: 1.1rem;
-        }
-
-        .section-subtitle {
-            max-width: 760px;
-            opacity: 0.78;
-            line-height: 1.7;
-        }
-
-        .glass-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .glass-panel {
-            background: var(--panel-strong);
-            border-radius: 18px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glass-panel::after {
-            content: "";
-            position: absolute;
-            inset: -40% 40% auto auto;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(92, 123, 255, 0.35), transparent 70%);
-            opacity: 0.7;
-            pointer-events: none;
-        }
-
-        .pill {
-            display: inline-block;
-            padding: 0.2rem 0.7rem;
-            border-radius: 999px;
-            background: rgba(0, 229, 168, 0.15);
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .code-card {
-            background: rgba(10, 18, 32, 0.92);
-            color: #e6f0ff;
-            border-radius: 16px;
-            padding: 1.2rem 1.4rem;
-            margin-top: 1rem;
-            box-shadow: var(--shadow);
-            overflow-x: auto;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 0.9rem;
-        }
-
-        .code-card code {
-            white-space: pre;
-        }
-
-        .api-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1.8rem;
-        }
-
-        .api-card {
-            background: var(--panel);
-            border-radius: 16px;
-            padding: 1.4rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .api-card h4 {
-            margin-bottom: 0.4rem;
-        }
-
-        .callout {
-            border-left: 3px solid var(--accent-2);
-            background: rgba(92, 123, 255, 0.08);
-            padding: 1rem 1.2rem;
-            border-radius: 12px;
-            margin-top: 1.2rem;
-        }
-
-        .metric-wall {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
-            margin-top: 2rem;
-        }
-
-        .metric-tile {
-            background: var(--panel-strong);
-            border-radius: 16px;
-            padding: 1.2rem;
-            border: 1px solid rgba(255, 255, 255, 0.35);
-        }
-
-        .metric-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            font-size: 0.85rem;
-        }
-
-        .two-col {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .data-sources {
-            background: rgba(0, 0, 0, 0.04);
-            border-radius: 18px;
-            padding: 1.5rem;
-            border: 1px dashed rgba(92, 123, 255, 0.4);
-        }
-
-        [data-theme="dark"] .data-sources {
-            background: rgba(255, 255, 255, 0.04);
-        }
-
-        @media (max-width: 720px) {
-            .hero-badges { justify-content: flex-start; }
-        }
+        .pill { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; background: rgba(0, 229, 168, 0.1); color: var(--accent); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 1rem; }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
-
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -283,8 +106,9 @@
             <ul class="nav-links" id="nav-links" role="menubar" aria-label="Site navigation">
                 <li><a href="index.html" class="nav-link">Platform</a></li>
                 <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="dataset.html" class="nav-link">Datasets</a></li>
                 <li><a href="research.html" class="nav-link">Research</a></li>
-                <li><a href="docs.html" class="nav-link">Docs</a></li>
+                <li><a href="docs.html" class="nav-link active">Docs</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
             <div class="nav-actions">
@@ -315,265 +139,43 @@
         </div>
     </nav>
 
-    <main id="main-content" tabindex="-1">
+    <main id="main-content">
         <section class="docs-hero">
             <div class="hero-inner" data-aos="fade-up">
-                <span class="hero-tag">Developer Operations Manual</span>
-                <h1 class="hero-title">Run, validate, and ship the Justify.AI backend with confidence.</h1>
-                <p class="hero-subtitle">This documentation is the technical operating guide for the Justify.AI backend. It covers API behavior, dataset rules, training flow, model artifacts, testing, and troubleshooting.</p>
-                <div class="hero-badges">
-                    <span class="badge">API Ready</span>
-                    <span class="badge">5 Languages</span>
-                    <span class="badge">Naive Bayes</span>
-                    <span class="badge">Explainable Outputs</span>
-                </div>
+                <span class="hero-tag">Developer Operations</span>
+                <h1 class="hero-title">Technical Operations & API Architecture</h1>
+                <p class="hero-subtitle">Comprehensive guide for running, validating, and extending the Justify.AI explainable pipeline.</p>
             </div>
         </section>
 
-        <section class="section" id="quickstart">
+        <section class="section">
             <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">Quick Start</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Minimal commands to run backend + demo locally. Designed for developers who need the system running fast.</p>
-                <div class="glass-grid" data-aos="fade-up" data-aos-delay="150">
+                <h2 class="section-title" data-aos="fade-up">Quick Deployment</h2>
+                <div class="glass-grid" data-aos="fade-up">
                     <div class="glass-panel">
-                        <span class="pill">Install</span>
-                        <div class="code-card"><code>python -m pip install -r requirements.txt</code></div>
+                        <span class="pill">Setup</span>
+                        <h3>Dependencies</h3>
+                        <div class="code-card"><code>pip install -r requirements.txt</code></div>
                     </div>
                     <div class="glass-panel">
-                        <span class="pill">Backend</span>
-                        <div class="code-card"><code>python -m uvicorn src.api.app:app --reload</code></div>
-                    </div>
-                    <div class="glass-panel">
-                        <span class="pill">Demo UI</span>
-                        <div class="code-card"><code>Open frontend/demo.html</code></div>
+                        <span class="pill">Run</span>
+                        <h3>API Server</h3>
+                        <div class="code-card"><code>uvicorn src.api.app:app --reload</code></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="api">
+        <section class="section">
             <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">Core API</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">The backend exposes a single analysis endpoint. Requests accept raw text and an optional language hint.</p>
-
-                <div class="api-grid" data-aos="fade-up" data-aos-delay="150">
-                    <div class="api-card">
-                        <h4>Endpoint</h4>
-                        <p><strong>POST</strong> /api/analyze</p>
-                        <p>Base URL: http://127.0.0.1:8000</p>
-                    </div>
-                    <div class="api-card">
-                        <h4>Language Values</h4>
-                        <p>english, hindi, marathi, bhojpuri, marwari</p>
-                        <p>Use auto-detect by omitting language.</p>
-                    </div>
-                    <div class="api-card">
-                        <h4>Payload Fields</h4>
-                        <p>text (required), language (optional)</p>
-                    </div>
-                </div>
-
-                <div class="two-col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="glass-panel">
-                        <span class="pill">Request</span>
-                        <div class="code-card"><code>{
-  "text": "Sample text to analyze",
-  "language": "english"
+                <h2 class="section-title" data-aos="fade-up">API Reference</h2>
+                <div class="glass-panel" data-aos="fade-up">
+                    <span class="pill">POST /api/analyze</span>
+                    <p>Primary analysis endpoint for multilingual text processing.</p>
+                    <div class="code-card"><code>{
+  "text": "Your text here",
+  "language": "auto"
 }</code></div>
-                    </div>
-                    <div class="glass-panel">
-                        <span class="pill">Response</span>
-                        <div class="code-card"><code>{
-  "language": "english",
-  "hate_speech_label": "non_hate",
-  "confidence": 0.99,
-  "lexicon_hits": ["..."],
-  "causality_relations": ["..."],
-  "bias_metrics": {"overall": 12, "religion": 0},
-  "risk": {"score": 8, "level": "low"}
-}</code></div>
-                    </div>
-                </div>
-
-                <div class="callout" data-aos="fade-up" data-aos-delay="250">
-                    <strong>Why the response matters:</strong> Use `risk.score` + `bias_metrics` for dashboards, and `lexicon_hits` + `causality_relations` for explainability views.
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="outputs">
-            <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">Explainability Outputs</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Every prediction is bundled with interpretable artifacts so analysts can justify the label.</p>
-                <div class="glass-grid" data-aos="fade-up" data-aos-delay="150">
-                    <div class="glass-panel">
-                        <h3>Lexicon Hits</h3>
-                        <p>Term, severity, count, and span positions for language-specific lexicons.</p>
-                    </div>
-                    <div class="glass-panel">
-                        <h3>Causality</h3>
-                        <p>Cause ? effect pairs with relation confidence and sentence context.</p>
-                    </div>
-                    <div class="glass-panel">
-                        <h3>Bias Metrics</h3>
-                        <p>Demographic co-occurrence scoring with per-dimension details.</p>
-                    </div>
-                    <div class="glass-panel">
-                        <h3>Risk Score</h3>
-                        <p>Composite 0–100 score with breakdown (lexical, causal, bias).</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="datasets">
-            <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">Dataset Workflow</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">All datasets live under <code>src/datasets</code> and follow a 17-field schema. Validation is enforced before any training run.</p>
-                <div class="two-col" data-aos="fade-up" data-aos-delay="150">
-                    <div class="glass-panel">
-                        <span class="pill">Schema</span>
-                        <p>Fields: text, label, severity, is_implicit, is_sarcasm, target_group, target_type, directness, call_to_action, tone, emotion, profanity_count, platform, domain, region, confidence, annotator_id.</p>
-                    </div>
-                    <div class="glass-panel">
-                        <span class="pill">Validate</span>
-                        <div class="code-card"><code>python scripts/validate_dataset.py</code></div>
-                    </div>
-                </div>
-                <div class="callout" data-aos="fade-up" data-aos-delay="200">
-                    Validation enforces allowed labels, tone values, boolean fields, and confidence bounds (0.70–1.00).
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="training">
-            <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">Model Training & Artifacts</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Each language has its own Naive Bayes model and vectorizer saved in <code>src/models/saved_models</code>.</p>
-                <div class="glass-grid" data-aos="fade-up" data-aos-delay="150">
-                    <div class="glass-panel">
-                        <span class="pill">Train All</span>
-                        <div class="code-card"><code>python src/models/naive_bayes_model.py</code></div>
-                    </div>
-                    <div class="glass-panel">
-                        <span class="pill">Artifacts</span>
-                        <p>{lang}_nb_model.pkl</p>
-                        <p>{lang}_vectorizer.pkl</p>
-                    </div>
-                    <div class="glass-panel">
-                        <span class="pill">Split</span>
-                        <p>80/20 stratified split, random_state=42</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="metrics">
-            <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">Latest Model Metrics</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Derived from <code>documents/model_metrics_report.md</code>.</p>
-                <div class="metric-wall" data-aos="fade-up" data-aos-delay="150">
-                    <div class="metric-tile">
-                        <h4>English</h4>
-                        <div class="metric-grid">
-                            <span>Accuracy</span><strong>0.988</strong>
-                            <span>Hate F1</span><strong>0.985</strong>
-                            <span>Offensive F1</span><strong>0.961</strong>
-                            <span>Health F1</span><strong>0.806</strong>
-                        </div>
-                    </div>
-                    <div class="metric-tile">
-                        <h4>Hindi</h4>
-                        <div class="metric-grid">
-                            <span>Accuracy</span><strong>0.988</strong>
-                            <span>Hate F1</span><strong>0.982</strong>
-                            <span>Offensive F1</span><strong>0.995</strong>
-                            <span>Health F1</span><strong>0.888</strong>
-                        </div>
-                    </div>
-                    <div class="metric-tile">
-                        <h4>Marathi</h4>
-                        <div class="metric-grid">
-                            <span>Accuracy</span><strong>0.996</strong>
-                            <span>Hate F1</span><strong>1.000</strong>
-                            <span>Offensive F1</span><strong>0.997</strong>
-                            <span>Health F1</span><strong>0.996</strong>
-                        </div>
-                    </div>
-                    <div class="metric-tile">
-                        <h4>Bhojpuri</h4>
-                        <div class="metric-grid">
-                            <span>Accuracy</span><strong>0.997</strong>
-                            <span>Hate F1</span><strong>0.999</strong>
-                            <span>Offensive F1</span><strong>0.999</strong>
-                            <span>Health F1</span><strong>0.997</strong>
-                        </div>
-                    </div>
-                    <div class="metric-tile">
-                        <h4>Marwari</h4>
-                        <div class="metric-grid">
-                            <span>Accuracy</span><strong>0.994</strong>
-                            <span>Hate F1</span><strong>0.990</strong>
-                            <span>Offensive F1</span><strong>0.997</strong>
-                            <span>Health F1</span><strong>0.994</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="tests">
-            <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">Testing & QA</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Run the test suite after dataset or model updates.</p>
-                <div class="glass-grid" data-aos="fade-up" data-aos-delay="150">
-                    <div class="glass-panel">
-                        <span class="pill">PyTest</span>
-                        <div class="code-card"><code>python -m pytest</code></div>
-                    </div>
-                    <div class="glass-panel">
-                        <span class="pill">Quick Health</span>
-                        <div class="code-card"><code>curl -X POST http://127.0.0.1:8000/api/analyze -H "Content-Type: application/json" -d '{"text":"test","language":"english"}'</code></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="troubleshooting">
-            <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">Troubleshooting</h2>
-                <div class="glass-grid" data-aos="fade-up" data-aos-delay="100">
-                    <div class="glass-panel">
-                        <h3>NLTK Download Warnings</h3>
-                        <p>Warnings appear offline but do not break the pipeline. Safe to ignore in air-gapped setups.</p>
-                    </div>
-                    <div class="glass-panel">
-                        <h3>Model Not Found</h3>
-                        <p>Run <code>python src/models/naive_bayes_model.py</code> to regenerate model files.</p>
-                    </div>
-                    <div class="glass-panel">
-                        <h3>Dataset Validation Failed</h3>
-                        <p>Run validation and ensure schema + tone values comply with <code>src/datasets/schema.md</code>.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="map">
-            <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">Project Map</h2>
-                <div class="two-col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="glass-panel">
-                        <span class="pill">Backend</span>
-                        <p><code>src/api</code>, <code>src/models</code>, <code>src/lexicon</code>, <code>src/causality</code>, <code>src/bias</code>, <code>src/scoring</code></p>
-                    </div>
-                    <div class="glass-panel">
-                        <span class="pill">Datasets</span>
-                        <p><code>src/datasets</code> + <code>src/datasets/schema.md</code> + <code>src/datasets/analysis/dataset_analysis_report.md</code></p>
-                    </div>
-                </div>
-                <div class="data-sources" data-aos="fade-up" data-aos-delay="150">
-                    <p><strong>Data Sources:</strong> documents/checklogs/progress-3.md, documents/model_metrics_report.md, documents/freeze_manifest.md, src/datasets/schema.md</p>
                 </div>
             </div>
         </section>
@@ -629,15 +231,8 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="js/theme.js" defer></script>
-    <script src="js/app.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (window.AOS) {
-                AOS.init({ once: true, duration: 900, easing: 'ease-out' });
-            }
-        });
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/theme.js"></script>
+    <script>AOS.init({ duration: 800 });</script>
 </body>
 </html>
