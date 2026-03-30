@@ -8,17 +8,24 @@
     --color-accent: #00C2A8;
     
     /* Background Colors */
-    --color-bg-primary: #F7F9FC;
-    --color-bg-secondary: #FFFFFF;
-    --color-bg-tertiary: #E5E7EB;
-    
+    --color-bg-primary:    #F0EDE8;   /* page bg — warm parchment */ 
+    --color-bg-secondary:  #FAF8F5;   /* card bg — creamy white */ 
+    --color-bg-tertiary:   #EDEAE5;   /* input/surface bg */ 
+ 
     /* Text Colors */
-    --color-text-primary: #111827;
-    --color-text-secondary: #6B7280;
-    --color-text-tertiary: #9CA3AF;
-    
+    --color-text-primary:  #1C1B18;   /* near-black, warm not cool */ 
+    --color-text-secondary:#5A5852;   /* warm medium gray */ 
+    --color-text-tertiary: #8C887F;   /* muted warm gray */ 
+ 
     /* Border Colors */
-    --color-border: #E5E7EB;
+    --color-border:        rgba(60,55,45,0.12);  /* warm-toned subtle border */ 
+
+    /* UI Component Variables */
+    --panel: rgba(250, 248, 245, 0.7);
+    --panel-strong: rgba(250, 248, 245, 0.9);
+    --grid: rgba(60, 55, 45, 0.05);
+    --shadow: 0 20px 50px rgba(60, 55, 45, 0.1);
+    --glow: rgba(108, 99, 255, 0.2);
 }
 
 :root[data-theme="dark"] {
@@ -39,6 +46,13 @@
     
     /* Border Colors */
     --color-border: #334155;
+
+    /* UI Component Variables */
+    --panel: rgba(30, 41, 59, 0.7);
+    --panel-strong: rgba(30, 41, 59, 0.9);
+    --grid: rgba(255, 255, 255, 0.05);
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    --glow: rgba(0, 194, 168, 0.2);
 }
 
 /* Base Styles */
@@ -77,15 +91,15 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(240, 237, 232, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 [data-theme="dark"] .navbar {
-    background-color: rgba(15, 23, 42, 0.8);
+    background-color: rgba(15, 23, 42, 0.85);
 }
 
 .nav-container {

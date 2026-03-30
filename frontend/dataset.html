@@ -13,38 +13,12 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        :root {
-            --ink: #0b1220;
-            --paper: #f5f7fb;
-            --glow: rgba(78, 196, 255, 0.4);
-            --accent: #00e5a8;
-            --accent-2: #5c7bff;
-            --accent-3: #ff8ccf;
-            --grid: rgba(12, 20, 36, 0.07);
-            --panel: rgba(255, 255, 255, 0.7);
-            --panel-strong: rgba(255, 255, 255, 0.88);
-            --shadow: 0 30px 80px rgba(8, 17, 32, 0.2);
-        }
-
-        [data-theme="dark"] {
-            --ink: #e5ecff;
-            --paper: #0b0f18;
-            --glow: rgba(64, 179, 255, 0.55);
-            --accent: #36f3bd;
-            --accent-2: #7ea0ff;
-            --accent-3: #ff9bdd;
-            --grid: rgba(255, 255, 255, 0.07);
-            --panel: rgba(10, 18, 32, 0.78);
-            --panel-strong: rgba(12, 20, 34, 0.9);
-            --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-        }
-
         body {
             font-family: "Space Grotesk", system-ui, sans-serif;
             background: radial-gradient(circle at 10% 0%, rgba(92, 123, 255, 0.1), transparent 45%),
                         radial-gradient(circle at 90% 20%, rgba(0, 229, 168, 0.1), transparent 40%),
-                        var(--paper);
-            color: var(--ink);
+                        var(--color-bg-primary);
+            color: var(--color-text-primary);
         }
 
         .ds-hero {
@@ -67,7 +41,7 @@
             padding: 0.4rem 1rem;
             border-radius: 999px;
             background: rgba(92, 123, 255, 0.12);
-            color: var(--accent-2);
+            color: var(--color-secondary);
             font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -87,7 +61,7 @@
             margin: 4rem 0;
             background: var(--panel-strong);
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid var(--color-border);
             box-shadow: var(--shadow);
             overflow: hidden;
         }
@@ -224,17 +198,6 @@
         }
 
         .dl-card svg { margin-bottom: 1rem; }
-
-        /* Sync Navbar/Footer Fixes */
-        .navbar {
-            backdrop-filter: blur(12px);
-            background: rgba(var(--paper-rgb), 0.7);
-        }
-
-        .footer {
-            background: var(--panel-strong);
-            margin-top: 8rem;
-        }
 
         /* 3D Visual Elements */
         #data-particles {
@@ -414,6 +377,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/app.js" defer></script>
     <script>
         AOS.init({ duration: 800, once: true });
 

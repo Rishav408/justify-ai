@@ -13,38 +13,12 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        :root {
-            --ink: #0b1220;
-            --paper: #f5f7fb;
-            --glow: rgba(78, 196, 255, 0.4);
-            --accent: #00e5a8;
-            --accent-2: #5c7bff;
-            --accent-3: #ff8ccf;
-            --grid: rgba(12, 20, 36, 0.07);
-            --panel: rgba(255, 255, 255, 0.7);
-            --panel-strong: rgba(255, 255, 255, 0.88);
-            --shadow: 0 30px 80px rgba(8, 17, 32, 0.2);
-        }
-
-        [data-theme="dark"] {
-            --ink: #e5ecff;
-            --paper: #0b0f18;
-            --glow: rgba(64, 179, 255, 0.55);
-            --accent: #36f3bd;
-            --accent-2: #7ea0ff;
-            --accent-3: #ff9bdd;
-            --grid: rgba(255, 255, 255, 0.07);
-            --panel: rgba(10, 18, 32, 0.78);
-            --panel-strong: rgba(12, 20, 34, 0.9);
-            --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-        }
-
         body {
             font-family: "Space Grotesk", system-ui, sans-serif;
             background: radial-gradient(circle at 10% 0%, rgba(92, 123, 255, 0.15), transparent 45%),
                         radial-gradient(circle at 90% 20%, rgba(0, 229, 168, 0.15), transparent 40%),
-                        var(--paper);
-            color: var(--ink);
+                        var(--color-bg-primary);
+            color: var(--color-text-primary);
         }
 
         .research-hero {
@@ -70,7 +44,7 @@
             padding: 0.4rem 1rem;
             border-radius: 999px;
             background: rgba(92, 123, 255, 0.12);
-            color: var(--accent-2);
+            color: var(--color-secondary);
             font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -84,6 +58,13 @@
             line-height: 1.05;
         }
 
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-top: 1rem;
+        }
+
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -93,23 +74,68 @@
 
         .stat-card {
             background: var(--panel-strong);
-            padding: 2rem;
-            border-radius: 20px;
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .stat-card h3 { font-size: 0.9rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
-        .stat-card p { font-size: 2rem; font-weight: 800; color: var(--accent-2); margin-top: 0.5rem; }
+        .stat-card h3 { font-size: 2.2rem; color: var(--color-secondary); margin-bottom: 0.2rem; }
+        .stat-card p { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; }
 
         .section { padding: 4.5rem 0; }
         .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .section-title { font-family: "Bricolage Grotesque", sans-serif; font-size: 2.8rem; margin-bottom: 2rem; border-left: 6px solid var(--accent-2); padding-left: 1.5rem; }
+        .section-title { font-family: "Bricolage Grotesque", sans-serif; font-size: 2.4rem; margin-bottom: 2rem; }
+        
+        .glass-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .glass-panel { background: var(--panel-strong); border-radius: 18px; padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--color-border); }
 
-        .tower-stack { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
-        .tower { height: 300px; display: flex; align-items: flex-end; justify-content: center; transform-style: preserve-3d; perspective: 1000px; }
-        .tower-layer { width: 150px; background: var(--accent-2); border-radius: 12px; margin-bottom: 5px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transform: translateZ(10px); }
-        .tower-label { text-align: center; margin-top: 1rem; font-weight: 700; color: var(--accent-2); }
+        .pill { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; background: rgba(0, 229, 168, 0.1); color: var(--accent); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 1rem; }
+
+        .section-description { font-size: 1.1rem; opacity: 0.8; max-width: 700px; margin-bottom: 1.5rem; }
+
+        .feature-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+        .feature-list li { padding: 0.5rem 0 0.5rem 1.2rem; position: relative; opacity: 0.9; }
+        .feature-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+        .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 1rem; }
+        .metric-item { display: flex; flex-direction: column; padding: 1rem; background: rgba(92, 123, 255, 0.08); border-radius: 12px; border: 1px solid rgba(92, 123, 255, 0.15); }
+        .metric-label { font-size: 0.8rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.5px; }
+        .metric-value { font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-top: 0.25rem; }
+
+        .language-metrics { margin-top: 1rem; }
+        .lang-metric-row { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .lang-metric-row:last-child { border-bottom: none; }
+        .lang-name { opacity: 0.9; }
+        .lang-score { font-weight: 700; color: var(--accent-2); font-size: 1.1rem; }
+
+        .roadmap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+        .roadmap-item { background: rgba(92, 123, 255, 0.06); padding: 1.5rem; border-radius: 14px; border: 1px solid rgba(92, 123, 255, 0.12); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .roadmap-item:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(92, 123, 255, 0.15); }
+        .roadmap-item h4 { margin: 0.75rem 0 0.5rem; font-size: 1.1rem; font-family: "Bricolage Grotesque", sans-serif; }
+        .roadmap-item p { opacity: 0.85; font-size: 0.95rem; margin: 0.4rem 0; line-height: 1.5; }
+        .roadmap-note { font-size: 0.8rem; opacity: 0.6; margin-top: 1rem !important; font-style: italic; }
+        .roadmap-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; background: rgba(92, 123, 255, 0.2); color: var(--accent-2); }
+        .roadmap-badge.in-progress { background: rgba(0, 229, 168, 0.2); color: var(--accent); }
+
+        .data-viz-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .data-viz-item { text-align: center; }
+        .data-bar-container { height: 200px; display: flex; align-items: flex-end; justify-content: center; background: rgba(92, 123, 255, 0.06); border-radius: 12px; padding: 1rem; border: 1px solid rgba(92, 123, 255, 0.1); }
+        .data-bar { width: 60px; background: linear-gradient(180deg, var(--accent-2), rgba(92, 123, 255, 0.4)); border-radius: 8px 8px 0 0; transition: height 0.6s ease; box-shadow: 0 10px 30px rgba(92, 123, 255, 0.3); }
+        .data-label { margin-top: 1rem; font-weight: 600; color: var(--accent-2); font-size: 0.95rem; }
+        .data-value { font-size: 0.85rem; opacity: 0.7; margin-top: 0.25rem; }
+
+        .explain-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .explain-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(92, 123, 255, 0.2); }
+        .explain-card h3 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.2rem; margin: 0.75rem 0 0.5rem; }
+        .explain-card p { opacity: 0.85; font-size: 0.95rem; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .metrics-grid { grid-template-columns: 1fr; }
+            .data-viz-grid { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
@@ -157,7 +183,7 @@
     <main id="main-content">
         <section class="research-hero">
             <div class="hero-inner" data-aos="fade-up">
-                <span class="hero-tag">Core Research dossier</span>
+                <span class="hero-tag">Core Research Dossier</span>
                 <h1 class="hero-title">Multilingual Hate Speech & Behavioral Scaling</h1>
                 <p class="hero-subtitle">Exploring the logical architecture behind 75,000+ data nodes and their 17 behavioral constraints.</p>
                 <div class="hero-stats">
@@ -168,15 +194,158 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="datasets">
             <div class="section-inner">
                 <h2 class="section-title" data-aos="fade-up">Data Distribution</h2>
-                <div class="tower-stack" data-aos="fade-up">
-                    <div><div class="tower"><div class="tower-layer" style="height: 180px;"></div></div><div class="tower-label">English</div></div>
-                    <div><div class="tower"><div class="tower-layer" style="height: 174px;"></div></div><div class="tower-label">Hindi</div></div>
-                    <div><div class="tower"><div class="tower-layer" style="height: 122px;"></div></div><div class="tower-label">Marathi</div></div>
-                    <div><div class="tower"><div class="tower-layer" style="height: 119px;"></div></div><div class="tower-label">Bhojpuri</div></div>
-                    <div><div class="tower"><div class="tower-layer" style="height: 147px;"></div></div><div class="tower-label">Marwari</div></div>
+                <p class="section-description" data-aos="fade-up">Breakdown of annotated samples across all supported languages in our dataset.</p>
+                <div class="data-viz-grid" data-aos="fade-up">
+                    <div class="data-viz-item">
+                        <div class="data-bar-container">
+                            <div class="data-bar" style="height: 180px;"></div>
+                        </div>
+                        <div class="data-label">English</div>
+                        <div class="data-value">28,450</div>
+                    </div>
+                    <div class="data-viz-item">
+                        <div class="data-bar-container">
+                            <div class="data-bar" style="height: 174px;"></div>
+                        </div>
+                        <div class="data-label">Hindi</div>
+                        <div class="data-value">27,520</div>
+                    </div>
+                    <div class="data-viz-item">
+                        <div class="data-bar-container">
+                            <div class="data-bar" style="height: 122px;"></div>
+                        </div>
+                        <div class="data-label">Marathi</div>
+                        <div class="data-value">19,340</div>
+                    </div>
+                    <div class="data-viz-item">
+                        <div class="data-bar-container">
+                            <div class="data-bar" style="height: 119px;"></div>
+                        </div>
+                        <div class="data-label">Bhojpuri</div>
+                        <div class="data-value">18,860</div>
+                    </div>
+                    <div class="data-viz-item">
+                        <div class="data-bar-container">
+                            <div class="data-bar" style="height: 147px;"></div>
+                        </div>
+                        <div class="data-label">Marwari</div>
+                        <div class="data-value">23,282</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Explainability Outputs</h2>
+                <p class="section-description" data-aos="fade-up">Deep dive into model interpretability and explanation generation across all supported languages.</p>
+                <div class="glass-grid" data-aos="fade-up">
+                    <div class="glass-panel explain-card">
+                        <span class="pill">Lexical Analysis</span>
+                        <h3>Token-Level Explanations</h3>
+                        <p>Granular attribution scores showing which tokens contribute most to classification decisions.</p>
+                        <ul class="feature-list">
+                            <li>Integrated Gradients visualization</li>
+                            <li>Attention weight heatmaps</li>
+                            <li>SHAP value distributions</li>
+                        </ul>
+                    </div>
+                    <div class="glass-panel explain-card">
+                        <span class="pill">Causal Analysis</span>
+                        <h3>Counterfactual Explanations</h3>
+                        <p>Understanding model behavior through minimal input perturbations and their effects.</p>
+                        <ul class="feature-list">
+                            <li>Minimal edit distance analysis</li>
+                            <li>Feature importance ranking</li>
+                            <li>Causal intervention testing</li>
+                        </ul>
+                    </div>
+                    <div class="glass-panel explain-card">
+                        <span class="pill">Bias Detection</span>
+                        <h3>Fairness Metrics</h3>
+                        <p>Quantifying and mitigating potential biases across demographic and linguistic groups.</p>
+                        <ul class="feature-list">
+                            <li>Demographic parity scores</li>
+                            <li>Equalized odds analysis</li>
+                            <li>Cross-lingual bias comparison</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Latest Model Metrics</h2>
+                <p class="section-description" data-aos="fade-up">Performance benchmarks and evaluation results from our latest model iterations.</p>
+                <div class="glass-grid" data-aos="fade-up">
+                    <div class="glass-panel">
+                        <span class="pill">Overall Performance</span>
+                        <h3>Aggregate Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <span class="metric-label">Accuracy</span>
+                                <span class="metric-value">98.8%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Precision</span>
+                                <span class="metric-value">97.2%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Recall</span>
+                                <span class="metric-value">96.5%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">F1 Score</span>
+                                <span class="metric-value">96.8%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-panel">
+                        <span class="pill">Per-Language</span>
+                        <h3>Language-Specific Performance</h3>
+                        <div class="language-metrics">
+                            <div class="lang-metric-row"><span class="lang-name">English</span><span class="lang-score">99.1%</span></div>
+                            <div class="lang-metric-row"><span class="lang-name">Hindi</span><span class="lang-score">98.5%</span></div>
+                            <div class="lang-metric-row"><span class="lang-name">Marathi</span><span class="lang-score">97.8%</span></div>
+                            <div class="lang-metric-row"><span class="lang-name">Bhojpuri</span><span class="lang-score">96.2%</span></div>
+                            <div class="lang-metric-row"><span class="lang-name">Marwari</span><span class="lang-score">97.4%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <h2 class="section-title" data-aos="fade-up">Research Roadmap</h2>
+                <p class="section-description" data-aos="fade-up">Upcoming experiments, datasets, and architectural improvements.</p>
+
+                <div class="glass-panel" data-aos="fade-up">
+                    <h3 style="margin-top: 0; font-family: 'Bricolage Grotesque', sans-serif;">Coming Soon</h3>
+                    <div class="roadmap-grid">
+                        <div class="roadmap-item">
+                            <span class="roadmap-badge">Planned</span>
+                            <h4>Extended Datasets</h4>
+                            <p>Additional annotated corpora for low-resource languages and dialectal variations.</p>
+                            <p class="roadmap-note">Expected: Q2 2026</p>
+                        </div>
+                        <div class="roadmap-item">
+                            <span class="roadmap-badge in-progress">In Progress</span>
+                            <h4>Workflow Diagrams</h4>
+                            <p>Visual documentation of the complete data processing and model inference pipeline.</p>
+                            <p class="roadmap-note">Status: Draft</p>
+                        </div>
+                        <div class="roadmap-item">
+                            <span class="roadmap-badge">Planned</span>
+                            <h4>Model Architecture Visualizations</h4>
+                            <p>Interactive diagrams showing layer-wise transformations and attention patterns.</p>
+                            <p class="roadmap-note">Expected: Q3 2026</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -234,6 +403,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/app.js" defer></script>
     <script>AOS.init({ duration: 800 });</script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Justify.AI Developer Docs - API, Workflow, and Operations">
-    <title>Documentation - Justify.AI</title>
+    <meta name="description" content="Justify.AI Technical Documentation - Architecture & Pipeline">
+    <title>Technical Docs - Justify.AI</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,88 +13,161 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        :root {
-            --ink: #0b1220;
-            --paper: #f5f7fb;
-            --glow: rgba(78, 196, 255, 0.4);
-            --accent: #00e5a8;
-            --accent-2: #5c7bff;
-            --accent-3: #ff8ccf;
-            --grid: rgba(12, 20, 36, 0.07);
-            --panel: rgba(255, 255, 255, 0.7);
-            --panel-strong: rgba(255, 255, 255, 0.88);
-            --shadow: 0 30px 80px rgba(8, 17, 32, 0.2);
-        }
-
-        [data-theme="dark"] {
-            --ink: #e5ecff;
-            --paper: #0b0f18;
-            --glow: rgba(64, 179, 255, 0.55);
-            --accent: #36f3bd;
-            --accent-2: #7ea0ff;
-            --accent-3: #ff9bdd;
-            --grid: rgba(255, 255, 255, 0.07);
-            --panel: rgba(10, 18, 32, 0.78);
-            --panel-strong: rgba(12, 20, 34, 0.9);
-            --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-        }
-
         body {
             font-family: "Space Grotesk", system-ui, sans-serif;
-            background: radial-gradient(circle at 10% 0%, rgba(92, 123, 255, 0.15), transparent 45%),
-                        radial-gradient(circle at 90% 20%, rgba(0, 229, 168, 0.15), transparent 40%),
-                        var(--paper);
-            color: var(--ink);
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
         }
 
-        .docs-hero {
-            padding: 8rem 0 4rem;
-            position: relative;
-            overflow: hidden;
-            background: repeating-linear-gradient(90deg, transparent 0 30px, var(--grid) 30px 31px),
-                        repeating-linear-gradient(0deg, transparent 0 30px, var(--grid) 30px 31px);
+        .docs-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+            padding-top: 80px;
         }
 
-        .hero-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
+        /* Sidebar Navigation */
+        .docs-sidebar {
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+            padding: 2rem;
+            border-right: 1px solid var(--color-border);
+            overflow-y: auto;
+            background: var(--color-bg-primary);
         }
 
-        .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.4rem 1rem;
-            border-radius: 999px;
-            background: rgba(92, 123, 255, 0.12);
-            color: var(--accent-2);
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-link {
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--color-secondary);
+        }
+
+        .sidebar-category {
             font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-tertiary);
+            margin: 1.5rem 0 0.75rem 1rem;
+            font-weight: 700;
+        }
+
+        /* Content Area */
+        .docs-content {
+            padding: 3rem 4rem;
+            max-width: 1000px;
+        }
+
+        .hero-section {
+            margin-bottom: 4rem;
         }
 
         .hero-title {
             font-family: "Bricolage Grotesque", sans-serif;
-            font-size: clamp(2.4rem, 4vw, 4.5rem);
-            margin: 1.4rem 0 1rem;
-            line-height: 1.05;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
         }
 
-        .section { padding: 4.2rem 0; }
-        .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .section-title { font-family: "Bricolage Grotesque", sans-serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            max-width: 700px;
+        }
 
-        .glass-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .glass-panel { background: var(--panel-strong); border-radius: 18px; padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid rgba(255, 255, 255, 0.25); }
+        .diagram-section {
+            margin-bottom: 6rem;
+            scroll-margin-top: 100px;
+        }
 
-        .code-card { background: #0b1220; color: #00e5a8; border-radius: 12px; padding: 1rem; margin-top: 1rem; font-family: monospace; }
-        .code-card code { white-space: pre-wrap; }
+        .diagram-title {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-        .pill { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; background: rgba(0, 229, 168, 0.1); color: var(--accent); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 1rem; }
+        .diagram-title::before {
+            content: "";
+            width: 8px;
+            height: 32px;
+            background: var(--color-secondary);
+            border-radius: 4px;
+        }
+
+        .diagram-card {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .diagram-desc {
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .mermaid {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        [data-theme="dark"] .mermaid {
+            background: #1e293b;
+        }
+
+        /* Utility Classes */
+        .pill {
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--color-secondary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .docs-container {
+                grid-template-columns: 1fr;
+            }
+            .docs-sidebar {
+                display: none;
+            }
+            .docs-content {
+                padding: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -139,47 +212,184 @@
         </div>
     </nav>
 
-    <main id="main-content">
-        <section class="docs-hero">
-            <div class="hero-inner" data-aos="fade-up">
-                <span class="hero-tag">Developer Operations</span>
-                <h1 class="hero-title">Technical Operations & API Architecture</h1>
-                <p class="hero-subtitle">Comprehensive guide for running, validating, and extending the Justify.AI explainable pipeline.</p>
-            </div>
-        </section>
+    <div class="docs-container">
+        <aside class="docs-sidebar">
+            <ul class="sidebar-nav">
+                <li class="sidebar-category">Overview</li>
+                <li class="sidebar-nav-item"><a href="#pipeline-flow" class="sidebar-link">Pipeline Flow</a></li>
+                <li class="sidebar-nav-item"><a href="#api-lifecycle" class="sidebar-link">API Lifecycle</a></li>
+                
+                <li class="sidebar-category">Architecture</li>
+                <li class="sidebar-nav-item"><a href="#directory-structure" class="sidebar-link">Project Structure</a></li>
+                <li class="sidebar-nav-item"><a href="#preprocessing" class="sidebar-link">Preprocessing Branch</a></li>
+                <li class="sidebar-nav-item"><a href="#model-arch" class="sidebar-link">Model Architecture</a></li>
+                
+                <li class="sidebar-category">Scoring & Verification</li>
+                <li class="sidebar-nav-item"><a href="#risk-composition" class="sidebar-link">Risk Score Breakdown</a></li>
+                <li class="sidebar-nav-item"><a href="#ai-verification" class="sidebar-link">AI Verification Layer</a></li>
+            </ul>
+        </aside>
 
-        <section class="section">
-            <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">Quick Deployment</h2>
-                <div class="glass-grid" data-aos="fade-up">
-                    <div class="glass-panel">
-                        <span class="pill">Setup</span>
-                        <h3>Dependencies</h3>
-                        <div class="code-card"><code>pip install -r requirements.txt</code></div>
-                    </div>
-                    <div class="glass-panel">
-                        <span class="pill">Run</span>
-                        <h3>API Server</h3>
-                        <div class="code-card"><code>uvicorn src.api.app:app --reload</code></div>
+        <main class="docs-content">
+            <header class="hero-section" data-aos="fade-up">
+                <span class="pill">Technical Documentation</span>
+                <h1 class="hero-title">System Architecture & Pipeline</h1>
+                <p class="hero-subtitle">A deep dive into the Justify.AI engine—from multilingual preprocessing to local LLM verification.</p>
+            </header>
+
+            <!-- Diagram 1 -->
+            <section id="pipeline-flow" class="diagram-section" data-aos="fade-up">
+                <h2 class="diagram-title">Full Pipeline Flow</h2>
+                <div class="diagram-card">
+                    <p class="diagram-desc">The end-to-end journey of a text input through our 8-phase explainable analysis pipeline.</p>
+                    <div class="mermaid">
+graph LR
+    A[Input Text] --> B[Language Detection]
+    B --> C[Preprocessing]
+    C --> D[Naive Bayes Classifier]
+    D --> E[Lexicon Matching]
+    E --> F[Causality Analysis]
+    F --> G[Bias Audit]
+    G --> H[Risk Scoring]
+    H --> I[AI/LLM Verification]
+    I --> J[Dashboard/UI]
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="section">
-            <div class="section-inner">
-                <h2 class="section-title" data-aos="fade-up">API Reference</h2>
-                <div class="glass-panel" data-aos="fade-up">
-                    <span class="pill">POST /api/analyze</span>
-                    <p>Primary analysis endpoint for multilingual text processing.</p>
-                    <div class="code-card"><code>{
-  "text": "Your text here",
-  "language": "auto"
-}</code></div>
+            <!-- Diagram 2 -->
+            <section id="api-lifecycle" class="diagram-section" data-aos="fade-up">
+                <h2 class="diagram-title">API Request Lifecycle</h2>
+                <div class="diagram-card">
+                    <p class="diagram-desc">Tracing the execution path of a POST request through the backend modules.</p>
+                    <div class="mermaid">
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant API (routes.py)
+    participant Pipeline
+    participant LLM (Ollama)
+
+    User->>Frontend: Submit Text
+    Frontend->>API (routes.py): POST /api/analyze
+    API (routes.py)->>Pipeline: Process Text
+    activate Pipeline
+    Pipeline->>Pipeline: Lexicon matching
+    Pipeline->>Pipeline: Causality analysis
+    Pipeline->>Pipeline: Bias audit
+    Pipeline->>Pipeline: Risk scoring
+    Pipeline->>LLM (Ollama): Verify output
+    LLM (Ollama)-->>Pipeline: AI Verification JSON
+    deactivate Pipeline
+    Pipeline-->>API (routes.py): Complete Analysis JSON
+    API (routes.py)-->>Frontend: JSON Response
+    Frontend-->>User: Display Results
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+
+            <!-- Diagram 3 -->
+            <section id="directory-structure" class="diagram-section" data-aos="fade-up">
+                <h2 class="diagram-title">Project Directory Structure</h2>
+                <div class="diagram-card">
+                    <p class="diagram-desc">Organizational map of the core source modules and their responsibilities.</p>
+                    <div class="mermaid">
+graph TD
+    Root[src/] --> API[api/]
+    Root --> LEX[lexicon/]
+    Root --> CAU[causality/]
+    Root --> BIAS[bias/]
+    Root --> SCORE[scoring/]
+    Root --> LLM[llm/]
+    Root --> MOD[models/]
+    
+    API --> Routes[routes.py]
+    MOD --> NB[naive_bayes.py]
+    LEX --> Match[matcher.py]
+    CAU --> Causal[analyzer.py]
+    BIAS --> Audit[auditor.py]
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diagram 4 -->
+            <section id="preprocessing" class="diagram-section" data-aos="fade-up">
+                <h2 class="diagram-title">Multilingual Preprocessing</h2>
+                <div class="diagram-card">
+                    <p class="diagram-desc">How Justify.AI handles different languages through specialized preprocessing branches.</p>
+                    <div class="mermaid">
+graph TD
+    Input[Input Text] --> Detect[Language Detection]
+    Detect -->|English| PE[English Preprocessor]
+    Detect -->|Hindi| PH[Hindi Preprocessor]
+    Detect -->|Marathi| PM[Marathi Preprocessor]
+    Detect -->|Bhojpuri| PB[Bhojpuri Preprocessor]
+    Detect -->|Marwari| PR[Marwari Preprocessor]
+    
+    PE --> FE[Feature Extraction]
+    PH --> FE
+    PM --> FE
+    PB --> FE
+    PR --> FE
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diagram 6 -->
+            <section id="model-arch" class="diagram-section" data-aos="fade-up">
+                <h2 class="diagram-title">Model Architecture</h2>
+                <div class="diagram-card">
+                    <p class="diagram-desc">The training and inference flow for our multilingual Naive Bayes classifiers.</p>
+                    <div class="mermaid">
+graph TD
+    Data[CSV Datasets] --> FE[Feature Extraction]
+    FE --> Vec[TF-IDF Vectorizer]
+    Vec --> NB[Naive Bayes Classifier]
+    NB --> P1[english_model.pkl]
+    NB --> P2[hindi_model.pkl]
+    NB --> P3[marathi_model.pkl]
+    NB --> P4[bhojpuri_model.pkl]
+    NB --> P5[marwari_model.pkl]
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diagram 5 -->
+            <section id="risk-composition" class="diagram-section" data-aos="fade-up">
+                <h2 class="diagram-title">Risk Score Composition</h2>
+                <div class="diagram-card">
+                    <p class="diagram-desc">Weighted calculation model for determining the final 0-100 risk score.</p>
+                    <div class="mermaid">
+graph TD
+    L[Lexical Score (0.45)] --> Total[Combined Risk Score (0-100)]
+    C[Causal Score (0.30)] --> Total
+    B[Bias Score (0.25)] --> Total
+    
+    subgraph Weights
+    L
+    C
+    B
+    end
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diagram 7 -->
+            <section id="ai-verification" class="diagram-section" data-aos="fade-up">
+                <h2 class="diagram-title">AI Verification Layer</h2>
+                <div class="diagram-card">
+                    <p class="diagram-desc">The secondary validation layer using local LLMs (via Ollama) to audit rule-based decisions.</p>
+                    <div class="mermaid">
+graph TD
+    Pipe[Rule-based Pipeline Output] --> Verifier[LLMVerifier]
+    Verifier --> Ollama[Ollama (Local)]
+    Ollama --> JSON[Structured JSON Review]
+    JSON --> Badge[Frontend Badge: Agree/Disagree]
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer class="footer">
         <div class="footer-container">
@@ -233,6 +443,37 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/theme.js"></script>
-    <script>AOS.init({ duration: 800 });</script>
+    <script src="js/app.js" defer></script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'neutral',
+            securityLevel: 'loose',
+            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+        });
+    </script>
+    <script>
+        AOS.init({ duration: 800 });
+        
+        // Active link tracking
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.sidebar-link').forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section[id]').forEach(section => observer.observe(section));
+    </script>
 </body>
 </html>
