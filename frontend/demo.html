@@ -794,6 +794,237 @@
             line-height: 1.5;
         }
 
+        /* ── AI Review Panel ── */
+        .ai-review-panel {
+            border-radius: 1rem;
+            border: 1px solid color-mix(in srgb, var(--color-border) 40%, #7c3aed 60%);
+            background: color-mix(in srgb, var(--color-bg-primary) 94%, #7c3aed 6%);
+            padding: 1.25rem;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ai-review-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #7c3aed, #06b6d4, #7c3aed);
+            background-size: 200% 100%;
+            animation: shimmer-bar 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer-bar {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .ai-review-panel:hover {
+            box-shadow: 0 0 24px rgba(124, 58, 237, 0.12);
+        }
+
+        .ai-review-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .ai-review-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .ai-review-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 0.55rem;
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .ai-review-title {
+            margin: 0;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            font-family: "Bricolage Grotesque", sans-serif;
+        }
+
+        .ai-powered-badge {
+            border-radius: 999px;
+            padding: 0.22rem 0.65rem;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(6, 182, 212, 0.15));
+            color: #7c3aed;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .ai-agreement-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.85rem;
+        }
+
+        .ai-agree-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            border-radius: 999px;
+            padding: 0.38rem 0.9rem;
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .ai-agree-badge.agrees {
+            background: rgba(34, 197, 94, 0.14);
+            color: #15803d;
+            border: 1px solid rgba(34, 197, 94, 0.4);
+        }
+
+        .ai-agree-badge.disagrees {
+            background: rgba(239, 68, 68, 0.14);
+            color: #b91c1c;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+        }
+
+        .ai-confidence-badge {
+            border-radius: 999px;
+            padding: 0.28rem 0.7rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-primary);
+            color: var(--color-text-secondary);
+        }
+
+        .ai-suggested-label {
+            display: none;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            color: var(--color-text-secondary);
+            padding: 0.3rem 0.75rem;
+            border-radius: 0.6rem;
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+        }
+
+        .ai-suggested-label.show {
+            display: inline-flex;
+        }
+
+        .ai-reasoning {
+            margin: 0 0 0.85rem;
+            padding: 0.85rem 1rem;
+            border-radius: 0.7rem;
+            background: color-mix(in srgb, var(--color-bg-secondary) 85%, #7c3aed 15%);
+            border-left: 3px solid #7c3aed;
+            font-size: 0.85rem;
+            line-height: 1.65;
+            color: var(--color-text-secondary);
+        }
+
+        .ai-section-label {
+            margin: 0 0 0.45rem;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: var(--color-text-tertiary);
+            font-weight: 700;
+        }
+
+        .ai-observations {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .ai-obs-pill {
+            border-radius: 999px;
+            padding: 0.32rem 0.75rem;
+            font-size: 0.74rem;
+            background: color-mix(in srgb, var(--color-bg-primary) 88%, #06b6d4 12%);
+            border: 1px solid color-mix(in srgb, var(--color-border) 65%, #06b6d4 35%);
+            color: var(--color-text-secondary);
+            line-height: 1.4;
+        }
+
+        .ai-risk-review {
+            margin: 0 0 0.85rem;
+            padding: 0.65rem 0.85rem;
+            border-radius: 0.6rem;
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            font-size: 0.82rem;
+            color: var(--color-text-secondary);
+            line-height: 1.55;
+        }
+
+        .ai-summary-box {
+            margin: 0;
+            padding: 0.75rem 1rem;
+            border-radius: 0.7rem;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(6, 182, 212, 0.08));
+            border: 1px solid color-mix(in srgb, var(--color-border) 50%, #7c3aed 50%);
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            line-height: 1.55;
+        }
+
+        /* AI Review Loading State */
+        .ai-review-loading {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 1rem;
+            color: var(--color-text-tertiary);
+            font-size: 0.85rem;
+        }
+
+        .ai-spinner {
+            width: 18px;
+            height: 18px;
+            border: 2.5px solid rgba(124, 58, 237, 0.2);
+            border-top-color: #7c3aed;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            flex-shrink: 0;
+        }
+
+        .ai-review-unavailable {
+            padding: 0.85rem 1rem;
+            border-radius: 0.6rem;
+            background: color-mix(in srgb, var(--color-bg-secondary) 90%, var(--color-border) 10%);
+            font-size: 0.82rem;
+            color: var(--color-text-tertiary);
+            text-align: center;
+        }
+
+        .ai-review-content { display: none; }
+        .ai-review-content.active { display: block; }
+
         /* ── Responsive ── */
         @media (max-width: 1024px) {
             .demo-grid {
@@ -1000,6 +1231,40 @@
                             <div class="meta-card">
                                 <p class="meta-label">is_implicit</p>
                                 <p class="meta-value" id="meta-implicit">no</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Verification Review Panel -->
+                        <div class="ai-review-panel" id="ai-review-panel" style="display:none;">
+                            <div class="ai-review-header">
+                                <div class="ai-review-title-group">
+                                    <div class="ai-review-icon">🤖</div>
+                                    <div>
+                                        <h4 class="ai-review-title">AI Verification Review</h4>
+                                    </div>
+                                </div>
+                                <span class="ai-powered-badge">Powered by Qwen Local AI</span>
+                            </div>
+
+                            <!-- Loading state -->
+                            <div id="ai-review-loading" class="ai-review-loading" style="display:none;">
+                                <div class="ai-spinner"></div>
+                                <span>Verifying analysis with AI...</span>
+                            </div>
+
+                            <!-- Unavailable state -->
+                            <div id="ai-review-unavailable" class="ai-review-unavailable" style="display:none;">
+                                AI verification review is not available. Ensure Ollama is running locally with the target model.
+                            </div>
+
+                            <!-- Content -->
+                            <div id="ai-review-content" class="ai-review-content">
+                                <div class="ai-agreement-row">
+                                    <span id="ai-agree-badge" class="ai-agree-badge agrees">✓ Agrees</span>
+                                    <span id="ai-confidence-badge" class="ai-confidence-badge">confidence: high</span>
+                                    <span id="ai-suggested-label" class="ai-suggested-label">Suggested: <strong id="ai-suggested-value">—</strong></span>
+                                </div>
+
                             </div>
                         </div>
 
@@ -1363,6 +1628,63 @@
             confidenceHistory.unshift(entry);
             if (confidenceHistory.length > 6) confidenceHistory.pop();
             renderHistory();
+
+            // Render AI review
+            const aiReview = res.rawResponse?.ai_review || null;
+            applyAiReview(aiReview, res.label);
+        }
+
+        /* ---------- AI Review rendering ---------- */
+        const aiPanel = document.getElementById('ai-review-panel');
+        const aiLoading = document.getElementById('ai-review-loading');
+        const aiUnavailable = document.getElementById('ai-review-unavailable');
+        const aiContent = document.getElementById('ai-review-content');
+        const aiAgreeBadge = document.getElementById('ai-agree-badge');
+        const aiConfBadge = document.getElementById('ai-confidence-badge');
+        const aiSuggestedLabel = document.getElementById('ai-suggested-label');
+        const aiSuggestedValue = document.getElementById('ai-suggested-value');
+
+        function applyAiReview(aiReview, modelLabel) {
+            if (!aiPanel) return;
+            aiPanel.style.display = 'block';
+
+            // Hide all states
+            if (aiLoading) aiLoading.style.display = 'none';
+            if (aiUnavailable) aiUnavailable.style.display = 'none';
+            if (aiContent) aiContent.classList.remove('active');
+
+            if (!aiReview) {
+                // AI review unavailable
+                if (aiUnavailable) aiUnavailable.style.display = 'block';
+                return;
+            }
+
+            // Populate content
+            if (aiContent) aiContent.classList.add('active');
+
+            // Agreement badge
+            if (aiAgreeBadge) {
+                const agrees = aiReview.agrees_with_classification;
+                aiAgreeBadge.className = `ai-agree-badge ${agrees ? 'agrees' : 'disagrees'}`;
+                aiAgreeBadge.textContent = agrees ? '\u2713 Agrees with Classification' : '\u2717 Disagrees with Classification';
+            }
+
+            // Confidence in model output
+            if (aiConfBadge) {
+                aiConfBadge.textContent = `AI confidence: ${aiReview.confidence_in_model_output || 'unknown'}`;
+            }
+
+            // Suggested label (show only if different from model label)
+            if (aiSuggestedLabel && aiSuggestedValue) {
+                const suggested = aiReview.suggested_label;
+                if (suggested && suggested !== modelLabel) {
+                    aiSuggestedLabel.classList.add('show');
+                    aiSuggestedValue.textContent = suggested.toUpperCase();
+                } else {
+                    aiSuggestedLabel.classList.remove('show');
+                }
+            }
+
         }
 
         async function analyzeWithBackend(text, langUi) {

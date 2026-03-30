@@ -6,12 +6,17 @@ __pycache__/
 # C extensions
 *.so
 
-# Packages
+# Packages / Virtual environments
 .Python
 env/
 venv/
 ENV/
+.venv/
+
+# Environment variables (contains API keys!)
 .env
+.env.local
+.env.production
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -22,12 +27,28 @@ ENV/
 # Local dev logs
 uvicorn.out.log
 uvicorn.err.log
+*.log
 
 # OS generated files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
 # Project specific
 logs/
 output/
 downloads/
+
+# Saved model artifacts (large binary files)
+src/models/saved_models/*.pkl
+
+# Node modules (if any frontend tooling is added)
+node_modules/
+

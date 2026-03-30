@@ -16,6 +16,7 @@ from src.lexicon.lexicon_matcher import LexiconMatcher
 from src.causality.causality_extractor import CausalityExtractor
 from src.bias.bias_auditor import BiasAuditor
 from src.scoring.risk_scorer import RiskScorer
+from src.llm.llm_verifier import LLMVerifier
 
 router = APIRouter()
 
@@ -53,6 +54,7 @@ lexicon_matcher = LexiconMatcher()
 causality_extractor = CausalityExtractor()
 bias_auditor = BiasAuditor()
 risk_scorer = RiskScorer()
+llm_verifier = LLMVerifier()
 
 def _count_matches(text: str, patterns: list[str]) -> int:
     count = 0
@@ -303,11 +305,13 @@ async def analyze_text(request: AnalyzeRequest):
     except Exception:
         analysis_bundle["risk"] = {
             "score": None,
+
             "level": "unknown",
             "breakdown": {"lexical": None, "causal": None, "bias": None},
         }
 
-    return {
+    # Build the response dict before LLM verification (so we can pass it to the verifier)
+    response_data = {
         "text": text,
         "language": lang,
         "language_coverage_priority": LANGUAGE_COVERAGE_PRIORITY,
@@ -337,8 +341,18 @@ async def analyze_text(request: AnalyzeRequest):
             "pos_tags": preproc_results.get('pos_tags', []),
             "named_entities": entities
         },
-        "version": "1.5 - Syllabus Logic"
+        "version": "2.0 - AI Verified"
     }
+
+    # Phase 8: AI/LLM Verification (Gemini via LangChain)
+    try:
+        ai_review = llm_verifier.verify(response_data)
+    except Exception:
+        ai_review = None
+
+    response_data["ai_review"] = ai_review
+
+    return response_data
 
 @router.get("/")
 async def health_check():

@@ -6,3 +6,6 @@ fastapi==0.100.0
 uvicorn==0.23.1
 python-multipart==0.0.6
 langdetect==1.0.9
+langchain>=0.3.0
+langchain-ollama>=0.1.0
+python-dotenv>=1.0.0
