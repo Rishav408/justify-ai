@@ -230,6 +230,58 @@
             border-color: var(--color-secondary);
         }
 
+        /* AI Bypass Toggle */
+        .ai-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--color-text-primary);
+            cursor: pointer;
+            user-select: none;
+            margin-right: auto;
+            margin-left: 0.5rem;
+            font-family: var(--font-body);
+        }
+
+        .ai-toggle-checkbox {
+            display: none;
+        }
+
+        .ai-toggle-switch {
+            position: relative;
+            width: 36px;
+            height: 20px;
+            background: rgba(45, 45, 45, 0.4);
+            border-radius: 20px;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: inline-block;
+        }
+
+        .ai-toggle-switch::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255,255,255, 0.6);
+            transition: 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .ai-toggle-checkbox:checked + .ai-toggle-switch {
+            background: rgba(85, 40, 202, 0.5);
+            border-color: var(--color-primary);
+        }
+
+        .ai-toggle-checkbox:checked + .ai-toggle-switch::before {
+            transform: translateX(16px);
+            background: #fff;
+            box-shadow: 0 0 8px var(--color-primary);
+        }
+
         .analyze-btn {
             flex-shrink: 0;
             border: none;
@@ -1142,6 +1194,11 @@
                             <option value="mwr">Marwari</option>
                             <option value="en">English</option>
                         </select>
+                        <label class="ai-toggle-label" title="Toggle strictly to bypass local AI for faster results">
+                            <input type="checkbox" id="ai-bypass-toggle" class="ai-toggle-checkbox" checked>
+                            <span class="ai-toggle-switch"></span>
+                            Enable AI
+                        </label>
                         <button id="analyze-btn" class="analyze-btn" type="button">Analyze</button>
                     </div>
                     <div class="status-row">
@@ -1653,9 +1710,8 @@
             if (aiUnavailable) aiUnavailable.style.display = 'none';
             if (aiContent) aiContent.classList.remove('active');
 
-            if (!aiReview) {
-                // AI review unavailable
-                if (aiUnavailable) aiUnavailable.style.display = 'block';
+            if (!aiReview || aiReview.status === 'bypassed') {
+                aiPanel.style.display = 'none'; // Completely hide AI results if bypassed or unavailable
                 return;
             }
 
@@ -1691,6 +1747,11 @@
             const payload = { text };
             const mappedLang = mapUiLangToApi(langUi);
             if (mappedLang) payload.language = mappedLang;
+            
+            const aiToggle = document.getElementById('ai-bypass-toggle');
+            if (aiToggle) payload.enable_ai = aiToggle.checked;
+            
+            console.log('API Payload:', JSON.stringify(payload));
 
             const response = await fetch(apiEndpoint(), {
                 method: 'POST',

@@ -5,6 +5,9 @@ import os
 import sys
 import re
 import math
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Add project root to path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -23,6 +26,7 @@ router = APIRouter()
 class AnalyzeRequest(BaseModel):
     text: str
     language: str = None # Optional: auto-detect if not provided
+    enable_ai: bool = False # Flag to explicitly bypass LLM layer (Default False for speed)
 
 # Phase 1: define unified analysis schema + language coverage priority.
 # This is a foundation for upcoming lexicon/causal/bias/risk implementations.
@@ -227,6 +231,7 @@ def get_ner_extractor(lang: str):
 
 @router.post("/analyze")
 async def analyze_text(request: AnalyzeRequest):
+    logger.info(f"Analysis Request: enable_ai={request.enable_ai}, text_len={len(request.text)}")
     text = request.text
     if not text.strip():
         raise HTTPException(status_code=400, detail="Empty text provided.")
@@ -344,11 +349,14 @@ async def analyze_text(request: AnalyzeRequest):
         "version": "2.0 - AI Verified"
     }
 
-    # Phase 8: AI/LLM Verification (Gemini via LangChain)
-    try:
-        ai_review = llm_verifier.verify(response_data)
-    except Exception:
-        ai_review = None
+    # Phase 8: AI/LLM Verification (Gemini via LangChain / Local Ollama)
+    if request.enable_ai:
+        try:
+            ai_review = llm_verifier.verify(response_data)
+        except Exception:
+            ai_review = None
+    else:
+        ai_review = {"status": "bypassed"}
 
     response_data["ai_review"] = ai_review
 
