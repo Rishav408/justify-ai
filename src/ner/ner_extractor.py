@@ -32,7 +32,7 @@ class NERExtractor:
         for path in required_paths:
             try:
                 nltk.data.find(path)
-            except LookupError:
+            except Exception:
                 missing = True
 
         if not missing:
